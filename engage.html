@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engage with the Artist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 2rem;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Engage with the Artist</h1>
+        <div id="step1" class="step active">
+            <h2>Step 1: Read the Bio</h2>
+            <p>Learn more about the artist and their journey.</p>
+            <button onclick="nextStep(2)">I've read the bio</button>
+        </div>
+        <div id="step2" class="step">
+            <h2>Step 2: Listen to Music</h2>
+            <p>Experience the artist's latest tracks and albums.</p>
+            <button onclick="nextStep(3)">I've listened to the music</button>
+        </div>
+        <div id="step3" class="step">
+            <h2>Step 3: Join the Newsletter</h2>
+            <p>Stay updated with the latest news and releases.</p>
+            <button onclick="nextStep(4)">I've joined the newsletter</button>
+        </div>
+        <div id="step4" class="step">
+            <h2>Step 4: RSVP to Upcoming Show</h2>
+            <p>Secure your spot at the next live performance.</p>
+            <button onclick="complete()">I've RSVPed to the show</button>
+        </div>
+        <div id="complete" class="step">
+            <h2>Congratulations!</h2>
+            <p>You've completed all steps and are now fully engaged with the artist.</p>
+            <button onclick="restart()">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            document.querySelector('.step.active').classList.remove('active');
+            document.getElementById('step' + step).classList.add('active');
+        }
+
+        function complete() {
+            document.querySelector('.step.active').classList.remove('active');
+            document.getElementById('complete').classList.add('active');
+        }
+
+        function restart() {
+            document.querySelector('.step.active').classList.remove('active');
+            document.getElementById('step1').classList.add('active');
+        }
+    </script>
+</body>
+</html>

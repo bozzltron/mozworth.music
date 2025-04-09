@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HCSKGBDXDT');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcard | mozworth</title>
+    <meta name="description" content="Listen to 'Postcard' by mozworth, read the lyrics, and explore the story behind the song.">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rich-green: #00d474;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000;
+            background-image: url('../boz4web.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .song-info {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .embed-container {
+            position: relative;
+            padding-bottom: 100%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        .section h2 {
+            color: var(--rich-green);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .lyrics {
+            white-space: pre-line;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .notes {
+            line-height: 1.6;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .link:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Home</a>
+        <h1>Postcard</h1>
+        
+        <div class="song-info">
+            <p>From the self-titled debut album (2024)</p>
+        </div>
+
+        <div class="embed-container">
+            <iframe src="https://bandcamp.com/EmbeddedPlayer/track=1468914398/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+                <a href="https://mozworth.bandcamp.com/track/postcard-2">Postcard by mozworth</a>
+            </iframe>
+        </div>
+
+        <div class="links">
+            <a href="https://mozworth.bandcamp.com/track/postcard-2" class="link" target="_blank">Buy on Bandcamp</a>
+            <a href="https://distrokid.com/hyperfollow/mozworth/mozworth-2" class="link" target="_blank">Stream</a>
+        </div>
+
+        <div class="section">
+            <h2>Lyrics</h2>
+            <div class="lyrics">
+                [Your lyrics here]
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>About the Song</h2>
+            <div class="notes">
+                [Your notes about the song's meaning, inspiration, or recording process here]
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <!-- Add your images here -->
+                <!-- Example: -->
+                <!-- <img src="../images/postcard-1.jpg" alt="Recording session for Postcard"> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track page view
+        document.addEventListener('DOMContentLoaded', function() {
+            gtag('event', 'page_view', {
+                'page_title': 'Postcard - Song Page',
+                'page_location': window.location.href,
+                'page_path': '/songs/postcard.html'
+            });
+
+            // Track link clicks
+            document.querySelectorAll('.link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    gtag('event', 'song_link_click', {
+                        'event_category': 'song_page',
+                        'event_label': this.textContent,
+                        'destination': this.href
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

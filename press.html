@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mozworth - Press</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000;
+            background-image: url('boz4web.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .press-item {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .press-title {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .press-outlet {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+        .press-date {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+        }
+        .press-excerpt {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .press-link {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .press-link:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+        .back-button {
+            display: inline-block;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        <h1>Press Coverage</h1>
+
+        <div class="press-item">
+            <h2 class="press-title">An Interview with Mozworth</h2>
+            <div class="press-outlet">KVRX 91.7</div>
+            <div class="press-date">December 4, 2024</div>
+            <div class="press-excerpt">
+                "Michael Bosworth, known professionally as Mozworth, is an independent singer-songwriter based in Austin. 
+                His self-titled debut, which was released on Nov. 15, stands out through both its catchy indie-rock melodies 
+                and passionate storytelling."
+            </div>
+            <a href="https://kvrx.org/app/blog/features/an-interview-with-mozworth/" class="press-link" target="_blank">Read Full Interview</a>
+        </div>
+
+        <div class="press-item">
+            <h2 class="press-title">Mozworth: "Postcard" [PREMIERE]</h2>
+            <div class="press-outlet">KUTX</div>
+            <div class="press-date">September 11, 2024</div>
+            <div class="press-excerpt">
+                "Packaging everything we love about '90s indie-alt-rock into a four-minute envelope, 'Postcard' proudly puts 
+                Mozworth's stamp on these nostalgic sounds, less of a 'wish you were here' and more of a 'can't wait to show 
+                you more' ahead of his upcoming debut album."
+            </div>
+            <a href="https://kutx.org/song-of-the-day/mozworth-postcard-premiere/" class="press-link" target="_blank">Read Full Article</a>
+        </div>
+
+        <a href="index.html" class="back-button">← Back to Home</a>
+    </div>
+
+    <script>
+        // Google Analytics Event Tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.press-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    gtag('event', 'press_click', {
+                        'event_label': this.closest('.press-item').querySelector('.press-title').textContent,
+                        'destination': this.href
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
