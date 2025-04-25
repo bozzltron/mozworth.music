@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      if (location.hostname === "mozworth.com" || location.hostname === "www.mozworth.music") {
+        // Only load GA in production
+        (function(){
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT";
+          document.head.appendChild(gtagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-HCSKGBDXDT');
+        })();
+      }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letting Go | mozworth</title>
+    <meta name="description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024).">
+    <link rel="canonical" href="https://mozworth.com/songs/letting-go/" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="music.song" />
+    <meta property="og:title" content="Letting Go | mozworth" />
+    <meta property="og:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
+    <meta property="og:image" content="https://mozworth.com/mozworth-debut.png" />
+    <meta property="og:url" content="https://mozworth.com/songs/letting-go/" />
+    <meta property="music:isrc" content="QZZ762472990" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Letting Go | mozworth" />
+    <meta name="twitter:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
+    <meta name="twitter:image" content="https://mozworth.com/mozworth-debut.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #a04c3d 0%, #3e6e6b 60%, #e2c97b 100%);
+            /* Only body::before uses absolute for blur effect */
+            position: relative;
+            overflow: hidden;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 98vw;
+            height: 95vh;
+            margin: 0;
+            background: rgba(0,0,0,0.45);
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            padding: 2.5rem 2rem 2rem 2rem;
+            box-sizing: border-box;
+        }
+        .player-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            flex: 0 0 380px;
+            width: 380px;
+            margin-right: 2.5rem;
+    
+        }
+        .player-right {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-width: 0;
+            background: transparent;
+            max-height: 100%;
+            overflow-y: auto;
+        }
+        .cover-art {
+            width: 100%;
+            max-width: 380px;
+            height: 380px;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.7); 
+            background: #222;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+        }
+        .cover-art:hover {
+            transform: scale(1.04) rotate(-2deg);
+            box-shadow: 0 8px 32px #00d4b4cc;
+        }
+
+        .song-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            text-align: left;
+        }
+        .song-info {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .player-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: flex-start;
+            position: sticky;
+            top: 0;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .player-btn {
+            background: none;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            color: inherit;
+            font: inherit;
+            box-shadow: none;
+            cursor: pointer;
+            transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .player-btn img {
+            height: 1.8em;
+            width: 1.8em;
+            filter: brightness(0) invert(1);
+            margin: 0 0.15em;
+            transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .player-btn:hover img,
+        .player-btn:focus img {
+            filter: brightness(0.7) invert(1) drop-shadow(0 0 8px #00d4b4);
+            transform: scale(1.15) rotate(-3deg);
+        }
+        .tabs {
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+        }
+        .tab {
+            font-size: 1.1rem;
+            color: #aaa;
+            cursor: pointer;
+            padding-bottom: 0.25rem;
+            border: none;
+            background: none;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+        .tab.active {
+            color: #00d474;
+            border-bottom: 2px solid #00d474;
+        }
+        .tab-content {
+            display: none;
+            max-width: 500px;
+            margin: 0 auto 0 0;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #f0f0f0;
+            background: none;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(24px);
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 1024px) {
+            .player {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+                max-width: 100vw;
+                max-height: none;
+                padding: 1.5rem 0.5rem;
+            }
+            .player-left {
+                width: 100%;
+                max-width: 100vw;
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+                align-items: center;
+                flex-direction: column;
+            }
+            .player-right {
+                width: 100%;
+                max-width: 100vw;
+                min-width: 0;
+                margin: 0;
+                flex-direction: column;
+            }
+            .cover-art {
+                width: 70vw;
+                max-width: 350px;
+                height: auto;
+                margin-bottom: 1.5rem;
+            }
+            .player-controls {
+                justify-content: center;
+                gap: 0.75rem;
+            }
+        }
+        @media (max-width: 600px) {
+            html, body {
+                height: auto !important;
+                min-height: 100vh;
+                overflow-y: auto !important;
+            }
+            .player {
+                height: auto;
+                min-height: 0;
+                max-height: none;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            .player-left {
+                margin-bottom: 1rem;
+            }
+            .cover-art {
+                width: 90vw;
+                max-width: 90vw;
+                margin-bottom: 1rem;
+            }
+            .player-right {
+                max-height: none;
+                overflow-y: visible;
+                padding: 0;
+            }
+            .player-controls {
+                gap: 0.5rem;
+            }
+            .tabs {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+                opacity: 1 !important;
+                transform: none !important;
+                pointer-events: auto !important;
+                animation: none !important;
+                margin-bottom: 2.5rem;
+            }
+            .tab-heading {
+                display: block;
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: #00d4b4;
+                letter-spacing: 0.03em;
+            }
+        }
+        @media (min-width: 601px) {
+            .tab-heading {
+                display: none;
+            }
+        }
+        a {
+            color: #00d4b4;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, #00d4b4 0%, #7fffd4 100%);
+            background-size: 0% 2px;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            transition: color 0.2s, background-size 0.3s cubic-bezier(.4,0,.2,1);
+        }
+        a:hover, a:focus {
+            color: #7fffd4;
+            background-size: 100% 2px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="https://schema.org/MusicRecording">
+        <header>
+          <meta itemprop="inAlbum" content="mozworth (2024)" />
+          <meta itemprop="isrcCode" content="QZZ762472990" />
+        </header>
+        <section class="player">
+          <div class="player-left">
+            <img src="/mozworth-debut.png" alt="mozworth debut cover art" class="cover-art" itemprop="image" />
+            <h1 class="song-title" itemprop="name">Letting Go</h1>
+            <div class="song-info"><span itemprop="byArtist">mozworth</span> &middot; <span itemprop="inAlbum">mozworth</span></div>
+            <div class="song-info">Released November 15, 2024</div>
+            <div class="song-info">Purchase on <a href="https://mozworth.bandcamp.com/track/letting-go" target="_blank" rel="noopener" aria-label="Buy on Bandcamp" itemprop="url">Bandcamp</a></div>
+            <div class="player-controls">
+                <a href="https://open.spotify.com/track/1av4Vro9y4sAfigukPMVLW?si=671827b7b13d4daf" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on Spotify" itemprop="url">
+                    <img src="/spotify.svg" alt="Spotify">
+                </a>
+                <a href="https://music.apple.com/us/song/letting-go/1778536749" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on Apple Music" itemprop="url">
+                    <img src="/apple-music.svg" alt="Apple Music">
+                </a>
+                <a href="https://mozworth.bandcamp.com/track/letting-go" class="player-btn" target="_blank" rel="noopener" aria-label="Buy on Bandcamp" itemprop="url">
+                    <img src="/bandcamp.svg" alt="Bandcamp">
+                </a>
+                <a href="https://www.youtube.com/watch?v=4Avq0ZtLtRc" class="player-btn" target="_blank" rel="noopener" aria-label="Watch on YouTube" itemprop="url">
+                    <img src="/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://tidal.com/browse/track/398032767" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on Tidal" itemprop="url">
+                    <img src="/tidal.svg" alt="Tidal">
+                </a>
+                <a href="https://music.amazon.com/albums/B0DM6QNX2J?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YDG3bySITVf4MMKmlbFnux1QA&trackAsin=B0DM6QL6N3" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on Amazon Music" itemprop="url">
+                    <img src="/amazon-music.svg" alt="Amazon Music">
+                </a>
+                <a href="https://soundcloud.com/mozworth/letting-go" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on SoundCloud" itemprop="url">
+                    <img src="/soundcloud.svg" alt="SoundCloud">
+                </a>
+                <a href="https://dzr.page.link/3vQHgas851udoDfq8" class="player-btn" target="_blank" rel="noopener" aria-label="Listen on Deezer" itemprop="url">
+                    <img src="/deezer.svg" alt="Deezer">
+                </a>
+            </div>
+        </div>
+          <div class="player-right">
+
+              <div class="tabs">
+                  <button class="tab active" data-tab="lyrics">Lyrics</button>
+                  <button class="tab" data-tab="about">About</button>
+                  <button class="tab" data-tab="video">Video</button>
+                  <button class="tab" data-tab="recording">Recording Process</button>
+                  <button class="tab" data-tab="credits">Credits</button>
+              </div>
+              <div class="tab-content active" id="lyrics">
+                <h2 class="tab-heading">Lyrics</h2>
+                <section itemprop="lyrics" itemscope itemtype="https://schema.org/CreativeWork">
+                  <meta itemprop="inLanguage" content="en" />
+                  <div>
+I've been scratching<br>
+For some space<br>
+To get my head<br>
+On the page<br><br>
+There's only so much<br>
+I can fit<br>
+Inside my head<br>
+Before it splits<br><br>
+I've been scratching<br>
+For some space<br>
+To get my head<br>
+On the page<br><br>
+There's only so much<br>
+I can fit<br>
+Inside my head<br>
+Before it splits<br><br>
+Feel the pressure building up<br>
+Gotta get away before I blow<br><br>
+Knock the arrow<br>
+Bend the bow<br>
+Feather to my face<br>
+I'm letting go<br><br>
+I've been Itching<br>
+For a place<br>
+To get my head<br>
+On the page<br><br>
+There's only so much<br>
+I can take<br>
+Before bending<br>
+Before I break<br><br>
+Feel the pressure building up<br>
+Gotta get away before I blow<br><br>
+Knock the arrow<br>
+Bend the bow<br>
+Feather to my face<br>
+I'm letting go<br><br>
+I'm letting go<br>
+I'm letting go<br>
+I'm letting<br>
+Go
+                  </div>
+                </section>
+              </div>
+              <div class="tab-content" id="about">
+                  <h2 class="tab-heading">About</h2>
+                  <section itemprop="description">
+                      [Your notes about the song's meaning, inspiration, or recording process here]
+                  </section>
+              </div>
+              <div class="tab-content" id="video">
+                  <h2 class="tab-heading">Video</h2>
+                  <section>
+                      [Your video embed or video-related content goes here]
+                  </section>
+              </div>
+              <div class="tab-content" id="recording">
+                  <h2 class="tab-heading">Recording Process</h2>
+                  <section>
+                      [Your notes or media about the recording process go here]
+                  </section>
+              </div>
+              <div class="tab-content" id="credits">
+                  <h2 class="tab-heading">Credits</h2>
+                  <section>
+                      <p>Original Composition by Michael Bosworth</p>
+                      <p>Drum Composition by Ken Mockler</p>
+                      <p>Lyrics by Michael Bosworth</p>
+                      <p>Vocals, Electric Guitars, Bass, and Tambourine by Michael Bosworth</p>
+                      <p>Drums by Ken Mockler</p>
+                      <p>Accompanying Vocals by Ashleigh Wright</p>
+                      <p>Produced by Jeff Shinrock</p>
+                      <p>Recorded by Jeff Shinrock and Michael Bosworth</p>
+                      <p>Mixed by Steve Glaze at Tone Freq Studios</p>
+                      <p>Mastered by Steve Glaze at Tone Freq Studios</p>
+                      <p>Cover art photography by Kelly Treybig</p>
+                      <p>Cover art design by Josh Row</p>
+                  </section>
+              </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

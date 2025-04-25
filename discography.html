@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HCSKGBDXDT');
+      if (location.hostname === "mozworth.com" || location.hostname === "www.mozworth.music") {
+        // Only load GA in production
+        (function(){
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT";
+          document.head.appendChild(gtagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-HCSKGBDXDT');
+        })();
+      }
     </script>
     
     <meta charset="UTF-8">
@@ -156,7 +166,7 @@
                 <div class="release-links">
                     <a href="https://distrokid.com/hyperfollow/mozworth/mozworth-2" class="release-link" target="_blank">Stream</a>
                     <a href="https://mozworth.bandcamp.com/album/mozworth" class="release-link" target="_blank">Buy on Bandcamp</a>
-                    <!-- <a href="songs/postcard.html" class="release-link">Song Pages</a> -->
+                    
                 </div>
             </div>
 
