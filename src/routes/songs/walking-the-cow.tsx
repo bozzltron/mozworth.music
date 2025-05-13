@@ -1,4 +1,4 @@
-import { Show, createSignal, onMount } from "solid-js";
+import { Show, createSignal, onMount, createEffect, createMemo } from "solid-js";
 import SongComments from "../../components/SongComments";
 import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
@@ -13,6 +13,7 @@ interface Tab {
 export default function WalkingTheCow() {
   const [commentsEnabled, setCommentsEnabled] = createSignal(false);
   const [mounted, setMounted] = createSignal(false);
+  const [tab, setTab] = createSignal("Lyrics");
 
   onMount(() => {
     setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
@@ -75,7 +76,6 @@ export default function WalkingTheCow() {
   const cover = (
     <iframe
       class="cover-art w-full max-w-[380px] min-h-[420px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
-      style={{ border: 0, width: '380px', height: '470px' }}
       src="https://bandcamp.com/EmbeddedPlayer/track=2974293744/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
       seamless
       title="Walking The Cow by mozworth (Bandcamp embed)"
@@ -100,11 +100,13 @@ export default function WalkingTheCow() {
   );
 
   // Tabbed content using TabbedContent component
-  const tabs: Tab[] = [
-    ...(mounted() && commentsEnabled() ? [{
+  const tabs = createMemo(() => [
+    {
       label: "Conversation",
-      content: <SongComments contentId="walking-the-cow" />,
-    }] : []),
+      content: mounted() && commentsEnabled()
+        ? <SongComments contentId="walking-the-cow" />
+        : <div class="text-gray-400 italic">Comments are disabled for this song.</div>,
+    },
     {
       label: "Lyrics",
       content: (
@@ -166,7 +168,13 @@ I am walking the cow`}</div>
         </>
       ),
     },
-  ];
+  ]);
+
+  createEffect(() => {
+    if (!tabs().some(t => t.label === tab())) {
+      setTab("Lyrics");
+    }
+  });
 
   return (
     <>
@@ -187,8 +195,14 @@ I am walking the cow`}</div>
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f8f8f8] via-[#e0e0e0] to-[#b0b0b0]"
       >
-        <TabbedContent tabs={tabs} defaultTab={tabs[0].label} />
+        <TabbedContent
+          tabs={tabs()}
+          defaultTab={"Lyrics"}
+          tab={tab()}
+          setTab={setTab}
+        />
       </BasePageLayout>
     </>
   );

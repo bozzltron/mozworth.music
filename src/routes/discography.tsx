@@ -34,17 +34,11 @@ export default function Discography() {
               <p class="text-white/70 mb-4">October 9, 2024</p>
             </a>
             {/* Postcard */}
-            <div class="release bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
-              <div class="w-full aspect-square mb-4 rounded overflow-hidden">
-                <iframe src="https://bandcamp.com/EmbeddedPlayer/track=1468914398/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" class="w-full h-full" seamless title="Postcard by mozworth"></iframe>
-              </div>
-              <h2 class="text-xl font-bold mb-2">Postcard</h2>
-              <p class="text-white/70 mb-4">Single (September 12, 2024)</p>
-              <div class="flex gap-2 flex-wrap justify-center">
-                <a href="https://mozworth.bandcamp.com/track/postcard-2" class="inline-block px-5 py-2 rounded-full border-2 border-white/30 text-white text-sm font-medium transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Buy on Bandcamp</a>
-                <a href="https://distrokid.com/hyperfollow/mozworth/postcard" class="inline-block px-5 py-2 rounded-full border-2 border-white/30 text-white text-sm font-medium transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Streaming Services</a>
-              </div>
-            </div>
+            <a href="/songs/postcard" class="release group bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30">
+              <img src="/postcard_cover.png" alt="Postcard cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+              <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 transition-colors">Postcard</h2>
+              <p class="text-white/70 mb-4">September 12, 2024</p>
+            </a>
           </div>
           <div class="text-xs text-gray-400 mt-8">&copy; {new Date().getFullYear()} mozworth. All rights reserved.</div>
         </div>

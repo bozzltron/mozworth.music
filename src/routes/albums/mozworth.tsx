@@ -59,6 +59,15 @@ export default function MozworthAlbum() {
     }
   ];
 
+  const trackList = [
+    { title: "Letting Go", href: "/songs/letting-go" },
+    { title: "Queen of the Ocean" },
+    { title: "Postcard", href: "/songs/postcard" },
+    { title: "The Observer" },
+    { title: "Goodbye Colorado", href: "/songs/goodbye-colorado" },
+    { title: "Can't Back Down" }
+  ];
+
   onMount(() => {
     setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
     if (localStorage.getItem("mozworth-comments-enabled") !== "true" && tab() === "conversation") {
@@ -127,12 +136,11 @@ export default function MozworthAlbum() {
               <Show when={tab() === "tracks"}>
                 <section class="tab-content mb-8">
                   <ol class="list-decimal list-inside text-lg text-white/90">
-                    <li><a href="/songs/letting-go" class="hover:text-teal-300 underline">Letting Go</a></li>
-                    <li>Queen of the Ocean</li>
-                    <li>Postcard</li>
-                    <li>The Observer</li>
-                    <li><a href="/songs/goodbye-colorado" class="hover:text-teal-300 underline">Goodbye Colorado</a></li>
-                    <li>Can't Back Down</li>
+                    {trackList.map(track =>
+                      track.href
+                        ? <li><a href={track.href} class="hover:text-teal-300 underline">{track.title}</a></li>
+                        : <li>{track.title}</li>
+                    )}
                   </ol>
                 </section>
               </Show>
@@ -163,8 +171,8 @@ export default function MozworthAlbum() {
                   <p>Accompanying Vocals by Ashleigh Wright</p>
                   <p>Produced by Jeff Shinrock</p>
                   <p>Recorded by Jeff Shinrock and Michael Bosworth</p>
-                  <p>Mixed by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at Tone Freq Studios</p>
-                  <p>Mastered by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at Tone Freq Studios</p>
+                  <p>Mixed by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at Tone Freq Studios</p>
+                  <p>Mastered by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at Tone Freq Studios</p>
                   <p>Cover art photography by Kelly Treybig</p>
                   <p>Cover art design by <a href="https://www.instagram.com/joshrowdesigns/" target="_blank" rel="noopener" class="hover:text-teal-300">Josh Row</a></p>
                 </section>
@@ -182,12 +190,11 @@ export default function MozworthAlbum() {
                 <div class="tab-heading text-lg font-bold mb-2 mt-4 text-teal-400">Tracklist</div>
                 <section class="tab-content mb-8">
                   <ol class="list-decimal list-inside text-lg text-white/90">
-                    <li>Letting Go</li>
-                    <li>Queen of the Ocean</li>
-                    <li>Postcard</li>
-                    <li>The Observer</li>
-                    <li>Goodbye Colorado</li>
-                    <li>Can't Back Down</li>
+                    {trackList.map(track =>
+                      track.href
+                        ? <li><a href={track.href} class="hover:text-teal-300 underline">{track.title}</a></li>
+                        : <li>{track.title}</li>
+                    )}
                   </ol>
                 </section>
                 <div class="tab-heading text-lg font-bold mb-2 mt-4 text-teal-400">Press Release</div>
