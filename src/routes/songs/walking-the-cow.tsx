@@ -102,12 +102,6 @@ export default function WalkingTheCow() {
   // Tabbed content using TabbedContent component
   const tabs = createMemo(() => [
     {
-      label: "Conversation",
-      content: mounted() && commentsEnabled()
-        ? <SongComments contentId="walking-the-cow" />
-        : <div class="text-gray-400 italic">Comments are disabled for this song.</div>,
-    },
-    {
       label: "Lyrics",
       content: (
         <div class="whitespace-pre-line text-base md:text-lg leading-relaxed text-white">{`

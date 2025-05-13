@@ -4,6 +4,7 @@ import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import type { JSX } from "solid-js";
+import { useLocation } from "@solidjs/router";
 
 interface Tab {
   label: string;
@@ -14,6 +15,7 @@ export default function GoodbyeColorado() {
   const [commentsEnabled, setCommentsEnabled] = createSignal(false);
   const [mounted, setMounted] = createSignal(false);
   const [tab, setTab] = createSignal("Lyrics");
+  const location = useLocation();
 
   onMount(() => {
     setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
@@ -103,7 +105,7 @@ export default function GoodbyeColorado() {
   );
 
   // Tabbed content using TabbedContent component
-  const tabs = createMemo(() => [
+  const tabs = [
     {
       label: "Lyrics",
       content: (
@@ -167,10 +169,22 @@ export default function GoodbyeColorado() {
       ),
     },
     {
-      label: "Conversation",
-      content: mounted() && commentsEnabled()
-        ? <SongComments contentId="goodbye-colorado" />
-        : <div class="text-gray-400 italic">Comments are disabled for this song.</div>,
+      label: "Press",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white">
+          <h2 class="text-xl font-bold mb-4">FOR IMMEDIATE RELEASE</h2>
+          <p class="mb-4 font-semibold">MOZWORTH TO RELEASE NEW SINGLE<br />"GOODBYE COLORADO" ON OCTOBER 9, 2024</p>
+          <p class="mb-4 italic">FROM HIS UPCOMING SELF-TITLED ALBUM</p>
+          <p class="mb-4">Mozworth, the rising Austin indie artist will release his new single, "Goodbye Colorado" on October 9th. This is on the heels of his first single "Postcard," which KUTX featured as their Song of the Day and stated that it's "...everything we love about '90s indie-alt-rock into a four-minute envelope." Both singles showcase Mozworth's diverse range and are a testament of what's to come from his self-titled debut album, dropping this Fall.</p>
+          <p class="mb-4">Inspired by his move away from Colorado Springs to Austin, "Goodbye Colorado" tells the deeply personal story of Mozworth's experience moving to a new city during the pandemic that had a lot of promise, but ultimately wasn't a fit. Mozworth's move to Colorado Springs marked the beginning of a new chapter for him and his family, but it also came with its own set of challenges. While they embraced the beauty of the mountains and the opportunity to be closer to family, the year spent in Colorado was one of the most difficult periods for him and his immediate family. It was a time of uncertainty, both personally and professionally, as the pandemic forced him to reevaluate his life path.</p>
+          <p class="mb-4">In search of new possibilities after a year of adversity in Colorado, Mozworth and his family set their sights on Austin. Coincidentally before leaving Colorado, Mozworth attended a live performance by Phoebe Bridgers at the iconic Red Rocks Amphitheatre, where a backdrop featuring imagery of the South, including the word Austin, felt like a strange but comforting sign that he was on the right path.</p>
+          <p class="mb-4">While spending time alone in their Colorado Springs rental house before his big move to Austin, Mozworth wrote "Goodbye Colorado" on a Harmony acoustic guitar gifted by a family member. Although the guitar was not the highest caliber, its unique timbre led Mozworth to incorporate it into the final recording, creating the hauntingly beautiful intro that defines the song. "The song is a mixture of skepticism, mourning the beauty of the mountains, and saying goodbye to family we were leaving behind," says Mozworth. "I wrote a lot of it while hiking the mountain trails. The opening line, 'A cool breath washing over me like a river,' came to me on a trail when I was feeling the coolness of the mountain air."</p>
+          <p class="mb-4">Emotionally charged and lyrically rich, "Goodbye Colorado" reflects on Mozworth's inner conflict about leaving behind both the hardships and beauty of Colorado Springs. In the final verse, the song conveys a sense of reconciliation, acknowledging the good amidst the challenges, as well as a hopeful outlook on the move to Austin. "Goodbye Colorado" is also "Hello Austin."</p>
+          <p class="mb-4">The song, which features the production of Jeff Shinrock and a powerful rhythm section by drummer Ken Mockler, blends melancholy with a unique groove. "Despite its downbeat tone, the rhythm gives it a groove that makes it stand out," Mozworth shares. "Ken brought the perfect rhythm to make it both introspective and engaging." Ashleigh Wright rounds out the song with her stunning vocals on harmony.</p>
+          <p class="mb-4">"Goodbye Colorado" serves as a follow-up to Mozworth's debut single "Postcard" and continues to set the stage for his upcoming debut album. Mozworth concludes, "'Postcard' and 'Goodbye Colorado' are very different songs and provide different ends of the spectrum that all the other songs will rest within."</p>
+          <p class="mb-4">Catch Mozworth live for his "Goodbye Colorado" single release party on October 25th at The Shiner's Saloon. More information at <a href="https://shinerssaloon.com/" class="underline hover:text-teal-300 transition-colors" target="_blank" rel="noopener">https://shinerssaloon.com/</a></p>
+        </div>
+      ),
     },
     {
       label: "Credits",
@@ -190,15 +204,14 @@ export default function GoodbyeColorado() {
         </>
       ),
     },
-  ]);
+  ];
 
   createEffect(() => {
-    if (!tabs().some(t => t.label === tab())) {
-      setTab("Lyrics");
-    }
+    location.pathname;
+    setTab("Lyrics");
   });
 
-  console.log('Tabs array at render:', tabs().map(t => t.label));
+  console.log('Tabs array at render:', tabs.map(t => t.label));
   return (
     <>
       <title>Goodbye Colorado | mozworth</title>
@@ -221,10 +234,9 @@ export default function GoodbyeColorado() {
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-b from-[#b6c85a] via-[#2e5d4a] to-[#18344a]"
       >
         <TabbedContent
-          tabs={tabs()}
+          key={location.pathname}
+          tabs={tabs}
           defaultTab={"Lyrics"}
-          tab={tab()}
-          setTab={setTab}
         />
       </BasePageLayout>
     </>

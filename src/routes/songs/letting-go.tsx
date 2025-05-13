@@ -69,9 +69,8 @@ export default function LettingGo() {
   // Cover art
   const cover = (
     <iframe
-      class="cover-art w-full max-w-[380px] min-h-[420px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
-      style={{ border: 0 }}
-      src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/track=2966455044/transparent=true/"
+      class="cover-art w-full max-w-[380px] min-h-[420px] md:min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2966455044/transparent=true/"
       seamless
       title="mozworth by mozworth (Bandcamp embed)"
     />
@@ -97,12 +96,6 @@ export default function LettingGo() {
 
   // TabbedContent tabs array
   const tabs = createMemo(() => [
-    {
-      label: "Conversation",
-      content: mounted() && commentsEnabled()
-        ? <SongComments contentId="letting-go" />
-        : <div class="text-gray-400 italic">Comments are disabled for this song.</div>,
-    },
     {
       label: "Lyrics",
       content: (

@@ -176,12 +176,6 @@ Wishing you were here with me</p>
       ),
     },
     {
-      label: "Conversation",
-      content: mounted() && commentsEnabled()
-        ? <SongComments contentId="postcard" />
-        : <div class="text-gray-400 italic">Comments are disabled for this song.</div>,
-    },
-    {
       label: "Credits",
       content: (
         <>
