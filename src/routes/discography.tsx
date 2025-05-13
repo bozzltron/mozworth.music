@@ -1,0 +1,54 @@
+export default function Discography() {
+  return (
+    <>
+      <title>Discography | mozworth</title>
+      <meta name="description" content="Explore the full discography of mozworth: albums, singles, and more." />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#000000" />
+      <main class="relative min-h-screen flex items-center justify-center bg-black">
+        {/* Background image */}
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/boz4web.jpg')" }} />
+        {/* Overlay */}
+        <div class="absolute inset-0 bg-black/70" />
+        {/* Main content */}
+        <div class="relative min-w-[1000px] max-w-5xl w-full mx-auto bg-black/70 rounded-xl p-8 text-white flex flex-col items-center sm:min-w-0">
+          <a href="/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black mb-6">&larr; Back to Home</a>
+          <h1 class="text-3xl font-bold mb-8 text-center">Discography</h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
+            {/* Walking The Cow */}
+            <a href="/songs/walking-the-cow" class="release group bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30">
+              <img src="/mozworth-walking-the-cow-cover.jpg" alt="Walking The Cow cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+              <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 transition-colors">Walking The Cow</h2>
+              <p class="text-white/70 mb-4">January 22, 2025</p>
+            </a>
+            {/* Self-titled Album */}
+            <a href="/albums/mozworth" class="release group bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30">
+              <img src="/mozworth-debut.png" alt="mozworth album cover" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+              <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 transition-colors">mozworth</h2>
+                      <p class="text-white/70 mb-4">November 15, 2024</p>
+            </a>
+            {/* Goodbye Colorado */}
+            <a href="/songs/goodbye-colorado" class="release group bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30">
+              <img src="/goodbye_colorado_cover.png" alt="Goodbye Colorado cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+              <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 transition-colors">Goodbye Colorado</h2>
+              <p class="text-white/70 mb-4">October 9, 2024</p>
+            </a>
+            {/* Postcard */}
+            <div class="release bg-black/50 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+              <div class="w-full aspect-square mb-4 rounded overflow-hidden">
+                <iframe src="https://bandcamp.com/EmbeddedPlayer/track=1468914398/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" class="w-full h-full" seamless title="Postcard by mozworth"></iframe>
+              </div>
+              <h2 class="text-xl font-bold mb-2">Postcard</h2>
+              <p class="text-white/70 mb-4">Single (September 12, 2024)</p>
+              <div class="flex gap-2 flex-wrap justify-center">
+                <a href="https://mozworth.bandcamp.com/track/postcard-2" class="inline-block px-5 py-2 rounded-full border-2 border-white/30 text-white text-sm font-medium transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Buy on Bandcamp</a>
+                <a href="https://distrokid.com/hyperfollow/mozworth/postcard" class="inline-block px-5 py-2 rounded-full border-2 border-white/30 text-white text-sm font-medium transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Streaming Services</a>
+              </div>
+            </div>
+          </div>
+          <div class="text-xs text-gray-400 mt-8">&copy; {new Date().getFullYear()} mozworth. All rights reserved.</div>
+        </div>
+      </main>
+    </>
+  );
+} 
