@@ -215,18 +215,34 @@ export default function GoodbyeColorado() {
   return (
     <>
       <title>Goodbye Colorado | mozworth</title>
-      <meta name="description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere October 9, 2024." />
+      <meta name="description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Goodbye Colorado' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/goodbye-colorado/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Goodbye Colorado | mozworth" />
-      <meta property="og:description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere October 9, 2024." />
-      <meta property="og:image" content="https://mozworth.music/goodbye-colorado-cover.jpg" />
+      <meta property="og:description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Goodbye Colorado' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/goodbye-colorado/" />
-      <meta property="music:release_date" content="2024-10-09" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Goodbye Colorado | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere October 9, 2024." />
-      <meta name="twitter:image" content="https://mozworth.music/goodbye-colorado-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Goodbye Colorado' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Goodbye Colorado",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/goodbye-colorado/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}

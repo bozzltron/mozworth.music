@@ -1,5 +1,9 @@
 import { createSignal } from "solid-js";
 
+// @ts-ignore
+// eslint-disable-next-line
+declare global { interface Window { gtag?: (...args: any[]) => void } }
+
 export default function Home() {
   const [showMusicPanel, setShowMusicPanel] = createSignal(false);
   const [showSocialPanel, setShowSocialPanel] = createSignal(false);
@@ -7,12 +11,33 @@ export default function Home() {
   return (
     <>
       <title>mozworth | Indie Alternative Rock Artist from Austin, Texas</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {/* Favicon and manifest */}
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#000000" />
+      <link rel="canonical" href="https://mozworth.music" />
+      {/* Open Graph & Twitter Enhancements */}
+      <meta property="og:site_name" content="mozworth" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:site" content="@mozworthmusic" />
+      <meta name="twitter:creator" content="@mozworthmusic" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        "name": "mozworth",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/albums/mozworth"
+      }`} />
       {/* Google Analytics */}
       <script innerHTML={`
         if (location.hostname === "mozworth.music") {
@@ -43,45 +68,44 @@ export default function Home() {
       <meta name="twitter:image" content="https://mozworth.music/boz4web.jpg" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/boz4web.jpg')" }} />
-        {/* Overlay */}
-        <div class="absolute inset-0 bg-black/70 z-10" />
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/boz4web.jpg')" }} />
+   
         {/* Main content */}
-        <div class="relative z-20 container max-w-xl mx-auto text-center rounded-xl p-8 flex flex-col items-center">
+        <div
+          class="relative container mx-auto text-center flex flex-col items-center max-w-[800px] p-5 md:rounded-[10px] bg-black/70 md:fixed md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+        >
           <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
           <h1 class="text-3xl md:text-4xl font-bold mb-6">Hello! I'm mozworth</h1>
           {/* Album ad */}
           <div class="mb-8 w-full flex justify-center">
-            <div class="bg-black/50 border border-white/30 rounded-xl p-4 w-full max-w-md">
-              <div class="aspect-square mb-4">
-                <iframe
-                  class="w-full h-full rounded"
-                  style="border:0;"
-                  src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
-                  seamless
-                  title="Mozworth Bandcamp"
+            <div class="bg-black/50 border border-white/30 rounded-xl p-4 w-full max-w-md flex flex-col items-center">
+              <a href="/albums/mozworth" class="block w-full aspect-square mb-4">
+                <img
+                  src="/mozworth-debut.png"
+                  alt="mozworth album cover"
+                  class="w-full h-full object-cover rounded"
+                  draggable={false}
                 />
-              </div>
+              </a>
               <h2 class="text-xl font-semibold mb-2">Self-Titled Debut Out Now!</h2>
-              <p class="text-gray-200 mb-2">Listen to it!</p>
+              <p class="text-gray-200 mb-2">Check out the album page for more!</p>
               <div class="flex flex-wrap justify-center gap-3">
-                <a href="https://distrokid.com/hyperfollow/mozworth/mozworth-2" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Stream</a>
-                <a href="https://mozworth.bandcamp.com/album/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Purchase</a>
+                <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Album Page</a>
               </div>
             </div>
           </div>
           {/* Actions */}
           <div class="flex flex-wrap justify-center gap-3 mb-6">
-            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); }}>Listen To Music</a>
-            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); }}>Follow On Social</a>
-            <a href="https://mozworth.beehiiv.com/subscribe" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Join The Newsletter</a>
-            <a href="https://mozworth.printful.me/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Visit The Store</a>
-            <a href="https://www.pressjunkiepr.com/clients/mozworth/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Press Kit</a>
-            <a href="/press" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Press Coverage</a>
-            <a href="/discography" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Discography</a>
-            <a href="/tour" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Tour Dates</a>
-            <a href="https://www.pressjunkiepr.com/contact/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Contact Me</a>
-            <a href="/lyrics" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Lyrics</a>
+            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'music' }); }}>Listen To Music</a>
+            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</a>
+            <a href="https://mozworth.beehiiv.com/subscribe" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Newsletter', destination: 'beehiiv' }); }}>Join The Newsletter</a>
+            <a href="https://mozworth.printful.me/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Visit The Store</a>
+            <a href="https://www.pressjunkiepr.com/clients/mozworth/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'pressjunkiepr' }); }}>Press Kit</a>
+            <a href="/press" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
+            <a href="/discography" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Discography</a>
+            <a href="/tour" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
+            <a href="https://www.pressjunkiepr.com/contact/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
+            <a href="/lyrics" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'lyrics_page' }); }}>Lyrics</a>
           </div>
           <div class="text-xs text-gray-400 mt-8">
             &copy; {new Date().getFullYear()} mozworth. All rights reserved.

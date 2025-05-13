@@ -23,14 +23,62 @@ export default function QueenOfTheOcean() {
   });
 
   const streamingLinks: StreamingLink[] = [
-    { href: "https://open.spotify.com/track/6YyB8JhNwtiG4vt3QgFddW?si=a419eb1f8ee9452f", alt: "Spotify", iconSrc: "/spotify.svg", ariaLabel: "Listen on Spotify" },
-    { href: "https://music.apple.com/us/song/queen-of-the-ocean/1778536750", alt: "Apple Music", iconSrc: "/apple-music.svg", ariaLabel: "Listen on Apple Music" },
-    { href: "https://mozworth.bandcamp.com/track/queen-of-the-ocean", alt: "Bandcamp", iconSrc: "/bandcamp.svg", ariaLabel: "Buy on Bandcamp" },
-    { href: "https://soundcloud.com/mozworth/queen-of-the-ocean", alt: "SoundCloud", iconSrc: "/soundcloud.svg", ariaLabel: "Listen on SoundCloud" },
-    { href: "https://www.youtube.com/watch?v=jWBZrGsmNUo", alt: "YouTube", iconSrc: "/youtube.svg", ariaLabel: "Listen on YouTube" },
-    { href: "https://listen.tidal.com/album/398032766/track/398032768", alt: "Tidal", iconSrc: "/tidal.svg", ariaLabel: "Listen on Tidal" },
-    { href: "https://music.amazon.com/albums/B0DM6QNX2J", alt: "Amazon Music", iconSrc: "/amazon-music.svg", ariaLabel: "Listen on Amazon Music" },
-    { href: "https://www.deezer.com/us/track/3083103521", alt: "Deezer", iconSrc: "/deezer.svg", ariaLabel: "Listen on Deezer" }
+    {
+      href: "https://open.spotify.com/track/6YyB8JhNwtiG4vt3QgFddW?si=a419eb1f8ee9452f",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://music.apple.com/us/song/queen-of-the-ocean/1778536750",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/queen-of-the-ocean",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/queen-of-the-ocean",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=jWBZrGsmNUo",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://listen.tidal.com/album/398032766/track/398032768",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://music.amazon.com/albums/B0DM6QNX2J",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Queen of the Ocean' }); }
+    },
+    {
+      href: "https://www.deezer.com/us/track/3083103521",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Queen of the Ocean' }); }
+    }
   ];
 
   const cover = (
@@ -147,27 +195,43 @@ Her spirit is finally free</p></div>,
   return (
     <>
       <title>Queen of the Ocean | mozworth</title>
-      <meta name="description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
+      <meta name="description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/queen-of-the-ocean/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Queen of the Ocean | mozworth" />
-      <meta property="og:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta property="og:image" content="https://mozworth.music/queen-of-the-ocean-cover.jpg" />
+      <meta property="og:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/queen-of-the-ocean/" />
-      <meta property="music:release_date" content="2024-11-15" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Queen of the Ocean | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta name="twitter:image" content="https://mozworth.music/queen-of-the-ocean-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Queen of the Ocean",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/queen-of-the-ocean/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
       >
         <TabbedContent
-          key={location.pathname + '-' + Date.now()}
+          key={location.pathname}
           tabs={tabs}
-          defaultTab={"Lyrics"}
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
     </>

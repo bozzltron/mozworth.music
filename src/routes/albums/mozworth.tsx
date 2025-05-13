@@ -5,6 +5,10 @@ import TabbedContent from "../../components/TabbedContent";
 import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
 
+// @ts-ignore
+// eslint-disable-next-line
+declare global { interface Window { gtag?: (...args: any[]) => void } }
+
 export default function MozworthAlbum() {
   const [commentsEnabled, setCommentsEnabled] = createSignal(false);
   const [tab, setTab] = createSignal("Tracklist");
@@ -17,49 +21,57 @@ export default function MozworthAlbum() {
       href: "https://open.spotify.com/album/21lSrbyIvx8oVjBORjKozD?si=e4f_JV1wQ2yO7UjEKsntoQ",
       alt: "Spotify",
       iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify"
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Album: mozworth' }); }
     },
     {
       href: "https://music.apple.com/us/album/mozworth-ep/1778536748",
       alt: "Apple Music",
       iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music"
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Album: mozworth' }); }
     },
     {
       href: "https://mozworth.bandcamp.com/album/mozworth",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp"
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Merch', song: 'Album: mozworth' }); }
     },
     {
       href: "https://www.youtube.com/watch?v=4Avq0ZtLtRc&list=OLAK5uy_kDXxBe_o2gnmaYQnzlPe1BY13IU2mkc8A",
       alt: "YouTube",
       iconSrc: "/youtube.svg",
-      ariaLabel: "Watch on YouTube"
+      ariaLabel: "Watch on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Album: mozworth' }); }
     },
     {
       href: "https://tidal.com/browse/album/398032766",
       alt: "Tidal",
       iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal"
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Album: mozworth' }); }
     },
     {
       href: "https://music.amazon.com/albums/B0DM6QNX2J",
       alt: "Amazon Music",
       iconSrc: "/amazon-music.svg",
-      ariaLabel: "Listen on Amazon Music"
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Album: mozworth' }); }
     },
     {
       href: "https://soundcloud.com/mozworth/sets/mozworth",
       alt: "SoundCloud",
       iconSrc: "/soundcloud.svg",
-      ariaLabel: "Listen on SoundCloud"
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Album: mozworth' }); }
     },
     {
       href: "https://dzr.page.link/3vQHgas851udoDfq8",
       alt: "Deezer",
       iconSrc: "/deezer.svg",
-      ariaLabel: "Listen on Deezer"
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Album: mozworth' }); }
     }
   ];
 
@@ -192,6 +204,19 @@ export default function MozworthAlbum() {
       <meta name="twitter:title" content="mozworth (Album) | mozworth" />
       <meta name="twitter:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        "name": "mozworth",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/albums/mozworth/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}

@@ -15,49 +15,57 @@ export default function LettingGo() {
       href: "https://open.spotify.com/track/1av4Vro9y4sAfigukPMVLW?si=671827b7b13d4daf",
       alt: "Spotify",
       iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify"
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Letting Go' }); }
     },
     {
       href: "https://music.apple.com/us/song/letting-go/1778536749",
       alt: "Apple Music",
       iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music"
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Letting Go' }); }
     },
     {
       href: "https://mozworth.bandcamp.com/track/letting-go",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp"
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Letting Go' }); }
     },
     {
       href: "https://www.youtube.com/watch?v=4Avq0ZtLtRc",
       alt: "YouTube",
       iconSrc: "/youtube.svg",
-      ariaLabel: "Watch on YouTube"
+      ariaLabel: "Watch on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Letting Go' }); }
     },
     {
       href: "https://tidal.com/browse/album/398032766?u",
       alt: "Tidal",
       iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal"
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Letting Go' }); }
     },
     {
       href: "https://music.amazon.com/albums/B0DM6QNX2J?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YDG3bySITVf4MMKmlbFnux1QA&trackAsin=B0DM6QL6N3",
       alt: "Amazon Music",
       iconSrc: "/amazon-music.svg",
-      ariaLabel: "Listen on Amazon Music"
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Letting Go' }); }
     },
     {
       href: "https://soundcloud.com/mozworth/letting-go",
       alt: "SoundCloud",
       iconSrc: "/soundcloud.svg",
-      ariaLabel: "Listen on SoundCloud"
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Letting Go' }); }
     },
     {
       href: "https://dzr.page.link/3vQHgas851udoDfq8",
       alt: "Deezer",
       iconSrc: "/deezer.svg",
-      ariaLabel: "Listen on Deezer"
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Letting Go' }); }
     }
   ];
 
@@ -170,6 +178,23 @@ export default function LettingGo() {
       <meta name="twitter:title" content="Letting Go | mozworth" />
       <meta name="twitter:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Letting Go",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/letting-go/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}

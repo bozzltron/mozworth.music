@@ -21,18 +21,71 @@ export default function CantBackDown() {
   });
 
   const streamingLinks: StreamingLink[] = [
-    { href: "https://open.spotify.com/track/6eJUqJSxwowzdMUeO4MwT4?si=8db3231ffa1642c7", alt: "Spotify", iconSrc: "/spotify.svg", ariaLabel: "Listen on Spotify" },
-    { href: "https://music.apple.com/us/song/cant-back-down/1778536754", alt: "Apple Music", iconSrc: "/apple-music.svg", ariaLabel: "Listen on Apple Music" },
-    { href: "https://mozworth.bandcamp.com/track/cant-back-down", alt: "Bandcamp", iconSrc: "/bandcamp.svg", ariaLabel: "Buy on Bandcamp" },
-    { href: "https://soundcloud.com/mozworth/cant-back-down", alt: "SoundCloud", iconSrc: "/soundcloud.svg", ariaLabel: "Listen on SoundCloud" },
-    { href: "https://www.youtube.com/watch?v=n11CkpCbYLI", alt: "YouTube", iconSrc: "/youtube.svg", ariaLabel: "Listen on YouTube" },
-    { href: "https://listen.tidal.com/album/398032766/track/398032772", alt: "Tidal", iconSrc: "/tidal.svg", ariaLabel: "Listen on Tidal" },
-    { href: "https://music.amazon.com/albums/B0DM6QNX2J", alt: "Amazon Music", iconSrc: "/amazon-music.svg", ariaLabel: "Listen on Amazon Music" },
-    { href: "https://www.deezer.com/us/track/3083103571", alt: "Deezer", iconSrc: "/deezer.svg", ariaLabel: "Listen on Deezer" }
+    {
+      href: "https://open.spotify.com/track/6eJUqJSxwowzdMUeO4MwT4?si=8db3231ffa1642c7",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://music.apple.com/us/song/cant-back-down/1778536754",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/cant-back-down",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/cant-back-down",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=n11CkpCbYLI",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://listen.tidal.com/album/398032766/track/398032772",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://music.amazon.com/albums/B0DM6QNX2J",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: "Can't Back Down" }); }
+    },
+    {
+      href: "https://www.deezer.com/us/track/3083103571",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: "Can't Back Down" }); }
+    }
   ];
 
   const cover = (
-    <iframe  class="w-full max-w-[380px] min-h-[490px] md:min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] overflow-hidden mb-6 md:mb-8" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2324904741/transparent=true/" seamless></iframe>
+    <iframe
+      class="cover-art w-full max-w-[380px] min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2324904741/transparent=true/"
+      seamless
+      title="Can't Back Down by mozworth (Bandcamp embed)"
+    />
   );
 
   const albumLink = "/albums/mozworth";
@@ -152,28 +205,43 @@ We can't back down now</p></div>,
   return (
     <>
       <title>Can't Back Down | mozworth</title>
-      <meta name="description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
+      <meta name="description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/cant-back-down/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Can't Back Down | mozworth" />
-      <meta property="og:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta property="og:image" content="https://mozworth.music/cant-back-down-cover.jpg" />
+      <meta property="og:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/cant-back-down/" />
-      <meta property="music:release_date" content="2024-11-15" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Can't Back Down | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta name="twitter:image" content="https://mozworth.music/cant-back-down-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Can't Back Down",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/cant-back-down/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
       >
         <TabbedContent
+          key={location.pathname}
           tabs={tabs}
-          defaultTab={"Lyrics"}
-          tab={tab()}
-          setTab={setTab}
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
     </>

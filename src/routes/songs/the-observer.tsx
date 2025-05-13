@@ -22,18 +22,71 @@ export default function TheObserver() {
   });
 
   const streamingLinks: StreamingLink[] = [
-    { href: "https://open.spotify.com/track/3NNXEFyHojoTRB9nmUi392?si=07a5363d64224b03", alt: "Spotify", iconSrc: "/spotify.svg", ariaLabel: "Listen on Spotify" },
-    { href: "https://music.apple.com/us/song/the-observer/1778536752", alt: "Apple Music", iconSrc: "/apple-music.svg", ariaLabel: "Listen on Apple Music" },
-    { href: "https://mozworth.bandcamp.com/track/the-observer", alt: "Bandcamp", iconSrc: "/bandcamp.svg", ariaLabel: "Buy on Bandcamp" },
-    { href: "https://soundcloud.com/mozworth/the-observer", alt: "SoundCloud", iconSrc: "/soundcloud.svg", ariaLabel: "Listen on SoundCloud" },
-    { href: "https://www.youtube.com/watch?v=LffiT-oJfg4", alt: "YouTube", iconSrc: "/youtube.svg", ariaLabel: "Listen on YouTube" },
-    { href: "https://listen.tidal.com/album/398032766/track/398032770", alt: "Tidal", iconSrc: "/tidal.svg", ariaLabel: "Listen on Tidal" },
-    { href: "https://music.amazon.com/albums/B0DM6QNX2J", alt: "Amazon Music", iconSrc: "/amazon-music.svg", ariaLabel: "Listen on Amazon Music" },
-    { href: "https://www.deezer.com/us/track/3083103541", alt: "Deezer", iconSrc: "/deezer.svg", ariaLabel: "Listen on Deezer" }
+    {
+      href: "https://open.spotify.com/track/3NNXEFyHojoTRB9nmUi392?si=07a5363d64224b03",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'The Observer' }); }
+    },
+    {
+      href: "https://music.apple.com/us/song/the-observer/1778536752",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'The Observer' }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/the-observer",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'The Observer' }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/the-observer",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'The Observer' }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=LffiT-oJfg4",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'The Observer' }); }
+    },
+    {
+      href: "https://listen.tidal.com/album/398032766/track/398032770",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'The Observer' }); }
+    },
+    {
+      href: "https://music.amazon.com/albums/B0DM6QNX2J",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'The Observer' }); }
+    },
+    {
+      href: "https://www.deezer.com/us/track/3083103541",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'The Observer' }); }
+    }
   ];
 
   const cover = (
-    <iframe class="w-full max-w-[380px] min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] overflow-hidden mb-6 md:mb-8" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=136727558/transparent=true/" seamless></iframe>
+    <iframe
+      class="cover-art w-full max-w-[380px] min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=136727558/transparent=true/"
+      seamless
+      title="The Observer by mozworth (Bandcamp embed)"
+    />
   );
 
   const albumLink = "/albums/mozworth";
@@ -81,7 +134,7 @@ I'm just listening</p>
     },
     {
       label: "Writing",
-      content: <p>The Observer was written during the Finland sessions. After making it to the cabin around dawn, mozworth moved in, stayed the first night alone in the woods. The next morning he got up, made some coffee, sat down and took in the sirene view of the snow covered valley. He picked up his guitar and The Observer happened.</p>,
+      content: <p>The Observer was written <a class="underline hover:text-teal-300 transition-colors" href="https://www.bozzltron.com/2020/06/25/the-finland-sessions-the-observer/" target="_blank" rel="noopener">during the Finland sessions</a>. After making it to the cabin around dawn, mozworth moved in, stayed the first night alone in the woods. The next morning he got up, made some coffee, sat down and took in the sirene view of the snow covered valley. He picked up his guitar and The Observer happened.</p>,
     },
     {
       label: "Demo",
@@ -114,18 +167,34 @@ I'm just listening</p>
   return (
     <>
       <title>The Observer | mozworth</title>
-      <meta name="description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
+      <meta name="description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/the-observer/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="The Observer | mozworth" />
-      <meta property="og:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta property="og:image" content="https://mozworth.music/the-observer-cover.jpg" />
+      <meta property="og:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/the-observer/" />
-      <meta property="music:release_date" content="2024-11-15" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="The Observer | mozworth" />
-      <meta name="twitter:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta name="twitter:image" content="https://mozworth.music/the-observer-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "The Observer",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/the-observer/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}
@@ -134,7 +203,7 @@ I'm just listening</p>
         <TabbedContent
           key={location.pathname}
           tabs={tabs}
-          defaultTab={"Lyrics"}
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
     </>

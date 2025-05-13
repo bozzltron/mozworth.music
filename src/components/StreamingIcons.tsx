@@ -5,6 +5,7 @@ export interface StreamingLink {
   alt: string;
   iconSrc: string;
   ariaLabel: string;
+  onClick?: () => void;
 }
 
 export default function StreamingIcons(props: { links: StreamingLink[] }) {
@@ -23,6 +24,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
             target="_blank"
             rel="noopener"
             aria-label={link.ariaLabel}
+            onClick={link.onClick}
           >
             <img
               src={link.iconSrc}
@@ -41,6 +43,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
             target="_blank"
             rel="noopener"
             aria-label={link.ariaLabel}
+            onClick={link.onClick}
           >
             <img
               src={link.iconSrc}

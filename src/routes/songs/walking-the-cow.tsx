@@ -173,18 +173,34 @@ I am walking the cow`}</div>
   return (
     <>
       <title>Walking The Cow | mozworth</title>
-      <meta name="description" content="Listen to 'Walking The Cow' by mozworth, a tribute to Daniel Johnston. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere January 22, 2025." />
+      <meta name="description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/walking-the-cow/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Walking The Cow | mozworth" />
-      <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth, a tribute to Daniel Johnston. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere January 22, 2025." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
+      <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/walking-the-cow/" />
-      <meta property="music:release_date" content="2025-01-22" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Walking The Cow | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth, a tribute to Daniel Johnston. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere January 22, 2025." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Walking The Cow",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/walking-the-cow/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}
@@ -192,10 +208,9 @@ I am walking the cow`}</div>
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f8f8f8] via-[#e0e0e0] to-[#b0b0b0]"
       >
         <TabbedContent
+          key={location.pathname}
           tabs={tabs()}
-          defaultTab={"Lyrics"}
-          tab={tab()}
-          setTab={setTab}
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
     </>

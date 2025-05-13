@@ -26,49 +26,57 @@ export default function Postcard() {
       href: "https://open.spotify.com/track/0LyV5KAWmvWa2AjrFfJq40?si=94d98fbe374c4c66",
       alt: "Spotify",
       iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify"
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Postcard' }); }
     },
     {
       href: "https://music.apple.com/us/song/postcard/1778536751",
       alt: "Apple Music",
       iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music"
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Postcard' }); }
     },
     {
       href: "https://mozworth.bandcamp.com/track/postcard",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp"
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Postcard' }); }
     },
     {
       href: "https://soundcloud.com/mozworth/postcard",
       alt: "SoundCloud",
       iconSrc: "/soundcloud.svg",
-      ariaLabel: "Listen on SoundCloud"
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Postcard' }); }
     },
     {
       href: "https://www.youtube.com/watch?v=IJmjaja5Bzc",
       alt: "YouTube",
       iconSrc: "/youtube.svg",
-      ariaLabel: "Listen on YouTube"
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Postcard' }); }
     },
     {
       href: "https://listen.tidal.com/album/398032766/track/398032769",
       alt: "Tidal",
       iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal"
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Postcard' }); }
     },
     {
       href: "https://music.amazon.com/albums/B0DCMBQ8B8",
       alt: "Amazon Music",
       iconSrc: "/amazon-music.svg",
-      ariaLabel: "Listen on Amazon Music"
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Postcard' }); }
     },
     {
       href: "https://www.deezer.com/us/album/627355711",
       alt: "Deezer",
       iconSrc: "/deezer.svg",
-      ariaLabel: "Listen on Deezer"
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Postcard' }); }
     }
   ];
 
@@ -213,18 +221,34 @@ Wishing you were here with me</p>
   return (
     <>
       <title>Postcard | mozworth</title>
-      <meta name="description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
+      <meta name="description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
       <link rel="canonical" href="https://mozworth.music/songs/postcard/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Postcard | mozworth" />
-      <meta property="og:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta property="og:image" content="https://mozworth.music/postcard-cover.jpg" />
+      <meta property="og:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
       <meta property="og:url" content="https://mozworth.music/songs/postcard/" />
-      <meta property="music:release_date" content="[Release Date]" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Postcard | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official cover art. Streaming everywhere soon!" />
-      <meta name="twitter:image" content="https://mozworth.music/postcard-cover.jpg" />
+      <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      {/* Structured Data for AI and Search Engines */}
+      <script type="application/ld+json" innerHTML={`{
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": "Postcard",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "mozworth"
+        },
+        "inAlbum": {
+          "@type": "MusicAlbum",
+          "name": "mozworth"
+        },
+        "image": "https://mozworth.music/mozworth-debut.png",
+        "datePublished": "2024-11-15",
+        "url": "https://mozworth.music/songs/postcard/"
+      }`} />
       <BasePageLayout
         cover={cover}
         info={info}
