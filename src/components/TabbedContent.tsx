@@ -1,5 +1,4 @@
 import { createSignal, createEffect, For, JSX } from "solid-js";
-import { useLocation } from "@solidjs/router";
 
 interface Tab {
   label: string;
@@ -13,21 +12,9 @@ interface TabbedContentProps {
 }
 
 export default function TabbedContent(props: TabbedContentProps) {
-  const location = useLocation();
   const [activeTab, setActiveTab] = createSignal(
     props.tabs.find(t => t.label === props.defaultTab)?.label || props.tabs[0]?.label
   );
-
-  // Remove all createEffects that try to sync or reset the tab
-  // Always use currentTab() to fall back to the first tab if the current is invalid
-  const currentTab = () => props.tabs.find(t => t.label === activeTab()) || props.tabs[0];
-
-  // Debug log
-  console.log('TabbedContent props.tabs:', props.tabs.map(t => t.label), 'Current tab:', activeTab());
-  console.log('currentTab:', currentTab());
-  console.log('[TabbedContent] MOUNT: props.tabs:', props.tabs.map(t => t.label), 'props.defaultTab:', props.defaultTab);
-  const tabToRender = currentTab();
-  console.log('[TabbedContent] tabToRender:', tabToRender);
 
   return (
     <>

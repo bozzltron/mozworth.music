@@ -77,7 +77,7 @@ export default function GoodbyeColorado() {
   // Cover art (use Bandcamp embed as fallback)
   const cover = (
     <iframe
-      class="cover-art w-full max-w-[380px] min-h-[420px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       style={{ border: 0 }}
       src="https://bandcamp.com/EmbeddedPlayer/track=2833446675/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
       seamless
@@ -99,6 +99,10 @@ export default function GoodbyeColorado() {
         <a href="https://mozworth.bandcamp.com/track/goodbye-colorado" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
+        </a>
+        <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
+          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
+          Merch
         </a>
       </div>
     </>

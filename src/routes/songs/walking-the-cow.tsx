@@ -1,24 +1,11 @@
-import { Show, createSignal, onMount, createEffect, createMemo } from "solid-js";
-import SongComments from "../../components/SongComments";
+import { createSignal, createEffect, createMemo } from "solid-js";
 import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
-import type { JSX } from "solid-js";
 
-interface Tab {
-  label: string;
-  content: JSX.Element;
-}
 
 export default function WalkingTheCow() {
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
-  const [mounted, setMounted] = createSignal(false);
   const [tab, setTab] = createSignal("Lyrics");
-
-  onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
-    setMounted(true);
-  });
 
   // Streaming links for this song
   const streamingLinks: StreamingLink[] = [
@@ -75,7 +62,7 @@ export default function WalkingTheCow() {
   // Cover art
   const cover = (
     <iframe
-      class="cover-art w-full max-w-[380px] min-h-[420px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       src="https://bandcamp.com/EmbeddedPlayer/track=2974293744/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
       seamless
       title="Walking The Cow by mozworth (Bandcamp embed)"
@@ -94,6 +81,10 @@ export default function WalkingTheCow() {
         <a href="https://mozworth.bandcamp.com/track/walking-the-cow" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
+        </a>
+        <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
+          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
+          Merch
         </a>
       </div>
     </>
@@ -173,17 +164,17 @@ I am walking the cow`}</div>
   return (
     <>
       <title>Walking The Cow | mozworth</title>
-      <meta name="description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
+      <meta name="description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the mozworth cover of 'Walking The Cow' (2025)." />
       <link rel="canonical" href="https://mozworth.music/songs/walking-the-cow/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Walking The Cow | mozworth" />
-      <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
+      <meta property="og:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
       <meta property="og:url" content="https://mozworth.music/songs/walking-the-cow/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Walking The Cow | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Walking The Cow' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -195,10 +186,10 @@ I am walking the cow`}</div>
         },
         "inAlbum": {
           "@type": "MusicAlbum",
-          "name": "mozworth"
+          "name": "Walking The Cow"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
-        "datePublished": "2024-11-15",
+        "image": "https://mozworth.music/mozworth-walking-the-cow-cover.jpg,
+        "datePublished": "2025-01-22",
         "url": "https://mozworth.music/songs/walking-the-cow/"
       }`} />
       <BasePageLayout

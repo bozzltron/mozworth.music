@@ -87,10 +87,8 @@ export default function Home() {
                   draggable={false}
                 />
               </a>
-              <h2 class="text-xl font-semibold mb-2">Self-Titled Debut Out Now!</h2>
-              <p class="text-gray-200 mb-2">Go listen!</p>
               <div class="flex flex-wrap justify-center gap-3">
-                <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Album Page</a>
+                <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Go listen!</a>
               </div>
             </div>
           </div>

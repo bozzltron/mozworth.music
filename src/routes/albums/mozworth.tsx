@@ -1,6 +1,5 @@
-import { Show, createSignal, onMount, onCleanup, createEffect, For } from "solid-js";
-import SongComments from "../../components/SongComments";
-import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
+import { createSignal, onMount, createEffect, For } from "solid-js";
+import { StreamingLink } from "../../components/StreamingIcons";
 import TabbedContent from "../../components/TabbedContent";
 import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
@@ -162,7 +161,7 @@ export default function MozworthAlbum() {
   });
 
   const cover = (
-    <iframe class="cover-art w-full max-w-[380px] min-h-[680px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless title="mozworth by mozworth" />
+    <iframe class="cover-art w-full max-w-[380px] min-h-[640px] md:min-h-[680px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless title="mozworth by mozworth" />
   );
 
   const info = (

@@ -82,7 +82,7 @@ export default function TheObserver() {
 
   const cover = (
     <iframe
-      class="cover-art w-full max-w-[380px] min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      class="cover-art w-full max-w-[380px] min-h-[425px] md:min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=136727558/transparent=true/"
       seamless
       title="The Observer by mozworth (Bandcamp embed)"

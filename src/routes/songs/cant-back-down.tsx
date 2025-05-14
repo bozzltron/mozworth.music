@@ -1,24 +1,10 @@
-import { createSignal, onMount, createEffect, createMemo } from "solid-js";
-import SongComments from "../../components/SongComments";
-import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
+import { createSignal, createEffect } from "solid-js";
+import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
-import type { JSX } from "solid-js";
-
-interface Tab {
-  label: string;
-  content: JSX.Element;
-}
 
 export default function CantBackDown() {
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
-  const [mounted, setMounted] = createSignal(false);
   const [tab, setTab] = createSignal("Lyrics");
-
-  onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
-    setMounted(true);
-  });
 
   const streamingLinks: StreamingLink[] = [
     {
@@ -81,7 +67,7 @@ export default function CantBackDown() {
 
   const cover = (
     <iframe
-      class="cover-art w-full max-w-[380px] min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      class="cover-art w-full max-w-[380px] min-h-[425px] md:min-h-[490px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2324904741/transparent=true/"
       seamless
       title="Can't Back Down by mozworth (Bandcamp embed)"
@@ -163,16 +149,16 @@ We can't back down now</p></div>,
     },
     {
       label: "Writing",
-      content: <p>Can't Back Down was written during the Finland sessions. [Add more writing background here.]</p>,
+      content: <p>Can't Back Down was written during the Finland sessions. Writing sessions are also about processing life. This song came out of the weight of life.</p>,
     },
     {
       label: "Demo",
       content: (
         <div class="flex flex-col items-start gap-4">
-          <p class="mb-4">This is the original demo of Can't Back Down. [Add demo details here.]</p>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/PLACEHOLDER&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
-          <div class="text-[10px] text-[#cccccc] break-all overflow-hidden whitespace-nowrap truncate font-sans font-thin">
-            <a href="https://soundcloud.com/mozworth" title="mozworth" target="_blank" class="text-[#cccccc] no-underline">mozworth</a> · <a href="https://soundcloud.com/mozworth/cant-back-down-demo" title="Can't Back Down Demo" target="_blank" class="text-[#cccccc] no-underline">Can't Back Down Demo</a>
+          <p class="mb-4">This is the original demo of Can't Back Down. It was recorded in the cabin in Finland.</p>
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/778572595&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+          <div style={{"font-size": "10px", color: "#cccccc", "line-break": "anywhere", "word-break": "normal", overflow: "hidden", "white-space": "nowrap", "text-overflow": "ellipsis", "font-family": "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif", "font-weight": 100}}>
+            <a href="https://soundcloud.com/mozworth" title="mozworth" target="_blank" style={{color: "#cccccc", "text-decoration": "none"}}>mozworth</a> · <a href="https://soundcloud.com/mozworth/cant-back-down-demo" title="Can't Back Down Demo" target="_blank" style={{color: "#cccccc", "text-decoration": "none"}}>Can't Back Down Demo</a>
           </div>
         </div>
       ),
