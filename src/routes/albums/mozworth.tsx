@@ -122,7 +122,7 @@ export default function MozworthAlbum() {
           </p>
           <h2 class="text-xl font-bold mb-2">KVRX Interview</h2>
           <p class="mb-4">
-            mozworth was interviewed on <a href="https://kvrx.org/app/blog/features/an-interview-with-mozworth/" target="_blank" rel="noopener" class="underline hover:text-teal-300">KVRX Austin</a> about the debut album. [Add link to the specific interview if available.]
+            mozworth was interviewed on <a href="https://kvrx.org/app/blog/features/an-interview-with-mozworth/" target="_blank" rel="noopener" class="underline hover:text-teal-300">KVRX Austin</a> about the debut album. 
           </p>
         </section>
       ),
