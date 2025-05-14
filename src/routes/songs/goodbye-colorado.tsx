@@ -163,8 +163,8 @@ export default function GoodbyeColorado() {
       content: (
         <div class="flex flex-col items-start gap-4">
           <p>This is the original demo recorded in the cabin in Colorado Springs, Colorado.</p>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292295211&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/mozworth" title="mozworth" target="_blank" style="color: #cccccc; text-decoration: none;">mozworth</a> · <a href="https://soundcloud.com/mozworth/goodbye-colorado-demo" title="Goodbye Colorado Demo" target="_blank" style="color: #cccccc; text-decoration: none;">Goodbye Colorado Demo</a></div>
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292295211&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
+          <div style={{"font-size":"10px","color":"#cccccc","line-break":"anywhere","word-break":"normal","overflow":"hidden","white-space":"nowrap","text-overflow":"ellipsis","font-family":"Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif","font-weight":"100"}}><a href="https://soundcloud.com/mozworth" title="mozworth" target="_blank" style={{"color":"#cccccc","text-decoration":"none"}}>mozworth</a> · <a href="https://soundcloud.com/mozworth/goodbye-colorado-demo" title="Goodbye Colorado Demo" target="_blank" style={{"color":"#cccccc","text-decoration":"none"}}>Goodbye Colorado Demo</a></div>
         </div>
       ),
     },

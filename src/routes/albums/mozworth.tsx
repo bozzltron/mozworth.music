@@ -1,18 +1,15 @@
-import { Show, createSignal, onMount, onCleanup, createEffect } from "solid-js";
+import { Show, createSignal, onMount, onCleanup, createEffect, For } from "solid-js";
 import SongComments from "../../components/SongComments";
 import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
 import TabbedContent from "../../components/TabbedContent";
 import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
 
-// @ts-ignore
 // eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
 
 export default function MozworthAlbum() {
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
   const [tab, setTab] = createSignal("Tracklist");
-  const [isMobile, setIsMobile] = createSignal(false);
   const location = useLocation();
 
   // Streaming links for this album
@@ -90,11 +87,10 @@ export default function MozworthAlbum() {
       label: "Tracklist",
       content: (
         <ol class="list-decimal list-inside text-lg text-white/90">
-          {trackList.map(track =>
+          <For each={trackList}>{track =>
             track.href
               ? <li><a href={track.href} class="hover:text-teal-300 underline">{track.title}</a></li>
-              : <li>{track.title}</li>
-          )}
+              : <li>{track.title}</li>}</For>
         </ol>
       ),
     },
@@ -154,15 +150,10 @@ export default function MozworthAlbum() {
   ];
 
   onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
     if (localStorage.getItem("mozworth-comments-enabled") !== "true" && tab() === "conversation") {
       setTab("tracks");
     }
     const mql = window.matchMedia('(max-width: 600px)');
-    setIsMobile(mql.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mql.addEventListener('change', handler);
-    onCleanup(() => mql.removeEventListener('change', handler));
   });
 
   createEffect(() => {
@@ -171,7 +162,7 @@ export default function MozworthAlbum() {
   });
 
   const cover = (
-    <iframe class="cover-art w-full max-w-[380px] min-h-[680px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless title="mozworth by mozworth"></iframe>
+    <iframe class="cover-art w-full max-w-[380px] min-h-[680px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60" src="https://bandcamp.com/EmbeddedPlayer/album=2412424488/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless title="mozworth by mozworth" />
   );
 
   const info = (

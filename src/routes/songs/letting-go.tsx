@@ -121,7 +121,7 @@ export default function LettingGo() {
       content: (
         <div>
           <p>This is the original demo recorded in the cabin in Finland, Minnesota.</p>
-          <iframe scrolling="no" frameborder="no" allow="autoplay" class="w-full h-32 md:h-40 rounded" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/778576108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+          <iframe scrolling="no" frameborder="no" allow="autoplay" class="w-full h-32 md:h-40 rounded" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/778576108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
           <div class="text-xs text-gray-400 mt-2"><a href="https://soundcloud.com/mozworth" target="_blank" rel="noopener" class="hover:text-teal-300">mozworth</a> · <a href="https://soundcloud.com/mozworth/letting-go-demo" target="_blank" rel="noopener" class="hover:text-teal-300">Letting GO Demo</a></div>
         </div>
       ),
@@ -203,8 +203,6 @@ export default function LettingGo() {
         <TabbedContent
           tabs={tabs()}
           defaultTab={mounted() && commentsEnabled() ? tabs()[0].label : "Lyrics"}
-          tab={tab()}
-          setTab={setTab}
         />
       </BasePageLayout>
     </>

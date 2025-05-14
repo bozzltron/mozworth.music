@@ -7,9 +7,7 @@ export default function Press() {
       <link rel="manifest" href="/manifest.json" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/boz4web.jpg')" }} />
-        {/* Overlay */}
-        <div class="absolute inset-0 bg-black/70 z-10" />
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/mozworth.jpg')" }} />
         {/* Main content */}
         <div class="relative z-20 max-w-2xl w-full mx-auto bg-black/70 rounded-xl p-8 text-white flex flex-col items-center">
           <a href="/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black mb-6">&larr; Back to Home</a>

@@ -58,21 +58,21 @@ export default function Home() {
       <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
       <meta property="og:title" content="mozworth | Indie Alternative Rock Artist" />
       <meta property="og:description" content="Explore the unique sounds of mozworth, an indie alternative rock artist from Austin, Texas. Check out the latest tracks and news!" />
-      <meta property="og:image" content="https://mozworth.music/boz4web.jpg" />
+      <meta property="og:image" content="https://mozworth.music/mozworth.jpg" />
       <meta property="og:url" content="https://mozworth.music" />
       <meta property="music:musician" content="mozworth" />
       <meta property="og:type" content="music" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="mozworth | Indie Alternative Rock Artist" />
       <meta name="twitter:description" content="Discover the music of mozworth, an indie alternative rock artist based in Austin, Texas." />
-      <meta name="twitter:image" content="https://mozworth.music/boz4web.jpg" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth.jpg" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/boz4web.jpg')" }} />
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.jpg')" }} />
    
         {/* Main content */}
         <div
-          class="relative container mx-auto text-center flex flex-col items-center max-w-[800px] p-5 md:rounded-[10px] bg-black/70 md:fixed md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+          class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-10 md:rounded-[10px] bg-black/70"
         >
           <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
           <h1 class="text-3xl md:text-4xl font-bold mb-6">Hello! I'm mozworth</h1>
@@ -88,7 +88,7 @@ export default function Home() {
                 />
               </a>
               <h2 class="text-xl font-semibold mb-2">Self-Titled Debut Out Now!</h2>
-              <p class="text-gray-200 mb-2">Check out the album page for more!</p>
+              <p class="text-gray-200 mb-2">Go listen!</p>
               <div class="flex flex-wrap justify-center gap-3">
                 <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Album Page</a>
               </div>
@@ -105,7 +105,6 @@ export default function Home() {
             <a href="/discography" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Discography</a>
             <a href="/tour" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
             <a href="https://www.pressjunkiepr.com/contact/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
-            <a href="/lyrics" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'lyrics_page' }); }}>Lyrics</a>
           </div>
           <div class="text-xs text-gray-400 mt-8">
             &copy; {new Date().getFullYear()} mozworth. All rights reserved.
