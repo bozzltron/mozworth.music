@@ -10,7 +10,16 @@ export default function ShareButton(props: ShareButtonProps) {
   const [copied, setCopied] = createSignal(false);
 
   const handleShare = async () => {
-    if (navigator.share) {
+    const method = typeof navigator.share === 'function' ? 'web_share_api' : 'clipboard';
+    if (window.gtag) {
+      window.gtag('event', 'share', {
+        event_category: 'engagement',
+        event_label: props.title,
+        value: props.url,
+        method,
+      });
+    }
+    if (typeof navigator.share === 'function') {
       try {
         await navigator.share({
           title: props.title,

@@ -1,21 +1,7 @@
 import { createSignal, For, onMount } from "solid-js";
 import { Session } from "@inrupt/solid-client-authn-browser";
 import {
-  getSolidDataset,
-  getFile,
-  overwriteFile,
   saveFileInContainer,
-  getContainedResourceUrlAll,
-  createSolidDataset,
-  createThing,
-  setThing,
-  saveSolidDatasetAt,
-  getThingAll,
-  getStringNoLocale,
-  getUrlAll,
-  getSourceUrl,
-  getFileWithAcl,
-  getResourceAcl,
   getPodUrlAll
 } from "@inrupt/solid-client";
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
@@ -30,7 +16,6 @@ export default function SongComments(props: { contentId: string }) {
   const [error, setError] = createSignal<string | null>(null);
   const [comments, setComments] = createSignal<any[]>([]);
   const [mounted, setMounted] = createSignal(false);
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
 
   // On mount, restore session if possible
   if (typeof window !== "undefined") {
