@@ -3,6 +3,7 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import type { JSX } from "solid-js";
+import ShareButton from "../../components/ShareButton";
 
 interface Tab {
   label: string;
@@ -98,9 +99,14 @@ export default function Postcard() {
           Purchase
         </a>
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
+          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch
         </a>
+        <ShareButton
+          url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/postcard/"}
+          title="Postcard by mozworth"
+          text="Check out this song by mozworth!"
+        />
       </div>
     </>
   );
@@ -221,12 +227,12 @@ Wishing you were here with me</p>
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Postcard | mozworth" />
       <meta property="og:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta property="og:image" content="https://mozworth.music/postcard_cover.png" />
       <meta property="og:url" content="https://mozworth.music/songs/postcard/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Postcard | mozworth" />
       <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta name="twitter:image" content="https://mozworth.music/postcard_cover.png" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -240,7 +246,7 @@ Wishing you were here with me</p>
           "@type": "MusicAlbum",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
+        "image": "https://mozworth.music/postcard_cover.png",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/songs/postcard/"
       }`} />

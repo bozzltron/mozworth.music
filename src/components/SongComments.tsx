@@ -47,7 +47,6 @@ export default function SongComments(props: { contentId: string }) {
     });
   }
   onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
     setMounted(true);
     fetchComments();
   });
@@ -161,61 +160,59 @@ export default function SongComments(props: { contentId: string }) {
 
   return (
     <>
-      {commentsEnabled() && (
-        <div class="bg-black/30 rounded-xl p-6 mb-6">
-          <h3 class="text-xl font-bold mb-2 text-teal-400">Comments</h3>
-          {mounted() && (
-            <>
-              {webId() ? (
-                <div class="mb-4">
-                  <div class="mb-2 text-green-300">Logged in as <span class="font-mono">{webId()}</span></div>
-                  <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={logout}>Log out</button>
-                </div>
-              ) : (
-                <div class="mb-4">
-                  <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={login}>Log in with Solid Pod</button>
-                </div>
-              )}
-              {webId() && (
-                <div class="mb-4">
-                  <textarea
-                    class="w-full rounded bg-black/60 text-white p-2 mb-2 border border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                    rows={3}
-                    placeholder="Write a comment..."
-                    value={comment()}
-                    onInput={e => setComment(e.currentTarget.value)}
-                    disabled={loading()}
-                  />
-                  <div class="flex gap-2">
-                    <button
-                      class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition disabled:opacity-50"
-                      onClick={postSolid}
-                      disabled={loading() || !comment().trim()}
-                    >
-                      Post (Solid Pod)
-                    </button>
-                  </div>
-                  {error() && <div class="text-red-400 mt-2">{error()}</div>}
-                </div>
-              )}
+      <div class="bg-black/30 rounded-xl p-6 mb-6">
+        <h3 class="text-xl font-bold mb-2 text-teal-400">Comments</h3>
+        {mounted() && (
+          <>
+            {webId() ? (
               <div class="mb-4">
-                <h4 class="text-lg font-semibold mb-2 text-teal-300">All Comments</h4>
-                {loading() && <div class="text-gray-400">Loading comments...</div>}
-                {!loading() && comments().length === 0 && <div class="text-gray-500">No comments yet. Be the first!</div>}
-                <For each={comments()}>{c => (
-                  <div class="mb-3 p-3 rounded bg-black/40 border border-teal-900/30">
-                    <div class="text-sm text-gray-300 mb-1">{c.author} <span class="text-gray-500">{new Date(c.date).toLocaleString()}</span></div>
-                    <div class="text-white whitespace-pre-line">{c.text}</div>
-                  </div>
-                )}</For>
+                <div class="mb-2 text-green-300">Logged in as <span class="font-mono">{webId()}</span></div>
+                <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={logout}>Log out</button>
               </div>
-            </>
-          )}
-          <div class="text-xs text-gray-400">
-            <a href="https://solidproject.org/about" target="_blank" rel="noopener" class="underline hover:text-teal-300">Learn more about Solid</a>
-          </div>
+            ) : (
+              <div class="mb-4">
+                <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={login}>Log in with Solid Pod</button>
+              </div>
+            )}
+            {webId() && (
+              <div class="mb-4">
+                <textarea
+                  class="w-full rounded bg-black/60 text-white p-2 mb-2 border border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  rows={3}
+                  placeholder="Write a comment..."
+                  value={comment()}
+                  onInput={e => setComment(e.currentTarget.value)}
+                  disabled={loading()}
+                />
+                <div class="flex gap-2">
+                  <button
+                    class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition disabled:opacity-50"
+                    onClick={postSolid}
+                    disabled={loading() || !comment().trim()}
+                  >
+                    Post (Solid Pod)
+                  </button>
+                </div>
+                {error() && <div class="text-red-400 mt-2">{error()}</div>}
+              </div>
+            )}
+            <div class="mb-4">
+              <h4 class="text-lg font-semibold mb-2 text-teal-300">All Comments</h4>
+              {loading() && <div class="text-gray-400">Loading comments...</div>}
+              {!loading() && comments().length === 0 && <div class="text-gray-500">No comments yet. Be the first!</div>}
+              <For each={comments()}>{c => (
+                <div class="mb-3 p-3 rounded bg-black/40 border border-teal-900/30">
+                  <div class="text-sm text-gray-300 mb-1">{c.author} <span class="text-gray-500">{new Date(c.date).toLocaleString()}</span></div>
+                  <div class="text-white whitespace-pre-line">{c.text}</div>
+                </div>
+              )}</For>
+            </div>
+          </>
+        )}
+        <div class="text-xs text-gray-400">
+          <a href="https://solidproject.org/about" target="_blank" rel="noopener" class="underline hover:text-teal-300">Learn more about Solid</a>
         </div>
-      )}
+      </div>
     </>
   );
 } 

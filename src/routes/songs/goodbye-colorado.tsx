@@ -1,26 +1,11 @@
-import { createSignal, Show, onCleanup, onMount, createEffect, createMemo } from "solid-js";
-import SongComments from "../../components/SongComments";
-import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
+import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
-import type { JSX } from "solid-js";
 import { useLocation } from "@solidjs/router";
-
-interface Tab {
-  label: string;
-  content: JSX.Element;
-}
+import ShareButton from "../../components/ShareButton";
 
 export default function GoodbyeColorado() {
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
-  const [mounted, setMounted] = createSignal(false);
-  const [tab, setTab] = createSignal("Lyrics");
   const location = useLocation();
-
-  onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
-    setMounted(true);
-  });
 
   // Streaming links for this song
   const streamingLinks: StreamingLink[] = [
@@ -104,6 +89,11 @@ export default function GoodbyeColorado() {
           class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
           Merch
         </a>
+        <ShareButton
+          url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/goodbye-colorado/"}
+          title="Goodbye Colorado by mozworth"
+          text="Check out this song by mozworth!"
+        />
       </div>
     </>
   );
@@ -210,12 +200,6 @@ export default function GoodbyeColorado() {
     },
   ];
 
-  createEffect(() => {
-    location.pathname;
-    setTab("Lyrics");
-  });
-
-  console.log('Tabs array at render:', tabs.map(t => t.label));
   return (
     <>
       <title>Goodbye Colorado | mozworth</title>

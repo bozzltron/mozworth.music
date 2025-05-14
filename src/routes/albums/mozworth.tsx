@@ -3,6 +3,7 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import TabbedContent from "../../components/TabbedContent";
 import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
+import ShareButton from "../../components/ShareButton";
 
 // eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
@@ -85,12 +86,28 @@ export default function MozworthAlbum() {
     {
       label: "Tracklist",
       content: (
-        <ol class="list-decimal list-inside text-lg text-white/90">
-          <For each={trackList}>{track =>
-            track.href
-              ? <li><a href={track.href} class="hover:text-teal-300 underline">{track.title}</a></li>
-              : <li>{track.title}</li>}</For>
-        </ol>
+        <div class="mb-8">
+          <ol class="flex flex-col gap-3">
+            <For each={trackList}>{(track, i) =>
+              track.href
+                ? <li>
+                    <a
+                      href={track.href}
+                      class="block w-full text-lg sm:text-xl font-semibold rounded bg-black/20 border-2 border-white text-white px-5 py-3 shadow-lg hover:bg-teal-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 transition-colors text-left relative"
+                      style="touch-action: manipulation; min-width: 44px; min-height: 44px; box-shadow: 0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18);"
+                    >
+                      <span class="inline-block w-8 text-white font-bold text-left align-middle">{i()+1}.</span>
+                      <span class="align-middle">{track.title}</span>
+                    </a>
+                  </li>
+                : <li class="block w-full text-lg sm:text-xl font-semibold rounded bg-black/20 border-2 border-white text-white px-5 py-3 shadow-lg text-left relative" style="min-width: 44px; min-height: 44px; box-shadow: 0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18);">
+                    <span class="inline-block w-8 text-white font-bold text-left align-middle">{i()+1}.</span>
+                    <span class="align-middle">{track.title}</span>
+                  </li>
+            }
+            </For>
+          </ol>
+        </div>
       ),
     },
     {
@@ -174,6 +191,15 @@ export default function MozworthAlbum() {
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
         </a>
+        <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
+          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
+          Merch
+        </a>
+        <ShareButton
+          url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/albums/mozworth/"}
+          title="mozworth (Album) by mozworth"
+          text="Check out this album by mozworth!"
+        />
       </div>
     </>
   );
