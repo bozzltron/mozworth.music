@@ -227,12 +227,12 @@ Wishing you were here with me</p>
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Postcard | mozworth" />
       <meta property="og:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/postcard_cover.png" />
+      <meta property="og:image" content="https://mozworth.music/postcard_cover.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/postcard/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Postcard | mozworth" />
       <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/postcard_cover.png" />
+      <meta name="twitter:image" content="https://mozworth.music/postcard_cover.webp" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -246,7 +246,7 @@ Wishing you were here with me</p>
           "@type": "MusicAlbum",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/postcard_cover.png",
+        "image": "https://mozworth.music/postcard_cover.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/songs/postcard/"
       }`} />

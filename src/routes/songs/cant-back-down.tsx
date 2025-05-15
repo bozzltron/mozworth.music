@@ -202,12 +202,12 @@ We can't back down now</p></div>,
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Can't Back Down | mozworth" />
       <meta property="og:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/cant-back-down/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Can't Back Down | mozworth" />
       <meta name="twitter:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -221,7 +221,7 @@ We can't back down now</p></div>,
           "@type": "MusicAlbum",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
+        "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/songs/cant-back-down/"
       }`} />

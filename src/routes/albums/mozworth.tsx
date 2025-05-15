@@ -212,14 +212,14 @@ export default function MozworthAlbum() {
       <meta property="og:type" content="music.album" />
       <meta property="og:title" content="mozworth (Album) | mozworth" />
       <meta property="og:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
       <meta property="og:url" content="https://mozworth.music/albums/mozworth/" />
       <meta property="music:release_date" content="2024-11-15" />
       <meta property="music:album" content="mozworth" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="mozworth (Album) | mozworth" />
       <meta name="twitter:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -229,7 +229,7 @@ export default function MozworthAlbum() {
           "@type": "MusicGroup",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
+        "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/albums/mozworth/"
       }`} />

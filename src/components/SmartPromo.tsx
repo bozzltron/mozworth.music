@@ -19,14 +19,11 @@ export default function SmartPromo() {
     </div>
   ) : (
     <div class="bg-black/50 border border-white/30 rounded-xl p-4 w-full max-w-md flex flex-col items-center mb-8">
-      <a href="/albums/mozworth" class="block w-full aspect-square mb-4">
-        <img
-          src="/mozworth-debut.png"
-          alt="mozworth album cover"
-          class="w-full h-full object-cover rounded"
-          draggable={false}
-        />
-      </a>
+      <img
+        src="/mozworth-debut.webp"
+        alt="Mozworth album cover"
+        class="w-full aspect-square object-cover rounded-xl shadow-lg mb-4"
+      />
       <div class="flex flex-wrap justify-center gap-3">
         <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Go listen!</a>
       </div>

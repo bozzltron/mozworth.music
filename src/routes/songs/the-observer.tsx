@@ -178,12 +178,12 @@ I'm just listening</p>
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="The Observer | mozworth" />
       <meta property="og:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/the-observer/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="The Observer | mozworth" />
       <meta name="twitter:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.png" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -197,7 +197,7 @@ I'm just listening</p>
           "@type": "MusicAlbum",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
+        "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/songs/the-observer/"
       }`} />

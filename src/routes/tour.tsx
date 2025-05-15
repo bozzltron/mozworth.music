@@ -6,7 +6,7 @@ export default function Tour() {
       <meta name="theme-color" content="#000000" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/mozworth.jpg')" }} />
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/mozworth.webp')" }} />
 
         {/* Main content */}
         <div class="relative z-20 min-w-[800px] max-w-3xl w-full mx-auto bg-black/70 rounded-xl p-8 text-white flex flex-col items-center sm:min-w-0">

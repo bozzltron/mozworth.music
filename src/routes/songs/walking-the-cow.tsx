@@ -175,12 +175,12 @@ I am walking the cow`}</div>
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Walking The Cow | mozworth" />
       <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
+      <meta property="og:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/walking-the-cow/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Walking The Cow | mozworth" />
       <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.jpg" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.webp" />
       {/* Structured Data for AI and Search Engines */}
       <script type="application/ld+json" innerHTML={`{
         "@context": "https://schema.org",
@@ -194,7 +194,7 @@ I am walking the cow`}</div>
           "@type": "MusicAlbum",
           "name": "Walking The Cow"
         },
-        "image": "https://mozworth.music/mozworth-walking-the-cow-cover.jpg,
+        "image": "https://mozworth.music/mozworth-walking-the-cow-cover.webp",
         "datePublished": "2025-01-22",
         "url": "https://mozworth.music/songs/walking-the-cow/"
       }`} />

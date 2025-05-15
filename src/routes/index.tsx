@@ -35,7 +35,7 @@ export default function Home() {
           "@type": "MusicGroup",
           "name": "mozworth"
         },
-        "image": "https://mozworth.music/mozworth-debut.png",
+        "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/albums/mozworth"
       }`} />
@@ -59,17 +59,17 @@ export default function Home() {
       <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
       <meta property="og:title" content="mozworth | Indie Alternative Rock Artist" />
       <meta property="og:description" content="Explore the unique sounds of mozworth, an indie alternative rock artist from Austin, Texas. Check out the latest tracks and news!" />
-      <meta property="og:image" content="https://mozworth.music/mozworth.jpg" />
+      <meta property="og:image" content="https://mozworth.music/mozworth.webp" />
       <meta property="og:url" content="https://mozworth.music" />
       <meta property="music:musician" content="mozworth" />
       <meta property="og:type" content="music" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="mozworth | Indie Alternative Rock Artist" />
       <meta name="twitter:description" content="Discover the music of mozworth, an indie alternative rock artist based in Austin, Texas." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth.jpg" />
+      <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.jpg')" }} />
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.webp')" }} />
    
         {/* Main content */}
         <div
