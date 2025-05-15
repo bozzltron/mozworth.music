@@ -1,4 +1,4 @@
-const CACHE_NAME = "mozworth-v1747320069723";
+const CACHE_NAME = "mozworth-v1747320178016";
 // const CACHE_VERSION = "20250122102846";
 const urlsToCache = [
   "/",
@@ -9,7 +9,7 @@ const urlsToCache = [
   "/mozworth-walking-the-cow-cover.webp",
   "/postcard_cover.webp",
   "/goodbye_colorado_cover.webp",
-  "/boz4web.jpg",
+  "/mozworth.webp",
   "/logo.jpg",
   "/mozworth.png",
   "/apple-touch-icon.png",
