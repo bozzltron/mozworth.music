@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import SmartPromo from "../components/SmartPromo";
 
 // @ts-ignore
 // eslint-disable-next-line
@@ -76,21 +77,9 @@ export default function Home() {
         >
           <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
           <h1 class="text-3xl md:text-4xl font-bold mb-6">Hello! I'm mozworth</h1>
-          {/* Album ad */}
+          {/* Album ad (replaced with SmartPromo) */}
           <div class="mb-8 w-full flex justify-center">
-            <div class="bg-black/50 border border-white/30 rounded-xl p-4 w-full max-w-md flex flex-col items-center">
-              <a href="/albums/mozworth" class="block w-full aspect-square mb-4">
-                <img
-                  src="/mozworth-debut.png"
-                  alt="mozworth album cover"
-                  class="w-full h-full object-cover rounded"
-                  draggable={false}
-                />
-              </a>
-              <div class="flex flex-wrap justify-center gap-3">
-                <a href="/albums/mozworth" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black">Go listen!</a>
-              </div>
-            </div>
+            <SmartPromo />
           </div>
           {/* Actions */}
           <div class="flex flex-wrap justify-center gap-3 mb-6">
