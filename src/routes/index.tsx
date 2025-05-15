@@ -14,10 +14,8 @@ export default function Home() {
       <title>mozworth | Indie Alternative Rock Artist from Austin, Texas</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {/* Favicon and manifest */}
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#000000" />
       <link rel="canonical" href="https://mozworth.music" />
       {/* Open Graph & Twitter Enhancements */}
@@ -39,22 +37,6 @@ export default function Home() {
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/albums/mozworth"
       }`} />
-      {/* Google Analytics */}
-      <script innerHTML={`
-        if (location.hostname === "mozworth.music") {
-          (function(){
-            var gtagScript = document.createElement('script');
-            gtagScript.async = true;
-            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT";
-            document.head.appendChild(gtagScript);
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-HCSKGBDXDT');
-          })();
-        }
-      `} />
       {/* SEO & Social Meta Tags */}
       <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
       <meta property="og:title" content="mozworth | Indie Alternative Rock Artist" />
@@ -67,6 +49,8 @@ export default function Home() {
       <meta name="twitter:title" content="mozworth | Indie Alternative Rock Artist" />
       <meta name="twitter:description" content="Discover the music of mozworth, an indie alternative rock artist based in Austin, Texas." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.webp')" }} />

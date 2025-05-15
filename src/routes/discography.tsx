@@ -3,8 +3,6 @@ export default function Discography() {
     <>
       <title>Discography | mozworth</title>
       <meta name="description" content="Explore the full discography of mozworth: albums, singles, and more." />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#000000" />
       <main class="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background image */}
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.webp')" }} />
