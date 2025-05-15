@@ -7,7 +7,8 @@
     "start": "vinxi start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update-sw-cache": "node scripts/update-sw-cache.js"
   },
   "dependencies": {
     "@inrupt/solid-client": "^2.1.2",
