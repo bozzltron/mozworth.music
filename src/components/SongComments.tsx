@@ -1,4 +1,4 @@
-import { createSignal, For, onMount } from "solid-js";
+import { createSignal, For, onMount, onCleanup } from "solid-js";
 import { Session } from "@inrupt/solid-client-authn-browser";
 import {
   saveFileInContainer,
@@ -14,26 +14,47 @@ export default function SongComments(props: { contentId: string }) {
   const [comment, setComment] = createSignal("");
   const [loading, setLoading] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
-  const [comments, setComments] = createSignal<any[]>([]);
+  const [comments, setComments] = createSignal<Array<Record<string, unknown>>>([]);
   const [mounted, setMounted] = createSignal(false);
+  const [indexExists, setIndexExists] = createSignal<boolean>(true);
 
-  // On mount, restore session if possible
-  if (typeof window !== "undefined") {
+  onMount(() => {
+    let unsub: (() => void) | undefined;
     import("@inrupt/solid-client-authn-browser").then(({ getDefaultSession, handleIncomingRedirect }) => {
       handleIncomingRedirect({ restorePreviousSession: true }).then(() => {
         const s = getDefaultSession();
         setSession(s);
         setWebId(s.info.webId || null);
+        // Log the session after login
+        if (s.info.isLoggedIn) {
+          console.log("Solid session after login:", s);
+        }
         // Clean up ?code=...&state=... from the URL after login
         if (window.location.search.includes("code=")) {
           window.history.replaceState({}, document.title, window.location.pathname);
         }
       });
+      // Listen for session changes
+      const s = getDefaultSession();
+      const onChange = () => {
+        setSession(s);
+        setWebId(s.info.webId || null);
+        if (s.info.isLoggedIn) {
+          console.log("Solid session after login:", s);
+        }
+      };
+      s.events.on("login", onChange);
+      s.events.on("logout", onChange);
+      unsub = () => {
+        s.events.off("login", onChange);
+        s.events.off("logout", onChange);
+      };
     });
-  }
-  onMount(() => {
     setMounted(true);
     fetchComments();
+    onCleanup(() => {
+      if (unsub) unsub();
+    });
   });
 
   // Fetch comments: fetch index file, then fetch each comment file
@@ -50,27 +71,41 @@ export default function SongComments(props: { contentId: string }) {
       // 1. Fetch the index file (JSON array of comment URLs)
       const res = await fetch(INDEX_POD);
       if (res.status === 404) {
+        setIndexExists(false);
         setComments([]);
         setLoading(false);
         return;
       }
+      setIndexExists(true);
       if (!res.ok) throw new Error("Failed to fetch index file");
-      const index = await res.json();
+      const index: string[] = await res.json();
       if (!Array.isArray(index)) throw new Error("Index file is not an array");
-      // 2. Fetch each comment file
-      const commentObjs = await Promise.all(index.map(async (url: string) => {
+      // 2. Fetch each comment file, prune missing ones
+      const validComments: Record<string, unknown>[] = [];
+      const validUrls: string[] = [];
+      await Promise.all(index.map(async (url: string) => {
         try {
           const r = await fetch(url);
-          if (!r.ok) return null;
+          if (!r.ok) throw new Error("Not found");
           const data = await r.json();
-          return { ...data, url };
+          validComments.push({ ...data, url });
+          validUrls.push(url);
         } catch {
-          return null;
+          // If not found, skip and prune
         }
       }));
-      setComments(commentObjs.filter(Boolean));
-    } catch (e: any) {
-      setError(e.message || "Failed to fetch comments");
+      // If any URLs were pruned, update the index
+      if (validUrls.length !== index.length) {
+        await fetch(INDEX_POD, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(validUrls, null, 2),
+          credentials: "include"
+        });
+      }
+      setComments(validComments);
+    } catch (e) {
+      setError((e as Error).message || "Failed to fetch comments");
       setComments([]);
     }
     setLoading(false);
@@ -81,6 +116,7 @@ export default function SongComments(props: { contentId: string }) {
     setLoading(true);
     setError(null);
     try {
+      const { getDefaultSession } = await import("@inrupt/solid-client-authn-browser");
       const s = getDefaultSession();
       if (!s.info.isLoggedIn || !webId()) throw new Error("Not logged in");
       // 1. Get user's pod root
@@ -102,13 +138,16 @@ export default function SongComments(props: { contentId: string }) {
       const file = new File([JSON.stringify(commentData, null, 2)], commentFileName, { type: "application/json" });
       await saveFileInContainer(commentsFolder, file, { slug: commentFileName, contentType: "application/json", fetch: s.fetch });
       // 3. Update index file in designated pod
-      // Fetch index
       let indexArr: string[] = [];
-      try {
-        const res = await fetch(INDEX_POD);
-        if (res.ok) indexArr = await res.json();
-      } catch {}
-      if (!Array.isArray(indexArr)) indexArr = [];
+      if (indexExists()) {
+        try {
+          const res = await fetch(INDEX_POD);
+          if (res.ok) indexArr = await res.json();
+        } catch {
+          // ignore
+        }
+        if (!Array.isArray(indexArr)) indexArr = [];
+      }
       indexArr.push(commentUrl);
       // Save updated index
       await fetch(INDEX_POD, {
@@ -117,10 +156,11 @@ export default function SongComments(props: { contentId: string }) {
         body: JSON.stringify(indexArr, null, 2),
         credentials: "include"
       });
+      setIndexExists(true);
       setComment("");
       await fetchComments();
-    } catch (e: any) {
-      setError(e.message || "Failed to post comment to Solid pod.");
+    } catch (e) {
+      setError((e as Error).message || "Failed to post comment to Solid pod.");
     }
     setLoading(false);
   };
@@ -159,7 +199,7 @@ export default function SongComments(props: { contentId: string }) {
                 <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={login}>Log in with Solid Pod</button>
               </div>
             )}
-            {webId() && (
+            {session()?.info.isLoggedIn && (
               <div class="mb-4">
                 <textarea
                   class="w-full rounded bg-black/60 text-white p-2 mb-2 border border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
