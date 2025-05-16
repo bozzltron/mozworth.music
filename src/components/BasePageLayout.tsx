@@ -30,6 +30,12 @@ export default function BasePageLayout(props: BasePageLayoutProps) {
           </div>
         </article>
       </main>
+      {/* Footer */}
+      <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 mt-auto bg-black/70">
+        &copy; {new Date().getFullYear()} mozworth. All rights reserved. &mdash;
+        <a href="/" class="text-teal-300 hover:underline mx-1">Home</a>|
+        <a href="/discography" class="text-teal-300 hover:underline mx-1">Discography</a>
+      </footer>
     </>
   );
 } 

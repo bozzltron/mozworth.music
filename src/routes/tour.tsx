@@ -73,7 +73,6 @@ export default function Tour() {
           </div>
 
           <a href="/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black mt-2">&larr; Back to Home</a>
-          <div class="text-xs text-gray-400 mt-8">&copy; {new Date().getFullYear()} mozworth. All rights reserved.</div>
         </div>
       </main>
     </>
