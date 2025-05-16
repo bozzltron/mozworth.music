@@ -167,10 +167,23 @@ export default function SongComments(props: { contentId: string }) {
 
   // Login handler (always use solidcommunity.net)
   const login = async () => {
-    const session = getDefaultSession();
+    if (typeof window === "undefined") return;
+    const session = (await import("@inrupt/solid-client-authn-browser")).getDefaultSession();
+    let redirectUrl = "";
+    try {
+      redirectUrl = window.location.origin + window.location.pathname;
+    } catch {
+      // ignore
+    }
+    // Fallback to production URL if something is wrong
+    if (!redirectUrl || typeof redirectUrl !== "string" || redirectUrl === "null" || redirectUrl === "undefined" || !redirectUrl.startsWith("https://")) {
+      redirectUrl = "https://mozworth.music/";
+      console.warn("Fallback to hardcoded redirectUrl:", redirectUrl);
+    }
+    console.log("Redirect URL for Solid login:", redirectUrl);
     session.login({
       oidcIssuer: "https://solidcommunity.net",
-      redirectUrl: window.location.href,
+      redirectUrl,
       clientName: "mozworth.music"
     });
   };
