@@ -1,7 +1,7 @@
 import { createSignal } from "solid-js";
 import SmartPromo from "../components/SmartPromo";
 
-// @ts-ignore
+// @ts-expect-error: Window.gtag is injected by Google Analytics and may not be present in all environments.
 // eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
 
@@ -25,7 +25,11 @@ export default function Home() {
       <meta name="twitter:site" content="@mozworthmusic" />
       <meta name="twitter:creator" content="@mozworthmusic" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      {/*
+        The innerHTML attribute is used here to inject static JSON-LD for SEO purposes.
+        The content is not user-generated and is safe in this context.
+      */}
+      <script type="application/ld+json" innerHTML={`<!--${JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicAlbum",
         "name": "mozworth",
@@ -36,7 +40,7 @@ export default function Home() {
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/albums/mozworth"
-      }`} />
+      })}-->`} />
       {/* SEO & Social Meta Tags */}
       <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
       <meta property="og:title" content="mozworth | Indie Alternative Rock Artist" />
@@ -57,7 +61,7 @@ export default function Home() {
    
         {/* Main content */}
         <div
-          class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-10 md:rounded-[10px] bg-black/70"
+          class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70"
         >
           <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
           <h1 class="text-3xl md:text-4xl font-bold mb-6">Hello! I'm mozworth</h1>
@@ -66,16 +70,16 @@ export default function Home() {
             <SmartPromo />
           </div>
           {/* Actions */}
-          <div class="flex flex-wrap justify-center gap-3 mb-6">
-            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'music' }); }}>Listen To Music</a>
-            <a href="#" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</a>
-            <a href="https://mozworth.beehiiv.com/subscribe" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Newsletter', destination: 'beehiiv' }); }}>Join The Newsletter</a>
-            <a href="https://mozworth.printful.me/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Visit The Store</a>
-            <a href="https://www.pressjunkiepr.com/clients/mozworth/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'pressjunkiepr' }); }}>Press Kit</a>
-            <a href="/press" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
-            <a href="/discography" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Discography</a>
-            <a href="/tour" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
-            <a href="https://www.pressjunkiepr.com/contact/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
+          <div class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 mb-6 w-full">
+            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'music' }); }}>Listen To Music</a>
+            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</a>
+            <a href="https://mozworth.beehiiv.com/subscribe" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Newsletter', destination: 'beehiiv' }); }}>Join The Newsletter</a>
+            <a href="https://mozworth.printful.me/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Visit The Store</a>
+            <a href="https://www.pressjunkiepr.com/clients/mozworth/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'pressjunkiepr' }); }}>Press Kit</a>
+            <a href="/press" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
+            <a href="/discography" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Discography</a>
+            <a href="/tour" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
+            <a href="https://www.pressjunkiepr.com/contact/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
           </div>
           <div class="text-xs text-gray-400 mt-8">
             &copy; {new Date().getFullYear()} mozworth. All rights reserved.
