@@ -4,57 +4,51 @@ import {
   saveFileInContainer,
   getPodUrlAll
 } from "@inrupt/solid-client";
-import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 
 const INDEX_POD = import.meta.env.VITE_COMMENTS_INDEX_POD;
 
+// Define a type for comments
+export type Comment = {
+  text: string;
+  date: string;
+  author: string;
+  contentId: string;
+  url?: string;
+};
+
 export default function SongComments(props: { contentId: string }) {
-  const [session, setSession] = createSignal<Session | null>(null);
-  const [webId, setWebId] = createSignal<string | null>(null);
+  const session = new Session();
+  const [webId, setWebId] = createSignal<string | null>(session.info.webId || null);
+  const [loggedIn, setLoggedIn] = createSignal(session.info.isLoggedIn);
   const [comment, setComment] = createSignal("");
   const [loading, setLoading] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
-  const [comments, setComments] = createSignal<Array<Record<string, unknown>>>([]);
+  const [comments, setComments] = createSignal<Comment[]>([]);
   const [mounted, setMounted] = createSignal(false);
   const [indexExists, setIndexExists] = createSignal<boolean>(true);
-
-  onMount(() => {
-    let unsub: (() => void) | undefined;
-    import("@inrupt/solid-client-authn-browser").then(({ getDefaultSession, handleIncomingRedirect }) => {
-      handleIncomingRedirect({ restorePreviousSession: true }).then(() => {
-        const s = getDefaultSession();
-        setSession(s);
-        setWebId(s.info.webId || null);
-        // Log the session after login
-        if (s.info.isLoggedIn) {
-          console.log("Solid session after login:", s);
-        }
-        // Clean up ?code=...&state=... from the URL after login
-        if (window.location.search.includes("code=")) {
-          window.history.replaceState({}, document.title, window.location.pathname);
-        }
-      });
-      // Listen for session changes
-      const s = getDefaultSession();
-      const onChange = () => {
-        setSession(s);
-        setWebId(s.info.webId || null);
-        if (s.info.isLoggedIn) {
-          console.log("Solid session after login:", s);
-        }
-      };
-      s.events.on("login", onChange);
-      s.events.on("logout", onChange);
-      unsub = () => {
-        s.events.off("login", onChange);
-        s.events.off("logout", onChange);
-      };
-    });
-    setMounted(true);
-    fetchComments();
+  
+  onMount(async () => {
+    // Listen for session changes
+    const listener = () => {
+      setLoggedIn(session.info.isLoggedIn);
+      setWebId(session.info.webId || null);
+      if (session.info.isLoggedIn && session.info.webId) {
+        localStorage.setItem("solid-webid", session.info.webId);
+      }
+    };
+    session.events.on("login", listener);
+    session.events.on("logout", listener);
     onCleanup(() => {
-      if (unsub) unsub();
+      session.events.off("login", listener);
+      session.events.off("logout", listener);
     });
+
+    // Handle incoming redirect (for OIDC)
+    await session.handleIncomingRedirect({ restorePreviousSession: true });
+    // Set initial state
+    setLoggedIn(session.info.isLoggedIn);
+    setWebId(session.info.webId || null);
+    setMounted(true);
   });
 
   // Fetch comments: fetch index file, then fetch each comment file
@@ -81,15 +75,18 @@ export default function SongComments(props: { contentId: string }) {
       const index: string[] = await res.json();
       if (!Array.isArray(index)) throw new Error("Index file is not an array");
       // 2. Fetch each comment file, prune missing ones
-      const validComments: Record<string, unknown>[] = [];
+      const validComments: Comment[] = [];
       const validUrls: string[] = [];
       await Promise.all(index.map(async (url: string) => {
         try {
           const r = await fetch(url);
           if (!r.ok) throw new Error("Not found");
           const data = await r.json();
-          validComments.push({ ...data, url });
-          validUrls.push(url);
+          // Validate and coerce to Comment type
+          if (typeof data.text === "string" && typeof data.date === "string" && typeof data.author === "string" && typeof data.contentId === "string") {
+            validComments.push({ ...data, url });
+            validUrls.push(url);
+          }
         } catch {
           // If not found, skip and prune
         }
@@ -116,11 +113,9 @@ export default function SongComments(props: { contentId: string }) {
     setLoading(true);
     setError(null);
     try {
-      const { getDefaultSession } = await import("@inrupt/solid-client-authn-browser");
-      const s = getDefaultSession();
-      if (!s.info.isLoggedIn || !webId()) throw new Error("Not logged in");
+      if (!session.info.isLoggedIn || !webId()) throw new Error("Not logged in");
       // 1. Get user's pod root
-      const podUrls = await getPodUrlAll(webId()!, { fetch: s.fetch });
+      const podUrls = await getPodUrlAll(webId()!, { fetch: session.fetch });
       if (!podUrls.length) throw new Error("No pod found for user");
       const podRoot = podUrls[0];
       // 2. Save comment file in user's pod
@@ -136,7 +131,7 @@ export default function SongComments(props: { contentId: string }) {
       };
       // Ensure folder exists by trying to save file
       const file = new File([JSON.stringify(commentData, null, 2)], commentFileName, { type: "application/json" });
-      await saveFileInContainer(commentsFolder, file, { slug: commentFileName, contentType: "application/json", fetch: s.fetch });
+      await saveFileInContainer(commentsFolder, file, { slug: commentFileName, contentType: "application/json", fetch: session.fetch });
       // 3. Update index file in designated pod
       let indexArr: string[] = [];
       if (indexExists()) {
@@ -166,33 +161,26 @@ export default function SongComments(props: { contentId: string }) {
   };
 
   // Login handler (always use solidcommunity.net)
-  const login = async () => {
-    if (typeof window === "undefined") return;
-    const session = (await import("@inrupt/solid-client-authn-browser")).getDefaultSession();
-    let redirectUrl = "";
+  const handleLogin = async () => {
     try {
-      redirectUrl = window.location.origin + window.location.pathname;
-    } catch {
-      // ignore
+      await session.login({
+        oidcIssuer: "https://solidcommunity.net",
+        redirectUrl: window.location.href,
+        clientName: "mozworth music",
+      });
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred during login.");
+      }
     }
-    // Fallback to production URL if something is wrong
-    if (!redirectUrl || typeof redirectUrl !== "string" || redirectUrl === "null" || redirectUrl === "undefined" || !redirectUrl.startsWith("https://")) {
-      redirectUrl = "https://mozworth.music/";
-      console.warn("Fallback to hardcoded redirectUrl:", redirectUrl);
-    }
-    console.log("Redirect URL for Solid login:", redirectUrl);
-    session.login({
-      oidcIssuer: "https://solidcommunity.net",
-      redirectUrl,
-      clientName: "mozworth.music"
-    });
   };
 
   // Logout handler
   const logout = async () => {
-    const session = getDefaultSession();
     await session.logout();
-    setSession(null);
+    setLoggedIn(false);
     setWebId(null);
   };
 
@@ -202,17 +190,17 @@ export default function SongComments(props: { contentId: string }) {
         <h3 class="text-xl font-bold mb-2 text-teal-400">Comments</h3>
         {mounted() && (
           <>
-            {webId() ? (
+            {loggedIn() && webId() ? (
               <div class="mb-4">
                 <div class="mb-2 text-green-300">Logged in as <span class="font-mono">{webId()}</span></div>
                 <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={logout}>Log out</button>
               </div>
             ) : (
               <div class="mb-4">
-                <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={login}>Log in with Solid Pod</button>
+                <button class="px-4 py-2 rounded bg-teal-500 text-white font-semibold hover:bg-teal-400 transition mr-2" onClick={handleLogin}>Log in with Solid Pod</button>
               </div>
             )}
-            {session()?.info.isLoggedIn && (
+            {loggedIn() && (
               <div class="mb-4">
                 <textarea
                   class="w-full rounded bg-black/60 text-white p-2 mb-2 border border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
