@@ -184,7 +184,22 @@ We can't back down now</p></div>,
         <p>Mastered by Steve Glaze at Tone Freq Studios</p>
         <p>Cover art by Josh Row</p>
         <p>Cover art photography by Kelly Treybig</p>
-      </>
+      </>,
+    },
+    {
+      label: "Reviews",
+      content: (
+        <div>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+            Great news! Your song has been added to our "Acoustic Journeys" playlist. We were truly impressed by the rich, organic quality of your acoustic instrumentation, which blends seamlessly with the emotive and textured vocal performance. The guitar work, characterized by its nuanced picking and strumming, creates a soothing backdrop, while the vocals deliver an emotional narrative that is both compelling and intimate. This combination offers a sense of authenticity that fits perfectly with our playlist’s aesthetic. 
+            <span class="block text-yellow-300 text-sm mt-1">Melodic Journeys</span>
+          </blockquote>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          These vibes sound so cool, they just grab you. 
+          <span class="block text-yellow-300 text-sm mt-1">Crashtest Recordings </span>
+          </blockquote>
+        </div>
+      ),
     },
   ];
 

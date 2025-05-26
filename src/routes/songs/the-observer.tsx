@@ -168,6 +168,26 @@ I'm just listening</p>
         <p>Cover art photography by Kelly Treybig</p>
       </>
     },
+    {
+      label: "Reviews",
+      content: (
+        <div>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          es una pieza que invita al oyente a sumergirse en un espacio introspectivo y contemplativo. La producción es atmosférica, con capas de sonidos que crean una sensación de vigilancia silenciosa, como si estuvieras observando desde lejos sin interferir en lo que ocurre.
+          <br /><br /> ( It's a piece that invites the listener to immerse themselves in an introspective and contemplative space. The production is atmospheric, with layers of sounds that create a sense of silent surveillance, as if you were observing from afar without interfering with what's happening.
+
+)<br />
+            <span class="block text-yellow-300 text-sm mt-1">B&amp;W Peru</span>
+          </blockquote>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          Very beautiful voice and calming energy. Lets go!  
+          <br />
+          <span class="block text-yellow-300 text-sm mt-1">NeverGrownUp </span>
+          </blockquote>
+          
+        </div>
+      ),
+    },
   ];
 
   return (

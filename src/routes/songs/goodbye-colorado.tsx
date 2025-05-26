@@ -198,6 +198,48 @@ export default function GoodbyeColorado() {
         </>
       ),
     },
+    {
+      label: "Reviews",
+      content: (
+        <div class="mt-8 p-4 bg-black/40 rounded-lg border border-white/20">
+          <h3 class="text-lg font-semibold mb-2">Indie Dream Review</h3>
+          <p class="mb-2">Indie Dream describes "Goodbye Colorado" as a moving indie rock track that explores the emotional journey of leaving behind not just a place, but memories, sensations, and people. The review highlights the song's blend of melodic indie softness with electric guitar and slow percussion, calling it a touching and nostalgic reflection on connections that will be remembered with love. Mozworth's serious and sentimental interpretation is praised for effectively conveying these emotions.</p>
+          <a href="https://www.indiedream.com.mx/2024/10/mozworth-goodbye-colorado.html?m=1" target="_blank" rel="noopener" class="text-teal-300 underline hover:text-teal-400">Read the full Indie Dream review</a>
+        </div>
+      ),
+    },
+    {
+      label: "Performances",
+      content: (
+        <div class="flex flex-col items-start gap-4">
+          <p class="mb-4">Watch a live performance of "Goodbye Colorado":</p>
+          <div class="w-full aspect-video max-w-2xl">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/0He2ot6VCnc"
+              title="Goodbye Colorado - Live Performance"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
+          <div class="w-full aspect-video max-w-2xl mt-8">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/Bl828gy-gIo"
+              title="Goodbye Colorado - Live at The Ballroom"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+      ),
+    },
   ];
 
   return (

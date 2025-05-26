@@ -159,9 +159,16 @@ export default function LettingGo() {
       label: "Reviews",
       content: (
         <div>
-          <blockquote class="text-base md:text-lg italic text-white mb-2">Your latest Alternative release showcases your growth as an artist. It's exciting, it's dynamic, and it's going to make waves.<br /><span class="block text-yellow-300 text-sm mt-1">OnTheRoad</span></blockquote>
-          <blockquote class="text-base md:text-lg italic text-white mb-2">The vocals sound like they're revealing something important about life. This sound feels like an invitation to forget everything and just enjoy the music.<br /><span class="block text-yellow-300 text-sm mt-1">Crashtest Recordings</span></blockquote>
-          <blockquote class="text-base md:text-lg italic text-white mb-2">es una canción introspectiva que combina una producción suave con una letra que habla sobre la liberación emocional y la superación personal. Es una balada que captura la sensación de dejar atrás el pasado para avanzar hacia algo new y más saludable. ( It's an introspective song that combines a soft production with lyrics that speak to emotional release and self-improvement. It's a ballad that captures the feeling of leaving the past behind to move forward toward something new and healthier.)<br /><span class="block text-yellow-300 text-sm mt-1">B&W Peru</span></blockquote>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          This sound feels like an invitation to forget everything and just enjoy the music. The vocals sound like they’re revealing something important about life. 
+            <br />
+            <span class="block text-yellow-300 text-sm mt-1">Crashtest Recordings </span>
+          </blockquote>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          Your latest Alternative release showcases your growth as an artist. It's exciting, it's dynamic, and it's going to make waves. 
+            <br />
+            <span class="block text-yellow-300 text-sm mt-1">OnTheRoad </span>
+          </blockquote>
         </div>
       ),
     },

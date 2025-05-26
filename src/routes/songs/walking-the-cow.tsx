@@ -159,6 +159,19 @@ I am walking the cow`}</div>
         </>
       ),
     },
+    {
+      label: "Reviews",
+      content: (
+        <div>
+          <blockquote class="text-base md:text-lg italic text-white mb-2">
+          Una reinterpretación peculiar, casi surrealista, que convierte lo cotidiano en algo profundamente extraño y familiar al mismo tiempo. Tonos distorsionados y estructura no convencional hacen de este tema una rareza encantadora. 
+          <br />  
+          ( A peculiar, almost surreal reinterpretation that transforms the everyday into something profoundly strange and familiar at the same time. Distorted tones and unconventional structure make this track a charming oddity. )<br />
+            <span class="block text-yellow-300 text-sm mt-1">B&amp;W Peru</span>
+          </blockquote>
+        </div>
+      ),
+    },
   ]);
 
   createEffect(() => {

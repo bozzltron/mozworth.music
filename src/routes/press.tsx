@@ -31,6 +31,15 @@ export default function Press() {
               </div>
               <a href="https://kutx.org/song-of-the-day/mozworth-postcard-premiere/" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Read Full Article</a>
             </div>
+            <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
+              <h2 class="text-2xl font-semibold mb-2">Mozworth - Goodbye Colorado</h2>
+              <div class="text-lg text-white/70 mb-1">Indie Dream</div>
+              <div class="text-sm text-white/60 mb-3">October 16, 2024</div>
+              <div class="mb-4 leading-relaxed">
+                "Indie Dream describes 'Goodbye Colorado' as a moving indie rock track that explores the emotional journey of leaving behind not just a place, but memories, sensations, and people. The review highlights the song's blend of melodic indie softness with electric guitar and slow percussion, calling it a touching and nostalgic reflection on connections that will be remembered with love. Mozworth's serious and sentimental interpretation is praised for effectively conveying these emotions."
+              </div>
+              <a href="https://www.indiedream.com.mx/2024/10/mozworth-goodbye-colorado.html?m=1" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Read Full Review</a>
+            </div>
           </div>
         </main>
         <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70">
