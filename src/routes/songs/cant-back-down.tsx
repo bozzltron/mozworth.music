@@ -191,13 +191,41 @@ We can't back down now</p></div>,
       content: (
         <div>
           <blockquote class="text-base md:text-lg italic text-white mb-2">
-            Great news! Your song has been added to our "Acoustic Journeys" playlist. We were truly impressed by the rich, organic quality of your acoustic instrumentation, which blends seamlessly with the emotive and textured vocal performance. The guitar work, characterized by its nuanced picking and strumming, creates a soothing backdrop, while the vocals deliver an emotional narrative that is both compelling and intimate. This combination offers a sense of authenticity that fits perfectly with our playlist’s aesthetic. 
-            <span class="block text-yellow-300 text-sm mt-1">Melodic Journeys</span>
+            Una explosión de energía y determinación, con una producción que impulsa hacia adelante y una letra que inspira a no rendirse. (An explosion of energy and determination, with production that pushes forward and lyrics that inspire you not to give up.)<br />
+            <span class="block text-yellow-300 text-sm mt-1">B&amp;W Peru</span>
           </blockquote>
-          <blockquote class="text-base md:text-lg italic text-white mb-2">
-          These vibes sound so cool, they just grab you. 
-          <span class="block text-yellow-300 text-sm mt-1">Crashtest Recordings </span>
-          </blockquote>
+        </div>
+      ),
+    },
+    {
+      label: "Performances",
+      content: (
+        <div class="flex flex-col items-start gap-4">
+          <p class="mb-4">Watch live performances of "Can't Back Down":</p>
+          <div class="w-full aspect-video max-w-2xl">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/EcEpQ2TbK-I"
+              title="Can't Back Down - Live Performance 1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
+          <div class="w-full aspect-video max-w-2xl mt-8">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/5aJvGx3ARAs"
+              title="Can't Back Down - Live Performance 2"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
         </div>
       ),
     },

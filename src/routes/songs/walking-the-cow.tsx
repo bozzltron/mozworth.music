@@ -164,11 +164,29 @@ I am walking the cow`}</div>
       content: (
         <div>
           <blockquote class="text-base md:text-lg italic text-white mb-2">
-          Una reinterpretación peculiar, casi surrealista, que convierte lo cotidiano en algo profundamente extraño y familiar al mismo tiempo. Tonos distorsionados y estructura no convencional hacen de este tema una rareza encantadora. 
-          <br />  
-          ( A peculiar, almost surreal reinterpretation that transforms the everyday into something profoundly strange and familiar at the same time. Distorted tones and unconventional structure make this track a charming oddity. )<br />
+            es una canción introspectiva que combina una producción suave con una letra que habla sobre la liberación emocional y la superación personal. Es una balada que captura la sensación de dejar atrás el pasado para avanzar hacia algo nuevo y más saludable. (It's an introspective song that combines a soft production with lyrics that speak to emotional release and self-improvement. It's a ballad that captures the feeling of leaving the past behind to move forward toward something new and healthier.)<br />
             <span class="block text-yellow-300 text-sm mt-1">B&amp;W Peru</span>
           </blockquote>
+        </div>
+      ),
+    },
+    {
+      label: "Performances",
+      content: (
+        <div class="flex flex-col items-start gap-4">
+          <p class="mb-4">Watch a live performance of "Walking The Cow":</p>
+          <div class="w-full aspect-video max-w-2xl">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/edJ2sMOpNHw"
+              title="Walking The Cow - Live Performance"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
         </div>
       ),
     },

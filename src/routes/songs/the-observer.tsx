@@ -188,6 +188,26 @@ I'm just listening</p>
         </div>
       ),
     },
+    {
+      label: "Performances",
+      content: (
+        <div class="flex flex-col items-start gap-4">
+          <p class="mb-4">Watch a live performance of "The Observer":</p>
+          <div class="w-full aspect-video max-w-2xl">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/_Wb_knkWYbk"
+              title="The Observer - Live Performance"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+      ),
+    },
   ];
 
   return (
