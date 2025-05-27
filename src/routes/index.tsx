@@ -31,15 +31,22 @@ export default function Home() {
       */}
       <script type="application/ld+json" innerHTML={`<!--${JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "MusicAlbum",
+        "@type": "MusicGroup",
         "name": "mozworth",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "url": "https://mozworth.music/albums/mozworth"
+        "url": "https://mozworth.music",
+        "image": "https://mozworth.music/mozworth.webp",
+        "genre": ["Indie Rock", "Alternative Rock"],
+        "sameAs": [
+          "https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO",
+          "https://music.apple.com/us/artist/mozworth/1761894108",
+          "https://mozworth.bandcamp.com",
+          "https://www.youtube.com/@mozworthmusic",
+          "https://soundcloud.com/mozworth",
+          "https://www.instagram.com/mozworthmusic/",
+          "https://www.tiktok.com/@mozworthmusic",
+          "https://bsky.app/profile/mozworth.music",
+          "https://www.facebook.com/mozworth"
+        ]
       })}-->`} />
       {/* SEO & Social Meta Tags */}
       <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
@@ -69,7 +76,7 @@ export default function Home() {
             </div>
             {/* Actions */}
             <div class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 mb-6 w-full">
-              <a href="/discography" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Discography</a>
+              <a href="/discography" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'discography_page' }); }}>Music</a>
               <a href="/tour" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
               <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'music' }); }}>Find Streaming</a>
               <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</a>
