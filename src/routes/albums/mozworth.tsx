@@ -208,6 +208,7 @@ export default function MozworthAlbum() {
     <>
       <title>mozworth (Album) | mozworth</title>
       <meta name="description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/albums/mozworth/" />
       <meta property="og:type" content="music.album" />
       <meta property="og:title" content="mozworth (Album) | mozworth" />
@@ -231,6 +232,7 @@ export default function MozworthAlbum() {
         },
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/albums/mozworth/"
       }`} />
       <BasePageLayout

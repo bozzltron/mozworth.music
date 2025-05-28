@@ -246,6 +246,7 @@ export default function GoodbyeColorado() {
     <>
       <title>Goodbye Colorado | mozworth</title>
       <meta name="description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Goodbye Colorado' from the self-titled debut album (2024)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/goodbye-colorado/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Goodbye Colorado | mozworth" />
@@ -271,6 +272,7 @@ export default function GoodbyeColorado() {
         },
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/goodbye-colorado/"
       }`} />
       <BasePageLayout

@@ -241,6 +241,7 @@ We can't back down now</p></div>,
     <>
       <title>Can't Back Down | mozworth</title>
       <meta name="description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/cant-back-down/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Can't Back Down | mozworth" />
@@ -266,6 +267,7 @@ We can't back down now</p></div>,
         },
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/cant-back-down/"
       }`} />
       <BasePageLayout

@@ -202,6 +202,7 @@ I am walking the cow`}</div>
     <>
       <title>Walking The Cow | mozworth</title>
       <meta name="description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the mozworth cover of 'Walking The Cow' (2025)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/walking-the-cow/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Walking The Cow | mozworth" />
@@ -227,6 +228,7 @@ I am walking the cow`}</div>
         },
         "image": "https://mozworth.music/mozworth-walking-the-cow-cover.webp",
         "datePublished": "2025-01-22",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/walking-the-cow/"
       }`} />
       <BasePageLayout

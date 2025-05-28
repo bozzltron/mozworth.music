@@ -243,6 +243,7 @@ Wishing you were here with me</p>
     <>
       <title>Postcard | mozworth</title>
       <meta name="description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/postcard/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Postcard | mozworth" />
@@ -268,6 +269,7 @@ Wishing you were here with me</p>
         },
         "image": "https://mozworth.music/postcard_cover.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/postcard/"
       }`} />
       <BasePageLayout

@@ -204,6 +204,7 @@ export default function LettingGo() {
     <>
       <title>Letting Go | mozworth</title>
       <meta name="description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/letting-go/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="Letting Go | mozworth" />
@@ -230,6 +231,7 @@ export default function LettingGo() {
         },
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/letting-go/"
       }`} />
       <BasePageLayout

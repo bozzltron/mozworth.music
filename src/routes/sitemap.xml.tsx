@@ -33,16 +33,16 @@ export async function GET({ request }: { request: Request }) {
   // Build URLs with SEO sparkle
   const urls = [
     // Home page: weekly, highest priority
-    `<url><loc>${baseUrl}/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>`,
+    `<url><loc>${baseUrl}/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2025-05-01</lastmod></url>`,
     // All others: monthly, slightly lower priority
     ...staticPages.filter((p) => p !== "").map(
-      (p) => `<url><loc>${baseUrl}/${p}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`
+      (p) => `<url><loc>${baseUrl}/${p}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2025-05-01</lastmod></url>`
     ),
     ...songSlugs.map(
-      (slug) => `<url><loc>${baseUrl}/songs/${slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`
+      (slug) => `<url><loc>${baseUrl}/songs/${slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2025-05-01</lastmod></url>`
     ),
     ...albumSlugs.map(
-      (slug) => `<url><loc>${baseUrl}/albums/${slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`
+      (slug) => `<url><loc>${baseUrl}/albums/${slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2025-05-01</lastmod></url>`
     ),
   ];
 

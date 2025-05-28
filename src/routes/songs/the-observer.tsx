@@ -214,6 +214,7 @@ I'm just listening</p>
     <>
       <title>The Observer | mozworth</title>
       <meta name="description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
+      <meta name="last-modified" content="2025-05-01" />
       <link rel="canonical" href="https://mozworth.music/songs/the-observer/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="The Observer | mozworth" />
@@ -239,6 +240,7 @@ I'm just listening</p>
         },
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
+        "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/the-observer/"
       }`} />
       <BasePageLayout
