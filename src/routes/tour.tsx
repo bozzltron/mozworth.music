@@ -2,6 +2,7 @@ export default function Tour() {
   return (
     <>
       <title>Tour Dates | mozworth</title>
+      <meta name="last-modified" content="2025-05-28" />
       <div class="flex flex-col min-h-screen">
         <main class="flex-1 flex items-center justify-center relative bg-black">
           {/* Background image */}
@@ -20,6 +21,17 @@ export default function Tour() {
             </div>
 
             <div class="tour-date w-full border border-white/30 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <div class="min-w-[200px] text-center md:text-left font-bold">June 6, 2025</div>
+              <div class="venue-info flex-1 text-center md:text-left text-base">
+                <p>South Austin Beer Garden<br />9pm - 10pm<br />Austin, TX</p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
+                <a href="https://www.bandsintown.com/e/106941100-mozworth-at-south-austin-beer-garden?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link inline-block border border-white/30 rounded-full px-4 py-1 text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1B8AZgXj5f/" class="tour-link inline-block border border-white/30 rounded-full px-4 py-1 text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+              </div>
+            </div>
+
+            <div class="tour-date past w-full border border-white/30 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div class="min-w-[200px] text-center md:text-left font-bold">May 16, 2025</div>
               <div class="venue-info flex-1 text-center md:text-left text-base">
                 <p>Unplugged @ Brentwood Social Club<br />4pm – 6pm<br />Austin, TX</p>
