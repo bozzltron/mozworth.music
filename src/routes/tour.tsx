@@ -31,7 +31,7 @@ export default function Tour() {
               </div>
             </div>
 
-            <div class="tour-date past w-full border border-white/30 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
+            <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div class="min-w-[200px] text-center md:text-left font-bold">May 16, 2025</div>
               <div class="venue-info flex-1 text-center md:text-left text-base">
                 <p>Unplugged @ Brentwood Social Club<br />4pm – 6pm<br />Austin, TX</p>
