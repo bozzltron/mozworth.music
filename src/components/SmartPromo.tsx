@@ -15,7 +15,7 @@ export default function SmartPromo(): JSX.Element {
         Live at South Austin Beer Garden
       </div>
       <div class="text-white text-center mb-2">
-        June 6, 2025 &bull; 9pm &ndash; 10pm<br />10700 Menchaca Rd, Austin, TX
+        June 6, 2025 &bull; 8pm &ndash; 10pm<br />10700 Menchaca Rd, Austin, TX
       </div>
       <div class="flex flex-wrap gap-3 justify-center">
         <a
