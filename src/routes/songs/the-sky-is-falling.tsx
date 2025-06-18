@@ -171,7 +171,7 @@ export default function TheSkyIsFalling() {
       <BasePageLayout
         cover={cover}
         info={info}
-        streamingLinks={streamingLinks}
+        streamingLinks={[]}
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#3a5ba0] via-[#7b3fa0] to-[#e05fa0]"
       >
         <TabbedContent
