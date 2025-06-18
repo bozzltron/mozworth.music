@@ -54,12 +54,14 @@ export default function TheSkyIsFalling() {
       </div>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Releasing July 15, 2025</div>
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-2">
-        <button
-          class="inline-block px-5 py-2 text-left rounded bg-teal-500 text-white font-semibold shadow opacity-60 cursor-not-allowed w-full"
-          disabled
+        <a
+          href="https://distrokid.com/hyperfollow/mozworth/the-sky-is-falling"
+          target="_blank"
+          rel="noopener"
+          class="inline-block px-5 py-2 text-left rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
           Pre Save
-        </button>
+        </a>
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch
@@ -170,7 +172,7 @@ export default function TheSkyIsFalling() {
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
-        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f8f8f8] via-[#e0e0e0] to-[#b0b0b0]"
+        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#3a5ba0] via-[#7b3fa0] to-[#e05fa0]"
       >
         <TabbedContent
           key={location.pathname}
