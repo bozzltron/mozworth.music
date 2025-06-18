@@ -5,8 +5,8 @@ export default function SmartPromo(): JSX.Element {
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
       <div class="w-full flex justify-center mb-4">
         <img
-          src="/album-placeholder.webp"
-          alt="The Sky Is Falling single promo"
+          src="/the_sky_is_falling.webp"
+          alt="The Sky Is Falling single cover art"
           class="rounded-xl shadow-lg w-full max-w-[560px] object-cover"
           style="aspect-ratio: 1/1;"
         />
@@ -15,7 +15,7 @@ export default function SmartPromo(): JSX.Element {
         New Single: The Sky Is Falling
       </div>
       <div class="text-white text-center mb-4">
-        Coming July 2025<br />Stay tuned for the debut of mozworth's next single!
+        Coming July 15, 2025<br />Stay tuned for the release of mozworth's next single!
       </div>
       <div class="flex flex-wrap gap-3 justify-center">
         <a

@@ -3,7 +3,7 @@ export default function Discography() {
     <>
       <title>Discography | mozworth</title>
       <meta name="description" content="Explore the full discography of mozworth: albums, singles, and more." />
-      <meta name="last-modified" content="2025-05-30" />
+      <meta name="last-modified" content="2025-06-17" />
       <div class="flex flex-col min-h-screen">
         <main class="flex-1 flex items-center justify-center relative bg-black">
           {/* Background image */}
@@ -14,9 +14,9 @@ export default function Discography() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
               {/* Upcoming Summer Release Placeholder */}
               <a href="/songs/the-sky-is-falling" class="release group bg-black/40 border-2 border-dashed border-white/20 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center w-full mx-auto opacity-80 transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 cursor-pointer select-none" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'discography', event_label: 'The Sky Is Falling', destination: '/songs/the-sky-is-falling' }); }}>
-                <img src="/album-placeholder.webp" alt="Upcoming Summer Release cover art placeholder" class="w-full aspect-square object-cover mb-4 rounded shadow-lg opacity-80 group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+                <img src="/the_sky_is_falling.webp" alt="The Sky Is Falling cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg opacity-80 group-hover:shadow-teal-400/40 transition-shadow duration-200" />
                 <h2 class="text-xl font-bold mb-2 text-gray-300 group-hover:text-teal-300 transition-colors">The Sky Is Falling</h2>
-                <p class="text-white/50 mb-1">Expected July 2025</p>
+                <p class="text-white/50 mb-1">Expected July 15, 2025</p>
                 <p class="text-white/40 text-sm mb-4">A brand new single is coming this summer. Stay tuned for more details!</p>
               </a>
               {/* Walking The Cow */}
