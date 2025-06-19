@@ -2,7 +2,7 @@ export default function Tour() {
   return (
     <>
       <title>Tour Dates | mozworth</title>
-      <meta name="last-modified" content="2025-05-28" />
+      <meta name="last-modified" content="2025-06-19" />
       <div class="flex flex-col min-h-screen">
         <main class="flex-1 flex items-center justify-center relative bg-black">
           {/* Background image */}
@@ -21,6 +21,14 @@ export default function Tour() {
             </div>
 
             <div class="tour-date w-full border border-white/30 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <div class="min-w-[200px] text-center md:text-left font-bold">August 2025 (TBD)</div>
+              <div class="venue-info flex-1 text-center md:text-left text-base">
+                <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />Austin, TX</p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
+            </div>
+
+            <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div class="min-w-[200px] text-center md:text-left font-bold">June 6, 2025</div>
               <div class="venue-info flex-1 text-center md:text-left text-base">
                 <p>South Austin Beer Garden<br />9pm - 10pm<br />Austin, TX</p>
