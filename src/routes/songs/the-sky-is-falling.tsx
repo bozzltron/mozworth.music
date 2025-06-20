@@ -1,39 +1,10 @@
 import { createSignal, createEffect, createMemo } from "solid-js";
-import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 
 export default function TheSkyIsFalling() {
-  const [tab, setTab] = createSignal("Lyrics");
-
-  // Streaming links (placeholders for now)
-  const streamingLinks: StreamingLink[] = [
-    {
-      href: "#",
-      alt: "Spotify",
-      iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify (coming soon)"
-    },
-    {
-      href: "#",
-      alt: "Bandcamp",
-      iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp (coming soon)"
-    },
-    {
-      href: "#",
-      alt: "Apple Music",
-      iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music (coming soon)"
-    },
-    {
-      href: "#",
-      alt: "Tidal",
-      iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal (coming soon)"
-    }
-  ];
+  const [tab, setTab] = createSignal("Press Release");
 
   // Cover art (placeholder)
   const cover = (
@@ -77,14 +48,14 @@ export default function TheSkyIsFalling() {
 
   // Tabbed content using TabbedContent component
   const tabs = createMemo(() => [
-    {
-      label: "Lyrics",
-      content: (
-        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
-          Lyrics will be available on release day. Stay tuned!
-        </div>
-      ),
-    },
+    // {
+    //   label: "Lyrics",
+    //   content: (
+    //     <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+    //       Lyrics will be available on release day. Stay tuned!
+    //     </div>
+    //   ),
+    // },
     {
       label: "Press Release",
       content: (
@@ -132,7 +103,7 @@ export default function TheSkyIsFalling() {
 
   createEffect(() => {
     if (!tabs().some(t => t.label === tab())) {
-      setTab("Lyrics");
+      setTab("Press Release");
     }
   });
 
@@ -177,7 +148,7 @@ export default function TheSkyIsFalling() {
         <TabbedContent
           key={location.pathname}
           tabs={tabs()}
-          defaultTab="Lyrics"
+          defaultTab="Press Release"
         />
       </BasePageLayout>
     </>
