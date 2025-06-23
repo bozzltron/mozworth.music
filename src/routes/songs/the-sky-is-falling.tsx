@@ -24,7 +24,12 @@ export default function TheSkyIsFalling() {
         mozworth &middot; The Sky Is Falling
       </div>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Releasing July 15, 2025</div>
-      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-2">
+      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
+        <a href="https://www.bandsintown.com/e/107046899?" target="_blank" rel="noopener" class="underline hover:text-teal-300">
+          Single Release Party: Aug 1, 2025
+        </a>
+      </div>
+      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <a
           href="https://distrokid.com/hyperfollow/mozworth/the-sky-is-falling"
           target="_blank"

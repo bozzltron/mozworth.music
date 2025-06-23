@@ -15,7 +15,8 @@ export default function SmartPromo(): JSX.Element {
         New Single: The Sky Is Falling
       </div>
       <div class="text-white text-center mb-4">
-        Coming July 15, 2025<br />Stay tuned for the release of mozworth's next single!
+        Coming July 15, 2025<br />
+        Single Release Party: Aug 1, 2025 (<a href="https://www.bandsintown.com/e/107046899?" target="_blank" rel="noopener" class="underline hover:text-teal-300">Bandsintown</a>, <a href="https://www.facebook.com/share/19L86HVi4U/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Facebook</a>)
       </div>
       <div class="flex flex-wrap gap-3 justify-center">
         <a
