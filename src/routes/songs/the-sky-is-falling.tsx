@@ -4,7 +4,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 
 export default function TheSkyIsFalling() {
-  const [tab, setTab] = createSignal("Press Release");
+  const [tab, setTab] = createSignal("Lyrics");
 
   // Cover art (placeholder)
   const cover = (
@@ -53,14 +53,72 @@ export default function TheSkyIsFalling() {
 
   // Tabbed content using TabbedContent component
   const tabs = createMemo(() => [
-    // {
-    //   label: "Lyrics",
-    //   content: (
-    //     <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
-    //       Lyrics will be available on release day. Stay tuned!
-    //     </div>
-    //   ),
-    // },
+    {
+      label: "Lyrics",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+          <pre class="whitespace-pre-line font-sans">
+{`Before I get out of bed
+I put the Internet in my head
+
+And all the lights go red
+The sky is falling!
+
+Oh way oh
+
+The tension is twisting up my mind
+Discorded digital divide
+The information flames are licking high
+The sky is falling!
+
+Get the day job done
+Or join the revolution
+
+Don't know which way to run
+When the sky is falling!
+
+Oh way oh
+
+The tension is twisting up my mind
+Discorded digital divide
+The information flames are licking high
+The sky is falling!
+
+Oh
+Woah
+Woah
+
+The sky is falling!
+
+Oh
+Woah
+Woah
+
+The tension is twisting up my mind
+Discorded digital divide
+The information flames are licking high
+The sky is falling!
+
+Oh
+Woah
+Woah
+
+It's falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!
+Falling!`}
+          </pre>
+        </div>
+      ),
+    },
     {
       label: "Press Release",
       content: (
@@ -108,29 +166,30 @@ export default function TheSkyIsFalling() {
 
   createEffect(() => {
     if (!tabs().some(t => t.label === tab())) {
-      setTab("Press Release");
+      setTab("Lyrics");
     }
   });
 
   return (
     <>
       <title>The Sky Is Falling | mozworth</title>
-      <meta name="description" content="Preview the upcoming single 'The Sky Is Falling' by mozworth. Release date: July 15, 2025. Lyrics, press, and more coming soon!" />
-      <meta name="last-modified" content="2025-06-17" />
+      <meta name="description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
+      <meta name="last-modified" content="2025-01-15" />
       <link rel="canonical" href="https://mozworth.music/songs/the-sky-is-falling/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="The Sky Is Falling | mozworth" />
-      <meta property="og:description" content="Preview the upcoming single 'The Sky Is Falling' by mozworth. Release date: July 15, 2025. Lyrics, press, and more coming soon!" />
+      <meta property="og:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
       <meta property="og:image" content="https://mozworth.music/the_sky_is_falling.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/the-sky-is-falling/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="The Sky Is Falling | mozworth" />
-      <meta name="twitter:description" content="Preview the upcoming single 'The Sky Is Falling' by mozworth. Release date: July 15, 2025. Lyrics, press, and more coming soon!" />
+      <meta name="twitter:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
       <meta name="twitter:image" content="https://mozworth.music/the_sky_is_falling.webp" />
       <script type="application/ld+json" innerHTML={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "The Sky Is Falling",
+        "isrcCode": "QZTB62543528",
         "byArtist": {
           "@type": "MusicGroup",
           "name": "mozworth"
@@ -141,19 +200,20 @@ export default function TheSkyIsFalling() {
         },
         "image": "https://mozworth.music/the_sky_is_falling.webp",
         "datePublished": "2025-07-15",
-        "dateModified": "2025-06-17",
+        "dateModified": "2025-01-15",
         "url": "https://mozworth.music/songs/the-sky-is-falling/"
       })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={[]}
+        isrc="QZTB62543528"
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#3a5ba0] via-[#7b3fa0] to-[#e05fa0]"
       >
         <TabbedContent
           key={location.pathname}
           tabs={tabs()}
-          defaultTab="Press Release"
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
     </>
