@@ -6,14 +6,16 @@ import ShareButton from "../../components/ShareButton";
 export default function TheSkyIsFalling() {
   const [tab, setTab] = createSignal("Lyrics");
 
-  // Cover art (placeholder)
+  // Bandcamp embedded player
   const cover = (
-    <img
-      class="cover-art w-full max-w-[380px] rounded-xl shadow-xl bg-white mb-6 md:mb-8 opacity-80 object-contain"
-      style={{ height: 'auto' }}
-      src="/the_sky_is_falling.webp"
-      alt="The Sky Is Falling cover art"
-    />
+    <iframe
+      style="border: 0; width: 350px; height: 442px;"
+      src="https://bandcamp.com/EmbeddedPlayer/track=2971387129/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      seamless
+      class="rounded-xl shadow-xl mb-6 md:mb-8"
+      title="The Sky Is Falling by mozworth"
+    >
+    </iframe>
   );
 
   // Info section
@@ -31,12 +33,12 @@ export default function TheSkyIsFalling() {
       </div>
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <a
-          href="https://distrokid.com/hyperfollow/mozworth/the-sky-is-falling"
+          href="https://mozworth.bandcamp.com/track/the-sky-is-falling"
           target="_blank"
           rel="noopener"
           class="inline-block px-5 py-2 text-left rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
-          Pre Save / Pre Purchase
+          Purchase
         </a>
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
@@ -157,7 +159,7 @@ Falling!`}
           <p>Bass performed by Jack Shultz</p>
           <p>Mixed and Mastered by Steven Glaze at Tone Freq Studios</p>
           <p>Recorded at mozworth and Mockler home studio's</p>
-          <p>Releasing July 15, 2025</p>
+          <p>Released July 15, 2025</p>
           <p>Cover art by Mark Heaps</p>
         </>
       ),
@@ -185,7 +187,7 @@ Falling!`}
       <meta name="twitter:title" content="The Sky Is Falling | mozworth" />
       <meta name="twitter:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
       <meta name="twitter:image" content="https://mozworth.music/the_sky_is_falling.webp" />
-      <script type="application/ld+json" innerHTML={JSON.stringify({
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "The Sky Is Falling",
@@ -206,7 +208,57 @@ Falling!`}
       <BasePageLayout
         cover={cover}
         info={info}
-        streamingLinks={[]}
+        streamingLinks={[
+          {
+            href: "https://open.spotify.com/track/6iiyVvEns1SUsTfkHwx6kD?si=27f2299ff4754fea",
+            alt: "Spotify",
+            iconSrc: "/spotify.svg",
+            ariaLabel: "Listen on Spotify",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://music.apple.com/us/song/the-sky-is-falling/1821374907",
+            alt: "Apple Music",
+            iconSrc: "/apple-music.svg",
+            ariaLabel: "Listen on Apple Music",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://soundcloud.com/mozworth/the-sky-is-falling",
+            alt: "SoundCloud",
+            iconSrc: "/soundcloud.svg",
+            ariaLabel: "Listen on SoundCloud",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://music.amazon.com/tracks/B0FDKBDH2H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_pSHxtvcKctGL28kj0uhZH0usA",
+            alt: "Amazon Music",
+            iconSrc: "/amazon-music.svg",
+            ariaLabel: "Listen on Amazon Music",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://www.youtube.com/watch?v=Tn1Ga35DhrE&list=OLAK5uy_ns4hFDiALnjWUzaiNs6166-WDzuktb_og",
+            alt: "YouTube",
+            iconSrc: "/youtube.svg",
+            ariaLabel: "Listen on YouTube",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://link.deezer.com/s/30tGGUK2Q6JX8l4OTJWGB",
+            alt: "Deezer",
+            iconSrc: "/deezer.svg",
+            ariaLabel: "Listen on Deezer",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://tidal.com/browse/track/442809178?u",
+            alt: "Tidal",
+            iconSrc: "/tidal.svg",
+            ariaLabel: "Listen on Tidal",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'The Sky Is Falling' }); }
+          },
+        ]}
         isrc="QZTB62543528"
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#3a5ba0] via-[#7b3fa0] to-[#e05fa0]"
       >
