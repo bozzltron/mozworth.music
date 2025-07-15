@@ -12,7 +12,7 @@ export default function TheSkyIsFalling() {
       style="border: 0; width: 350px; height: 442px;"
       src="https://bandcamp.com/EmbeddedPlayer/track=2971387129/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
       seamless
-      class="rounded-xl shadow-xl mb-6 md:mb-8"
+      class="rounded-xl shadow-xl mb-4 md:mb-8"
       title="The Sky Is Falling by mozworth"
     >
     </iframe>
@@ -25,7 +25,7 @@ export default function TheSkyIsFalling() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; The Sky Is Falling
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Releasing July 15, 2025</div>
+      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released July 15, 2025</div>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         <a href="https://www.bandsintown.com/e/107046899?" target="_blank" rel="noopener" class="underline hover:text-teal-300">
           Single Release Party: Aug 1, 2025
@@ -47,7 +47,7 @@ export default function TheSkyIsFalling() {
         <ShareButton
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/the-sky-is-falling/"}
           title="The Sky Is Falling by mozworth"
-          text="Mark your calendar for this upcoming single by mozworth!"
+          text="Check out this song by mozworth!"
         />
       </div>
     </>
@@ -175,17 +175,17 @@ Falling!`}
   return (
     <>
       <title>The Sky Is Falling | mozworth</title>
-      <meta name="description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
-      <meta name="last-modified" content="2025-01-15" />
+      <meta name="description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
+      <meta name="last-modified" content="2025-07-15" />
       <link rel="canonical" href="https://mozworth.music/songs/the-sky-is-falling/" />
       <meta property="og:type" content="music.song" />
       <meta property="og:title" content="The Sky Is Falling | mozworth" />
-      <meta property="og:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
+      <meta property="og:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
       <meta property="og:image" content="https://mozworth.music/the_sky_is_falling.webp" />
       <meta property="og:url" content="https://mozworth.music/songs/the-sky-is-falling/" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="The Sky Is Falling | mozworth" />
-      <meta name="twitter:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the upcoming single. Release date: July 15, 2025." />
+      <meta name="twitter:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
       <meta name="twitter:image" content="https://mozworth.music/the_sky_is_falling.webp" />
       <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
@@ -202,7 +202,7 @@ Falling!`}
         },
         "image": "https://mozworth.music/the_sky_is_falling.webp",
         "datePublished": "2025-07-15",
-        "dateModified": "2025-01-15",
+        "dateModified": "2025-07-15",
         "url": "https://mozworth.music/songs/the-sky-is-falling/"
       })} />
       <BasePageLayout
@@ -257,6 +257,13 @@ Falling!`}
             iconSrc: "/tidal.svg",
             ariaLabel: "Listen on Tidal",
             onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'The Sky Is Falling' }); }
+          },
+          {
+            href: "https://mozworth.bandcamp.com/track/the-sky-is-falling",
+            alt: "Bandcamp",
+            iconSrc: "/bandcamp.svg",
+            ariaLabel: "Listen on Bandcamp",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'The Sky Is Falling' }); }
           },
         ]}
         isrc="QZTB62543528"
