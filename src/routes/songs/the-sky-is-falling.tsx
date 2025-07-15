@@ -144,6 +144,24 @@ Falling!`}
       ),
     },
     {
+      label: "Press",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+          <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">Indie Dock Music Blog Review</h3>
+            <p class="text-white/70 mb-2">July 15, 2025</p>
+            <p class="mb-3">
+              Indie Dock Music Blog reviewed "The Sky Is Falling," highlighting how mozworth captures the tension of modern digital life with this compelling indie rock track, praising its tight musicianship and thoughtful songwriting.
+            </p>
+            <a href="https://indiedockmusicblog.co.uk/?p=30798" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
       label: "Credits",
       content: (
         <>

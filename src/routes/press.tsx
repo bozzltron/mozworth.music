@@ -10,6 +10,15 @@ export default function Press() {
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <h1 class="text-3xl font-bold mb-8 text-center">Press Coverage</h1>
             <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
+              <h2 class="text-2xl font-semibold mb-2">mozworth - The Sky Is Falling</h2>
+              <div class="text-lg text-white/70 mb-1">Indie Dock Music Blog</div>
+              <div class="text-sm text-white/60 mb-3">July 15, 2025</div>
+              <div class="mb-4 leading-relaxed">
+                Indie Dock Music Blog reviews "The Sky Is Falling," highlighting how mozworth captures the tension of modern digital life with this compelling indie rock track, praising its tight musicianship and thoughtful songwriting.
+              </div>
+              <a href="https://indiedockmusicblog.co.uk/?p=30798" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Read Full Review</a>
+            </div>
+            <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
               <h2 class="text-2xl font-semibold mb-2">An Interview with Mozworth</h2>
               <div class="text-lg text-white/70 mb-1">KVRX 91.7</div>
               <div class="text-sm text-white/60 mb-3">December 4, 2024</div>
