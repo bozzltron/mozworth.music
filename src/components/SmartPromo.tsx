@@ -21,8 +21,8 @@ export default function SmartPromo(): JSX.Element {
       
       <CountdownTimer
         releaseDate={releaseDate}
-        title="Releasing in:"
-        subtitle="July 15, 2025 • Midnight"
+        title=""
+        subtitle=""
         className="mb-4"
       />
       
