@@ -114,7 +114,6 @@ Falling!
 Falling!
 Falling!
 Falling!
-Falling!
 Falling!`}
           </pre>
         </div>
@@ -175,6 +174,16 @@ Falling!`}
               Apricot Magazine calls "The Sky Is Falling" a "compelling sonic landscape" and praises the band's chemistry, emotional honesty, and the track's transformation of anxiety into beauty and connection.
             </p>
             <a href="https://apricot-magazine.com/review/the-sky-may-be-falling-but-mozworth-is-rising/" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">Buzzy Band Review</h3>
+            <p class="text-white/70 mb-2">July 15, 2025</p>
+            <p class="mb-3">
+              Buzzy Band highlights "The Sky Is Falling" for its urgent indie rock energy and praises mozworth's ability to turn anxiety into anthemic, cathartic music.
+            </p>
+            <a href="https://buzzyband.com/mozworth-the-sky-is-falling/" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
               Read Full Review →
             </a>
           </div>
