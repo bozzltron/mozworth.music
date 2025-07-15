@@ -149,6 +149,16 @@ Falling!`}
         <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
           <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
           <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">The Big Takeover Review</h3>
+            <p class="text-white/70 mb-2">July 15, 2025</p>
+            <p class="mb-3">
+              The Big Takeover praises "The Sky Is Falling" as "an absolutely essential document of our times," highlighting the band's evolution and their perfect capture of modern chaos through "raw rock riffs and indie deftness."
+            </p>
+            <a href="https://bigtakeover.com/recordings/mozworth-the-sky-is-falling-balanced-scale-media" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
+          <div class="mb-6">
             <h3 class="text-lg font-semibold mb-2">Indie Dock Music Blog Review</h3>
             <p class="text-white/70 mb-2">July 15, 2025</p>
             <p class="mb-3">
