@@ -12,7 +12,7 @@ export default function Tour() {
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
 
-            <div class="tour-date upcoming w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <div class="tour-date info w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">2025</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>2025 Tour Dates Coming Soon<br />Check back for updates</p>
@@ -20,10 +20,18 @@ export default function Tour() {
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
             </div>
 
-            <div class="tour-date upcoming w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Thursday, July 31, 2025</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>Good Day Austin (TV Appearance)<br />FOX 7 Austin (KTBC)<br />9:30am<br />Austin, TX<br /><span class="block mt-2 text-white font-semibold">Watch live on FOX 7 Austin or stream at <a href="https://www.fox7austin.com/live" class="underline hover:text-teal-300 transition" target="_blank" rel="noopener">fox7austin.com/live</a></span></p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
+            </div>
+
+            <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, August 1, 2025</div>
               <div class="venue-info flex-1 text-left text-base">
-                <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX<br /><span class="block mt-2 text-green-300 font-semibold">The Distraits open at 8pm</span><span class="block text-teal-300 font-semibold">mozworth plays at 9pm</span></p>
+                <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX<br /><span class="block mt-2 text-white font-semibold">The Distraits open at 8pm</span><span class="block text-teal-300 font-semibold">mozworth plays at 9pm</span></p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
                 <a href="https://www.bandsintown.com/e/107046899?" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
