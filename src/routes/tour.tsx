@@ -21,14 +21,6 @@ export default function Tour() {
             </div>
 
             <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
-              <div class="min-w-[200px] text-left font-bold">Thursday, July 31, 2025</div>
-              <div class="venue-info flex-1 text-left text-base">
-                <p>Good Day Austin (TV Appearance)<br />FOX 7 Austin (KTBC)<br />9:30am<br />Austin, TX<br /><span class="block mt-2 text-white font-semibold">Watch live on FOX 7 Austin or stream at <a href="https://www.fox7austin.com/live" class="underline hover:text-teal-300 transition" target="_blank" rel="noopener">fox7austin.com/live</a></span></p>
-              </div>
-              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
-            </div>
-
-            <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, August 1, 2025</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX<br /><span class="block mt-2 text-white font-semibold">The Distraits open at 8pm</span><span class="block text-teal-300 font-semibold">mozworth plays at 9pm</span></p>
@@ -36,6 +28,26 @@ export default function Tour() {
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
                 <a href="https://www.bandsintown.com/e/107046899?" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
                 <a href="https://www.facebook.com/share/19L86HVi4U/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+              </div>
+            </div>
+
+            <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Thursday, July 31, 2025</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>Good Day Austin (TV Appearance)<br />FOX 7 Austin (KTBC)<br />9:30am<br />Austin, TX</p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
+                <a href="https://www.fox7austin.com/live" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm font-semibold transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="Watch Good Day Austin live">Watch</a>
+              </div>
+            </div>
+
+            <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Sunday, July 20, 2025</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>mozworth Interview Airs<br />KLBJ 93.7 FM<br />7:00pm<br />Austin, TX</p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
+                <a href="https://www.klbjfm.com/listen-live" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm font-semibold transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="Listen to KLBJ live">Listen</a>
               </div>
             </div>
 
