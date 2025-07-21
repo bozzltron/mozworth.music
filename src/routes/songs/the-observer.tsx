@@ -6,6 +6,7 @@ import TabbedContent from "../../components/TabbedContent";
 import type { JSX } from "solid-js";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
+import LeaveNoteModal from "../../components/LeaveNoteModal";
 
 interface Tab {
   label: string;
@@ -15,6 +16,7 @@ interface Tab {
 export default function TheObserver() {
   const [commentsEnabled, setCommentsEnabled] = createSignal(false);
   const [mounted, setMounted] = createSignal(false);
+  const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
   const location = useLocation();
 
   onMount(() => {
@@ -99,12 +101,18 @@ export default function TheObserver() {
       </div>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released on November 15, 2024</div>
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
+        >
+          Leave a Note
+        </button>
         <a href="https://mozworth.bandcamp.com/track/the-observer" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full mb-2">
+          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
         </a>
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
+          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch
         </a>
         <ShareButton
@@ -252,7 +260,12 @@ I'm just listening</p>
           key={location.pathname}
           tabs={tabs}
           defaultTab="Lyrics"
-        />
+        />      <LeaveNoteModal
+        isOpen={showLeaveNoteModal()}
+        onClose={() => setShowLeaveNoteModal(false)}
+        songTitle="The Observer"
+      />
+
       </BasePageLayout>
     </>
   );

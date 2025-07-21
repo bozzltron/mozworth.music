@@ -2,9 +2,11 @@ import { createSignal, createEffect, createMemo } from "solid-js";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import LeaveNoteModal from "../../components/LeaveNoteModal";
 
 export default function Sandpiper() {
   const [tab, setTab] = createSignal("Press Release");
+  const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
 
   // Cover art (placeholder)
   const cover = (
@@ -25,18 +27,24 @@ export default function Sandpiper() {
       </div>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Release date TBA</div>
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
+        >
+          Leave a Note
+        </button>
         <a
           href="#"
           target="_blank"
           rel="noopener"
-          class="inline-block px-5 py-2 text-left rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full opacity-60 cursor-not-allowed"
+          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full opacity-60 cursor-not-allowed"
           tabIndex={-1}
           aria-disabled="true"
         >
           Pre Save / Pre Purchase (Coming Soon)
         </a>
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-ful">
+          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch
         </a>
         <ShareButton
@@ -134,6 +142,11 @@ export default function Sandpiper() {
           defaultTab="Press Release"
         />
       </BasePageLayout>
+      <LeaveNoteModal
+        isOpen={showLeaveNoteModal()}
+        onClose={() => setShowLeaveNoteModal(false)}
+        songTitle="Sandpiper"
+      />
     </>
   );
 } 

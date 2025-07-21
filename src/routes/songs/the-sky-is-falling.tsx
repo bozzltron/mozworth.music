@@ -2,9 +2,11 @@ import { createSignal, createEffect, createMemo } from "solid-js";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import LeaveNoteModal from "../../components/LeaveNoteModal";
 
 export default function TheSkyIsFalling() {
   const [tab, setTab] = createSignal("Lyrics");
+  const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
 
   // Bandcamp embedded player
   const cover = (
@@ -31,11 +33,17 @@ export default function TheSkyIsFalling() {
         </a>
       </div>
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
+        >
+          Leave a Note
+        </button>
         <a
           href="https://mozworth.bandcamp.com/track/the-sky-is-falling"
           target="_blank"
           rel="noopener"
-          class="inline-block px-5 py-2 text-left rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
+          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
           Purchase
         </a>
@@ -321,6 +329,11 @@ Falling!`}
           defaultTab="Lyrics"
         />
       </BasePageLayout>
+      <LeaveNoteModal
+        isOpen={showLeaveNoteModal()}
+        onClose={() => setShowLeaveNoteModal(false)}
+        songTitle="The Sky Is Falling"
+      />
     </>
   );
 } 
