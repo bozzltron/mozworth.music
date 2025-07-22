@@ -1,4 +1,4 @@
-// @ts-expect-error: Window.gtag is injected by Google Analytics and may not be present in all environments.
+// eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
 
 export default function Support() {
