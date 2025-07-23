@@ -91,7 +91,7 @@ export default function Support() {
             <h1 class="text-3xl font-bold mb-8 text-center">Support mozworth</h1>
             
             <p class="text-white/90 leading-relaxed text-left mb-2">
-              Thank you for supporting independent music! <strong>100% of all money coming into the mozworth project goes directly to recording, promoting, and whatever the project needs.</strong> Your support makes it that much easier to keep making music.
+              Thank you for supporting independent music! <strong>100% of contributions go directly to recording and promotion.</strong> Your support keeps the music coming.
             </p>
             
                          <div class="space-y-12 w-full mt-6 text-left">
@@ -99,13 +99,13 @@ export default function Support() {
                <div class="support-section">
                  <h2 class="text-2xl font-bold mb-4 text-teal-300">Direct Support</h2>
                  <p class="text-white/80 mb-6 leading-relaxed">
-                   The most effective way to support independent artists is through donations or direct purchases.
+                   The most effective way to support independent artists.
                  </p>
                  
                  <div class="space-y-4">
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Cash App</h3>
-                     <p class="text-white/70 mb-3 text-sm">100% of your contribution goes directly to the artist for creating new music and supporting the local scene.</p>
+                     <p class="text-white/70 mb-3 text-sm">100% goes directly to the artist for new music and local scene support.</p>
                      <a href="https://cash.app/$mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Cash App', destination: 'cashapp' }); }}>
                        <img src="/cashapp.svg" alt="Cash App" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Send $mozworth
@@ -114,7 +114,7 @@ export default function Support() {
                    
                                                              <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">Digital Downloads</h3>
-                       <p class="text-white/70 mb-3 text-sm">Artists keep 85-90% of sales after payment processing fees. You can buy individual tracks or entire albums at once, often at a better value than streaming.</p>
+                                                <p class="text-white/70 mb-3 text-sm">Artists keep 85-90% after fees. Buy individual tracks or full albums.</p>
                                             <a href="https://mozworth.bandcamp.com/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-cyan-500 text-white font-semibold shadow hover:bg-cyan-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Bandcamp', destination: 'bandcamp' }); }}>
                        <img src="/bandcamp.svg" alt="Bandcamp" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Buy on Bandcamp
@@ -123,7 +123,7 @@ export default function Support() {
                    
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Physical Media</h3>
-                     <p class="text-white/70 mb-3 text-sm">CDs and vinyl records are in the works! Physical media provides the highest revenue share for artists and creates lasting connections with fans.</p>
+                     <p class="text-white/70 mb-3 text-sm">CDs and vinyl coming soon! Highest revenue share and lasting fan connections.</p>
                      <div class="text-sm text-white/60 italic">
                        Coming soon...
                      </div>
@@ -143,7 +143,7 @@ export default function Support() {
                <div class="support-section">
                  <h2 class="text-2xl font-bold mb-4 text-teal-300">Streaming Smart</h2>
                  <p class="text-white/80 mb-6 leading-relaxed">
-                   Not all streaming platforms pay artists equally. Some platforms pay significantly more per stream than others. By choosing platforms that pay artists better, you can maximize your support while still enjoying your favorite music. Following artists on these platforms also helps them appear in recommendations and curated playlists.
+                   Platforms pay different rates. Choose higher-paying ones to maximize your support. Following helps with recommendations and playlists.
                  </p>
 
                  
@@ -204,7 +204,7 @@ export default function Support() {
                <div class="support-section">
                  <h2 class="text-2xl font-bold mb-4 text-teal-300">Social Media</h2>
                  <p class="text-white/80 mb-6 leading-relaxed">
-                   Following artists on social media helps them build community and get discovered by new listeners. Higher follower counts increase visibility, algorithm recommendations, and opportunities for collaborations and features. Some platforms are better for artists than others. <span class="block mt-2">Want to go the extra mile? Share your own posts about mozworth and include <strong>#mozworth</strong> so we can find and share your support!</span>
+                   Following builds community and helps discovery. Higher follower counts boost visibility and opportunities. <span class="block mt-2">Share your own posts with <strong>#mozworth</strong> so we can find and share your support!</span>
                  </p>
 
                  
