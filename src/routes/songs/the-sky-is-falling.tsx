@@ -213,7 +213,7 @@ Falling!`}
           <p>Bass performed by Jack Shultz</p>
           <p>Mixed and Mastered by Steven Glaze at Tone Freq Studios</p>
           <p>Recorded at mozworth and Mockler home studio's</p>
-          <p>Released July 15, 2025</p>
+          <p>Released July 15, 2025 by Balanced Scale Media</p>
           <p>Cover art by Mark Heaps</p>
         </>
       ),

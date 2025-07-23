@@ -106,7 +106,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Cash App</h3>
                      <p class="text-white/70 mb-3 text-sm">100% of your contribution goes directly to the artist for creating new music and supporting the local scene.</p>
-                     <a href="https://cash.app/$mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Cash App', destination: 'cashapp' }); }}>
+                     <a href="https://cash.app/$mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Cash App', destination: 'cashapp' }); }}>
                        <img src="/cashapp.svg" alt="Cash App" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Send $mozworth
                      </a>
@@ -115,7 +115,7 @@ export default function Support() {
                                                              <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">Digital Downloads</h3>
                        <p class="text-white/70 mb-3 text-sm">Artists keep 85-90% of sales after payment processing fees. You can buy individual tracks or entire albums at once, often at a better value than streaming.</p>
-                                            <a href="https://mozworth.bandcamp.com/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Bandcamp', destination: 'bandcamp' }); }}>
+                                            <a href="https://mozworth.bandcamp.com/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-cyan-500 text-white font-semibold shadow hover:bg-cyan-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Bandcamp', destination: 'bandcamp' }); }}>
                        <img src="/bandcamp.svg" alt="Bandcamp" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Buy on Bandcamp
                      </a>
@@ -151,7 +151,7 @@ export default function Support() {
                      <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">Tidal</h3>
                        <p class="text-white/70 mb-3 text-sm">Pays artists $0.01284 per stream - the highest rate among major platforms. Following helps artists appear in recommendations and curated playlists.</p>
-                                            <a href="https://tidal.com/browse/artist/49656537" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Tidal', destination: 'tidal' }); }}>
+                                            <a href="https://tidal.com/browse/artist/49656537" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-black text-white font-semibold shadow hover:bg-gray-800 transition-colors border border-white/20" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Tidal', destination: 'tidal' }); }}>
                        <img src="/tidal.svg" alt="Tidal" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow on Tidal
                      </a>
@@ -160,7 +160,7 @@ export default function Support() {
                      <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">Apple Music</h3>
                        <p class="text-white/70 mb-3 text-sm">Pays artists $0.01 per stream. Adding artists to favorites helps them appear in recommendations and curated playlists.</p>
-                                            <a href="https://music.apple.com/us/artist/mozworth/1761894108" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Apple Music', destination: 'apple_music' }); }}>
+                                            <a href="https://music.apple.com/us/artist/mozworth/1761894108" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-red-500 text-white font-semibold shadow hover:bg-red-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Apple Music', destination: 'apple_music' }); }}>
                        <img src="/apple-music.svg" alt="Apple Music" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Add to Favorites
                      </a>
@@ -169,7 +169,7 @@ export default function Support() {
                      <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">SoundCloud</h3>
                        <p class="text-white/70 mb-3 text-sm">Pays artists $0.003 per stream. Great for independent artists and music discovery. Following helps with algorithm recommendations.</p>
-                                            <a href="https://soundcloud.com/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'SoundCloud', destination: 'soundcloud' }); }}>
+                                            <a href="https://soundcloud.com/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-orange-500 text-white font-semibold shadow hover:bg-orange-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'SoundCloud', destination: 'soundcloud' }); }}>
                        <img src="/soundcloud.svg" alt="SoundCloud" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow on SoundCloud
                      </a>
@@ -178,7 +178,7 @@ export default function Support() {
                      <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">Spotify</h3>
                        <p class="text-white/70 mb-3 text-sm">Pays artists $0.00318 per stream. Following increases playlist consideration and discovery opportunities.</p>
-                       <a href="https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Spotify', destination: 'spotify' }); }}>
+                       <a href="https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-green-500 text-white font-semibold shadow hover:bg-green-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Spotify', destination: 'spotify' }); }}>
                          <img src="/spotify.svg" alt="Spotify" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                          Follow on Spotify
                        </a>
@@ -187,7 +187,7 @@ export default function Support() {
                      <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                        <h3 class="font-semibold text-white mb-2">YouTube Music</h3>
                        <p class="text-white/70 mb-3 text-sm">Pays artists $0.00200 per stream - one of the lowest rates among major platforms. Following still helps with algorithm recommendations.</p>
-                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-red-600 text-white font-semibold shadow hover:bg-red-500 transition-colors">
                          <img src="/youtube.svg" alt="YouTube" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                          Subscribe on YouTube
                        </a>
@@ -204,7 +204,7 @@ export default function Support() {
                <div class="support-section">
                  <h2 class="text-2xl font-bold mb-4 text-teal-300">Social Media</h2>
                  <p class="text-white/80 mb-6 leading-relaxed">
-                   Following artists on social media helps them build community and get discovered by new listeners. Higher follower counts increase visibility, algorithm recommendations, and opportunities for collaborations and features. Some platforms are better for artists than others.
+                   Following artists on social media helps them build community and get discovered by new listeners. Higher follower counts increase visibility, algorithm recommendations, and opportunities for collaborations and features. Some platforms are better for artists than others. <span class="block mt-2">Want to go the extra mile? Share your own posts about mozworth and include <strong>#mozworth</strong> so we can find and share your support!</span>
                  </p>
 
                  
@@ -212,7 +212,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Bluesky</h3>
                      <p class="text-white/70 mb-3 text-sm">Decentralized platform that gives users control over their data and content. No algorithm manipulation, authentic community connections, and better artist-fan relationships.</p>
-                     <a href="https://bsky.app/profile/mozworth.music" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'social', event_label: 'Bluesky', destination: 'bluesky' }); }}>
+                     <a href="https://bsky.app/profile/mozworth.music" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-400 transition-colors" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'social', event_label: 'Bluesky', destination: 'bluesky' }); }}>
                        <img src="/bluesky.svg" alt="Bluesky" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow @mozworth.music
                      </a>
@@ -221,7 +221,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Reddit</h3>
                      <p class="text-white/70 mb-3 text-sm">Community-driven platform where artists can engage with niche audiences and music enthusiasts. Good for authentic discussions and fan engagement.</p>
-                     <a href="https://www.reddit.com/user/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.reddit.com/user/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-orange-600 text-white font-semibold shadow hover:bg-orange-500 transition-colors">
                        <img src="/reddit.svg" alt="Reddit" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow on Reddit
                      </a>
@@ -230,7 +230,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">TikTok</h3>
                      <p class="text-white/70 mb-3 text-sm">Viral potential and algorithm-driven discovery can introduce artists to millions of new listeners. Strong music discovery features and trend-driven exposure.</p>
-                     <a href="https://www.tiktok.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.tiktok.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-black text-white font-semibold shadow hover:bg-gray-800 transition-colors border border-pink-400">
                        <img src="/tiktok.svg" alt="TikTok" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow @mozworthmusic
                      </a>
@@ -239,7 +239,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">YouTube</h3>
                      <p class="text-white/70 mb-3 text-sm">Long-form content and music videos help artists build deeper connections with fans. Algorithm can be unpredictable but offers high potential reach.</p>
-                     <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-red-600 text-white font-semibold shadow hover:bg-red-500 transition-colors">
                        <img src="/youtube.svg" alt="YouTube" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Subscribe
                      </a>
@@ -248,7 +248,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Instagram</h3>
                      <p class="text-white/70 mb-3 text-sm">Builds community and helps artists get discovered through hashtags and recommendations. Good for visual content and fan engagement.</p>
-                     <a href="https://www.instagram.com/mozworthmusic/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.instagram.com/mozworthmusic/" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold shadow hover:from-purple-400 hover:to-pink-400 transition-colors">
                        <img src="/instagram.svg" alt="Instagram" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow @mozworthmusic
                      </a>
@@ -257,7 +257,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Threads</h3>
                      <p class="text-white/70 mb-3 text-sm">Meta's text-based platform that connects with Instagram. Good for longer-form content and community building with existing Instagram followers.</p>
-                     <a href="https://www.threads.net/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.threads.net/@mozworthmusic" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-black text-white font-semibold shadow hover:bg-gray-800 transition-colors border border-white/20">
                        <img src="/threads.svg" alt="Threads" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow @mozworthmusic
                      </a>
@@ -266,7 +266,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Bandsintown</h3>
                      <p class="text-white/70 mb-3 text-sm">Concert discovery platform that helps artists promote shows and build local fan bases. Great for tour announcements and event updates.</p>
-                     <a href="https://www.bandsintown.com/a/15561057-mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.bandsintown.com/a/15561057-mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-500 transition-colors">
                        <img src="/bandsintown.svg" alt="Bandsintown" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow on Bandsintown
                      </a>
@@ -275,7 +275,7 @@ export default function Support() {
                    <div class="bg-black/30 border border-white/10 rounded-lg p-4">
                      <h3 class="font-semibold text-white mb-2">Facebook</h3>
                      <p class="text-white/70 mb-3 text-sm">Traditional social platform with broad reach and event promotion capabilities. Good for older demographics and local community building.</p>
-                     <a href="https://www.facebook.com/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors">
+                     <a href="https://www.facebook.com/mozworth" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2 rounded bg-blue-700 text-white font-semibold shadow hover:bg-blue-600 transition-colors">
                        <img src="/facebook.svg" alt="Facebook" class="w-5 h-5 mr-2 filter brightness-0 invert" />
                        Follow on Facebook
                      </a>
