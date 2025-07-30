@@ -14,27 +14,31 @@ export default function BasePageLayout(props: BasePageLayoutProps) {
   return (
     <>
       {props.isrc && <meta property="music:isrc" content={props.isrc} />}
-      <main class={props.backgroundClass || "min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#a04c3d] via-[#3e6e6b] to-[#e2c97b]"}>
+      <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
+      <main id="main-content" class={props.backgroundClass || "min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#a04c3d] via-[#3e6e6b] to-[#e2c97b]"}>
         <article class="w-full h-full md:w-[98vw] md:h-[95vh] bg-black/45 md:rounded-xl shadow-2xl flex flex-col md:flex-row items-stretch p-4 mt-0 mb-2 md:mt-4 md:mb-4 md:overflow-hidden">
           {/* Left: Cover, info, controls */}
-          <div class="flex flex-col items-center md:items-start md:mr-10 flex-shrink-0 w-full md:w-[380px] max-w-full md:max-w-[380px] min-h-[420px] md:min-h-[470px] mb-6 md:mb-0 overflow-y-auto">
+          <aside class="flex flex-col items-center md:items-start md:mr-10 flex-shrink-0 w-full md:w-[380px] max-w-full md:max-w-[380px] min-h-[420px] md:min-h-[470px] mb-6 md:mb-0 overflow-y-auto" aria-label="Song information and streaming links">
             {props.cover}
             {props.info}
-            <div class="player-controls flex flex-wrap gap-4 mb-4 w-full justify-center md:justify-start">
+            <nav aria-label="Streaming platforms" class="player-controls flex flex-wrap gap-4 mb-4 w-full justify-center md:justify-start">
               <StreamingIcons links={props.streamingLinks} />
-            </div>
-          </div>
+            </nav>
+          </aside>
           {/* Right: Tabbed content */}
-          <div class="player-right flex-1 flex flex-col min-w-0 md:max-h-[calc(95vh-2rem)] md:overflow-y-auto">
+          <section class="player-right flex-1 flex flex-col min-w-0 md:max-h-[calc(95vh-2rem)] md:overflow-y-auto" aria-label="Song content">
             {props.children}
-          </div>
+          </section>
         </article>
       </main>
       {/* Footer */}
-      <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 mt-auto bg-black/70">
-        &copy; {new Date().getFullYear()} mozworth. All rights reserved. &mdash;
-        <a href="/" class="text-teal-300 hover:underline mx-1">Home</a>|
-        <a href="/discography" class="text-teal-300 hover:underline mx-1">Discography</a>
+      <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 mt-auto bg-black/70" role="contentinfo">
+        &copy; {new Date().getFullYear()} mozworth. All rights reserved.
+        <nav aria-label="Footer navigation" class="inline ml-2">
+          <a href="/" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Home</a>
+          <span class="mx-1" aria-hidden="true">|</span>
+          <a href="/discography" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Discography</a>
+        </nav>
       </footer>
     </>
   );

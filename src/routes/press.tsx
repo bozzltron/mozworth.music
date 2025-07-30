@@ -3,7 +3,8 @@ export default function Press() {
     <>
       <title>mozworth - Press</title>
       <div class="flex flex-col min-h-screen">
-        <main class="flex-1 flex items-center justify-center relative bg-black">
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
+        <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
           {/* Background image */}
           <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style={{ 'background-image': "url('/mozworth.webp')" }} />
           {/* Main content */}
@@ -16,7 +17,7 @@ export default function Press() {
               <div class="mb-4 leading-relaxed">
                 The Big Takeover praises "The Sky Is Falling" as "an absolutely essential document of our times," highlighting the band's evolution and their perfect capture of modern chaos through "raw rock riffs and indie deftness."
               </div>
-              <a href="https://bigtakeover.com/recordings/mozworth-the-sky-is-falling-balanced-scale-media" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Read Full Review</a>
+              <a href="https://bigtakeover.com/recordings/mozworth-the-sky-is-falling-balanced-scale-media" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" aria-label="Read full review from The Big Takeover (opens in new tab)">Read Full Review</a>
             </div>
             <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
               <h2 class="text-2xl font-semibold mb-2">mozworth - The Sky Is Falling</h2>
@@ -78,9 +79,11 @@ export default function Press() {
             </div>
           </div>
         </main>
-        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70">
-          &copy; {new Date().getFullYear()} mozworth. All rights reserved. &mdash;
-          <a href="/" class="text-teal-300 hover:underline mx-1">Home</a>
+        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70" role="contentinfo">
+          &copy; {new Date().getFullYear()} mozworth. All rights reserved.
+          <nav aria-label="Footer navigation" class="inline ml-2">
+            <a href="/" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Home</a>
+          </nav>
         </footer>
       </div>
     </>

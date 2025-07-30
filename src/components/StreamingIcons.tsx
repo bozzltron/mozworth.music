@@ -20,7 +20,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
         <For each={props.links}>{link => (
           <a
             href={link.href}
-            class="player-btn flex items-center justify-center"
+            class="player-btn flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black rounded"
             target="_blank"
             rel="noopener"
             aria-label={link.ariaLabel}
@@ -28,7 +28,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
           >
             <img
               src={link.iconSrc}
-              alt={link.alt}
+              alt=""
               class="h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"
             />
           </a>
@@ -39,7 +39,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
         <For each={props.links}>{link => (
           <a
             href={link.href}
-            class="player-btn flex items-center justify-center"
+            class="player-btn flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black rounded"
             target="_blank"
             rel="noopener"
             aria-label={link.ariaLabel}
@@ -47,7 +47,7 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
           >
             <img
               src={link.iconSrc}
-              alt={link.alt}
+              alt=""
               class="h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"
             />
           </a>
