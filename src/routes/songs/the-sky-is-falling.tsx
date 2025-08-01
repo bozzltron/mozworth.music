@@ -151,10 +151,48 @@ Falling!`}
       ),
     },
     {
+      label: "Performances",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+          <h2 class="text-xl font-bold mb-4">Live Performances</h2>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">FOX 7 Austin Studio Performance</h3>
+            <p class="text-white/70 mb-2">July 31, 2025</p>
+            <p class="mb-3">
+              Indie alternative rock artist mozworth talks about upcoming shows and performs a song live in the FOX 7 Austin studios.
+            </p>
+            <a
+              href="https://www.fox7austin.com/video/1683875"
+              target="_blank"
+              rel="noopener"
+              class="inline-block text-teal-300 hover:text-teal-200 underline"
+            >
+              Watch the performance on FOX 7 Austin →
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
       label: "Press",
       content: (
         <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
           <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">FOX 7 Austin Studio Performance</h3>
+            <p class="text-white/70 mb-2">July 31, 2025</p>
+            <p class="mb-3">
+              Indie alternative rock artist mozworth talks about upcoming shows and performs a song live in the FOX 7 Austin studios.
+            </p>
+            <a
+              href="https://www.fox7austin.com/video/1683875"
+              target="_blank"
+              rel="noopener"
+              class="inline-block text-teal-300 hover:text-teal-200 underline"
+            >
+              Watch the segment →
+            </a>
+          </div>
           <div class="mb-6">
             <h3 class="text-lg font-semibold mb-2">The Big Takeover Review</h3>
             <p class="text-white/70 mb-2">July 15, 2025</p>

@@ -184,10 +184,22 @@ export default function Support() {
                      </div>
                          <span class="text-xs text-center text-white font-semibold">SoundCloud</span>
                        </a>
+                       <a href="https://music.amazon.com/artists/B0DCMD1NQ7/mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Amazon Music', destination: 'amazon_music' }); }}>
+                         <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-blue-500 transition-colors">
+                           <img src="/amazon-music.svg" alt="Amazon Music" class="w-5 h-5 filter brightness-0 invert" />
+                         </div>
+                         <span class="text-xs text-center text-white font-semibold">Amazon Music</span>
+                       </a>
+                       <a href="https://www.deezer.com/en/artist/277222071" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Deezer', destination: 'deezer' }); }}>
+                         <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500 transition-colors">
+                           <img src="/deezer.svg" alt="Deezer" class="w-5 h-5 filter brightness-0 invert" />
+                         </div>
+                         <span class="text-xs text-center text-white font-semibold">Deezer</span>
+                       </a>
                        <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-red-500 transition-colors">
                            <img src="/youtube.svg" alt="YouTube" class="w-5 h-5 filter brightness-0 invert" />
-                     </div>
+                         </div>
                          <span class="text-xs text-center text-white font-semibold">YouTube</span>
                        </a>
                      </div>

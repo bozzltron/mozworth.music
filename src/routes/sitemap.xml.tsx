@@ -20,7 +20,7 @@ export async function GET({ request }: { request: Request }) {
     "albums",
     "songs",
     "tour",
-    "discography",
+    "music",
     "press"
   ];
 

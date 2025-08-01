@@ -24,7 +24,7 @@ export default function Tour() {
             <div class="tour-date upcoming w-full border-white bg-white/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, August 1, 2025</div>
               <div class="venue-info flex-1 text-left text-base">
-                <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX<br /><span class="block mt-2 text-white font-semibold">The Distraits open at 8pm</span><span class="block text-teal-300 font-semibold">mozworth plays at 9pm</span></p>
+                <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX<br /><span class="block mt-2 text-sm text-white/80">Celebrate the release of mozworth's powerful new single "The Sky Is Falling" - an urgent indie rock anthem about finding connection in chaotic times.</span><br /><span class="block mt-2 text-white font-semibold">The Distraits open at 8pm</span><span class="block text-teal-300 font-semibold">mozworth plays at 9pm</span></p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
                 <a href="https://www.bandsintown.com/e/107046899?" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>

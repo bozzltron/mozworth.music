@@ -195,6 +195,10 @@ export default function MozworthAlbum() {
           class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
           Merch
         </a>
+        <a href="/support" 
+          class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2">
+          Support
+        </a>
         <ShareButton
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/albums/mozworth/"}
           title="mozworth (Album) by mozworth"
