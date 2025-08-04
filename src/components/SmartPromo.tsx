@@ -27,7 +27,7 @@ export default function SmartPromo(): JSX.Element {
       />
       
       <div class="text-white text-center mb-4">
-        Single Release Party: Aug 1, 2025 (<a href="https://www.bandsintown.com/e/107046899?" target="_blank" rel="noopener" class="underline hover:text-teal-300">Bandsintown</a>, <a href="https://www.facebook.com/share/19L86HVi4U/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Facebook</a>)
+        FOX 7 Austin Studio Performance: July 31, 2025 (<a href="https://www.fox7austin.com/video/1683875" target="_blank" rel="noopener" class="underline hover:text-teal-300">Watch the segment</a>)
       </div>
       <div class="flex flex-wrap gap-3 justify-center">
         <a

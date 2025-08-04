@@ -11,15 +11,6 @@ export default function Press() {
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <h1 class="text-3xl font-bold mb-8 text-center">Press Coverage</h1>
             <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
-              <h2 class="text-2xl font-semibold mb-2">mozworth - FOX 7 Austin Studio Performance</h2>
-              <div class="text-lg text-white/70 mb-1">FOX 7 Austin</div>
-              <div class="text-sm text-white/60 mb-3">July 31, 2025</div>
-              <div class="mb-4 leading-relaxed">
-                Indie alternative rock artist mozworth talks about upcoming shows and performs a song live in the FOX 7 Austin studios.
-              </div>
-              <a href="https://www.fox7austin.com/video/1683875" class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" aria-label="Watch the FOX 7 Austin segment (opens in new tab)">Watch Segment</a>
-            </div>
-            <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
               <h2 class="text-2xl font-semibold mb-2">mozworth - The Sky Is Falling</h2>
               <div class="text-lg text-white/70 mb-1">The Big Takeover</div>
               <div class="text-sm text-white/60 mb-3">July 15, 2025</div>
