@@ -3,6 +3,7 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 
 
@@ -79,7 +80,7 @@ export default function WalkingTheCow() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Walking The Cow
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released January 22, 2025</div>
+      <ReleaseMeta releaseDate="2025-01-22" prefix="Released" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -222,7 +223,7 @@ I am walking the cow`}</div>
       <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Walking The Cow",
@@ -238,11 +239,12 @@ I am walking the cow`}</div>
         "datePublished": "2025-01-22",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/walking-the-cow/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2025-01-22'), imageUrl: '/mozworth-walking-the-cow-cover.webp' }}
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f8f8f8] via-[#e0e0e0] to-[#b0b0b0]"
       >
         <TabbedContent

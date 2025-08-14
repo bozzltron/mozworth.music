@@ -4,6 +4,7 @@ import TabbedContent from "../../components/TabbedContent";
 import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
+import ReleaseMeta from "../../components/ReleaseMeta";
 
 // eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
@@ -185,7 +186,7 @@ export default function MozworthAlbum() {
     <>
       <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">mozworth</h1>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">mozworth</div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-11-15" prefix="Released" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <a href="https://mozworth.bandcamp.com/album/mozworth" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
@@ -243,6 +244,7 @@ export default function MozworthAlbum() {
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-11-15'), imageUrl: '/mozworth-debut.webp' }}
       >
         <TabbedContent
           key={location.pathname}

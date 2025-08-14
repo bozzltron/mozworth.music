@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import ReleaseMeta from "../../components/ReleaseMeta";
 import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
@@ -81,8 +82,7 @@ export default function GoodbyeColorado() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released as a single on October 9, 2024</div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released on mozworth on November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-10-09" prefix="Released as a single on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -267,7 +267,7 @@ export default function GoodbyeColorado() {
       <meta name="twitter:description" content="Listen to 'Goodbye Colorado' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Goodbye Colorado' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Goodbye Colorado",
@@ -283,11 +283,12 @@ export default function GoodbyeColorado() {
         "datePublished": "2024-11-15",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/goodbye-colorado/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-10-09'), imageUrl: '/goodbye_colorado_cover.webp' }}
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-b from-[#b6c85a] via-[#2e5d4a] to-[#18344a]"
       >
         <TabbedContent

@@ -1,4 +1,5 @@
 import { createSignal, createEffect } from "solid-js";
+import ReleaseMeta from "../../components/ReleaseMeta";
 import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
@@ -84,7 +85,7 @@ export default function CantBackDown() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released on November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -170,7 +171,7 @@ We can't back down now</p></div>,
       content: (
         <div class="flex flex-col items-start gap-4">
           <p class="mb-4">This is the original demo of Can't Back Down. It was recorded in the cabin in Finland.</p>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/778572595&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/778572595&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
           <div style={{"font-size": "10px", color: "#cccccc", "line-break": "anywhere", "word-break": "normal", overflow: "hidden", "white-space": "nowrap", "text-overflow": "ellipsis", "font-family": "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif", "font-weight": 100}}>
             <a href="https://soundcloud.com/mozworth" title="mozworth" target="_blank" style={{color: "#cccccc", "text-decoration": "none"}}>mozworth</a> · <a href="https://soundcloud.com/mozworth/cant-back-down-demo" title="Can't Back Down Demo" target="_blank" style={{color: "#cccccc", "text-decoration": "none"}}>Can't Back Down Demo</a>
           </div>
@@ -261,7 +262,7 @@ We can't back down now</p></div>,
       <meta name="twitter:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Can't Back Down",
@@ -277,11 +278,12 @@ We can't back down now</p></div>,
         "datePublished": "2024-11-15",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/cant-back-down/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-11-15'), imageUrl: '/mozworth-debut.webp' }}
       >
         <TabbedContent
           key={location.pathname}

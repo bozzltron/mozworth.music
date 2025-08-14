@@ -1,10 +1,18 @@
 import { createSignal, createEffect, createMemo } from "solid-js";
+import { useLocation } from "@solidjs/router";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import ReleaseMeta from "../../components/ReleaseMeta";
 
 export default function TheSkyIsFalling() {
+  const location = useLocation();
+  const isForcedAnniversary = createMemo(() => {
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    const sp = new URLSearchParams(search);
+    return sp.has('anniversary') && sp.get('anniversary') !== '0' && sp.get('anniversary') !== 'false';
+  });
   const [tab, setTab] = createSignal("Lyrics");
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
 
@@ -26,7 +34,12 @@ export default function TheSkyIsFalling() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; The Sky Is Falling
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released July 15, 2025</div>
+      <ReleaseMeta
+        releaseDate="2025-07-15"
+        prefix="Released"
+        showConfetti={true}
+        forceConfetti={isForcedAnniversary()}
+      />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -340,6 +353,7 @@ Falling!`}
         ]}
         isrc="QZTB62543528"
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#3a5ba0] via-[#7b3fa0] to-[#e05fa0]"
+        confetti={{ enabled: true, releaseDate: new Date('2025-07-15'), force: isForcedAnniversary(), imageUrl: '/the_sky_is_falling.webp' }}
       >
         <TabbedContent
           key={location.pathname}

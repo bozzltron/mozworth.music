@@ -1,4 +1,5 @@
 import { JSX } from "solid-js";
+import AnniversaryConfetti from "./AnniversaryConfetti";
 import StreamingIcons, { StreamingLink } from "./StreamingIcons";
 
 interface BasePageLayoutProps {
@@ -8,9 +9,25 @@ interface BasePageLayoutProps {
   children: JSX.Element;
   isrc?: string;
   backgroundClass?: string;
+  confetti?: {
+    enabled: boolean;
+    releaseDate: Date;
+    force?: boolean;
+    imageUrl?: string;
+  };
 }
 
 export default function BasePageLayout(props: BasePageLayoutProps) {
+  const forceConfetti = ((): boolean => {
+    try {
+      const search = typeof window !== 'undefined' ? window.location.search : '';
+      const sp = new URLSearchParams(search);
+      const v = sp.get('anniversary');
+      return sp.has('anniversary') && v !== '0' && v !== 'false';
+    } catch {
+      return false;
+    }
+  })();
   return (
     <>
       {props.isrc && <meta property="music:isrc" content={props.isrc} />}
@@ -26,11 +43,20 @@ export default function BasePageLayout(props: BasePageLayoutProps) {
             </nav>
           </aside>
           {/* Right: Tabbed content */}
-          <section class="player-right flex-1 flex flex-col min-w-0 md:max-h-[calc(95vh-2rem)] md:overflow-y-auto" aria-label="Song content">
+          <section class="player-right flex-1 flex flex-col min-w-0 md:max-h-[calc(95vh-2rem)] md:overflow-y-auto relative" aria-label="Song content">
             {props.children}
           </section>
         </article>
       </main>
+      {props.confetti?.enabled && (
+        <AnniversaryConfetti
+          releaseDate={props.confetti.releaseDate}
+          enabled={true}
+          force={props.confetti.force ?? forceConfetti}
+          variant="fullscreen"
+          imageUrl={props.confetti.imageUrl}
+        />
+      )}
       {/* Footer */}
       <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 mt-auto bg-black/70" role="contentinfo">
         &copy; {new Date().getFullYear()} mozworth. All rights reserved.

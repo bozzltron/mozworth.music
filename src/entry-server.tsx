@@ -14,20 +14,17 @@ export default createHandler(() => (
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <meta name="theme-color" content="#000000" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="application-name" content="mozworth" />
+          <meta name="apple-mobile-web-app-title" content="mozworth" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT"></script>
           <script innerHTML={`
-            if (location.hostname === "mozworth.music") {
-              (function(){
-                var gtagScript = document.createElement('script');
-                gtagScript.async = true;
-                gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT";
-                document.head.appendChild(gtagScript);
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                window.gtag = gtag;
-                gtag('js', new Date());
-                gtag('config', 'G-HCSKGBDXDT');
-              })();
-            }
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-HCSKGBDXDT', { anonymize_ip: true });
           `} />
           {assets}
         </head>

@@ -1,29 +1,18 @@
-import { createSignal, onMount, createEffect, createMemo } from "solid-js";
-import SongComments from "../../components/SongComments";
-import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
+import { createSignal } from "solid-js";
+import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
-import type { JSX } from "solid-js";
+//
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
+import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 
-interface Tab {
-  label: string;
-  content: JSX.Element;
-}
+//
 
 export default function QueenOfTheOcean() {
-  const [commentsEnabled, setCommentsEnabled] = createSignal(false);
-  const [mounted, setMounted] = createSignal(false);
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
   const location = useLocation();
-  console.log('[QueenOfTheOcean] location.pathname:', location.pathname);
-
-  onMount(() => {
-    setCommentsEnabled(localStorage.getItem("mozworth-comments-enabled") === "true");
-    setMounted(true);
-  });
 
   const streamingLinks: StreamingLink[] = [
     {
@@ -100,7 +89,7 @@ export default function QueenOfTheOcean() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released on November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -221,7 +210,7 @@ Her spirit is finally free</p></div>,
       <meta name="twitter:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Queen of the Ocean",
@@ -236,11 +225,12 @@ Her spirit is finally free</p></div>,
         "image": "https://mozworth.music/mozworth-debut.webp",
         "datePublished": "2024-11-15",
         "url": "https://mozworth.music/songs/queen-of-the-ocean/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-11-15'), imageUrl: '/mozworth-debut.webp' }}
       >
         <TabbedContent
           key={location.pathname}

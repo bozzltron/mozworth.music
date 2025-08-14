@@ -8,12 +8,14 @@ export default function SmartPromo(): JSX.Element {
   return (
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
       <div class="w-full flex justify-center mb-4">
-        <img
-          src="/the_sky_is_falling.webp"
-          alt="The Sky Is Falling single cover art"
-          class="rounded-xl shadow-lg w-full max-w-[560px] object-cover"
-          style="aspect-ratio: 1/1;"
-        />
+        <a href="/songs/the-sky-is-falling" aria-label="Go to The Sky Is Falling page">
+          <img
+            src="/the_sky_is_falling.webp"
+            alt="The Sky Is Falling single cover art"
+            class="rounded-xl shadow-lg w-full max-w-[560px] object-cover focus:outline-none focus:ring-2 focus:ring-teal-400"
+            style={{ 'aspect-ratio': '1 / 1' }}
+          />
+        </a>
       </div>
       <div class="text-xl font-bold text-white text-center mb-2">
         New Single: The Sky Is Falling
@@ -23,7 +25,7 @@ export default function SmartPromo(): JSX.Element {
         releaseDate={releaseDate}
         title=""
         subtitle=""
-        className="mb-4"
+        class="mb-4"
       />
       
       <div class="text-white text-center mb-4">

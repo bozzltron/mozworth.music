@@ -4,7 +4,7 @@ interface CountdownTimerProps {
   releaseDate: Date;
   title?: string;
   subtitle?: string;
-  className?: string;
+  class?: string;
   onComplete?: () => void;
 }
 
@@ -197,7 +197,7 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
           }
         `}
       </style>
-      <div class={`countdown-timer ${props.className || ''}`}>
+      <div class={`countdown-timer ${props.class || ''}`}>
         {props.title && (
           <div class="text-lg font-semibold text-white mb-2 text-center">
             {props.title}
@@ -214,36 +214,36 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
         <div class="text-center relative">
           {timeRemaining().isInCelebrationWindow && (
             <div class="confetti-fullscreen z-40">
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
-              <div class="confetti-piece"></div>
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
+              <div class="confetti-piece" />
             </div>
           )}
           <div class="text-2xl font-bold text-green-400 mb-2 relative z-50">

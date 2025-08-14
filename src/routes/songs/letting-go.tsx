@@ -1,5 +1,6 @@
 import { createSignal, onMount, createEffect, createMemo } from "solid-js";
-import StreamingIcons, { StreamingLink } from "../../components/StreamingIcons";
+import ReleaseMeta from "../../components/ReleaseMeta";
+import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
@@ -94,7 +95,7 @@ export default function LettingGo() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-11-15" prefix="Released" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -224,7 +225,7 @@ export default function LettingGo() {
       <meta name="twitter:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Letting Go",
@@ -240,11 +241,12 @@ export default function LettingGo() {
         "datePublished": "2024-11-15",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/letting-go/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-11-15'), imageUrl: '/mozworth-debut.webp' }}
       >
         <TabbedContent
           tabs={tabs()}

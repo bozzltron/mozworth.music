@@ -1,15 +1,13 @@
-import { createSignal, Show, onCleanup, onMount, createEffect, createMemo } from "solid-js";
+import { createSignal, createEffect, createMemo } from "solid-js";
 import { StreamingLink } from "../../components/StreamingIcons";
+import ReleaseMeta from "../../components/ReleaseMeta";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
-import type { JSX } from "solid-js";
+//
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 
-interface Tab {
-  label: string;
-  content: JSX.Element;
-}
+//
 
 export default function Postcard() {
   const [tab, setTab] = createSignal("Lyrics");
@@ -93,8 +91,7 @@ export default function Postcard() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released as a single on September 12, 2024</div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Released on mozworth on November 15, 2024</div>
+      <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -263,7 +260,7 @@ Wishing you were here with me</p>
       <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
       <meta name="twitter:image" content="https://mozworth.music/postcard_cover.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": "Postcard",
@@ -279,11 +276,12 @@ Wishing you were here with me</p>
         "datePublished": "2024-11-15",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/songs/postcard/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
+        confetti={{ enabled: true, releaseDate: new Date('2024-09-12'), imageUrl: '/postcard_cover.webp' }}
       >
         <TabbedContent
           tabs={tabs()}

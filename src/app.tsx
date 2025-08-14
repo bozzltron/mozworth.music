@@ -1,6 +1,7 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount, ErrorBoundary } from "solid-js";
+import { registerSW } from 'virtual:pwa-register';
 import "./app.css";
 
 function GlobalErrorFallback(err: unknown) {
@@ -32,30 +33,14 @@ function GlobalErrorFallback(err: unknown) {
 
 export default function App() {
   onMount(() => {
-    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js");
-    }
+    // Let VitePWA handle service worker generation/registration
+    registerSW({ immediate: true });
   });
   return (
     <ErrorBoundary fallback={GlobalErrorFallback}>
       <Router
         root={props => (
           <>
-            <script innerHTML={`
-              if (location.hostname === "mozworth.music") {
-                (function(){
-                  var gtagScript = document.createElement('script');
-                  gtagScript.async = true;
-                  gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT";
-                  document.head.appendChild(gtagScript);
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  window.gtag = gtag;
-                  gtag('js', new Date());
-                  gtag('config', 'G-HCSKGBDXDT');
-                })();
-              }
-            `} />
             <Suspense>{props.children}</Suspense>
           </>
         )}
