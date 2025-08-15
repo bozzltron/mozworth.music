@@ -5,6 +5,14 @@ import solid from "eslint-plugin-solid";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
+  {
+    ignores: [
+      "**/.vinxi/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.output/**",
+    ],
+  },
   js.configs.recommended,
   solid.configs["flat/recommended"],
   tseslint.configs.recommended,

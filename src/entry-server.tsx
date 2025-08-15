@@ -18,13 +18,20 @@ export default createHandler(() => (
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="application-name" content="mozworth" />
           <meta name="apple-mobile-web-app-title" content="mozworth" />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT"></script>
           <script innerHTML={`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-HCSKGBDXDT', { anonymize_ip: true });
+            (function(){
+              var allowedHosts = ["mozworth.music"]; // add more production hosts if needed
+              if (!allowedHosts.includes(location.hostname)) return;
+              var gtagScript = document.createElement('script');
+              gtagScript.async = true;
+              gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-HCSKGBDXDT';
+              document.head.appendChild(gtagScript);
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);} 
+              window.gtag = gtag;
+              gtag('js', new Date());
+              gtag('config', 'G-HCSKGBDXDT', { anonymize_ip: true });
+            })();
           `} />
           {assets}
         </head>

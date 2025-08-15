@@ -1,4 +1,4 @@
-import { createSignal, createEffect, For, JSX } from "solid-js";
+import { createSignal, For, JSX } from "solid-js";
 
 interface Tab {
   label: string;

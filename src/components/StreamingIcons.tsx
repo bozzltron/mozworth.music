@@ -1,4 +1,4 @@
-import { JSX, For } from "solid-js";
+import { For } from "solid-js";
 
 export interface StreamingLink {
   href: string;
