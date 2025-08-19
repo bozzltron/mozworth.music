@@ -158,29 +158,71 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
     if (timerId) window.clearInterval(timerId);
   });
 
-  const baseLayerClass = "absolute inset-0 bg-center bg-no-repeat bg-fixed transition-opacity duration-1000 will-change-[opacity] pointer-events-none";
+  const layerContainerClass = "absolute inset-0 transition-opacity will-change-[opacity] pointer-events-none";
+  const bgBaseClass = "absolute inset-0 bg-center bg-no-repeat bg-fixed";
 
   return (
     <div class={`absolute inset-0 z-0 ${props.class ?? ""}`} aria-hidden="true">
+      {/* Layer A (with blurred fill + focused image) */}
       <div
-        class={baseLayerClass}
+        class={layerContainerClass}
         style={{
-          "background-image": `url('${imageAUrl()}')`,
-          // For portrait images, reduce perceived zoom by sizing to viewport height
-          "background-size": imageAOrientation() === "portrait" ? "auto 110%" : "cover",
           "transition-duration": `${fadeMs}ms`,
           opacity: showA() ? "1" : "0",
         }}
-      />
+      >
+        {/* Blurred fill to cover negative space, especially for portrait images */}
+        <div
+          class={bgBaseClass}
+          style={{
+            "background-image": `url('${imageAUrl()}')`,
+            "background-size": "cover",
+            filter: "blur(24px)",
+            transform: "scale(1.08)",
+            opacity: imageAOrientation() === "portrait" ? "0.9" : "0.6",
+            "will-change": "transform, filter, opacity",
+          }}
+        />
+        {/* Focused image on top */}
+        <div
+          class={bgBaseClass}
+          style={{
+            "background-image": `url('${imageAUrl()}')`,
+            // For portrait images, reduce perceived zoom by sizing to viewport height
+            "background-size": imageAOrientation() === "portrait" ? "auto 110%" : "cover",
+          }}
+        />
+      </div>
+
+      {/* Layer B (with blurred fill + focused image) */}
       <div
-        class={baseLayerClass}
+        class={layerContainerClass}
         style={{
-          "background-image": `url('${imageBUrl()}')`,
-          "background-size": imageBOrientation() === "portrait" ? "auto 110%" : "cover",
           "transition-duration": `${fadeMs}ms`,
           opacity: showA() ? "0" : "1",
         }}
-      />
+      >
+        {/* Blurred fill */}
+        <div
+          class={bgBaseClass}
+          style={{
+            "background-image": `url('${imageBUrl()}')`,
+            "background-size": "cover",
+            filter: "blur(24px)",
+            transform: "scale(1.08)",
+            opacity: imageBOrientation() === "portrait" ? "0.9" : "0.6",
+            "will-change": "transform, filter, opacity",
+          }}
+        />
+        {/* Focused image */}
+        <div
+          class={bgBaseClass}
+          style={{
+            "background-image": `url('${imageBUrl()}')`,
+            "background-size": imageBOrientation() === "portrait" ? "auto 110%" : "cover",
+          }}
+        />
+      </div>
     </div>
   );
 }
