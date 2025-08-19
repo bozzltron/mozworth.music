@@ -21,7 +21,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
   const allImages = (props.images && props.images.length > 0)
     ? props.images
     : photographyBackgrounds;
-  const intervalMs = props.intervalMs ?? 60_000; // default: 1 minute
+  const intervalMs = props.intervalMs ?? 180_000; // default: 3 minutes
   const fadeMs = props.fadeMs ?? 1500; // a little slower than 1s
 
   const [showA, setShowA] = createSignal(true);
