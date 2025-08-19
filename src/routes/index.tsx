@@ -1,9 +1,9 @@
 import { createSignal } from "solid-js";
 import SmartPromo from "../components/SmartPromo";
+import RotatingBackground from "../components/RotatingBackground";
+import { photographyBackgrounds } from "../data/photography";
 
-// @ts-expect-error: Window.gtag is injected by Google Analytics and may not be present in all environments.
-// eslint-disable-next-line
-declare global { interface Window { gtag?: (...args: any[]) => void } }
+declare global { interface Window { gtag?: (...args: unknown[]) => void } }
 
 export default function Home() {
   const [showMusicPanel, setShowMusicPanel] = createSignal(false);
@@ -25,6 +25,14 @@ export default function Home() {
       <meta property="og:image:height" content="630" />
       <meta name="twitter:site" content="@mozworthmusic" />
       <meta name="twitter:creator" content="@mozworthmusic" />
+      <meta name="twitter:card" content="summary_large_image" />
+      {photographyBackgrounds.map((src) => (
+        <>
+          <meta property="og:image" content={src} />
+          <meta property="og:image:alt" content="mozworth photography" />
+        </>
+      ))}
+      <meta name="twitter:image" content={photographyBackgrounds[0]} />
       {/* Structured Data for AI and Search Engines */}
       {/*
         The innerHTML attribute is used here to inject static JSON-LD for SEO purposes.
@@ -66,8 +74,7 @@ export default function Home() {
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
-          {/* Background image */}
-          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ 'background-image': "url('/mozworth.webp')" }} />
+          <RotatingBackground />
           {/* Main content */}
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
