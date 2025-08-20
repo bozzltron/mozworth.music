@@ -18,16 +18,18 @@ function preloadImage(url: string): void {
 }
 
 export default function RotatingBackground(props: RotatingBackgroundProps) {
-  const allImages = (props.images && props.images.length > 0)
+  const sourceImages = (props.images && props.images.length > 0)
     ? props.images
     : photographyBackgrounds;
+  const images = sourceImages.filter((u): u is string => typeof u === 'string' && u.trim().length > 0);
+  const FALLBACK_IMAGE = '/mozworth.webp';
   const intervalMs = props.intervalMs ?? 180_000; // default: 3 minutes
   const fadeMs = props.fadeMs ?? 1500; // a little slower than 1s
 
   const [showA, setShowA] = createSignal(true);
   // Provide SSR-friendly defaults so the first paint has a background
-  const [imageAUrl, setImageAUrl] = createSignal<string>(allImages[0] ?? "");
-  const [imageBUrl, setImageBUrl] = createSignal<string>(allImages[1] ?? allImages[0] ?? "");
+  const [imageAUrl, setImageAUrl] = createSignal<string>(images[0] ?? FALLBACK_IMAGE);
+  const [imageBUrl, setImageBUrl] = createSignal<string>(images[1] ?? images[0] ?? FALLBACK_IMAGE);
 
   // Track orientation so we can "push back" portrait images a bit
   type Orientation = "portrait" | "landscape" | "square";
@@ -58,11 +60,11 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
 
   // Find the next index whose orientation is not portrait (if known). If none found, fallback to given start.
   function findNextNonPortrait(startIndex: number): number {
-    if (allImages.length === 0) return startIndex;
+    if (images.length === 0) return startIndex;
     let attempts = 0;
-    let idx = ((startIndex % allImages.length) + allImages.length) % allImages.length;
-    while (attempts < allImages.length) {
-      const url = allImages[idx];
+    let idx = ((startIndex % images.length) + images.length) % images.length;
+    while (attempts < images.length) {
+      const url = images[idx];
       const o = orientations.get(url);
       if (o === undefined) {
         // Kick off detection for unknowns and skip for now
@@ -70,7 +72,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
       } else if (o !== "portrait") {
         return idx;
       }
-      idx = (idx + 1) % allImages.length;
+      idx = (idx + 1) % images.length;
       attempts += 1;
     }
     return startIndex;
@@ -82,7 +84,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
   let timerId: number | undefined;
 
   // Persist across navigations within the SPA
-  const STORAGE_KEY = "rotating-bg-state-v1";
+  const STORAGE_KEY = "rotating-bg-state-v2";
   interface PersistedState {
     index: number;
     lastTick: number;
@@ -90,7 +92,11 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
   }
 
   onMount(() => {
-    if (allImages.length === 0) return;
+    if (images.length === 0) {
+      setImageAUrl(FALLBACK_IMAGE);
+      setImageBUrl(FALLBACK_IMAGE);
+      return;
+    }
     const now = Date.now();
     let initialIndex = 0;
     let initialShowA = true;
@@ -101,12 +107,12 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
         const saved = JSON.parse(raw) as PersistedState;
         if (Number.isFinite(saved.index) && Number.isFinite(saved.lastTick)) {
           const ticksPassed = Math.floor((now - saved.lastTick) / intervalMs);
-          initialIndex = (saved.index + Math.max(0, ticksPassed)) % allImages.length;
+          initialIndex = (saved.index + Math.max(0, ticksPassed)) % images.length;
           initialShowA = saved.showA ?? true;
         }
       } else {
         // No saved state → randomize the starting image for variety
-        initialIndex = Math.floor(Math.random() * allImages.length);
+        initialIndex = Math.floor(Math.random() * images.length);
       }
     } catch {
       // ignore and fallback to defaults
@@ -120,12 +126,12 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
     setShowA(initialShowA);
 
     // Seed layer URLs and orientations
-    setImageAUrl(allImages[currentIndex]);
-    setImageBUrl(allImages[nextIndex]);
-    detectOrientation(allImages[currentIndex], setImageAOrientation);
-    detectOrientation(allImages[nextIndex], setImageBOrientation);
-    preloadImage(allImages[nextIndex]);
-    preloadImage(allImages[(nextIndex + 1) % allImages.length]);
+    setImageAUrl(images[currentIndex] ?? FALLBACK_IMAGE);
+    setImageBUrl(images[nextIndex] ?? images[currentIndex] ?? FALLBACK_IMAGE);
+    detectOrientation(images[currentIndex], setImageAOrientation);
+    detectOrientation(images[nextIndex], setImageBOrientation);
+    preloadImage(images[nextIndex]);
+    preloadImage(images[(nextIndex + 1) % images.length]);
 
     // Align to the next tick boundary for smooth persistence
     const msSinceLastTick = (() => {
@@ -147,19 +153,19 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
       if (showA()) {
         setShowA(false);
         setTimeout(() => {
-          setImageAUrl(allImages[upcoming]);
-          detectOrientation(allImages[upcoming], setImageAOrientation);
+          setImageAUrl(images[upcoming] ?? images[currentIndex] ?? FALLBACK_IMAGE);
+          detectOrientation(images[upcoming], setImageAOrientation);
         }, 50);
       } else {
         setShowA(true);
         setTimeout(() => {
-          setImageBUrl(allImages[upcoming]);
-          detectOrientation(allImages[upcoming], setImageBOrientation);
+          setImageBUrl(images[upcoming] ?? images[currentIndex] ?? FALLBACK_IMAGE);
+          detectOrientation(images[upcoming], setImageBOrientation);
         }, 50);
       }
 
       nextIndex = upcoming;
-      preloadImage(allImages[upcoming]);
+      preloadImage(images[upcoming]);
       try {
         const toSave: PersistedState = { index: currentIndex, lastTick: Date.now(), showA: showA() };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
