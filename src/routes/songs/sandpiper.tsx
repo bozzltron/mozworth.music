@@ -99,8 +99,8 @@ export default function Sandpiper() {
           <p>Vocals and Guitar performed by Michael Bosworth</p>
           <p>Guitars and vocals recorded by Michael Bosworth at mozworth's home studio in South Austin</p>
           <p>Drums recorded at Ken's home studio in South Austin</p>
-          <p>Mixed by Steve Glaze</p>
-          <p>Mastered by Steve Glaze</p>
+          <p>Mixed by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
+          <p>Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Cover art watercolor by Jessica Bosworth</p>
           <p>Cover art composition and design by Mark Heaps</p>
         </>
