@@ -33,6 +33,8 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
   type Orientation = "portrait" | "landscape" | "square";
   const [imageAOrientation, setImageAOrientation] = createSignal<Orientation>("landscape");
   const [imageBOrientation, setImageBOrientation] = createSignal<Orientation>("landscape");
+  // Cache orientations by URL so we can skip portrait images from rotation
+  const orientations = new Map<string, Orientation>();
 
   function detectOrientation(url: string, assign: (o: Orientation) => void): void {
     try {
@@ -41,14 +43,37 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
         const w = img.naturalWidth;
         const h = img.naturalHeight;
         if (w === 0 || h === 0) return;
-        if (Math.abs(w - h) < 4) assign("square");
-        else if (h > w) assign("portrait");
-        else assign("landscape");
+        let o: Orientation;
+        if (Math.abs(w - h) < 4) o = "square";
+        else if (h > w) o = "portrait";
+        else o = "landscape";
+        orientations.set(url, o);
+        assign(o);
       };
       img.src = url;
     } catch {
       // ignore
     }
+  }
+
+  // Find the next index whose orientation is not portrait (if known). If none found, fallback to given start.
+  function findNextNonPortrait(startIndex: number): number {
+    if (allImages.length === 0) return startIndex;
+    let attempts = 0;
+    let idx = ((startIndex % allImages.length) + allImages.length) % allImages.length;
+    while (attempts < allImages.length) {
+      const url = allImages[idx];
+      const o = orientations.get(url);
+      if (o === undefined) {
+        // Kick off detection for unknowns and skip for now
+        detectOrientation(url, () => {});
+      } else if (o !== "portrait") {
+        return idx;
+      }
+      idx = (idx + 1) % allImages.length;
+      attempts += 1;
+    }
+    return startIndex;
   }
 
   // Track indices so we know what comes next
@@ -87,18 +112,20 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
       // ignore and fallback to defaults
     }
 
-    const initialNext = (initialIndex + 1) % allImages.length;
-    currentIndex = initialIndex;
+    // Seed indices but prefer non-portrait if known
+    const preferredInitial = findNextNonPortrait(initialIndex);
+    const initialNext = findNextNonPortrait(preferredInitial + 1);
+    currentIndex = preferredInitial;
     nextIndex = initialNext;
     setShowA(initialShowA);
 
     // Seed layer URLs and orientations
-    setImageAUrl(allImages[initialIndex]);
-    setImageBUrl(allImages[initialNext]);
-    detectOrientation(allImages[initialIndex], setImageAOrientation);
-    detectOrientation(allImages[initialNext], setImageBOrientation);
-    preloadImage(allImages[initialNext]);
-    preloadImage(allImages[(initialNext + 1) % allImages.length]);
+    setImageAUrl(allImages[currentIndex]);
+    setImageBUrl(allImages[nextIndex]);
+    detectOrientation(allImages[currentIndex], setImageAOrientation);
+    detectOrientation(allImages[nextIndex], setImageBOrientation);
+    preloadImage(allImages[nextIndex]);
+    preloadImage(allImages[(nextIndex + 1) % allImages.length]);
 
     // Align to the next tick boundary for smooth persistence
     const msSinceLastTick = (() => {
@@ -115,7 +142,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
 
     const advance = () => {
       currentIndex = nextIndex;
-      const upcoming = (nextIndex + 1) % allImages.length;
+      let upcoming = findNextNonPortrait(nextIndex + 1);
 
       if (showA()) {
         setShowA(false);

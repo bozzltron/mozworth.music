@@ -122,6 +122,21 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
             animation-iteration-count: infinite;
             top: -100px;
           }
+
+          /* Container constraints */
+          .countdown-timer { max-width: 100%; overflow: hidden; }
+          .countdown-row { display: flex; justify-content: center; gap: 1rem; }
+
+          /* Responsive adjustments for very small screens */
+          @media (max-width: 420px) {
+            .countdown-row { gap: 0.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem; }
+            .countdown-number { min-width: 48px; padding: 0.5rem 0.5rem; font-size: 1.25rem; }
+            .countdown-label { font-size: 0.70rem; }
+            .countdown-separator { font-size: 1rem; }
+          }
+          @media (max-width: 350px) {
+            .countdown-number { min-width: 42px; }
+          }
           
           /* Using proven nth-child pattern for better randomization */
           .confetti-piece:nth-child(1) { left: 3%; animation: confetti-fall 4.2s linear infinite; animation-delay: 0s; }
@@ -256,7 +271,7 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
         </div>
       ) : (
         <>
-          <div class="flex justify-center gap-4 mb-3">
+          <div class="countdown-row mb-3">
             <div class="countdown-unit text-center">
               <div class="countdown-number text-3xl font-bold text-white bg-white/10 rounded-lg px-3 py-2 min-w-[60px] border border-white/20">
                 {formatNumber(timeRemaining().days)}

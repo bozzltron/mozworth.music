@@ -20,6 +20,9 @@ export default function SmartPromo(): JSX.Element {
       <div class="text-xl font-bold text-white text-center mb-2">
         New Single: Sandpiper
       </div>
+      <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
+        The second summer release following, and a companion to, <a href="/songs/the-sky-is-falling" class="underline hover:text-teal-300">The Sky Is Falling</a>.
+      </div>
       
       <CountdownTimer
         releaseDate={releaseDate}
