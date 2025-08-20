@@ -103,6 +103,7 @@ export default function Sandpiper() {
           <p>Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Cover art watercolor by Jessica Bosworth</p>
           <p>Cover art composition and design by Mark Heaps</p>
+          <p>ISRC: QZZ782549784</p>
         </>
       ),
     }
@@ -145,7 +146,8 @@ export default function Sandpiper() {
           "image": "https://mozworth.music/sandpiper.webp",
           "datePublished": "2025-09-15",
           "dateModified": "2025-08-21",
-          "url": "https://mozworth.music/songs/sandpiper/"
+          "url": "https://mozworth.music/songs/sandpiper/",
+          "isrcCode": "QZZ782549784"
         }).replace(/</g, '\\u003c')}
       </script>
       <BasePageLayout
