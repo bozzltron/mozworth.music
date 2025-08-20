@@ -6,6 +6,7 @@ interface CountdownTimerProps {
   subtitle?: string;
   class?: string;
   onComplete?: () => void;
+  confettiImageUrl?: string;
 }
 
 interface TimeRemaining {
@@ -112,7 +113,7 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
             position: absolute;
             width: 24px;
             height: 24px;
-            background-image: url('/the_sky_is_falling.webp');
+            background-image: url('${props.confettiImageUrl || '/mozworth-debut.webp'}');
             background-size: cover;
             background-position: center;
             border-radius: 4px;
