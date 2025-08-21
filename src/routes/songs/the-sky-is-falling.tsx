@@ -242,7 +242,7 @@ Falling!`}
           <p>Acoustic and Electronic Drums performed by Ken Mockler</p>
           <p>Lead Guitar performed by Mark Heaps</p>
           <p>Bass performed by Jack Shultz</p>
-          <p>Mixed and Mastered by Steven Glaze at Tone Freq Studios</p>
+          <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Recorded at mozworth and Mockler home studio's</p>
           <p>Released July 15, 2025 by Balanced Scale Media</p>
           <p>Cover art by Mark Heaps</p>

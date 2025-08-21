@@ -6,8 +6,7 @@ import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
 
-// eslint-disable-next-line
-declare global { interface Window { gtag?: (...args: any[]) => void } }
+declare global { interface Window { gtag?: (...args: unknown[]) => void } }
 
 export default function MozworthAlbum() {
   const [tab, setTab] = createSignal("Tracklist");
@@ -95,13 +94,13 @@ export default function MozworthAlbum() {
                     <a
                       href={track.href}
                       class="block w-full text-lg sm:text-xl font-semibold rounded bg-black/20 border-2 border-white text-white px-5 py-3 shadow-lg hover:bg-teal-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 transition-colors text-left relative"
-                      style="touch-action: manipulation; min-width: 44px; min-height: 44px; box-shadow: 0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18);"
+                      style={{ "touch-action": "manipulation", "min-width": "44px", "min-height": "44px", "box-shadow": "0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18)" }}
                     >
                       <span class="inline-block w-8 text-white font-bold text-left align-middle">{i()+1}.</span>
                       <span class="align-middle">{track.title}</span>
                     </a>
                   </li>
-                : <li class="block w-full text-lg sm:text-xl font-semibold rounded bg-black/20 border-2 border-white text-white px-5 py-3 shadow-lg text-left relative" style="min-width: 44px; min-height: 44px; box-shadow: 0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18);">
+                : <li class="block w-full text-lg sm:text-xl font-semibold rounded bg-black/20 border-2 border-white text-white px-5 py-3 shadow-lg text-left relative" style={{ "min-width": "44px", "min-height": "44px", "box-shadow": "0 4px 24px 0 rgba(0,255,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.18)" }}>
                     <span class="inline-block w-8 text-white font-bold text-left align-middle">{i()+1}.</span>
                     <span class="align-middle">{track.title}</span>
                   </li>
@@ -157,10 +156,10 @@ export default function MozworthAlbum() {
           <p>Accompanying Vocals by Ashleigh Wright</p>
           <p>Produced by Jeff Shinrock</p>
           <p>Recorded by Jeff Shinrock and Michael Bosworth</p>
-          <p>Mixed by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at Tone Freq Studios</p>
-          <p>Mastered by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at Tone Freq Studios</p>
+          <p>Mixed by <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Tone Freq Studios</a></p>
+          <p>Mastered by <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Steve Glaze</a> at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Tone Freq Studios</a></p>
           <p>Cover art photography by Kelly Treybig</p>
-          <p>Cover art design by <a href="https://www.instagram.com/joshrowdesigns/" target="_blank" rel="noopener" class="hover:text-teal-300">Josh Row</a></p>
+          <p>Cover art design by <a href="https://www.instagram.com/joshrowdesign/?hl=en" target="_blank" rel="noopener" class="hover:text-teal-300">Josh Row</a></p>
         </section>
       ),
     },
@@ -170,11 +169,11 @@ export default function MozworthAlbum() {
     if (localStorage.getItem("mozworth-comments-enabled") !== "true" && tab() === "conversation") {
       setTab("tracks");
     }
-    const mql = window.matchMedia('(max-width: 600px)');
+    void location.pathname;
   });
 
   createEffect(() => {
-    location.pathname;
+    void location.pathname;
     setTab("Tracklist");
   });
 
@@ -227,7 +226,7 @@ export default function MozworthAlbum() {
       <meta name="twitter:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
       <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
       {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" innerHTML={`{
+      <script type="application/ld+json" textContent={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "MusicAlbum",
         "name": "mozworth",
@@ -239,7 +238,7 @@ export default function MozworthAlbum() {
         "datePublished": "2024-11-15",
         "dateModified": "2025-05-01",
         "url": "https://mozworth.music/albums/mozworth/"
-      }`} />
+      })} />
       <BasePageLayout
         cover={cover}
         info={info}

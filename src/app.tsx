@@ -1,6 +1,6 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense, onMount, ErrorBoundary } from "solid-js";
+import { Suspense, onMount, ErrorBoundary, createSignal } from "solid-js";
 import { registerSW } from 'virtual:pwa-register';
 import "./app.css";
 
@@ -32,9 +32,23 @@ function GlobalErrorFallback(err: unknown) {
 }
 
 export default function App() {
+  const [updateReady, setUpdateReady] = createSignal(false);
+  const [offlineReady, setOfflineReady] = createSignal(false);
+  let doUpdate: ((reload?: boolean) => void) | undefined;
+
   onMount(() => {
-    // Let VitePWA handle service worker generation/registration
-    registerSW({ immediate: true });
+    // Let VitePWA handle service worker generation/registration and surface updates
+    doUpdate = registerSW({
+      immediate: true,
+      onNeedRefresh() {
+        setUpdateReady(true);
+      },
+      onOfflineReady() {
+        setOfflineReady(true);
+        // auto-hide the offline ready toast after a moment
+        setTimeout(() => setOfflineReady(false), 2500);
+      }
+    });
   });
   return (
     <ErrorBoundary fallback={GlobalErrorFallback}>
@@ -42,6 +56,32 @@ export default function App() {
         root={props => (
           <>
             <Suspense>{props.children}</Suspense>
+            {offlineReady() && (
+              <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-black/80 border border-white/20 px-4 py-2 text-sm text-white shadow-lg">
+                App is ready to work offline
+              </div>
+            )}
+            {updateReady() && (
+              <div class="fixed bottom-0 left-0 right-0 z-50 bg-black/90 border-t border-white/20 text-white">
+                <div class="mx-auto max-w-3xl px-4 py-3 flex items-center justify-between gap-3">
+                  <span class="text-sm">A new version is available.</span>
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="px-3 py-1.5 rounded bg-teal-500 text-white text-sm font-medium hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                      onClick={() => { setUpdateReady(false); doUpdate && doUpdate(true); }}
+                    >
+                      Reload
+                    </button>
+                    <button
+                      class="px-3 py-1.5 rounded border border-white/30 text-white/90 text-sm hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+                      onClick={() => setUpdateReady(false)}
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       >

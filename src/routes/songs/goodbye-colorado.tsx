@@ -201,8 +201,8 @@ export default function GoodbyeColorado() {
           <p>Accompanying Vocals by Ashleigh Wright</p>
           <p>Produced by Jeff Shinrock</p>
           <p>Recorded by Jeff Shinrock and Michael Bosworth</p>
-          <p>Mixed and Mastered by Steve Glaze at Tone Freq Studios</p>
-          <p>Cover art by Josh Row</p>
+          <p>Mixed and Mastered by Steve Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
+          <p>Cover art by  <a href="https://www.instagram.com/joshrowdesign/?hl=en" target="_blank" rel="noopener" class="underline hover:text-teal-300">Josh Row</a></p>
           <p>Cover art script by Michael Bosworth</p>
         </>
       ),

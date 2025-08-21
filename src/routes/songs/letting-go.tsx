@@ -156,10 +156,10 @@ export default function LettingGo() {
           <p>Accompanying Vocals by Ashleigh Wright</p>
           <p>Produced by Jeff Shinrock</p>
           <p>Recorded by Jeff Shinrock and Michael Bosworth</p>
-          <p>Mixed by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at Tone Freq Studios</p>
-          <p>Mastered by <a href="http://www.tonefreq.net/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at Tone Freq Studios</p>
+          <p>Mixed by <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Tone Freq Studios</a></p>
+          <p>Mastered by <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300">Steve Glaze</a> at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="hover:text-teal-300 underline">Tone Freq Studios</a></p>
           <p>Cover art photography by Kelly Treybig</p>
-          <p>Cover art design by <a href="https://www.instagram.com/joshrowdesigns/" target="_blank" rel="noopener" class="hover:text-teal-300">Josh Row</a></p>
+          <p>Cover art design by <a href="https://www.instagram.com/joshrowdesign/?hl=en" target="_blank" rel="noopener" class="hover:text-teal-300">Josh Row</a></p>
         </div>
       ),
     },

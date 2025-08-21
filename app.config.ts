@@ -16,7 +16,7 @@ export default defineConfig({
           'android-chrome-512x512.png'
         ],
         workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,png,webp,ico}'],
+          globPatterns: ['**/*.{js,css,html,svg,png,webp,ico,jpg,jpeg}'],
           navigateFallback: '/',
         },
         devOptions: {
