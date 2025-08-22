@@ -8,19 +8,34 @@
   "background_color": "#000000",
   "theme_color": "#000000",
   "description": "Listen to mozworth: songs, albums, lyrics, and press.",
-  "categories": ["music", "entertainment"],
+  "categories": [
+    "music",
+    "entertainment"
+  ],
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "//public/manifest-icon-192.maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "//public/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "//public/manifest-icon-512.maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "//public/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/favicon-32x32.png",
@@ -52,13 +67,25 @@
       "name": "Songs",
       "short_name": "Songs",
       "url": "/music",
-      "icons": [{ "src": "/spotify.svg", "sizes": "64x64", "type": "image/svg+xml" }]
+      "icons": [
+        {
+          "src": "/spotify.svg",
+          "sizes": "64x64",
+          "type": "image/svg+xml"
+        }
+      ]
     },
     {
       "name": "Album",
       "short_name": "Album",
       "url": "/albums/mozworth",
-      "icons": [{ "src": "/mozworth-debut.png", "sizes": "512x512", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "/mozworth-debut.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

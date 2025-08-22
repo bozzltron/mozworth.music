@@ -34,6 +34,7 @@ function GlobalErrorFallback(err: unknown) {
 export default function App() {
   const [updateReady, setUpdateReady] = createSignal(false);
   const [offlineReady, setOfflineReady] = createSignal(false);
+  const [showLaunchSplash, setShowLaunchSplash] = createSignal(true);
   let doUpdate: ((reload?: boolean) => void) | undefined;
 
   onMount(() => {
@@ -45,24 +46,39 @@ export default function App() {
       },
       onOfflineReady() {
         setOfflineReady(true);
-        // auto-hide the offline ready toast after a moment
         setTimeout(() => setOfflineReady(false), 2500);
       }
     });
+
+    // Hide the launch overlay once the page is fully loaded, with a small delay
+    const hide = () => setShowLaunchSplash(false);
+    if (document.readyState === 'complete') {
+      setTimeout(hide, 200);
+    } else {
+      window.addEventListener('load', () => setTimeout(hide, 200), { once: true });
+    }
+    // Fallback in case load event is delayed
+    setTimeout(hide, 1800);
   });
   return (
     <ErrorBoundary fallback={GlobalErrorFallback}>
       <Router
         root={props => (
           <>
+            {/* In-app launch overlay splash */}
+            {showLaunchSplash() && (
+              <div class="fixed inset-0 z-50 bg-black flex items-center justify-center">
+                <img src="/logo.jpg" alt="mozworth logo" class="w-[52vw] max-w-[300px] h-auto object-contain" />
+              </div>
+            )}
             <Suspense>{props.children}</Suspense>
             {offlineReady() && (
-              <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-black/80 border border-white/20 px-4 py-2 text-sm text-white shadow-lg">
+              <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 rounded-lg bg-black/80 border border-white/20 px-4 py-2 text-sm text-white shadow-lg">
                 App is ready to work offline
               </div>
             )}
             {updateReady() && (
-              <div class="fixed bottom-0 left-0 right-0 z-50 bg-black/90 border-t border-white/20 text-white">
+              <div class="fixed bottom-0 left-0 right-0 z-40 bg-black/90 border-t border-white/20 text-white">
                 <div class="mx-auto max-w-3xl px-4 py-3 flex items-center justify-between gap-3">
                   <span class="text-sm">A new version is available.</span>
                   <div class="flex items-center gap-2">
