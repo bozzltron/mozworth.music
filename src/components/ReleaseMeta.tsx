@@ -12,7 +12,11 @@ interface ReleaseMetaProps {
 export default function ReleaseMeta(props: ReleaseMetaProps): JSX.Element {
   const [isClient, setIsClient] = createSignal(false);
   onMount(() => setIsClient(true));
-  const date = createMemo(() => new Date(props.releaseDate));
+  const date = createMemo(() => {
+    // Parse date in local timezone to avoid timezone conversion issues
+    const [year, month, day] = props.releaseDate.split('-').map(Number);
+    return new Date(year, month - 1, day); // month is 0-based
+  });
   const userLocale = createMemo(() => (typeof navigator !== 'undefined' && navigator.language) ? navigator.language : undefined);
   const formatted = createMemo(() => date().toLocaleDateString(userLocale(), { year: 'numeric', month: 'long', day: 'numeric' }));
   const timeAgo = createMemo(() => formatTimeAgo(date(), new Date(), userLocale()));

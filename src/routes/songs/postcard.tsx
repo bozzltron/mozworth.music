@@ -6,6 +6,7 @@ import TabbedContent from "../../components/TabbedContent";
 //
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import AnniversaryMessage from "../../components/AnniversaryMessage";
 
 //
 
@@ -92,6 +93,7 @@ export default function Postcard() {
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
       <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={true} />
+      <AnniversaryMessage releaseDate={new Date(2024, 8, 12)} enabled={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -220,8 +222,20 @@ Wishing you were here with me</p>
     {
       label: "Performances",
       content: (
-        <div class="flex flex-col items-start gap-4">
-          <p class="mb-4">Watch a live performance of "Postcard":</p>
+        <div class="flex flex-col items-start gap-6">
+          <p class="mb-4">Watch live performances of "Postcard":</p>
+          <div class="w-full aspect-video max-w-2xl">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/ffPWpWdfnMA"
+              title="Postcard - Live Performance"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-xl shadow-lg"
+            />
+          </div>
           <div class="w-full aspect-video max-w-2xl">
             <iframe
               width="100%"
@@ -282,7 +296,7 @@ Wishing you were here with me</p>
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
-        confetti={{ enabled: true, releaseDate: new Date('2024-09-12'), imageUrl: '/postcard_cover.webp' }}
+        confetti={{ enabled: true, releaseDate: new Date(2024, 8, 12), imageUrl: '/postcard_cover.webp' }}
       >
         <TabbedContent
           tabs={tabs()}

@@ -28,7 +28,32 @@ export default function CountdownTimer(props: CountdownTimerProps): JSX.Element 
     isInCelebrationWindow: false
   });
 
+  // Allow forcing a release state for demos/tests via ?release=1 (or true)
+  const isForcedRelease = (): boolean => {
+    if (typeof window === 'undefined') return false;
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      if (!sp.has('release')) return false;
+      const value = (sp.get('release') || '').toLowerCase();
+      return value !== '0' && value !== 'false';
+    } catch {
+      return false;
+    }
+  };
+
   const calculateTimeRemaining = (): TimeRemaining => {
+    // If release is forced via query param, immediately present as released and celebrate
+    if (isForcedRelease()) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        isExpired: true,
+        isInCelebrationWindow: true
+      };
+    }
+
     const now = new Date().getTime();
     const targetTime = props.releaseDate.getTime();
     const difference = targetTime - now;
