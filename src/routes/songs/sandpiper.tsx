@@ -1,21 +1,30 @@
 import { createSignal, createEffect, createMemo } from "solid-js";
+import { useLocation } from "@solidjs/router";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import ReleaseMeta from "../../components/ReleaseMeta";
 
 export default function Sandpiper() {
-  const [tab, setTab] = createSignal("Press Release");
+  const location = useLocation();
+  const isForcedAnniversary = createMemo(() => {
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    const sp = new URLSearchParams(search);
+    return sp.has('anniversary') && sp.get('anniversary') !== '0' && sp.get('anniversary') !== 'false';
+  });
+  const [tab, setTab] = createSignal("Lyrics");
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
 
-  // Cover art
+  // Bandcamp embedded player
   const cover = (
-    <img
-      class="cover-art w-full max-w-[380px] rounded-xl shadow-xl bg-white mb-6 md:mb-8 opacity-80 object-contain"
-      style={{ height: 'auto' }}
-      src="/sandpiper.webp"
-      alt="Sandpiper cover art"
-    />
+    <iframe
+      src="https://bandcamp.com/EmbeddedPlayer/track=2363697352/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      seamless
+      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      title="Sandpiper by mozworth"
+    >
+    </iframe>
   );
 
   // Info section
@@ -25,7 +34,12 @@ export default function Sandpiper() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Sandpiper
       </div>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">Release date September 15, 2025</div>
+      <ReleaseMeta
+        releaseDate="2025-09-15"
+        prefix="Released"
+        showConfetti={false}
+        forceConfetti={isForcedAnniversary()}
+      />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -34,12 +48,12 @@ export default function Sandpiper() {
           Leave a Note
         </button>
         <a
-          href="https://distrokid.com/hyperfollow/mozworth/sandpiper"
+          href="https://mozworth.bandcamp.com/track/sandpiper"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
-          Pre-Save / Pre-Order
+          Purchase
         </a>
         <a href="/support" 
           class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
@@ -56,14 +70,50 @@ export default function Sandpiper() {
 
   // Tabbed content using TabbedContent component
   const tabs = createMemo(() => [
-    // {
-    //   label: "Lyrics",
-    //   content: (
-    //     <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
-    //       Lyrics will be available on release day. Stay tuned!
-    //     </div>
-    //   ),
-    // },
+    {
+      label: "Lyrics",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+          <pre class="whitespace-pre-line font-sans">
+{`You are a messenger
+Of land and sea
+You know the tides
+Now you know me
+
+You are the soul
+Of a sailor lost
+You forecast the storm
+You show me the cost
+
+Natural and mystical
+Help me make sense of my world
+
+Sandpiper show me the way!
+Sandpiper show me the way!
+
+You weathered the storm
+You survived
+You command the shore
+You're a samurai
+
+You are a voyager
+An ocean guide
+You navigate your world
+Now help me with mine
+
+Natural and mystical
+Help me make sense of my world
+
+Sandpiper show me the way!
+Sandpiper show me the way!
+
+
+Sandpiper show me the way!
+Sandpiper show me the way!`}
+          </pre>
+        </div>
+      ),
+    },
     {
       label: "Press Release",
       content: (
@@ -111,7 +161,7 @@ export default function Sandpiper() {
 
   createEffect(() => {
     if (!tabs().some(t => t.label === tab())) {
-      setTab("Press Release");
+      setTab("Lyrics");
     }
   });
 
@@ -153,13 +203,72 @@ export default function Sandpiper() {
       <BasePageLayout
         cover={cover}
         info={info}
-        streamingLinks={[]}
+        streamingLinks={[
+          {
+            href: "https://open.spotify.com/track/7odYoITooNmjUhi81htXk4?si=d665c12d45cc460f",
+            alt: "Spotify",
+            iconSrc: "/spotify.svg",
+            ariaLabel: "Listen on Spotify",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://music.apple.com/us/song/sandpiper/1834623310",
+            alt: "Apple Music",
+            iconSrc: "/apple-music.svg",
+            ariaLabel: "Listen on Apple Music",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://soundcloud.com/mozworth/sandpiper",
+            alt: "SoundCloud",
+            iconSrc: "/soundcloud.svg",
+            ariaLabel: "Listen on SoundCloud",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://music.amazon.com/tracks/B0FN573KFW?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_NBSjdSmsLdVdbJaBHuXUWG3oc",
+            alt: "Amazon Music",
+            iconSrc: "/amazon-music.svg",
+            ariaLabel: "Listen on Amazon Music",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://www.youtube.com/watch?v=Mq1T76H5TLQ&list=OLAK5uy_kcqChVTW_E_Y-etU1YweSXWEEj-mM-Z8M&index=1",
+            alt: "YouTube",
+            iconSrc: "/youtube.svg",
+            ariaLabel: "Listen on YouTube",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://tidal.com/browse/track/455287849",
+            alt: "Tidal",
+            iconSrc: "/tidal.svg",
+            ariaLabel: "Listen on Tidal",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://link.deezer.com/s/3138pzzD6y4Z7wkQkqaHH",
+            alt: "Deezer",
+            iconSrc: "/deezer.svg",
+            ariaLabel: "Listen on Deezer",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Sandpiper' }); }
+          },
+          {
+            href: "https://mozworth.bandcamp.com/track/sandpiper",
+            alt: "Bandcamp",
+            iconSrc: "/bandcamp.svg",
+            ariaLabel: "Listen on Bandcamp",
+            onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Sandpiper' }); }
+          },
+        ]}
+        isrc="QZZ782549784"
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#0d2a3a] via-[#2e6f7e] to-[#f2c17d]"
+        confetti={{ enabled: true, releaseDate: new Date('2025-09-15'), force: isForcedAnniversary(), imageUrl: '/sandpiper.webp' }}
       >
         <TabbedContent
           key={location.pathname}
           tabs={tabs()}
-          defaultTab="Press Release"
+          defaultTab="Lyrics"
         />
       </BasePageLayout>
       <LeaveNoteModal
