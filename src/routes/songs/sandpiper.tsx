@@ -62,7 +62,7 @@ export default function Sandpiper() {
         <ShareButton
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/sandpiper/"}
           title="Sandpiper by mozworth"
-          text="Check out this upcoming single by mozworth!"
+          text="Check out this song by mozworth!"
         />
       </div>
     </>
