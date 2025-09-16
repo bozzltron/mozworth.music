@@ -136,6 +136,24 @@ Sandpiper show me the way!`}
       ),
     },
     {
+      label: "Press",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+          <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">It's All Indie Review</h3>
+            <p class="text-white/70 mb-2">September 14, 2025</p>
+            <p class="mb-3">
+              It's All Indie describes "Sandpiper" as "a clear-cut slice of shimmering indie-pop with a slightly scuzzy undertone of grunge guitar sounds" and praises the track as "a breezy indie-pop gem with grungy undertones, jangly new-wave hooks, and lush melodies."
+            </p>
+            <a href="https://www.itsallindie.com/2025/09/mozworth-reveals-bold-new-single.html" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
       label: "Credits",
       content: (
         <>
