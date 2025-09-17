@@ -150,6 +150,16 @@ Sandpiper show me the way!`}
               Read Full Review →
             </a>
           </div>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">The Big Takeover Review</h3>
+            <p class="text-white/70 mb-2">September 17, 2025</p>
+            <p class="mb-3">
+              The Big Takeover praises "Sandpiper" for its depth and duality, describing it as music that "ebbs and flows between folky understatement and the roar of rock and roll at its finest" and calling it "a blend of indie delicacy, rock muscle, psychedelic colour, and surf finesse."
+            </p>
+            <a href="https://bigtakeover.com/recordings/mozworth-sandpiper-balanced-scale-media" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
         </div>
       ),
     },
