@@ -8,6 +8,16 @@ export default function Press() {
   const pressItems = [
     {
       id: 1,
+      category: "REVIEW",
+      title: "mozworth - Sandpiper",
+      publication: "Plastic Magazine",
+      date: "September 22, 2025",
+      description: "Plastic Magazine praises \"Sandpiper\" as \"a spectacular alternative jam that's timeless and truly absorbing throughout,\" highlighting the track's \"intricate ebb and flow between the mellow verses and charge of exhilarating choruses.\" The review celebrates mozworth's \"songwriting flair and performance talent\" and calls it \"an incredible display\" of his musical evolution.",
+      link: "https://plasticmag.co.uk/2025/09/mozworth-drops-new-single-sandpiper/",
+      linkText: "Read Full Review"
+    },
+    {
+      id: 2,
       category: "INTERVIEW",
       title: "Exclusive Interview with MOZWORTH",
       publication: "Illustrate Magazine",
@@ -17,7 +27,7 @@ export default function Press() {
       linkText: "Read Full Interview"
     },
     {
-      id: 2,
+      id: 3,
       category: "REVIEW",
       title: "mozworth - Sandpiper",
       publication: "The Big Takeover", 
@@ -27,7 +37,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 3,
+      id: 4,
       category: "REVIEW",
       title: "mozworth - Sandpiper",
       publication: "It's All Indie",
@@ -37,7 +47,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 4,
+      id: 5,
       category: "REVIEW",
       title: "mozworth - The Sky Is Falling",
       publication: "The Big Takeover",
@@ -47,7 +57,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 5,
+      id: 6,
       category: "REVIEW", 
       title: "mozworth - The Sky Is Falling",
       publication: "Indie Dock Music Blog",
@@ -57,7 +67,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 6,
+      id: 7,
       category: "REVIEW",
       title: "mozworth - The Sky Is Falling", 
       publication: "Apricot Magazine",
@@ -67,7 +77,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 7,
+      id: 8,
       category: "REVIEW",
       title: "mozworth - The Sky Is Falling",
       publication: "Buzzy Band", 
@@ -77,7 +87,7 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 8,
+      id: 9,
       category: "INTERVIEW",
       title: "An Interview with mozworth",
       publication: "KVRX 91.7",
@@ -87,7 +97,7 @@ export default function Press() {
       linkText: "Read Full Interview"
     },
     {
-      id: 9,
+      id: 10,
       category: "REVIEW",
       title: "mozworth - Goodbye Colorado",
       publication: "Indie Dream",
@@ -97,12 +107,12 @@ export default function Press() {
       linkText: "Read Full Review"
     },
     {
-      id: 10,
+      id: 11,
       category: "PREMIERE",
       title: "mozworth: \"Postcard\" [PREMIERE]",
       publication: "KUTX",
       date: "September 11, 2024",
-      description: "\"Packaging everything we love about '90s indie-alt-rock into a four-minute envelope, 'Postcard' proudly puts mozworth's stamp on these nostalgic sounds, less of a 'wish you were here' and more of a 'wish you were here' and more of a 'can't wait to show you more' ahead of his upcoming debut album.\"",
+      description: "\"Packaging everything we love about '90s indie-alt-rock into a four-minute envelope, 'Postcard' proudly puts mozworth's stamp on these nostalgic sounds, less of a 'wish you were here' and more of a 'can't wait to show you more' ahead of his upcoming debut album.\"",
       link: "https://kutx.org/song-of-the-day/mozworth-postcard-premiere/",
       linkText: "Read Full Article"
     }

@@ -1,0 +1,179 @@
+# mozworth.music - Official Artist Website
+
+This is the official website for mozworth, an indie artist from Austin, Texas. The site showcases music, lyrics, song stories, and provides streaming links across all major platforms.
+
+## Project Overview
+
+### Technology Stack
+- **Framework**: SolidJS with SolidStart (SSR-enabled)
+- **Styling**: TailwindCSS 4.x with custom gradients and animations
+- **Build Tool**: Vite with Vinxi
+- **PWA**: Vite PWA plugin for offline support and app-like experience
+- **TypeScript**: Full TypeScript support throughout
+- **Node**: Requires Node.js >=22
+
+### Architecture Patterns
+
+#### Component Structure
+- **BasePageLayout**: Main layout wrapper for all song/album pages
+- **TabbedContent**: Responsive tabbed interface (desktop tabs, mobile scrolling sections)
+- **StreamingIcons**: Consistent streaming platform links with analytics tracking
+- **ReleaseMeta**: Release date display with anniversary confetti effects
+
+#### File Organization
+```
+src/
+├── components/          # Reusable UI components
+├── routes/             # File-based routing
+│   ├── songs/          # Individual song pages
+│   ├── albums/         # Album pages
+│   └── api/           # API endpoints
+├── data/              # Static data files
+└── utils/             # Utility functions
+```
+
+#### Song Page Pattern
+Each song follows a consistent structure:
+- **Cover Art**: Bandcamp embed iframe for playback
+- **Metadata**: Title, artist, album link, release date
+- **Action Buttons**: Leave Note, Purchase, Support, Share
+- **Streaming Links**: All major platforms with analytics tracking
+- **Tabbed Content**: Lyrics, Writing, Demo, Credits, Reviews, Performances
+
+### Design System
+
+#### Color Palette
+- **Primary**: Teal (#14b8a6, #0f766e)
+- **Background**: Dynamic gradients per song/album
+- **Text**: White primary, gray-400 secondary
+- **Accents**: Purple for CTAs, yellow for highlights
+
+#### Typography
+- **Headings**: Bold, white text with responsive sizing
+- **Body**: Base to lg text with relaxed leading
+- **Lyrics**: Monospace-like treatment with proper line breaks
+
+#### Responsive Behavior
+- **Mobile**: Single column, stacked layout, scrolling sections
+- **Desktop**: Two-column layout with fixed sidebar and tabbed content
+- **PWA**: Full offline support with service worker caching
+
+### Content Patterns
+
+#### Song Pages
+- Each song has its own route: `/songs/[song-name]`
+- Consistent metadata structure for SEO and social sharing
+- Structured data (JSON-LD) for search engines
+- Analytics tracking on streaming link clicks
+
+#### Streaming Links
+Standard platform array with tracking:
+```typescript
+interface StreamingLink {
+  href: string;
+  alt: string;
+  iconSrc: string;
+  ariaLabel: string;
+  onClick?: () => void; // Analytics tracking
+}
+```
+
+#### Content Tabs
+- **Lyrics**: Full song lyrics with proper formatting
+- **Writing**: Song backstory and creation process
+- **Demo**: Original demo recordings (usually SoundCloud embeds)
+- **Credits**: Full production credits with links
+- **Reviews**: Press quotes and review excerpts
+- **Performances**: Live performance videos (YouTube embeds)
+
+### Development Guidelines
+
+#### Component Development
+- Use SolidJS patterns (createSignal, createMemo, etc.)
+- Implement proper TypeScript interfaces
+- Follow accessibility best practices (ARIA labels, semantic HTML)
+- Ensure responsive design across all screen sizes
+
+#### Content Management
+- Song data is component-based (not CMS-driven)
+- Images optimized as WebP with fallbacks
+- All external embeds should be lazy-loaded where possible
+
+#### Performance Considerations
+- PWA optimization with aggressive caching
+- Image optimization (WebP format preferred)
+- Minimal JavaScript bundles
+- Server-side rendering for SEO
+
+#### Analytics Integration
+- Google Analytics 4 integration
+- Track streaming platform clicks
+- Monitor user engagement with song content
+
+### Special Features
+
+#### Anniversary System
+- Automatic confetti effects on release anniversaries
+- Force confetti with `?anniversary=true` URL parameter
+- Album cover integration with confetti imagery
+
+#### Leave Note Feature
+- Modal system for user feedback on songs
+- Purple CTA buttons for engagement
+- Integration with backend comment system
+
+#### PWA Features
+- Offline functionality
+- App-like experience on mobile
+- Update notifications with reload prompts
+- Custom splash screen with mozworth logo
+
+### Brand Guidelines
+
+#### Voice & Tone
+- Personal and authentic
+- Storytelling focus (especially in "Writing" tabs)
+- Professional but approachable
+- Music-focused content
+
+#### Visual Identity
+- mozworth logo prominently featured
+- Consistent use of teal accent color
+- Gradient backgrounds that complement album artwork
+- Clean, modern typography
+
+### SEO & Social
+- Complete Open Graph and Twitter Card meta tags
+- Structured data for music content
+- Canonical URLs for all pages
+- Proper heading hierarchy
+- Image alt text for accessibility
+
+### Future Considerations
+- **Synchronized Lyrics**: Exploring LRC format integration
+- **Enhanced Analytics**: More detailed user engagement tracking
+- **Content Expansion**: Additional artist content and media
+- **Performance Optimization**: Continued PWA improvements
+
+## Development Commands
+
+```bash
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # ESLint check
+npm run lint:fix     # ESLint auto-fix
+```
+
+## Content Creation Guidelines
+
+When creating new song pages:
+1. Follow the established song page pattern
+2. Ensure all streaming links are current and functional
+3. Include proper analytics tracking on platform links
+4. Optimize images (WebP format, proper sizing)
+5. Write comprehensive song stories in "Writing" tab
+6. Include full production credits
+7. Test responsive behavior across devices
+
+This project represents a musician's official digital presence, so maintain high quality standards for performance, accessibility, and user experience.

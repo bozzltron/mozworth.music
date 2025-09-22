@@ -141,12 +141,12 @@ Sandpiper show me the way!`}
         <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
           <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
           <div class="mb-6">
-            <h3 class="text-lg font-semibold mb-2">It's All Indie Review</h3>
-            <p class="text-white/70 mb-2">September 14, 2025</p>
+            <h3 class="text-lg font-semibold mb-2">Plastic Magazine Review</h3>
+            <p class="text-white/70 mb-2">September 22, 2025</p>
             <p class="mb-3">
-              It's All Indie describes "Sandpiper" as "a clear-cut slice of shimmering indie-pop with a slightly scuzzy undertone of grunge guitar sounds" and praises the track as "a breezy indie-pop gem with grungy undertones, jangly new-wave hooks, and lush melodies."
+              Plastic Magazine praises "Sandpiper" as "a spectacular alternative jam that's timeless and truly absorbing throughout," highlighting the track's "intricate ebb and flow between the mellow verses and charge of exhilarating choruses." The review celebrates mozworth's "songwriting flair and performance talent" and calls it "an incredible display" of his musical evolution.
             </p>
-            <a href="https://www.itsallindie.com/2025/09/mozworth-reveals-bold-new-single.html" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+            <a href="https://plasticmag.co.uk/2025/09/mozworth-drops-new-single-sandpiper/" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
               Read Full Review →
             </a>
           </div>
@@ -157,6 +157,16 @@ Sandpiper show me the way!`}
               The Big Takeover praises "Sandpiper" for its depth and duality, describing it as music that "ebbs and flows between folky understatement and the roar of rock and roll at its finest" and calling it "a blend of indie delicacy, rock muscle, psychedelic colour, and surf finesse."
             </p>
             <a href="https://bigtakeover.com/recordings/mozworth-sandpiper-balanced-scale-media" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
+              Read Full Review →
+            </a>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">It's All Indie Review</h3>
+            <p class="text-white/70 mb-2">September 14, 2025</p>
+            <p class="mb-3">
+              It's All Indie describes "Sandpiper" as "a clear-cut slice of shimmering indie-pop with a slightly scuzzy undertone of grunge guitar sounds" and praises the track as "a breezy indie-pop gem with grungy undertones, jangly new-wave hooks, and lush melodies."
+            </p>
+            <a href="https://www.itsallindie.com/2025/09/mozworth-reveals-bold-new-single.html" target="_blank" rel="noopener" class="inline-block text-teal-300 hover:text-teal-200 underline">
               Read Full Review →
             </a>
           </div>

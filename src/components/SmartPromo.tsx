@@ -40,20 +40,22 @@ export default function SmartPromo(): JSX.Element {
         >View Single</a>
       </div>
 
-      {/* Interview Promotion */}
+      {/* Latest Review Promotion */}
       <div class="w-full border-t border-white/20 pt-4">
         <div class="text-xl font-bold text-white text-center mb-2">
-          New Interview: Illustrate Magazine
+          New Review: Plastic Magazine
         </div>
         <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
-          An in-depth conversation covering musical journey, influences, and creative process.
+          "A spectacular alternative jam that's timeless and truly absorbing throughout."
         </div>
         <div class="flex flex-wrap gap-3 justify-center">
           <a
-            href="/press"
+            href="https://plasticmag.co.uk/2025/09/mozworth-drops-new-single-sandpiper/"
+            target="_blank"
+            rel="noopener"
             class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
           >
-            Read Interview
+            Read Review
           </a>
         </div>
       </div>

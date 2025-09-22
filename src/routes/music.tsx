@@ -33,7 +33,7 @@ export default function Music() {
                 <img src="/sandpiper.webp" alt="Sandpiper single cover featuring watercolor artwork and coastal hues" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
                 <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 transition-colors">Sandpiper</h2>
                 <p class="text-white/70 mb-1">September 15, 2025</p>
-                <p class="text-white/60 text-sm mb-4">A guitar-driven, ocean-soaked anthem inspired by myth, nature, and quiet messengers.</p>
+                <p class="text-white/60 text-sm mb-4">"A spectacular alternative jam that's timeless and truly absorbing throughout." – Plastic Magazine</p>
               </a>
               {/* The Sky Is Falling */}
               <a href="/songs/the-sky-is-falling" class="release group bg-black/50 border border-white/10 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 w-full mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'music', event_label: 'The Sky Is Falling', destination: '/songs/the-sky-is-falling' }); }} aria-label="The Sky Is Falling - Single released July 15, 2025">
