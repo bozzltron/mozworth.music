@@ -23,6 +23,16 @@ export default function Tour() {
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
             </div>
 
+            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Saturday, October 11, 2025</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>South Austin Beer Garden<br />6:00pm<br />Austin, TX</p>
+              </div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
+                {/* Links to be added later */}
+              </div>
+            </div>
+
             <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, August 1, 2025</div>
               <div class="venue-info flex-1 text-left text-base">
