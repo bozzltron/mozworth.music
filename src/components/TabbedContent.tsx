@@ -1,4 +1,4 @@
-import { createSignal, For, JSX } from "solid-js";
+import { createSignal, For, JSX, onMount, onCleanup, createEffect } from "solid-js";
 
 interface Tab {
   label: string;
@@ -11,10 +11,89 @@ interface TabbedContentProps {
   key?: string;
 }
 
+// Convert tab label to URL-friendly slug
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-')     // Replace spaces with hyphens
+    .replace(/-+/g, '-')      // Replace multiple hyphens with single hyphen
+    .trim();
+}
+
+// Find tab by slug or label
+function findTabBySlug(tabs: Tab[], slug: string): Tab | undefined {
+  return tabs.find(t => slugify(t.label) === slug) || tabs.find(t => t.label.toLowerCase() === slug);
+}
+
 export default function TabbedContent(props: TabbedContentProps) {
-  const [activeTab, setActiveTab] = createSignal(
-    props.tabs.find(t => t.label === props.defaultTab)?.label || props.tabs[0]?.label
-  );
+  // Initialize with default tab (will be updated in onMount if hash exists)
+  const getDefaultTab = () => {
+    return props.tabs.find(t => t.label === props.defaultTab)?.label || props.tabs[0]?.label;
+  };
+
+  const [activeTab, setActiveTab] = createSignal(getDefaultTab());
+  const [isInitialized, setIsInitialized] = createSignal(false);
+
+  // Handle initial load and browser back/forward navigation
+  onMount(() => {
+    if (typeof window === 'undefined') return;
+
+    // Check hash on mount (handles hard refresh with hash)
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const matchedTab = findTabBySlug(props.tabs, hash);
+      if (matchedTab) {
+        setActiveTab(matchedTab.label);
+      }
+    }
+    setIsInitialized(true);
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        const matchedTab = findTabBySlug(props.tabs, hash);
+        if (matchedTab) {
+          setActiveTab(matchedTab.label);
+        }
+      } else {
+        // If hash is removed, go back to default
+        setActiveTab(getDefaultTab());
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    onCleanup(() => {
+      window.removeEventListener('hashchange', handleHashChange);
+    });
+  });
+
+  // Update hash when active tab changes (but only after initialization)
+  createEffect(() => {
+    const tab = activeTab();
+    if (typeof window !== 'undefined' && tab && isInitialized()) {
+      const slug = slugify(tab);
+      const newHash = `#${slug}`;
+      
+      // Only update if different to avoid unnecessary history entries
+      if (window.location.hash !== newHash) {
+        history.replaceState(null, '', newHash);
+      }
+    }
+  });
+
+  const handleTabClick = (label: string) => {
+    setActiveTab(label);
+    
+    // Smooth scroll to top of content on mobile
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      const tabPanel = document.querySelector(`[data-tab="${slugify(label)}"]`);
+      if (tabPanel) {
+        tabPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   return (
     <>
@@ -24,7 +103,7 @@ export default function TabbedContent(props: TabbedContentProps) {
           <button
             type="button"
             class={`tab text-lg pb-1 border-b-2 transition-colors ${activeTab() === t.label ? "text-teal-400 border-teal-400" : "text-gray-400 border-transparent"}`}
-            onClick={() => setActiveTab(t.label)}
+            onClick={() => handleTabClick(t.label)}
           >
             {t.label}
           </button>
@@ -35,6 +114,7 @@ export default function TabbedContent(props: TabbedContentProps) {
         <div
           class={`tab-panel mb-8 ${activeTab() === t.label ? 'sm:block' : 'sm:hidden'} block`}
           style={{ order: i() }}
+          data-tab={slugify(t.label)}
         >
           {/* Tab heading for mobile only */}
           <div class="tab-heading text-lg font-bold mb-2 mt-4 text-teal-400 block sm:hidden">{t.label}</div>
