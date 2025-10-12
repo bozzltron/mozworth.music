@@ -78,7 +78,6 @@ export default function Home() {
           {/* Main content */}
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
-            <h1 class="text-3xl md:text-4xl font-bold mb-6">Hello! I'm mozworth</h1>
             {/* Album ad (replaced with SmartPromo) */}
             <div class="mb-8 w-full flex justify-center">
               <SmartPromo />
