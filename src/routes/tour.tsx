@@ -1,10 +1,16 @@
 import RotatingBackground from "../components/RotatingBackground";
+import { StandardMetadata } from "../utils/metadata";
 
 export default function Tour() {
   return (
     <>
-      <title>Tour Dates | mozworth</title>
-      <meta name="last-modified" content="2025-06-23" />
+      <StandardMetadata
+        title="Tour Dates | mozworth"
+        description="View upcoming mozworth tour dates and live performances. Austin-based indie alternative rock shows and concert schedule."
+        url="https://mozworth.music/tour/"
+        type="website"
+        modifiedDate="2025-06-23"
+      />
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">

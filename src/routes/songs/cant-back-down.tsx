@@ -5,6 +5,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import { StandardMetadata } from "../../utils/metadata";
 
 export default function CantBackDown() {
   const [tab, setTab] = createSignal("Lyrics");
@@ -248,37 +249,33 @@ We can't back down now</p></div>,
 
   return (
     <>
-      <title>Can't Back Down | mozworth</title>
-      <meta name="description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/songs/cant-back-down/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Can't Back Down | mozworth" />
-      <meta property="og:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/cant-back-down/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Can't Back Down | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "Can't Back Down",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/songs/cant-back-down/"
-      })} />
+      <StandardMetadata
+        title="Can't Back Down | mozworth"
+        description="Listen to 'Can't Back Down' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Can't Back Down' from the self-titled debut album (2024)."
+        url="https://mozworth.music/songs/cant-back-down/"
+        type="music.song"
+        image="https://mozworth.music/mozworth-debut.webp"
+        imageAlt="Can't Back Down by mozworth - album artwork"
+        publishDate="2024-11-15"
+        modifiedDate="2025-05-01"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "Can't Back Down",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "inAlbum": {
+            "@type": "MusicAlbum",
+            "name": "mozworth"
+          },
+          "image": "https://mozworth.music/mozworth-debut.webp",
+          "datePublished": "2024-11-15",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/songs/cant-back-down/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

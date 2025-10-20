@@ -1,5 +1,6 @@
 import RotatingBackground from "../components/RotatingBackground";
-import { createSignal, createMemo } from "solid-js";
+import { createSignal, createMemo, For } from "solid-js";
+import { StandardMetadata } from "../utils/metadata";
 
 export default function Press() {
   const [selectedFilter, setSelectedFilter] = createSignal("ALL");
@@ -144,10 +145,12 @@ export default function Press() {
   };
   return (
     <>
-      <title>mozworth - Press</title>
-      <meta property="og:image" content="https://mozworth.music/mozworth.webp" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
+      <StandardMetadata
+        title="Press Coverage | mozworth"
+        description="Read the latest press coverage, reviews, interviews and features about mozworth. Featured in Plastic Magazine, The Big Takeover, It's All Indie, and more."
+        url="https://mozworth.music/press/"
+        type="website"
+      />
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
@@ -158,7 +161,7 @@ export default function Press() {
             
             {/* Filter buttons */}
             <div class="mb-8 flex flex-wrap justify-center gap-3">
-              {categories().map(category => (
+              <For each={categories()}>{category => (
                 <button
                   onClick={() => setSelectedFilter(category)}
                   class={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
@@ -169,11 +172,11 @@ export default function Press() {
                 >
                   {category}
                 </button>
-              ))}
+              )}</For>
             </div>
             
             {/* Dynamic press items */}
-            {filteredItems().map(item => (
+            <For each={filteredItems()}>{item => (
               <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
                 <div class="mb-3">
                   <span class={`inline-block px-3 py-1 text-xs font-semibold text-white rounded-full mr-2 ${getCategoryColor(item.category)}`}>
@@ -195,7 +198,7 @@ export default function Press() {
                   {item.linkText}
                 </a>
               </div>
-            ))}
+            )}</For>
           </div>
         </main>
         <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70" role="contentinfo">

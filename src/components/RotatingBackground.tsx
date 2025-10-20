@@ -22,7 +22,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
     ? props.images
     : photographyBackgrounds;
   const images = sourceImages.filter((u): u is string => typeof u === 'string' && u.trim().length > 0);
-  const FALLBACK_IMAGE = '/mozworth.webp';
+  const FALLBACK_IMAGE = '/mozworth-10-11-2025.webp';
   const intervalMs = props.intervalMs ?? 180_000; // default: 3 minutes
   const fadeMs = props.fadeMs ?? 1500; // a little slower than 1s
 

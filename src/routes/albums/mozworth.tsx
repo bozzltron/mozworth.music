@@ -5,6 +5,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
+import { StandardMetadata } from "../../utils/metadata";
 
 declare global { interface Window { gtag?: (...args: unknown[]) => void } }
 
@@ -210,35 +211,33 @@ export default function mozworthAlbum() {
 
   return (
     <>
-      <title>mozworth (Album) | mozworth</title>
-      <meta name="description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/albums/mozworth/" />
-      <meta property="og:type" content="music.album" />
-      <meta property="og:title" content="mozworth (Album) | mozworth" />
-      <meta property="og:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
-      <meta property="og:url" content="https://mozworth.music/albums/mozworth/" />
+      <StandardMetadata
+        title="mozworth (Album) | mozworth"
+        description="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more."
+        url="https://mozworth.music/albums/mozworth/"
+        type="music.album"
+        image="https://mozworth.music/mozworth-debut.webp"
+        imageAlt="mozworth self-titled album artwork"
+        publishDate="2024-11-15"
+        modifiedDate="2025-05-01"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicAlbum",
+          "name": "mozworth",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "image": "https://mozworth.music/mozworth-debut.webp",
+          "datePublished": "2024-11-15",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/albums/mozworth/"
+        }}
+      />
+      
+      {/* Music-specific Open Graph properties */}
       <meta property="music:release_date" content="2024-11-15" />
       <meta property="music:album" content="mozworth" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="mozworth (Album) | mozworth" />
-      <meta name="twitter:description" content="Listen to the self-titled debut album by mozworth. Explore the tracklist, credits, and more." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicAlbum",
-        "name": "mozworth",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/albums/mozworth/"
-      })} />
       <BasePageLayout
         cover={cover}
         info={info}

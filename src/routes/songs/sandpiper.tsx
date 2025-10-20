@@ -5,6 +5,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
+import { StandardMetadata } from "../../utils/metadata";
 
 export default function Sandpiper() {
   const location = useLocation();
@@ -23,8 +24,7 @@ export default function Sandpiper() {
       seamless
       class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       title="Sandpiper by mozworth"
-    >
-    </iframe>
+    />
   );
 
   // Info section
@@ -205,21 +205,17 @@ Sandpiper show me the way!`}
 
   return (
     <>
-      <title>Sandpiper | mozworth</title>
-      <meta name="description" content="mozworth Bridges Worlds with New Summer Single Sandpiper — a guitar-driven, ocean-soaked anthem inspired by myth, nature, and quiet messengers. Out September 15, 2025." />
-      <meta name="last-modified" content="2025-08-21" />
-      <link rel="canonical" href="https://mozworth.music/songs/sandpiper/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Sandpiper | mozworth" />
-      <meta property="og:description" content="mozworth Bridges Worlds with New Summer Single Sandpiper — a guitar-driven, ocean-soaked anthem inspired by myth, nature, and quiet messengers. Out September 15, 2025." />
-      <meta property="og:image" content="https://mozworth.music/sandpiper.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/sandpiper/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Sandpiper | mozworth" />
-      <meta name="twitter:description" content="mozworth Bridges Worlds with New Summer Single Sandpiper — a guitar-driven, ocean-soaked anthem inspired by myth, nature, and quiet messengers. Out September 15, 2025." />
-      <meta name="twitter:image" content="https://mozworth.music/sandpiper.webp" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <StandardMetadata
+        title="Sandpiper | mozworth"
+        description="mozworth Bridges Worlds with New Summer Single Sandpiper — a guitar-driven, ocean-soaked anthem inspired by myth, nature, and quiet messengers. Out September 15, 2025."
+        url="https://mozworth.music/songs/sandpiper/"
+        type="music.song"
+        image="https://mozworth.music/sandpiper.webp"
+        imageAlt="Sandpiper by mozworth - single artwork"
+        publishDate="2025-09-15"
+        modifiedDate="2025-08-21"
+        isrc="QZZ782549784"
+        structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
           "name": "Sandpiper",
@@ -236,8 +232,8 @@ Sandpiper show me the way!`}
           "dateModified": "2025-08-21",
           "url": "https://mozworth.music/songs/sandpiper/",
           "isrcCode": "QZZ782549784"
-        }).replace(/</g, '\\u003c')}
-      </script>
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

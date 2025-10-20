@@ -2,87 +2,54 @@
 declare global { interface Window { gtag?: (...args: any[]) => void } }
 
 import RotatingBackground from "../components/RotatingBackground";
+import { StandardMetadata, createSocialLinks } from "../utils/metadata";
 
 export default function Support() {
   return (
     <>
-      <title>Support mozworth | Independent Music Support Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Support mozworth and independent music. Learn about streaming payouts, follow on social media, and make direct contributions to keep local music alive. 100% of contributions go to recording and promotion." />
-      <meta name="last-modified" content="2025-01-20" />
-      <link rel="canonical" href="https://mozworth.music/support/" />
-      
       {/* Favicon and manifest */}
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <meta name="theme-color" content="#000000" />
       
-      {/* Open Graph & Twitter Enhancements */}
-      <meta property="og:site_name" content="mozworth" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta name="twitter:site" content="@mozworthmusic" />
-      <meta name="twitter:creator" content="@mozworthmusic" />
-      
-      {/* Structured Data for AI and Search Engines */}
-      {/*
-        The innerHTML attribute is used here to inject static JSON-LD for SEO purposes.
-        The content is not user-generated and is safe in this context.
-      */}
-      <script type="application/ld+json" innerHTML={`<!--${JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Support mozworth",
-        "description": "Support mozworth and independent music. Learn about streaming payouts, follow on social media, and make direct contributions to keep local music alive.",
-        "url": "https://mozworth.music/support/",
-        "mainEntity": {
-          "@type": "MusicGroup",
-          "name": "mozworth",
-          "url": "https://mozworth.music",
-          "image": "https://mozworth.music/mozworth.webp",
-          "genre": ["Indie Rock", "Alternative Rock"],
-          "location": {
-            "@type": "Place",
-            "name": "Austin, Texas"
+      <StandardMetadata
+        title="Support mozworth | Independent Music Support"
+        description="Support mozworth and independent music. Learn about streaming payouts, follow on social media, and make direct contributions to keep local music alive. 100% of contributions go to recording and promotion."
+        url="https://mozworth.music/support/"
+        type="website"
+        modifiedDate="2025-01-20"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Support mozworth",
+          "description": "Support mozworth and independent music. Learn about streaming payouts, follow on social media, and make direct contributions to keep local music alive.",
+          "url": "https://mozworth.music/support/",
+          "mainEntity": {
+            "@type": "MusicGroup",
+            "name": "mozworth",
+            "url": "https://mozworth.music",
+            "image": "https://mozworth.music/mozworth-10-11-2025.webp",
+            "genre": ["Indie Rock", "Alternative Rock"],
+            "location": {
+              "@type": "Place",
+              "name": "Austin, Texas"
+            },
+            "sameAs": createSocialLinks()
           },
-          "sameAs": [
-            "https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO",
-            "https://music.apple.com/us/artist/mozworth/1761894108",
-            "https://mozworth.bandcamp.com",
-            "https://www.youtube.com/@mozworthmusic",
-            "https://soundcloud.com/mozworth",
-            "https://www.instagram.com/mozworthmusic/",
-            "https://www.tiktok.com/@mozworthmusic",
-            "https://bsky.app/profile/mozworth.music",
-            "https://www.facebook.com/mozworth"
+          "potentialAction": [
+            {
+              "@type": "DonateAction",
+              "target": "https://cash.app/$mozworth",
+              "description": "Support mozworth via Cash App"
+            },
+            {
+              "@type": "BuyAction", 
+              "target": "https://mozworth.bandcamp.com/",
+              "description": "Buy music on Bandcamp"
+            }
           ]
-        },
-        "potentialAction": [
-          {
-            "@type": "DonateAction",
-            "target": "https://cash.app/$mozworth",
-            "description": "Support mozworth via Cash App"
-          },
-          {
-            "@type": "BuyAction", 
-            "target": "https://mozworth.bandcamp.com/",
-            "description": "Buy music on Bandcamp"
-          }
-        ]
-      })}-->`} />
-      
-      {/* SEO & Social Meta Tags */}
-      <meta property="og:title" content="Support mozworth | Independent Music Support" />
-      <meta property="og:description" content="Support mozworth and independent music. Learn about streaming payouts, follow on social media, and make direct contributions. 100% goes to recording and promotion." />
-      <meta property="og:image" content="https://mozworth.music/mozworth.webp" />
-      <meta property="og:url" content="https://mozworth.music/support/" />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Support mozworth | Independent Music Support" />
-      <meta name="twitter:description" content="Support mozworth and independent music. Learn about streaming payouts and make direct contributions. 100% goes to recording and promotion." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        }}
+      />
       
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>

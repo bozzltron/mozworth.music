@@ -5,6 +5,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
+import { StandardMetadata } from "../../utils/metadata";
 
 export default function TheSkyIsFalling() {
   const location = useLocation();
@@ -23,8 +24,7 @@ export default function TheSkyIsFalling() {
       seamless
       class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
       title="The Sky Is Falling by mozworth"
-    >
-    </iframe>
+    />
   );
 
   // Info section
@@ -259,37 +259,35 @@ Falling!`}
 
   return (
     <>
-      <title>The Sky Is Falling | mozworth</title>
-      <meta name="description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
-      <meta name="last-modified" content="2025-07-15" />
-      <link rel="canonical" href="https://mozworth.music/songs/the-sky-is-falling/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="The Sky Is Falling | mozworth" />
-      <meta property="og:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
-      <meta property="og:image" content="https://mozworth.music/the_sky_is_falling.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/the-sky-is-falling/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="The Sky Is Falling | mozworth" />
-      <meta name="twitter:description" content="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025." />
-      <meta name="twitter:image" content="https://mozworth.music/the_sky_is_falling.webp" />
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "The Sky Is Falling",
-        "isrcCode": "QZTB62543528",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "The Sky Is Falling"
-        },
-        "image": "https://mozworth.music/the_sky_is_falling.webp",
-        "datePublished": "2025-07-15",
-        "dateModified": "2025-07-15",
-        "url": "https://mozworth.music/songs/the-sky-is-falling/"
-      })} />
+      <StandardMetadata
+        title="The Sky Is Falling | mozworth"
+        description="'The Sky Is Falling' by mozworth - lyrics, press release, and credits for the new single. Released July 15, 2025."
+        url="https://mozworth.music/songs/the-sky-is-falling/"
+        type="music.song"
+        image="https://mozworth.music/the_sky_is_falling.webp"
+        imageAlt="The Sky Is Falling by mozworth - single artwork"
+        publishDate="2025-07-15"
+        modifiedDate="2025-07-15"
+        isrc="QZTB62543528"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "The Sky Is Falling",
+          "isrcCode": "QZTB62543528",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "inAlbum": {
+            "@type": "MusicAlbum",
+            "name": "The Sky Is Falling"
+          },
+          "image": "https://mozworth.music/the_sky_is_falling.webp",
+          "datePublished": "2025-07-15",
+          "dateModified": "2025-07-15",
+          "url": "https://mozworth.music/songs/the-sky-is-falling/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

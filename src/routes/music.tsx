@@ -1,22 +1,16 @@
 import RotatingBackground from "../components/RotatingBackground";
+import { StandardMetadata } from "../utils/metadata";
+
 export default function Music() {
   return (
     <>
-      <title>Music | mozworth</title>
-      <meta name="description" content="Explore the complete music catalog of mozworth: albums, singles, and releases." />
-      <meta name="last-modified" content="2025-01-20" />
-      <link rel="canonical" href="https://mozworth.music/music/" />
-      
-      {/* SEO & Social Meta Tags */}
-      <meta property="og:title" content="Music | mozworth" />
-      <meta property="og:description" content="Explore the complete music catalog of mozworth: albums, singles, and releases." />
-      <meta property="og:image" content="https://mozworth.music/mozworth.webp" />
-      <meta property="og:url" content="https://mozworth.music/music/" />
-      <meta property="og:type" content="music.albums" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Music | mozworth" />
-      <meta name="twitter:description" content="Explore the complete music catalog of mozworth: albums, singles, and releases." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
+      <StandardMetadata
+        title="Music | mozworth"
+        description="Explore the complete music catalog of mozworth: albums, singles, and releases."
+        url="https://mozworth.music/music/"
+        type="music.albums"
+        modifiedDate="2025-01-20"
+      />
       
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>

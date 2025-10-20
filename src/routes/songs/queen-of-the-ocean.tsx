@@ -6,6 +6,7 @@ import TabbedContent from "../../components/TabbedContent";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
+import { StandardMetadata } from "../../utils/metadata";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 
 //
@@ -197,35 +198,31 @@ Her spirit is finally free</p></div>,
 
   return (
     <>
-      <title>Queen of the Ocean | mozworth</title>
-      <meta name="description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
-      <link rel="canonical" href="https://mozworth.music/songs/queen-of-the-ocean/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Queen of the Ocean | mozworth" />
-      <meta property="og:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/queen-of-the-ocean/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Queen of the Ocean | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "Queen of the Ocean",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "url": "https://mozworth.music/songs/queen-of-the-ocean/"
-      })} />
+      <StandardMetadata
+        title="Queen of the Ocean | mozworth"
+        description="Listen to 'Queen of the Ocean' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Queen of the Ocean' from the self-titled debut album (2024)."
+        url="https://mozworth.music/songs/queen-of-the-ocean/"
+        type="music.song"
+        image="https://mozworth.music/mozworth-debut.webp"
+        imageAlt="Queen of the Ocean by mozworth - album artwork"
+        publishDate="2024-11-15"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "Queen of the Ocean",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "inAlbum": {
+            "@type": "MusicAlbum",
+            "name": "mozworth"
+          },
+          "image": "https://mozworth.music/mozworth-debut.webp",
+          "datePublished": "2024-11-15",
+          "url": "https://mozworth.music/songs/queen-of-the-ocean/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

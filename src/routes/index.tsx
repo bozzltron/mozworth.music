@@ -1,7 +1,8 @@
-import { createSignal } from "solid-js";
+import { createSignal, For } from "solid-js";
 import SmartPromo from "../components/SmartPromo";
 import RotatingBackground from "../components/RotatingBackground";
 import { photographyBackgrounds } from "../data/photography";
+import { StandardMetadata, createMusicGroupData } from "../utils/metadata";
 
 declare global { interface Window { gtag?: (...args: unknown[]) => void } }
 
@@ -11,66 +12,27 @@ export default function Home() {
 
   return (
     <>
-      <title>mozworth | Indie Alternative Rock Artist from Austin, Texas</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="last-modified" content="2025-01-15" />
       {/* Favicon and manifest */}
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <meta name="theme-color" content="#000000" />
-      <link rel="canonical" href="https://mozworth.music" />
-      {/* Open Graph & Twitter Enhancements */}
-      <meta property="og:site_name" content="mozworth" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta name="twitter:site" content="@mozworthmusic" />
-      <meta name="twitter:creator" content="@mozworthmusic" />
-      <meta name="twitter:card" content="summary_large_image" />
-      {photographyBackgrounds.map((src) => (
+      
+      <StandardMetadata
+        title="mozworth | Indie Alternative Rock Artist from Austin, Texas"
+        description="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist."
+        url="https://mozworth.music"
+        type="music"
+        modifiedDate="2025-01-15"
+        structuredData={createMusicGroupData()}
+      />
+      
+      {/* Additional Open Graph images from photography backgrounds */}
+      <For each={photographyBackgrounds}>{(src) => (
         <>
           <meta property="og:image" content={src} />
           <meta property="og:image:alt" content="mozworth photography" />
         </>
-      ))}
-      <meta name="twitter:image" content={photographyBackgrounds[0]} />
-      {/* Structured Data for AI and Search Engines */}
-      {/*
-        The innerHTML attribute is used here to inject static JSON-LD for SEO purposes.
-        The content is not user-generated and is safe in this context.
-      */}
-      <script type="application/ld+json" innerHTML={`<!--${JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicGroup",
-        "name": "mozworth",
-        "url": "https://mozworth.music",
-        "image": "https://mozworth.music/mozworth.webp",
-        "genre": ["Indie Rock", "Alternative Rock"],
-        "sameAs": [
-          "https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO",
-          "https://music.apple.com/us/artist/mozworth/1761894108",
-          "https://mozworth.bandcamp.com",
-          "https://www.youtube.com/@mozworthmusic",
-          "https://soundcloud.com/mozworth",
-          "https://www.instagram.com/mozworthmusic/",
-          "https://www.tiktok.com/@mozworthmusic",
-          "https://bsky.app/profile/mozworth.music",
-          "https://www.facebook.com/mozworth"
-        ]
-      })}-->`} />
-      {/* SEO & Social Meta Tags */}
-      <meta name="description" content="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist." />
-      <meta property="og:title" content="mozworth | Indie Alternative Rock Artist" />
-      <meta property="og:description" content="Explore the unique sounds of mozworth, an indie alternative rock artist from Austin, Texas. Check out the latest tracks and news!" />
-      <meta property="og:image" content="https://mozworth.music/mozworth.webp" />
-      <meta property="og:url" content="https://mozworth.music" />
-      <meta property="music:musician" content="mozworth" />
-      <meta property="og:type" content="music" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="mozworth | Indie Alternative Rock Artist" />
-      <meta name="twitter:description" content="Discover the music of mozworth, an indie alternative rock artist based in Austin, Texas." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth.webp" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      )}</For>
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
@@ -91,7 +53,7 @@ export default function Home() {
             <button type="button" aria-label="Open social media platforms" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</button>
             <a href="https://mozworth.beehiiv.com/subscribe" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Newsletter', destination: 'beehiiv' }); }}>Join The Newsletter</a>
             <a href="https://mozworth.printful.me/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Merch</a>
-            <a href="https://www.pressjunkiepr.com/clients/mozworth/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'pressjunkiepr' }); }}>Press Kit</a>
+            <a href="/epk" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'epk_page' }); }}>Press Kit</a>
             <a href="/press" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
             <a href="https://www.pressjunkiepr.com/contact/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
           </nav>

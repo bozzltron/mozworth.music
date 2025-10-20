@@ -5,6 +5,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import { StandardMetadata } from "../../utils/metadata";
 
 
 export default function WalkingTheCow() {
@@ -209,37 +210,33 @@ I am walking the cow`}</div>
 
   return (
     <>
-      <title>Walking The Cow | mozworth</title>
-      <meta name="description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the mozworth cover of 'Walking The Cow' (2025)." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/songs/walking-the-cow/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Walking The Cow | mozworth" />
-      <meta property="og:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/walking-the-cow/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Walking The Cow | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the the mozworth cover of 'Walking The Cow' (2025)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-walking-the-cow-cover.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "Walking The Cow",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "Walking The Cow"
-        },
-        "image": "https://mozworth.music/mozworth-walking-the-cow-cover.webp",
-        "datePublished": "2025-01-22",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/songs/walking-the-cow/"
-      })} />
+      <StandardMetadata
+        title="Walking The Cow | mozworth"
+        description="Listen to 'Walking The Cow' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the mozworth cover of 'Walking The Cow' (2025)."
+        url="https://mozworth.music/songs/walking-the-cow/"
+        type="music.song"
+        image="https://mozworth.music/mozworth-walking-the-cow-cover.webp"
+        imageAlt="Walking The Cow by mozworth - single artwork"
+        publishDate="2025-01-22"
+        modifiedDate="2025-05-01"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "Walking The Cow",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "inAlbum": {
+            "@type": "MusicAlbum",
+            "name": "Walking The Cow"
+          },
+          "image": "https://mozworth.music/mozworth-walking-the-cow-cover.webp",
+          "datePublished": "2025-01-22",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/songs/walking-the-cow/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

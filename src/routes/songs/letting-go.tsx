@@ -5,6 +5,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import { StandardMetadata } from "../../utils/metadata";
 
 export default function LettingGo() {
   const [commentsEnabled, setCommentsEnabled] = createSignal(false);
@@ -210,38 +211,34 @@ export default function LettingGo() {
 
   return (
     <>
-      <title>Letting Go | mozworth</title>
-      <meta name="description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/songs/letting-go/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Letting Go | mozworth" />
-      <meta property="og:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/letting-go/" />
-      <meta property="music:isrc" content="QZZ762472990" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Letting Go | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "Letting Go",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/songs/letting-go/"
-      })} />
+      <StandardMetadata
+        title="Letting Go | mozworth"
+        description="Listen to 'Letting Go' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Letting Go' from the self-titled debut album (2024)."
+        url="https://mozworth.music/songs/letting-go/"
+        type="music.song"
+        image="https://mozworth.music/mozworth-debut.webp"
+        imageAlt="Letting Go by mozworth - album artwork"
+        publishDate="2024-11-15"
+        modifiedDate="2025-05-01"
+        isrc="QZZ762472990"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "Letting Go",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "mozworth"
+          },
+          "inAlbum": {
+            "@type": "MusicAlbum",
+            "name": "mozworth"
+          },
+          "image": "https://mozworth.music/mozworth-debut.webp",
+          "datePublished": "2024-11-15",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/songs/letting-go/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}
