@@ -22,14 +22,22 @@ export default function Tour() {
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
 
             <div class="tour-date info w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
-              <div class="min-w-[200px] text-left font-bold">2025</div>
+              <div class="min-w-[200px] text-left font-bold">2026</div>
               <div class="venue-info flex-1 text-left text-base">
-                <p>2025 Tour Dates Coming Soon<br />Check back for updates</p>
+                <p>2026 Tour Dates Coming Soon<br />Check back for updates</p>
               </div>
-              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end"></div>
+              <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end" />
             </div>
 
             <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Sunday, January 4, 2026</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>Stout Haus<br />mozworth (two piece with Mark Heaps)<br />7:00pm<br />Austin, TX</p>
+              </div>
+              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end" />
+            </div>
+
+            <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Saturday, October 11, 2025</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>South Austin Beer Garden<br />6:00pm<br />Austin, TX</p>
