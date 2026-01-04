@@ -35,7 +35,7 @@ export default function Tour() {
                 <p>Stout Haus<br />mozworth (two piece with Mark Heaps)<br />7:00pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://artists.bandsintown.com/artists/15561057/events/upcoming" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.bandsintown.com/e/107752868?&came_from=210&_ga=2.198202799.1431877457.1767487122-1718009698.1767487122" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
                 <a href="https://www.facebook.com/share/1KYdDWVDrw/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
