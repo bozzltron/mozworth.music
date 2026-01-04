@@ -146,10 +146,11 @@ export default function Press() {
   return (
     <>
       <StandardMetadata
-        title="Press Coverage | mozworth"
-        description="Read the latest press coverage, reviews, interviews and features about mozworth. Featured in Plastic Magazine, The Big Takeover, It's All Indie, and more."
+        title="Press Coverage | mozworth | Austin Indie Rock"
+        description="Read the latest press coverage, reviews, interviews and features about mozworth, an indie rock and alternative rock band from Austin, Texas. Featured in Plastic Magazine, The Big Takeover, It's All Indie, and more."
         url="https://mozworth.music/press/"
         type="website"
+        keywords="indie rock reviews, alternative rock press, Austin indie rock bands, mozworth reviews, indie rock press coverage, alternative rock interviews"
       />
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>

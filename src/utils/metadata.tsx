@@ -136,15 +136,24 @@ export function createMusicGroupData(additionalProps?: Record<string, unknown>) 
     "name": "mozworth",
     "url": "https://mozworth.music",
     "image": "https://mozworth.music/mozworth-10-11-2025.webp",
-    "description": "Austin-based indie alternative rock artist",
-    "genre": ["Indie Rock", "Alternative Rock"],
+    "description": "Austin-based indie rock and alternative rock band",
+    "genre": ["Indie Rock", "Alternative Rock", "Indie Alternative Rock", "Rock"],
     "location": {
       "@type": "Place",
+      "name": "Austin, Texas",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Austin",
         "addressRegion": "TX",
         "addressCountry": "US"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Austin",
+      "containedIn": {
+        "@type": "State",
+        "name": "Texas"
       }
     },
     "sameAs": createSocialLinks(),

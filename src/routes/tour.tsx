@@ -5,10 +5,11 @@ export default function Tour() {
   return (
     <>
       <StandardMetadata
-        title="Tour Dates | mozworth"
-        description="View upcoming mozworth tour dates and live performances. Austin-based indie alternative rock shows and concert schedule."
+        title="Tour Dates & Live Shows | mozworth | Austin Indie Rock"
+        description="View upcoming mozworth tour dates and live performances in Austin, Texas and beyond. Indie rock and alternative rock shows from this Austin-based band. Find concert dates and ticket information."
         url="https://mozworth.music/tour/"
         type="website"
+        keywords="indie rock shows Austin, alternative rock concerts Austin, Austin indie rock bands, mozworth tour dates, Austin live music, indie rock Austin Texas"
         modifiedDate="2025-06-23"
       />
       <div class="flex flex-col min-h-screen">
@@ -20,6 +21,7 @@ export default function Tour() {
           {/* Main content */}
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
+            <p class="text-white/80 mb-6 text-center">Indie rock and alternative rock shows in Austin, Texas and beyond</p>
 
             <div class="tour-date info w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">2026</div>

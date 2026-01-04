@@ -19,9 +19,10 @@ export default function Home() {
       
       <StandardMetadata
         title="mozworth | Indie Alternative Rock Artist from Austin, Texas"
-        description="Discover mozworth, an indie alternative rock artist based in Austin, Texas. Explore the latest music, news, and updates from the artist."
+        description="mozworth is an indie rock and alternative rock band from Austin, Texas. Discover new music, tour dates, and press coverage from this Austin-based indie alternative rock artist."
         url="https://mozworth.music"
         type="music"
+        keywords="indie rock, alternative rock, indie rock bands, alternative rock bands, Austin Texas, indie rock bands Austin, alternative rock bands Austin, Austin indie rock, Austin alternative rock, indie rock Austin TX, mozworth"
         modifiedDate="2025-01-15"
         structuredData={createMusicGroupData()}
       />
@@ -39,6 +40,7 @@ export default function Home() {
           <RotatingBackground />
           {/* Main content */}
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
+            <h1 class="sr-only">mozworth - Indie Rock & Alternative Rock Band from Austin, Texas</h1>
             <img src="/logo.jpg" alt="mozworth logo" class="w-36 mb-6 mx-auto select-none pointer-events-none" draggable={false} />
             {/* Album ad (replaced with SmartPromo) */}
             <div class="mb-8 w-full flex justify-center">

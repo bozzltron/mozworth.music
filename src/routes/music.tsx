@@ -5,10 +5,11 @@ export default function Music() {
   return (
     <>
       <StandardMetadata
-        title="Music | mozworth"
-        description="Explore the complete music catalog of mozworth: albums, singles, and releases. New music coming January 22, 2026!"
+        title="Indie Rock Music | mozworth | Austin, Texas"
+        description="Explore mozworth's indie rock and alternative rock music catalog. Albums, singles, and releases from this Austin-based indie alternative rock band. New music coming January 22, 2026!"
         url="https://mozworth.music/music/"
         type="music.albums"
+        keywords="indie rock music, alternative rock music, indie rock albums, alternative rock singles, Austin indie rock, Austin alternative rock, mozworth music"
         modifiedDate="2025-10-28"
       />
       
@@ -20,7 +21,8 @@ export default function Music() {
           <RotatingBackground />
           {/* Main content */}
           <div class="relative container mx-0 md:mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-4 md:rounded-[10px] bg-black/70">
-            <h1 class="text-3xl font-bold mb-8 text-center">Music</h1>
+            <h1 class="text-3xl font-bold mb-8 text-center">Indie Rock & Alternative Rock Music</h1>
+            <p class="text-white/80 mb-6 text-center">Austin, Texas based indie alternative rock</p>
             <section aria-label="Music releases" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
               {/* New Release Coming Soon */}
               <div class="release group bg-gradient-to-br from-teal-900/30 to-purple-900/30 border-2 border-teal-400/50 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/50 w-full mx-auto relative overflow-hidden" aria-label="New release coming January 22, 2026">
