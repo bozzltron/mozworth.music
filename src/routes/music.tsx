@@ -21,8 +21,7 @@ export default function Music() {
           <RotatingBackground />
           {/* Main content */}
           <div class="relative container mx-0 md:mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-4 md:rounded-[10px] bg-black/70">
-            <h1 class="text-3xl font-bold mb-8 text-center">Indie Rock & Alternative Rock Music</h1>
-            <p class="text-white/80 mb-6 text-center">Austin, Texas based indie alternative rock</p>
+            <h1 class="text-3xl font-bold mb-8 text-center">Music</h1>
             <section aria-label="Music releases" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
               {/* New Release Coming Soon */}
               <div class="release group bg-gradient-to-br from-teal-900/30 to-purple-900/30 border-2 border-teal-400/50 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/50 w-full mx-auto relative overflow-hidden" aria-label="New release coming January 22, 2026">
@@ -33,9 +32,9 @@ export default function Music() {
                   <div class="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 animate-pulse" />
                   <div class="text-6xl opacity-30">?</div>
                 </div>
-                <h2 class="text-xl font-bold mb-2 text-teal-300">New Release</h2>
+                <h2 class="text-xl font-bold mb-2 text-teal-300">Story of an Artist</h2>
                 <p class="text-white/90 mb-1 font-semibold">January 22, 2026</p>
-                <p class="text-white/70 text-sm mb-4 italic">Something new is on the way...</p>
+                <p class="text-white/70 text-sm mb-4 italic">The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.</p>
               </div>
               {/* Sandpiper (Upcoming) */}
               <a href="/songs/sandpiper" class="release group bg-black/50 border border-white/10 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 w-full mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'music', event_label: 'Sandpiper', destination: '/songs/sandpiper' }); }} aria-label="Sandpiper - Single releasing September 15, 2025">

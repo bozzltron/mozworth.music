@@ -2,27 +2,23 @@ import { JSX } from "solid-js";
 import CountdownTimer from "./CountdownTimer";
 
 export default function SmartPromo(): JSX.Element {
-  // September 15, 2025 at midnight (user's local time)
-  const releaseDate = new Date('2025-09-15T00:00:00');
+  // January 22, 2026 at midnight (user's local time)
+  const releaseDate = new Date('2026-01-22T00:00:00');
 
   return (
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
-      {/* Sandpiper Promotion */}
+      {/* Story of an Artist Promotion */}
       <div class="w-full flex justify-center mb-4">
-        <a href="/songs/sandpiper" aria-label="Go to Sandpiper page">
-          <img
-            src="/sandpiper.webp"
-            alt="Sandpiper single cover art"
-            class="rounded-xl shadow-lg w-full max-w-[560px] object-cover focus:outline-none focus:ring-2 focus:ring-teal-400"
-            style={{ 'aspect-ratio': '1 / 1' }}
-          />
-        </a>
+        <div class="rounded-xl shadow-lg w-full max-w-[560px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden" style={{ 'aspect-ratio': '1 / 1' }}>
+          <div class="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 animate-pulse" />
+          <div class="text-6xl opacity-30">?</div>
+        </div>
       </div>
       <div class="text-xl font-bold text-white text-center mb-2">
-        New Single: Sandpiper
+        Coming Soon: Story of an Artist
       </div>
       <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
-        The second summer release following, and a companion to, <a href="/songs/the-sky-is-falling" class="underline hover:text-teal-300">The Sky Is Falling</a>.
+        The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.
       </div>
       
       <CountdownTimer
@@ -30,34 +26,14 @@ export default function SmartPromo(): JSX.Element {
         title=""
         subtitle=""
         class="mb-4"
-        confettiImageUrl="/sandpiper.webp"
+        confettiImageUrl="/mozworth-10-11-2025.webp"
       />
       
-      <div class="flex flex-wrap gap-3 justify-center mb-6">
+      <div class="flex flex-wrap gap-3 justify-center">
         <a
-          href="/songs/sandpiper"
+          href="/music"
           class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
-        >View Single</a>
-      </div>
-
-      {/* Latest Review Promotion */}
-      <div class="w-full border-t border-white/20 pt-4">
-        <div class="text-xl font-bold text-white text-center mb-2">
-          New Review: Plastic Magazine
-        </div>
-        <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
-          "A spectacular alternative jam that's timeless and truly absorbing throughout."
-        </div>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a
-            href="https://plasticmag.co.uk/2025/09/mozworth-drops-new-single-sandpiper/"
-            target="_blank"
-            rel="noopener"
-            class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
-          >
-            Read Review
-          </a>
-        </div>
+        >Learn More</a>
       </div>
     </div>
   );
