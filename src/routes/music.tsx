@@ -28,10 +28,7 @@ export default function Music() {
                 <div class="absolute top-2 right-2 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
                   COMING SOON
                 </div>
-                <div class="w-full aspect-square bg-gradient-to-br from-gray-800 to-gray-900 mb-4 rounded shadow-lg flex items-center justify-center relative overflow-hidden group-hover:shadow-teal-400/50 transition-shadow duration-200">
-                  <div class="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 animate-pulse" />
-                  <div class="text-6xl opacity-30">?</div>
-                </div>
+                <img src="/album-placeholder.webp" alt="Story of an Artist cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/50 transition-shadow duration-200" />
                 <h2 class="text-xl font-bold mb-2 text-teal-300">Story of an Artist</h2>
                 <p class="text-white/90 mb-1 font-semibold">January 22, 2026</p>
                 <p class="text-white/70 text-sm mb-4 italic">The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.</p>

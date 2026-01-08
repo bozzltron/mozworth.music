@@ -9,10 +9,12 @@ export default function SmartPromo(): JSX.Element {
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
       {/* Story of an Artist Promotion */}
       <div class="w-full flex justify-center mb-4">
-        <div class="rounded-xl shadow-lg w-full max-w-[560px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden" style={{ 'aspect-ratio': '1 / 1' }}>
-          <div class="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 animate-pulse" />
-          <div class="text-6xl opacity-30">?</div>
-        </div>
+        <img
+          src="/album-placeholder.webp"
+          alt="Story of an Artist cover art"
+          class="rounded-xl shadow-lg w-full max-w-[560px] object-cover focus:outline-none focus:ring-2 focus:ring-teal-400"
+          style={{ 'aspect-ratio': '1 / 1' }}
+        />
       </div>
       <div class="text-xl font-bold text-white text-center mb-2">
         Coming Soon: Story of an Artist
