@@ -65,7 +65,7 @@ Thanks!`);
           <div class="text-white space-y-4">
             <p>
               I love the idea that the meaning of art isn't fixed by the artist, but it emerges from the audiences collective response. 
-              I'm curious to know your reponse to "{props.songTitle}" .
+              I'm curious to know your response to "{props.songTitle}".
             </p>
             
             <p>
