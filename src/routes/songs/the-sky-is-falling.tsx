@@ -235,13 +235,13 @@ Falling!`}
         <>
           <p>Songwriting by Michael Bosworth</p>
           <p>Lyrics by Michael Bosworth</p>
-          <p>Composed by Michael Bosworth, Ken Mockler, Mark Heaps, and Jack Shultz</p>
+          <p>Composed by Michael Bosworth, Ken Mockler, Mark Heaps, and Jack Schultz</p>
           <p>Produced by Michael Bosworth</p>
           <p>Recorded by Michael Bosworth and Mockler</p>
           <p>Guitar and Vocals performed by Michael Bosworth</p>
           <p>Acoustic and Electronic Drums performed by Ken Mockler</p>
           <p>Lead Guitar performed by Mark Heaps</p>
-          <p>Bass performed by Jack Shultz</p>
+          <p>Bass performed by Jack Schultz</p>
           <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Recorded at mozworth and Mockler home studio's</p>
           <p>Released July 15, 2025 by Balanced Scale Media</p>
