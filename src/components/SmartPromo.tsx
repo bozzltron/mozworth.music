@@ -10,7 +10,7 @@ export default function SmartPromo(): JSX.Element {
       {/* Story of an Artist Promotion */}
       <div class="w-full flex justify-center mb-4">
         <img
-          src="/album-placeholder.webp"
+          src="/storyofanartist.webp"
           alt="Story of an Artist cover art"
           class="rounded-xl shadow-lg w-full max-w-[560px] object-cover focus:outline-none focus:ring-2 focus:ring-teal-400"
           style={{ 'aspect-ratio': '1 / 1' }}
@@ -28,12 +28,12 @@ export default function SmartPromo(): JSX.Element {
         title=""
         subtitle=""
         class="mb-4"
-        confettiImageUrl="/mozworth-10-11-2025.webp"
+        confettiImageUrl="/storyofanartist.webp"
       />
       
       <div class="flex flex-wrap gap-3 justify-center">
         <a
-          href="/music"
+          href="/songs/story-of-an-artist"
           class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
         >Learn More</a>
       </div>
