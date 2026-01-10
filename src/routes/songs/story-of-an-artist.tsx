@@ -71,9 +71,32 @@ export default function StoryOfAnArtist() {
       label: "Press Release",
       content: (
         <>
-          <h2 class="text-xl font-bold mb-2">Story of an Artist: The Second Installment</h2>
-          <p>The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.</p>
-          <p class="mt-4">More details coming soon...</p>
+          <h2 class="text-xl font-bold mb-2">mozworth – Indie‑Alt Rock Outfit Releases a New Cover of Daniel Johnston's "Story of an Artist"</h2>
+          <p class="mb-4"><strong>Austin, TX – 9 January 2026</strong></p>
+          <p class="mb-4">South‑Austin band mozworth is proud to announce the digital release of their re‑imagined version of Daniel Johnston's classic <em>Story of an Artist</em>. The track drops on January 22, 2026—the day that celebrates both Johnston's birthday and Austin's "Hi, How Are You Day," a city‑wide reminder to check in on friends' mental health. By pairing the tribute with this civic observance, mozworth hopes to honor Daniel's legacy in song and in community.</p>
+          
+          <p class="mb-4">The song has long spoke to Michael Bosworth. "It is such a vivid picture of Daniel's experience. It contains some profound perspectives along with some deep pain. Sonically, it's beautiful." he says. "I remember working on the demo and getting caught up with emotion. I was able to connect with his pain."</p>
+          
+          <p class="mb-4">Paying homage to Daniel isn't new for mozworth. Last year was the first release of this kind with "Walking The Cow". "Story of an Artist" is the second installment. "We knew we were going to record this song early and I had a demo but we waited till late in the year to get recording", says Michael Bosworth. "We quickly realized that everyone's schedules were too fragmented for a traditional in‑person studio day." Instead, they pieced the song together digitally.</p>
+          
+          <p class="mb-4">They had a demo, but they needed drums. They needed Mike. When Mike heard the demo, he heard the Beatles—a natural homage, given Daniel Johnston's lifelong admiration for the Fab Four. The band embraced the idea, swapping their usual twin‑electric‑guitar attack for a mandolin and upright bass.</p>
+          
+          <p class="mb-4">Each member showed up with their instrument, wrote their part, and recorded it on the spot. Mark Heaps on mandolin. Jack Schultz on upright bass. Michael Bosworth on electric guitar. "These guys showed up really having no idea what to play and reacting to the recording. There is a spontaneity to it. A trust in our intuition that brings some magic.", says Michael Bosworth.</p>
+          
+          <p class="mb-4">Mandolin, bass, guitar, and vocals were recorded at mozworth's South‑Austin space; drums and auxiliary percussion at Mike Hall's home studio. A brief nod to the gear: a set of vintage microphones and preamps borrowed from friend Josh Wolfer to give this release a new sound. Mixing and mastering were handled by Steven Glaze at Tone Freq Studios.</p>
+          
+          <p class="mb-4">mozworth's <em>Story of an Artist</em> is a dreamy DIY reinterpretation that honors the original by digging deep into Daniel's own inspiration and playing in the spirit of his heroes.</p>
+          
+          <p class="mb-4">January 22 is Hi, How Are You Day in Austin and several other cities, a grassroots campaign encouraging residents to reach out to friends and family about mental‑health wellbeing.</p>
+          
+          <p class="mb-4">mozworth is currently booking dates in the Austin area to support the release and they are in the process of recording their next full length album expected late 2026.</p>
+          
+          <p class="mb-6"><strong>Story of an Artist releases January 22, 2026</strong></p>
+          
+          <div class="border-t border-white/20 pt-4 mt-6">
+            <p class="text-sm text-white/70 mb-2">For media inquiries, interviews, or press materials, please contact:</p>
+            <p class="text-sm">Balanced Scale Media PR<br />email: <a href="mailto:promo@balancedscale.com" class="underline hover:text-teal-300">promo@balancedscale.com</a><br />phone: +1 (515) 418‑7894</p>
+          </div>
         </>
       ),
     },
@@ -81,10 +104,16 @@ export default function StoryOfAnArtist() {
       label: "Credits",
       content: (
         <>
-          <p>Songwriting by Michael Bosworth</p>
-          <p>Lyrics by Michael Bosworth</p>
+          <p>Written by Daniel Johnston</p>
+          <p>Arrangement by Michael Bosworth</p>
+          <p>Electric Guitar and Vocals performed by Michael Bosworth</p>
+          <p>Mandolin performed by Mark Heaps</p>
+          <p>Upright Bass performed by Jack Schultz</p>
+          <p>Drums and Auxiliary Percussion performed by Mike Hall</p>
           <p>Produced by Michael Bosworth</p>
-          {/* Credits to be updated when available */}
+          <p>Recorded by Michael Bosworth (mandolin, bass, guitar, vocals at mozworth's South-Austin space) and Mike Hall (drums and auxiliary percussion at Mike Hall's home studio)</p>
+          <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
+          <p>Vintage microphones and preamps borrowed from Josh Wolfer</p>
         </>
       ),
     },
