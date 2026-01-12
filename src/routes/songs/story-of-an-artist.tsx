@@ -182,13 +182,14 @@ Others just like to watch the world`}</div>
     <>
       <StandardMetadata
         title="Story of an Artist | mozworth"
-        description="Listen to 'Story of an Artist' by mozworth. Read the lyrics, learn about the song, and experience the official album art. The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day."
+        description="Listen to 'Story of an Artist' by mozworth. Daniel Johnston cover song from Austin indie rock band mozworth. Read the lyrics, learn about the song, and experience the official album art. The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day. Releases January 22, 2026."
         url="https://mozworth.music/songs/story-of-an-artist/"
         type="music.song"
         image="https://mozworth.music/storyofanartist.webp"
         imageAlt="Story of an Artist by mozworth - single artwork"
+        keywords="Story of an Artist, Daniel Johnston, mozworth, indie rock, alternative rock, Austin Texas, Daniel Johnston cover, Austin indie rock, alternative rock bands Austin, mozworth music"
         publishDate="2026-01-22"
-        modifiedDate="2026-01-22"
+        modifiedDate="2026-01-09"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -201,9 +202,10 @@ Others just like to watch the world`}</div>
             "@type": "MusicAlbum",
             "name": "Story of an Artist"
           },
+          "genre": ["Indie Rock", "Alternative Rock", "Indie Alternative Rock"],
           "image": "https://mozworth.music/storyofanartist.webp",
           "datePublished": "2026-01-22",
-          "dateModified": "2026-01-22",
+          "dateModified": "2026-01-09",
           "url": "https://mozworth.music/songs/story-of-an-artist/"
         }}
       />
