@@ -31,7 +31,7 @@ export default function Tour() {
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end" />
             </div>
 
-            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Sunday, January 4, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>Stout Haus<br />mozworth solo acoustic<br />7:00pm<br />Austin, TX</p>
