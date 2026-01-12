@@ -24,7 +24,7 @@ export default function StoryOfAnArtist() {
     <img
       src="/storyofanartist.webp"
       alt="Story of an Artist cover art"
-      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      class="cover-art w-full max-w-[380px] rounded-xl shadow-xl bg-[#222] object-contain mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
     />
   );
 
