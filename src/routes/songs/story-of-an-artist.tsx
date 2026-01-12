@@ -214,7 +214,7 @@ Others just like to watch the world`}</div>
         info={info}
         streamingLinks={streamingLinks}
         confetti={{ enabled: true, releaseDate: new Date('2026-01-22'), imageUrl: '/storyofanartist.webp' }}
-        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f8f8f8] via-[#e0e0e0] to-[#b0b0b0]"
+        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f9f3d8] via-[#f5e6a8] to-[#e8d474]"
       >
         <TabbedContent
           key={location.pathname}
