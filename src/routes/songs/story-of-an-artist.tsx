@@ -61,10 +61,56 @@ export default function StoryOfAnArtist() {
     {
       label: "Lyrics",
       content: (
-        <div class="whitespace-pre-line text-base md:text-lg leading-relaxed text-white">
-          {/* Lyrics to be added */}
-          Lyrics coming soon...
-        </div>
+        <div class="whitespace-pre-line text-base md:text-lg leading-relaxed text-white">{`
+Listen up and I'll tell a story
+About an artist growing old
+Some would try for fame and glory
+Others aren't so bold
+
+Everyone, and friends and family
+Saying, "Hey! Get a job!"
+"Why do you only do that only?
+Why are you so odd?
+
+We don't really like what you do
+We don't think anyone ever will
+It's a problem that you have
+And this problem's made you ill."
+
+Listen up and I'll tell a story
+About an artist growing old
+Some would try for fame and glory
+Others aren't so bold
+
+The artist walks alone
+Someone says behind his back
+"He's got his gall to call himself that!
+He doesn't even know where he's at!"
+
+The artist walks among the flowers
+Appreciating the sun
+He does this all his waking hours
+But is it really so wrong?
+
+Listen up and I'll tell a story
+About an artist growing old
+Some would try for fame and glory
+Others aren't so bold
+
+They sit in front of their TVs
+Saying, "Hey! This is fun!"
+And they laugh at the artist
+Saying, "He doesn't know how to have fun."
+
+The best things in life are truly free
+Singing birds and laughing bees
+"You've got me wrong", says he
+"The sun don't shine in your TV"
+
+Listen up and I'll tell a story
+About an artist growing old
+Some would try for fame and glory
+Others just like to watch the world`}</div>
       ),
     },
     {
@@ -104,16 +150,15 @@ export default function StoryOfAnArtist() {
       label: "Credits",
       content: (
         <>
-          <p>Written by Daniel Johnston</p>
-          <p>Arrangement by Michael Bosworth</p>
-          <p>Electric Guitar and Vocals performed by Michael Bosworth</p>
-          <p>Mandolin performed by Mark Heaps</p>
-          <p>Upright Bass performed by Jack Schultz</p>
-          <p>Drums and Auxiliary Percussion performed by Mike Hall</p>
-          <p>Produced by Michael Bosworth</p>
-          <p>Recorded by Michael Bosworth (mandolin, bass, guitar, vocals at mozworth's South-Austin space) and Mike Hall (drums and auxiliary percussion at Mike Hall's home studio)</p>
+          <p>Releases January 22, 2026</p>
+          <p>Songwriting by Daniel Johnston</p>
+          <p>Composed by mozworth</p>
+          <p>Electric Guitar by Michael Bosworth</p>
+          <p>Mandolin by Mark Heaps</p>
+          <p>Bass by Jack Schultz</p>
+          <p>Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
           <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
-          <p>Vintage microphones and preamps borrowed from Josh Wolfer</p>
+          <p>Cover art by Michael Bosworth</p>
         </>
       ),
     },
