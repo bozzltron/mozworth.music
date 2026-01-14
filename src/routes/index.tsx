@@ -9,6 +9,18 @@ declare global { interface Window { gtag?: (...args: unknown[]) => void } }
 export default function Home() {
   const [showMusicPanel, setShowMusicPanel] = createSignal(false);
   const [showSocialPanel, setShowSocialPanel] = createSignal(false);
+  
+  // Secure email handling - split to prevent scraping
+  const handleContactClick = (e: MouseEvent) => {
+    e.preventDefault();
+    const emailLocal = 'mozworth';
+    const emailDomain = 'mozworth.music';
+    const email = `${emailLocal}@${emailDomain}`;
+    window.location.href = `mailto:${email}`;
+    if (window.gtag) {
+      window.gtag('event', 'email_click', { event_category: 'contact', event_label: 'Contact Me' });
+    }
+  };
 
   return (
     <>
@@ -57,7 +69,7 @@ export default function Home() {
             <a href="https://mozworth.printful.me/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Merch</a>
             <a href="https://www.balancedscale.com/artists/mozworth" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'balancedscale' }); }}>Press Kit</a>
             <a href="/press" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
-            <a href="https://www.pressjunkiepr.com/contact/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Contact', destination: 'pressjunkiepr' }); }}>Contact Me</a>
+            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={handleContactClick} aria-label="Contact mozworth via email">Contact Me</a>
           </nav>
           </div>
           {/* Music Panel */}
