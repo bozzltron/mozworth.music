@@ -164,6 +164,7 @@ Others just like to watch the world`}</div>
           <p>Electric Guitar by Michael Bosworth</p>
           <p>Mandolin by Mark Heaps</p>
           <p>Bass by Jack Schultz</p>
+          <p>Slide Guitar by Jack Schultz</p>
           <p>Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
           <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Cover art by Michael Bosworth</p>
@@ -206,7 +207,8 @@ Others just like to watch the world`}</div>
           "image": "https://mozworth.music/storyofanartist.webp",
           "datePublished": "2026-01-22",
           "dateModified": "2026-01-09",
-          "url": "https://mozworth.music/songs/story-of-an-artist/"
+          "url": "https://mozworth.music/songs/story-of-an-artist/",
+          "isrcCode": "QZDA62658204"
         }}
       />
       <BasePageLayout
