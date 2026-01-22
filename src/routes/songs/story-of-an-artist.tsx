@@ -213,6 +213,7 @@ Others just like to watch the world`}</div>
           <p>Mandolin by Mark Heaps</p>
           <p>Bass by Jack Schultz</p>
           <p>Slide Guitar by Jack Schultz</p>
+          <p>Background "lala" Vocals by Mark Heaps and Michael Bosworth</p>
           <p>Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
           <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Cover art by Michael Bosworth</p>
