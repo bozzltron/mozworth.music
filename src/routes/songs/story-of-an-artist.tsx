@@ -209,7 +209,7 @@ Others just like to watch the world`}</div>
           <p>Released January 22, 2026</p>
           <p>Songwriting by Daniel Johnston</p>
           <p>composed by mozworth</p>
-          <p>Electric Guitar by Michael Bosworth</p>
+          <p>Vocals and Electric Guitar by Michael Bosworth</p>
           <p>Mandolin by Mark Heaps</p>
           <p>Bass by Jack Schultz</p>
           <p>Slide Guitar by Jack Schultz</p>
