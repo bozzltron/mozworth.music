@@ -199,11 +199,6 @@ Others just like to watch the world`}</div>
           <p class="mb-4">mozworth is currently booking dates in the Austin area to support the release and they are in the process of recording their next full length album expected late 2026.</p>
           
           <p class="mb-6"><strong>Story of an Artist released January 22, 2026</strong></p>
-          
-          <div class="border-t border-white/20 pt-4 mt-6">
-            <p class="text-sm text-white/70 mb-2">For media inquiries, interviews, or press materials, please contact:</p>
-            <p class="text-sm">Balanced Scale Media PR<br />email: <a href="mailto:promo@balancedscale.com" class="underline hover:text-teal-300">promo@balancedscale.com</a><br />phone: +1 (515) 418‑7894</p>
-          </div>
         </>
       ),
     },
