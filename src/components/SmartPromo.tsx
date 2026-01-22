@@ -17,25 +17,17 @@ export default function SmartPromo(): JSX.Element {
         />
       </div>
       <div class="text-xl font-bold text-white text-center mb-2">
-        Coming Soon: Story of an Artist
+        Story of an Artist
       </div>
       <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
-        The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.
+        The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day. Released January 22, 2026.
       </div>
-      
-      <CountdownTimer
-        releaseDate={releaseDate}
-        title=""
-        subtitle=""
-        class="mb-4"
-        confettiImageUrl="/storyofanartist.webp"
-      />
       
       <div class="flex flex-wrap gap-3 justify-center">
         <a
           href="/songs/story-of-an-artist"
           class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
-        >Learn More</a>
+        >Listen Now</a>
       </div>
     </div>
   );
