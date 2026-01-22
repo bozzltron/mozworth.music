@@ -92,7 +92,7 @@ export default function Postcard() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={true} />
+      <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={false} />
       <AnniversaryMessage releaseDate={new Date(2024, 8, 12)} enabled={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button

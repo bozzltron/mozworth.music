@@ -83,7 +83,7 @@ export default function GoodbyeColorado() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
-      <ReleaseMeta releaseDate="2024-10-09" prefix="Released as a single on" showConfetti={true} />
+      <ReleaseMeta releaseDate="2024-10-09" prefix="Released as a single on" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -297,7 +297,7 @@ export default function GoodbyeColorado() {
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
-        confetti={{ enabled: true, releaseDate: new Date('2024-10-09'), imageUrl: '/goodbye_colorado_cover.webp' }}
+        confetti={{ enabled: true, releaseDate: new Date('2024-10-09'), imageUrl: '/mozworth-debut.webp' }}
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-b from-[#b6c85a] via-[#2e5d4a] to-[#18344a]"
       >
         <TabbedContent

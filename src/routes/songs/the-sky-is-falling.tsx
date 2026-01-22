@@ -37,7 +37,7 @@ export default function TheSkyIsFalling() {
       <ReleaseMeta
         releaseDate="2025-07-15"
         prefix="Released"
-        showConfetti={true}
+        showConfetti={false}
         forceConfetti={isForcedAnniversary()}
       />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">

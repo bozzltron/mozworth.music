@@ -81,7 +81,7 @@ export default function WalkingTheCow() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Walking The Cow
       </div>
-      <ReleaseMeta releaseDate="2025-01-22" prefix="Released" showConfetti={true} />
+      <ReleaseMeta releaseDate="2025-01-22" prefix="Released" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
