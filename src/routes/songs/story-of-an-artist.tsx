@@ -14,17 +14,74 @@ export default function StoryOfAnArtist() {
   const [tab, setTab] = createSignal("Lyrics");
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
 
-  // Streaming links for this song (to be updated when available)
+  // Streaming links for this song
   const streamingLinks: StreamingLink[] = [
-    // Placeholder - update with actual links when available
+    {
+      href: "https://open.spotify.com/track/0KJKnfaRQo9ChpFdBiXMBz?si=4a6a5dd6e4ca4ee4",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://music.apple.com/us/album/story-of-an-artist-single/1869440910",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/story-of-an-artist",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/story-of-an-artist",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://tidal.com/album/489983996/track/489983997",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://www.amazon.com/music/player/albums/B0GH2FB8GF",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://link.deezer.com/s/32eJ51YMEr2g4u4FF0khU",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Story of an Artist' }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=zXXh2I4wU3g&list=OLAK5uy_lDN5oZeT_lDLQunHTEshby_mbRe0WfF7w",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Watch on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Story of an Artist' }); }
+    },
   ];
 
-  // Cover art
+  // Cover art (Bandcamp embed)
   const cover = (
-    <img
-      src="/storyofanartist.webp"
-      alt="Story of an Artist cover art"
-      class="cover-art w-full max-w-[380px] rounded-xl shadow-xl bg-[#222] object-contain mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+    <iframe
+      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      style={{ border: 0 }}
+      src="https://bandcamp.com/EmbeddedPlayer/track=1390313411/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      seamless
+      title="Story of an Artist by mozworth (Bandcamp embed)"
     />
   );
 
@@ -35,7 +92,7 @@ export default function StoryOfAnArtist() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Story of an Artist
       </div>
-      <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={true} />
+      <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -43,13 +100,9 @@ export default function StoryOfAnArtist() {
         >
           Leave a Note
         </button>
-        <a
-          href="https://distrokid.com/hyperfollow/mozworth/story-of-an-artist"
-          target="_blank"
-          rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full"
-        >
-          Pre-Save
+        <a href="https://mozworth.bandcamp.com/track/story-of-an-artist" target="_blank" rel="noopener"
+          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
+          Purchase
         </a>
         <a href="/support" 
           class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
@@ -145,7 +198,7 @@ Others just like to watch the world`}</div>
           
           <p class="mb-4">mozworth is currently booking dates in the Austin area to support the release and they are in the process of recording their next full length album expected late 2026.</p>
           
-          <p class="mb-6"><strong>Story of an Artist releases January 22, 2026</strong></p>
+          <p class="mb-6"><strong>Story of an Artist released January 22, 2026</strong></p>
           
           <div class="border-t border-white/20 pt-4 mt-6">
             <p class="text-sm text-white/70 mb-2">For media inquiries, interviews, or press materials, please contact:</p>
@@ -154,11 +207,11 @@ Others just like to watch the world`}</div>
         </>
       ),
     },
-    {
+      {
       label: "Credits",
       content: (
         <>
-          <p>Releases January 22, 2026</p>
+          <p>Released January 22, 2026</p>
           <p>Songwriting by Daniel Johnston</p>
           <p>composed by mozworth</p>
           <p>Electric Guitar by Michael Bosworth</p>
@@ -183,14 +236,15 @@ Others just like to watch the world`}</div>
     <>
       <StandardMetadata
         title="Story of an Artist | mozworth"
-        description="Listen to 'Story of an Artist' by mozworth. Daniel Johnston cover song from Austin indie rock band mozworth. Read the lyrics, learn about the song, and experience the official album art. The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day. Releases January 22, 2026."
+        description="Listen to 'Story of an Artist' by mozworth. Daniel Johnston cover song from Austin indie rock band mozworth. Read the lyrics, learn about the song, and experience the official album art. The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day. Released January 22, 2026."
         url="https://mozworth.music/songs/story-of-an-artist/"
         type="music.song"
         image="https://mozworth.music/storyofanartist.webp"
         imageAlt="Story of an Artist by mozworth - single artwork"
         keywords="Story of an Artist, Daniel Johnston, mozworth, indie rock, alternative rock, Austin Texas, Daniel Johnston cover, Austin indie rock, alternative rock bands Austin, mozworth music"
         publishDate="2026-01-22"
-        modifiedDate="2026-01-09"
+        modifiedDate="2026-01-22"
+        isrc="QZDA62658204"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -206,7 +260,7 @@ Others just like to watch the world`}</div>
           "genre": ["Indie Rock", "Alternative Rock", "Indie Alternative Rock"],
           "image": "https://mozworth.music/storyofanartist.webp",
           "datePublished": "2026-01-22",
-          "dateModified": "2026-01-09",
+          "dateModified": "2026-01-22",
           "url": "https://mozworth.music/songs/story-of-an-artist/",
           "isrcCode": "QZDA62658204"
         }}
