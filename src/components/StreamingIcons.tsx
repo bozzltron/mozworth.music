@@ -8,7 +8,7 @@ export interface StreamingLink {
   onClick?: () => void;
 }
 
-export default function StreamingIcons(props: { links: StreamingLink[] }) {
+export default function StreamingIcons(props: { links: StreamingLink[]; iconClass?: string }) {
   // Dynamically set grid columns for desktop based on number of links
   const gridCols = `grid-cols-${props.links.length}`;
   return (
@@ -29,7 +29,8 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
             <img
               src={link.iconSrc}
               alt=""
-              class="h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"
+              class={props.iconClass || "h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"}
+              style={props.iconClass ? { filter: 'brightness(0)' } : undefined}
             />
           </a>
         )}</For>
@@ -48,7 +49,8 @@ export default function StreamingIcons(props: { links: StreamingLink[] }) {
             <img
               src={link.iconSrc}
               alt=""
-              class="h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"
+              class={props.iconClass || "h-12 w-12 sm:h-7 sm:w-7 filter invert brightness-0 hover:brightness-75 hover:drop-shadow-[0_0_8px_#00d4b4] transition-transform duration-200 hover:scale-110 hover:-rotate-3"}
+              style={props.iconClass ? { filter: 'brightness(0)' } : undefined}
             />
           </a>
         )}</For>

@@ -78,7 +78,6 @@ export default function StoryOfAnArtist() {
   const cover = (
     <iframe
       class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#222] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
-      style={{ border: 0 }}
       src="https://bandcamp.com/EmbeddedPlayer/track=1390313411/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
       seamless
       title="Story of an Artist by mozworth (Bandcamp embed)"
@@ -88,11 +87,11 @@ export default function StoryOfAnArtist() {
   // Info section
   const info = (
     <>
-      <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">Story of an Artist</h1>
-      <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
+      <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full text-black">Story of an Artist</h1>
+      <div class="song-info text-gray-700 text-base mb-1 w-full text-left">
         mozworth &middot; Story of an Artist
       </div>
-      <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={false} />
+      <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={false} textColor="text-black" />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
@@ -101,17 +100,18 @@ export default function StoryOfAnArtist() {
           Leave a Note
         </button>
         <a href="https://mozworth.bandcamp.com/track/story-of-an-artist" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
+          class="inline-block px-5 py-2 mt-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Free Download
         </a>
         <a href="/support" 
-          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
+          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-black font-semibold border-2 border-black shadow-sm hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 w-full">
           Support
         </a>
         <ShareButton
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/story-of-an-artist/"}
           title="Story of an Artist by mozworth"
           text="Check out this song by mozworth!"
+          buttonClass="inline-block px-5 py-2 mt-2 rounded bg-transparent text-black font-semibold border-2 border-black shadow-sm hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 w-full text-left"
         />
       </div>
     </>
@@ -122,7 +122,7 @@ export default function StoryOfAnArtist() {
     {
       label: "Lyrics",
       content: (
-        <div class="whitespace-pre-line text-base md:text-lg leading-relaxed text-white">{`
+        <div class="whitespace-pre-line text-base md:text-lg leading-relaxed text-black">{`
 Listen up and I'll tell a story
 About an artist growing old
 Some would try for fame and glory
@@ -178,27 +178,27 @@ Others just like to watch the world`}</div>
       label: "Press Release",
       content: (
         <>
-          <h2 class="text-xl font-bold mb-2">mozworth – Indie‑Alt Rock Outfit Releases a New Cover of Daniel Johnston's "Story of an Artist"</h2>
-          <p class="mb-4"><strong>Austin, TX – 9 January 2026</strong></p>
-          <p class="mb-4">South‑Austin band mozworth is proud to announce the digital release of their re‑imagined version of Daniel Johnston's classic <em>Story of an Artist</em>. The track drops on January 22, 2026—the day that celebrates both Johnston's birthday and Austin's "Hi, How Are You Day," a city‑wide reminder to check in on friends' mental health. By pairing the tribute with this civic observance, mozworth hopes to honor Daniel's legacy in song and in community.</p>
+          <h2 class="text-xl font-bold mb-2 text-black">mozworth – Indie‑Alt Rock Outfit Releases a New Cover of Daniel Johnston's "Story of an Artist"</h2>
+          <p class="mb-4 text-black"><strong>Austin, TX – 9 January 2026</strong></p>
+          <p class="mb-4 text-black">South‑Austin band mozworth is proud to announce the digital release of their re‑imagined version of Daniel Johnston's classic <em>Story of an Artist</em>. The track drops on January 22, 2026—the day that celebrates both Johnston's birthday and Austin's "Hi, How Are You Day," a city‑wide reminder to check in on friends' mental health. By pairing the tribute with this civic observance, mozworth hopes to honor Daniel's legacy in song and in community.</p>
           
-          <p class="mb-4">The song has long spoke to Michael Bosworth. "It is such a vivid picture of Daniel's experience. It contains some profound perspectives along with some deep pain. Sonically, it's beautiful." he says. "I remember working on the demo and getting caught up with emotion. I was able to connect with his pain."</p>
+          <p class="mb-4 text-black">The song has long spoke to Michael Bosworth. "It is such a vivid picture of Daniel's experience. It contains some profound perspectives along with some deep pain. Sonically, it's beautiful." he says. "I remember working on the demo and getting caught up with emotion. I was able to connect with his pain."</p>
           
-          <p class="mb-4">Paying homage to Daniel isn't new for mozworth. Last year was the first release of this kind with "Walking The Cow". "Story of an Artist" is the second installment. "We knew we were going to record this song early and I had a demo but we waited till late in the year to get recording", says Michael Bosworth. "We quickly realized that everyone's schedules were too fragmented for a traditional in‑person studio day." Instead, they pieced the song together digitally.</p>
+          <p class="mb-4 text-black">Paying homage to Daniel isn't new for mozworth. Last year was the first release of this kind with "Walking The Cow". "Story of an Artist" is the second installment. "We knew we were going to record this song early and I had a demo but we waited till late in the year to get recording", says Michael Bosworth. "We quickly realized that everyone's schedules were too fragmented for a traditional in‑person studio day." Instead, they pieced the song together digitally.</p>
           
-          <p class="mb-4">They had a demo, but they needed drums. They needed Mike. When Mike heard the demo, he heard the Beatles—a natural homage, given Daniel Johnston's lifelong admiration for the Fab Four. The band embraced the idea, swapping their usual twin‑electric‑guitar attack for a mandolin and upright bass.</p>
+          <p class="mb-4 text-black">They had a demo, but they needed drums. They needed Mike. When Mike heard the demo, he heard the Beatles—a natural homage, given Daniel Johnston's lifelong admiration for the Fab Four. The band embraced the idea, swapping their usual twin‑electric‑guitar attack for a mandolin and upright bass.</p>
           
-          <p class="mb-4">Each member showed up with their instrument, wrote their part, and recorded it on the spot. Mark Heaps on mandolin. Jack Schultz on upright bass. Michael Bosworth on electric guitar. "These guys showed up really having no idea what to play and reacting to the recording. There is a spontaneity to it. A trust in our intuition that brings some magic.", says Michael Bosworth.</p>
+          <p class="mb-4 text-black">Each member showed up with their instrument, wrote their part, and recorded it on the spot. Mark Heaps on mandolin. Jack Schultz on upright bass. Michael Bosworth on electric guitar. "These guys showed up really having no idea what to play and reacting to the recording. There is a spontaneity to it. A trust in our intuition that brings some magic.", says Michael Bosworth.</p>
           
-          <p class="mb-4">Mandolin, bass, guitar, and vocals were recorded at mozworth's South‑Austin space; drums and auxiliary percussion at Mike Hall's home studio. A brief nod to the gear: a set of vintage microphones and preamps borrowed from friend Josh Wolfer to give this release a new sound. Mixing and mastering were handled by Steven Glaze at Tone Freq Studios.</p>
+          <p class="mb-4 text-black">Mandolin, bass, guitar, and vocals were recorded at mozworth's South‑Austin space; drums and auxiliary percussion at Mike Hall's home studio. A brief nod to the gear: a set of vintage microphones and preamps borrowed from friend Josh Wolfer to give this release a new sound. Mixing and mastering were handled by Steven Glaze at Tone Freq Studios.</p>
           
-          <p class="mb-4">mozworth's <em>Story of an Artist</em> is a dreamy DIY reinterpretation that honors the original by digging deep into Daniel's own inspiration and playing in the spirit of his heroes.</p>
+          <p class="mb-4 text-black">mozworth's <em>Story of an Artist</em> is a dreamy DIY reinterpretation that honors the original by digging deep into Daniel's own inspiration and playing in the spirit of his heroes.</p>
           
-          <p class="mb-4">January 22 is Hi, How Are You Day in Austin and several other cities, a grassroots campaign encouraging residents to reach out to friends and family about mental‑health wellbeing.</p>
+          <p class="mb-4 text-black">January 22 is Hi, How Are You Day in Austin and several other cities, a grassroots campaign encouraging residents to reach out to friends and family about mental‑health wellbeing.</p>
           
-          <p class="mb-4">mozworth is currently booking dates in the Austin area to support the release and they are in the process of recording their next full length album expected late 2026.</p>
+          <p class="mb-4 text-black">mozworth is currently booking dates in the Austin area to support the release and they are in the process of recording their next full length album expected late 2026.</p>
           
-          <p class="mb-6"><strong>Story of an Artist released January 22, 2026</strong></p>
+          <p class="mb-6 text-black"><strong>Story of an Artist released January 22, 2026</strong></p>
         </>
       ),
     },
@@ -206,17 +206,17 @@ Others just like to watch the world`}</div>
       label: "Credits",
       content: (
         <>
-          <p>Released January 22, 2026</p>
-          <p>Songwriting by Daniel Johnston</p>
-          <p>composed by mozworth</p>
-          <p>Vocals and Electric Guitar by Michael Bosworth</p>
-          <p>Mandolin by Mark Heaps</p>
-          <p>Bass by Jack Schultz</p>
-          <p>Slide Guitar by Jack Schultz</p>
-          <p>Background "lala" Vocals by Mark Heaps and Michael Bosworth</p>
-          <p>Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
-          <p>Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
-          <p>Cover art by Michael Bosworth</p>
+          <p class="text-black">Released January 22, 2026</p>
+          <p class="text-black">Songwriting by Daniel Johnston</p>
+          <p class="text-black">composed by mozworth</p>
+          <p class="text-black">Vocals and Electric Guitar by Michael Bosworth</p>
+          <p class="text-black">Mandolin by Mark Heaps</p>
+          <p class="text-black">Bass by Jack Schultz</p>
+          <p class="text-black">Slide Guitar by Jack Schultz</p>
+          <p class="text-black">Background "lala" Vocals by Mark Heaps and Michael Bosworth</p>
+          <p class="text-black">Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
+          <p class="text-black">Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-600 text-black">Tone Freq Studios</a></p>
+          <p class="text-black">Cover art by Michael Bosworth</p>
         </>
       ),
     },
@@ -266,12 +266,16 @@ Others just like to watch the world`}</div>
         info={info}
         streamingLinks={streamingLinks}
         confetti={{ enabled: true, releaseDate: new Date('2026-01-22'), imageUrl: '/storyofanartist.webp' }}
-        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f9f3d8] via-[#faf8f0] to-[#e8d474]"
+        backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#f5e642] via-[#fff9d6] to-white"
+        articleClass="w-full h-full md:w-[98vw] md:h-[95vh] bg-white/60 md:rounded-xl shadow-2xl flex flex-col md:flex-row items-stretch p-4 mt-0 mb-2 md:mt-4 md:mb-4"
+        iconClass="h-12 w-12 sm:h-7 sm:w-7 transition-transform duration-200 hover:scale-110 hover:-rotate-3"
       >
         <TabbedContent
           key={location.pathname}
           tabs={tabs()}
           defaultTab="Lyrics"
+          inactiveTabColor="text-gray-900"
+          activeTabColor="text-black"
         />      <LeaveNoteModal
         isOpen={showLeaveNoteModal()}
         onClose={() => setShowLeaveNoteModal(false)}

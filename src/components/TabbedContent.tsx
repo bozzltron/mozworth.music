@@ -9,6 +9,8 @@ interface TabbedContentProps {
   tabs: Tab[];
   defaultTab: string;
   key?: string;
+  inactiveTabColor?: string; // optional text color for inactive tabs
+  activeTabColor?: string; // optional text color for active tabs
 }
 
 // Convert tab label to URL-friendly slug
@@ -99,15 +101,20 @@ export default function TabbedContent(props: TabbedContentProps) {
     <>
       {/* Desktop: tab switching */}
       <div class="hidden sm:flex tabs gap-4 md:gap-8 mb-4 md:mb-6 mt-2 md:mt-4">
-        <For each={props.tabs}>{t => (
-          <button
-            type="button"
-            class={`tab text-lg pb-1 border-b-2 transition-colors ${activeTab() === t.label ? "text-teal-400 border-teal-400" : "text-gray-400 border-transparent"}`}
-            onClick={() => handleTabClick(t.label)}
-          >
-            {t.label}
-          </button>
-        )}</For>
+        <For each={props.tabs}>{t => {
+          const activeColor = props.activeTabColor || "text-teal-400";
+          const inactiveColor = props.inactiveTabColor || "text-gray-400";
+          const borderColor = activeTab() === t.label ? activeColor.replace("text-", "border-") : "border-transparent";
+          return (
+            <button
+              type="button"
+              class={`tab text-lg pb-1 border-b-2 transition-colors ${activeTab() === t.label ? `${activeColor} ${borderColor}` : `${inactiveColor} border-transparent`}`}
+              onClick={() => handleTabClick(t.label)}
+            >
+              {t.label}
+            </button>
+          );
+        }}</For>
       </div>
       {/* Unified tab content: only one render, CSS controls visibility */}
       <For each={props.tabs}>{(t, i) => (
@@ -117,7 +124,7 @@ export default function TabbedContent(props: TabbedContentProps) {
           data-tab={slugify(t.label)}
         >
           {/* Tab heading for mobile only */}
-          <div class="tab-heading text-lg font-bold mb-2 mt-4 text-teal-400 block sm:hidden">{t.label}</div>
+          <div class={`tab-heading text-lg font-bold mb-2 mt-4 ${props.activeTabColor || "text-teal-400"} block sm:hidden`}>{t.label}</div>
           <div>{t.content}</div>
         </div>
       )}</For>

@@ -7,6 +7,7 @@ interface ReleaseMetaProps {
   prefix?: string; // e.g., 'Released', 'Released on'
   showConfetti?: boolean;
   forceConfetti?: boolean; // force confetti for demos/tests
+  textColor?: string; // optional text color class
 }
 
 export default function ReleaseMeta(props: ReleaseMetaProps): JSX.Element {
@@ -22,11 +23,14 @@ export default function ReleaseMeta(props: ReleaseMetaProps): JSX.Element {
   const timeAgo = createMemo(() => formatTimeAgo(date(), new Date(), userLocale()));
   const todayIsAnniversary = createMemo(() => isAnniversaryToday(date()));
 
+  const textColorClass = props.textColor || "text-gray-400";
+  const timeAgoColorClass = props.textColor === "text-black" ? "text-gray-600" : "text-white/60";
+  
   return (
-    <div class="song-info text-gray-400 text-base mb-1 w-full text-left relative">
+    <div class={`song-info ${textColorClass} text-base mb-1 w-full text-left relative`}>
       {props.prefix ?? 'Released'} {formatted()}
       <Show when={isClient()}>
-        <span class="ml-2 text-white/60">({timeAgo()})</span>
+        <span class={`ml-2 ${timeAgoColorClass}`}>({timeAgo()})</span>
       </Show>
       {props.showConfetti && (todayIsAnniversary() || props.forceConfetti) && (
         <AnniversaryConfetti releaseDate={date()} enabled={true} force={props.forceConfetti} />
