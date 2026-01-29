@@ -128,6 +128,21 @@ interface StreamingLink {
 - Update notifications with reload prompts
 - Custom splash screen with mozworth logo
 
+#### PWA Icon Maintenance
+- **Source logo**: `public/logo.jpg` (879x1042, portrait, non-square)
+- **Icon generation**: Use `scripts/generate-android-icons.js` to regenerate PWA icons
+- **Icons generated**:
+  - `android-chrome-192x192.png` (Android PWA icon, 192x192)
+  - `android-chrome-512x512.png` (Android PWA icon, 512x512)
+  - `apple-touch-icon.png` (iOS home screen icon, 180x180)
+- **Requirements**:
+  - Icons must be square (1:1 aspect ratio) for PWA compliance
+  - Logo is centered and scaled to fit within square, maintaining aspect ratio
+  - Black background padding (#000000) matches app theme
+  - Logo should never be cropped or stretched
+- **When to regenerate**: After updating `public/logo.jpg`
+- **Command**: `node scripts/generate-android-icons.js`
+
 ### Brand Guidelines
 
 #### Voice & Tone
@@ -163,6 +178,7 @@ npm run build        # Production build
 npm run start        # Production server
 npm run lint         # ESLint check
 npm run lint:fix     # ESLint auto-fix
+node scripts/generate-android-icons.js  # Regenerate PWA icons from logo.jpg
 ```
 
 ## Content Creation Guidelines
