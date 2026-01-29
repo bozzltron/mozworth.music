@@ -108,6 +108,9 @@ export default function Home() {
                 <a href="https://soundcloud.com/mozworth" class="ad-button flex items-center w-full mb-2 text-white text-base rounded-full border-2 border-white/30 px-5 py-2 font-medium transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" aria-label="Listen to mozworth on SoundCloud (opens in new tab)">
                   <img src="/soundcloud.svg" alt="" class="w-7 h-7 mr-3 invert brightness-0" />SoundCloud
                 </a>
+                <a href="https://www.deezer.com/us/artist/277222071" class="ad-button flex items-center w-full mb-2 text-white text-base rounded-full border-2 border-white/30 px-5 py-2 font-medium transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" aria-label="Listen to mozworth on Deezer (opens in new tab)" onClick={() => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', destination: 'deezer' }); }}>
+                  <img src="/deezer.svg" alt="" class="w-7 h-7 mr-3 invert brightness-0" />Deezer
+                </a>
               </div>
             </div>
           )}

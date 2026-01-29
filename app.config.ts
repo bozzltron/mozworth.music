@@ -23,6 +23,15 @@ export default defineConfig({
           enabled: false,
         },
       })
-    ]
+    ],
+    server: {
+      hmr: {
+        overlay: true, // Show error overlay in browser
+      },
+      watch: {
+        // Ensure file watching is enabled
+        usePolling: false, // Set to true if you have issues with file watching
+      },
+    },
   }
 });

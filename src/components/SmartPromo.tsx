@@ -9,12 +9,14 @@ export default function SmartPromo(): JSX.Element {
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
       {/* Story of an Artist Promotion */}
       <div class="w-full flex justify-center mb-1 md:mb-4">
-        <iframe
-          class="w-full max-w-[560px] h-[345px] md:h-[395px] rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
-          src="https://bandcamp.com/EmbeddedPlayer/track=1390313411/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-          seamless
-          title="Story of an Artist by mozworth (Bandcamp embed)"
-        />
+        <div class="w-full max-w-[560px] aspect-square">
+          <iframe
+            class="w-full h-full rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+            src="https://bandcamp.com/EmbeddedPlayer/track=1390313411/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+            seamless
+            title="Story of an Artist by mozworth (Bandcamp embed)"
+          />
+        </div>
       </div>
       <div class="text-xl font-bold text-white text-center mb-2">
         Story of an Artist
