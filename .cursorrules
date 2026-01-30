@@ -132,14 +132,22 @@ interface StreamingLink {
 - **Source logo**: `public/logo.jpg` (879x1042, portrait, non-square)
 - **Icon generation**: Use `scripts/generate-android-icons.js` to regenerate PWA icons
 - **Icons generated**:
-  - `android-chrome-192x192.png` (Android PWA icon, 192x192)
-  - `android-chrome-512x512.png` (Android PWA icon, 512x512)
+  - `android-chrome-192x192.png` (Android PWA icon, 192x192, maskable)
+  - `android-chrome-512x512.png` (Android PWA icon, 512x512, maskable)
   - `apple-touch-icon.png` (iOS home screen icon, 180x180)
+- **Android Icon Behavior**:
+  - Logo fills entire icon, extending to edges (will be cropped by Android's adaptive icon mask)
+  - Black background fills entire icon
+  - Logo scaled larger to fill space, white text may be cropped at edges (intentional)
+  - Marked as "maskable" in manifest so Android can properly crop with adaptive icon shapes
+- **Apple Icon Behavior**:
+  - Logo centered with black padding (contain mode)
+  - Maintains full logo visibility, no cropping
 - **Requirements**:
   - Icons must be square (1:1 aspect ratio) for PWA compliance
-  - Logo is centered and scaled to fit within square, maintaining aspect ratio
-  - Black background padding (#000000) matches app theme
-  - Logo should never be cropped or stretched
+  - Black background (#000000) matches app theme
+  - Android icons use "cover" mode (fill space, crop edges)
+  - Apple icon uses "contain" mode (centered, full visibility)
 - **When to regenerate**: After updating `public/logo.jpg`
 - **Command**: `node scripts/generate-android-icons.js`
 
