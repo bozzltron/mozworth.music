@@ -32,6 +32,14 @@ export default function Tour() {
             </div>
 
             <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Friday, April 25, 2026</div>
+              <div class="venue-info flex-1 text-left text-base">
+                <p>w/ Space Cushion & ItBegins<br />Stage Time TBD<br />Venue TBD<br />Austin, TX</p>
+              </div>
+              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end" />
+            </div>
+
+            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Thursday, March 12 - Wednesday, March 18, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>It's a van festival<br />SXSW<br />Stage Time TBD<br />Austin, TX</p>
