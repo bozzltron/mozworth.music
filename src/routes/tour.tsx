@@ -34,9 +34,11 @@ export default function Tour() {
             <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, April 25, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
-                <p>w/ Space Cushion & ItBegins<br />Stage Time TBD<br />Venue TBD<br />Austin, TX</p>
+                <p>Hanover<br />w/ Space Cushion & ItBegins<br />Stage Time TBD<br />108 E Main St<br />Pflugerville, TX 78660</p>
               </div>
-              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end" />
+              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
+                <a href="https://www.bandsintown.com/e/107888752" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+              </div>
             </div>
 
             <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
@@ -45,6 +47,7 @@ export default function Tour() {
                 <p>It's a van festival<br />SXSW<br />Stage Time TBD<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
+                <a href="https://www.bandsintown.com/e/107849645" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
                 <a href="https://www.facebook.com/share/1GHRANWTn8/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
@@ -54,7 +57,9 @@ export default function Tour() {
               <div class="venue-info flex-1 text-left text-base">
                 <p>Shiner's Saloon<br />Stage Time TBD<br />Austin, TX</p>
               </div>
-              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end" />
+              <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
+                <a href="https://www.bandsintown.com/e/107849633" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+              </div>
             </div>
 
             <div class="tour-date past w-full border border-white/30 opacity-70 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">

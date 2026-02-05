@@ -18,7 +18,19 @@ export default function Home() {
     const email = `${emailLocal}@${emailDomain}`;
     window.location.href = `mailto:${email}`;
     if (window.gtag) {
-      window.gtag('event', 'email_click', { event_category: 'contact', event_label: 'Contact Me' });
+      window.gtag('event', 'email_click', { event_category: 'contact', event_label: 'Contact mozworth' });
+    }
+  };
+
+  // Secure email handling for label contact - split to prevent scraping
+  const handleLabelContactClick = (e: MouseEvent) => {
+    e.preventDefault();
+    const emailLocal = 'info';
+    const emailDomain = 'friendmusicrecords.com';
+    const email = `${emailLocal}@${emailDomain}`;
+    window.location.href = `mailto:${email}`;
+    if (window.gtag) {
+      window.gtag('event', 'email_click', { event_category: 'contact', event_label: 'Contact Label', destination: 'friendmusicrecords' });
     }
   };
 
@@ -69,7 +81,8 @@ export default function Home() {
             <a href="https://mozworth.printful.me/" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Store', destination: 'printful' }); }}>Merch</a>
             <a href="https://friendmusicrecords.com/artists/mozworth" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Press Kit', destination: 'friendmusicrecords' }); }}>Press Kit</a>
             <a href="/press" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'press_coverage' }); }}>Press Coverage</a>
-            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={handleContactClick} aria-label="Contact mozworth via email">Contact Me</a>
+            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={handleContactClick} aria-label="Contact mozworth via email">Contact mozworth</a>
+            <a href="#" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={handleLabelContactClick} aria-label="Contact friend music records label via email">Contact Label</a>
           </nav>
           </div>
           {/* Music Panel */}
