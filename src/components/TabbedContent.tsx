@@ -1,4 +1,4 @@
-import { createSignal, For, JSX, onMount, onCleanup, createEffect } from "solid-js";
+import { createSignal, For, JSX, onMount, onCleanup } from "solid-js";
 
 interface Tab {
   label: string;
@@ -35,33 +35,37 @@ export default function TabbedContent(props: TabbedContentProps) {
   };
 
   const [activeTab, setActiveTab] = createSignal(getDefaultTab());
-  const [isInitialized, setIsInitialized] = createSignal(false);
+
+  // Sync activeTab with hash - let browser handle hash navigation naturally
+  const syncTabFromHash = () => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const matchedTab = findTabBySlug(props.tabs, hash);
+      if (matchedTab) {
+        setActiveTab(matchedTab.label);
+        return;
+      }
+    }
+    // If no hash or no match, use default
+    setActiveTab(getDefaultTab());
+  };
+
+  // Handle tab click - update state immediately, browser handles hash via anchor
+  const handleTabClick = (label: string) => {
+    setActiveTab(label);
+  };
 
   // Handle initial load and browser back/forward navigation
   onMount(() => {
     if (typeof window === 'undefined') return;
 
     // Check hash on mount (handles hard refresh with hash)
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-      const matchedTab = findTabBySlug(props.tabs, hash);
-      if (matchedTab) {
-        setActiveTab(matchedTab.label);
-      }
-    }
-    setIsInitialized(true);
+    syncTabFromHash();
 
+    // Listen for hash changes (browser back/forward, direct URL navigation)
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash) {
-        const matchedTab = findTabBySlug(props.tabs, hash);
-        if (matchedTab) {
-          setActiveTab(matchedTab.label);
-        }
-      } else {
-        // If hash is removed, go back to default
-        setActiveTab(getDefaultTab());
-      }
+      syncTabFromHash();
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -71,63 +75,184 @@ export default function TabbedContent(props: TabbedContentProps) {
     });
   });
 
-  // Update hash when active tab changes (but only after initialization)
-  createEffect(() => {
-    const tab = activeTab();
-    if (typeof window !== 'undefined' && tab && isInitialized()) {
-      const slug = slugify(tab);
-      const newHash = `#${slug}`;
-      
-      // Only update if different to avoid unnecessary history entries
-      if (window.location.hash !== newHash) {
-        history.replaceState(null, '', newHash);
-      }
-    }
-  });
 
-  const handleTabClick = (label: string) => {
-    setActiveTab(label);
-    
-    // Smooth scroll to top of content on mobile
-    if (typeof window !== 'undefined' && window.innerWidth < 640) {
-      const tabPanel = document.querySelector(`[data-tab="${slugify(label)}"]`);
-      if (tabPanel) {
-        tabPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  // Keyboard navigation for accessibility (ARIA best practices)
+  const handleKeyDown = (e: KeyboardEvent, currentIndex: number) => {
+    const tabs = props.tabs;
+    let newIndex = currentIndex;
+
+    switch (e.key) {
+      case 'ArrowLeft':
+        e.preventDefault();
+        newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+        break;
+      case 'Home':
+        e.preventDefault();
+        newIndex = 0;
+        break;
+      case 'End':
+        e.preventDefault();
+        newIndex = tabs.length - 1;
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        // Activate tab - click the anchor to trigger hash navigation
+        const tab = tabs[currentIndex];
+        const slug = slugify(tab.label);
+        const tabElement = document.querySelector(`[href="#${slug}"]`) as HTMLAnchorElement;
+        tabElement?.click();
+        return;
+      default:
+        return; // Let other keys work normally
     }
+
+    // Focus the new tab
+    const newTabSlug = slugify(tabs[newIndex].label);
+    const newTabElement = document.querySelector(`[href="#${newTabSlug}"]`) as HTMLElement;
+    newTabElement?.focus();
   };
 
   return (
     <>
-      {/* Desktop: tab switching */}
-      <div class="hidden sm:flex tabs gap-4 md:gap-8 mb-4 md:mb-6 mt-2 md:mt-4">
-        <For each={props.tabs}>{t => {
+      {/* Desktop: tab switching with ARIA */}
+      <div 
+        role="tablist" 
+        aria-label="Song content sections"
+        class="hidden sm:flex tabs gap-4 md:gap-8 mb-4 md:mb-6 mt-2 md:mt-4"
+      >
+        <For each={props.tabs}>{(t, i) => {
+          const isActive = () => activeTab() === t.label;
           const activeColor = props.activeTabColor || "text-teal-400";
           const inactiveColor = props.inactiveTabColor || "text-gray-400";
-          const borderColor = activeTab() === t.label ? activeColor.replace("text-", "border-") : "border-transparent";
+          const slug = slugify(t.label);
+          const tabId = `tab-${slug}`;
+          const panelId = `panel-${slug}`;
+          const borderColor = isActive() ? activeColor.replace("text-", "border-") : "border-transparent";
+          
           return (
-            <button
-              type="button"
-              class={`tab text-lg pb-1 border-b-2 transition-colors ${activeTab() === t.label ? `${activeColor} ${borderColor}` : `${inactiveColor} border-transparent`}`}
+            <a
+              id={tabId}
+              href={`#${slug}`}
+              role="tab"
+              aria-selected={isActive()}
+              aria-controls={panelId}
+              tabIndex={isActive() ? 0 : -1}
+              class={`tab text-lg pb-1 border-b-2 transition-colors ${isActive() ? `${activeColor} ${borderColor}` : `${inactiveColor} border-transparent`}`}
               onClick={() => handleTabClick(t.label)}
+              onKeyDown={(e) => handleKeyDown(e, i())}
             >
               {t.label}
-            </button>
+            </a>
           );
         }}</For>
       </div>
-      {/* Unified tab content: only one render, CSS controls visibility */}
-      <For each={props.tabs}>{(t, i) => (
-        <div
-          class={`tab-panel mb-8 ${activeTab() === t.label ? 'sm:block' : 'sm:hidden'} block`}
-          style={{ order: i() }}
-          data-tab={slugify(t.label)}
-        >
-          {/* Tab heading for mobile only */}
-          <div class={`tab-heading text-lg font-bold mb-2 mt-4 ${props.activeTabColor || "text-teal-400"} block sm:hidden`}>{t.label}</div>
-          <div>{t.content}</div>
+      
+      {/* Mobile: sticky tab navigation bar with ARIA */}
+      <div 
+        role="tablist" 
+        aria-label="Song content sections"
+        class="mobile-tab-nav sm:hidden sticky top-0 z-40 backdrop-blur-sm border-b border-white/10 mb-4 -mx-4 px-4 pb-2 pt-2"
+      >
+        <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+          <For each={props.tabs}>{(t, i) => {
+            const isActive = () => activeTab() === t.label;
+            const activeColor = props.activeTabColor || "text-teal-400";
+            const inactiveColor = props.inactiveTabColor || "text-gray-400";
+            const slug = slugify(t.label);
+            const tabId = `tab-mobile-${slug}`;
+            const panelId = `panel-${slug}`;
+            const borderColor = isActive() ? activeColor.replace("text-", "border-") : "border-transparent";
+            
+            return (
+              <a
+                id={tabId}
+                href={`#${slug}`}
+                role="tab"
+                aria-selected={isActive()}
+                aria-controls={panelId}
+                tabIndex={isActive() ? 0 : -1}
+                class={`mobile-tab-btn px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors border-2 ${
+                  isActive() 
+                    ? `${activeColor} ${borderColor}` 
+                    : `${inactiveColor} border-transparent`
+                }`}
+                onClick={() => handleTabClick(t.label)}
+                onKeyDown={(e) => handleKeyDown(e, i())}
+              >
+                {t.label}
+              </a>
+            );
+          }}</For>
         </div>
-      )}</For>
+      </div>
+      
+      {/* Unified tab content: only one render, CSS controls visibility */}
+      <For each={props.tabs}>{(t, i) => {
+        const isActive = () => activeTab() === t.label;
+        const slug = slugify(t.label);
+        const panelId = `panel-${slug}`;
+        const tabId = typeof window !== 'undefined' && window.innerWidth >= 640 
+          ? `tab-${slug}` 
+          : `tab-mobile-${slug}`;
+        
+        return (
+          <div
+            id={panelId}
+            role="tabpanel"
+            aria-labelledby={tabId}
+            aria-hidden={!isActive()}
+            class={`tab-panel mb-8 ${isActive() ? 'sm:block' : 'sm:hidden'} block`}
+            style={{ order: i() }}
+            data-tab={slug}
+          >
+            {/* Tab heading for mobile only - this is the ID anchor at top of section */}
+            <h2 
+              id={slug}
+              class={`tab-heading text-lg font-bold mb-2 mt-4 ${props.activeTabColor || "text-teal-400"} block sm:hidden scroll-mt-20`}
+            >
+              {t.label}
+            </h2>
+            <div>{t.content}</div>
+          </div>
+        );
+      }}</For>
+      
+      <style>{`
+        /* Hide scrollbar for mobile tab nav */
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        /* Scroll margin for hash navigation - accounts for sticky nav */
+        .scroll-mt-20 {
+          scroll-margin-top: 4.5rem;
+        }
+        
+        /* Ensure smooth scrolling works with hash links */
+        :target {
+          scroll-margin-top: 4.5rem;
+        }
+        
+        /* Sticky nav backdrop blur */
+        .mobile-tab-nav {
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+      `}</style>
     </>
   );
 } 
