@@ -10,7 +10,7 @@ export default function LeaveNoteModal(props: LeaveNoteModalProps) {
   const [copied, setCopied] = createSignal(false);
 
   const handleCopyEmail = async () => {
-    const email = "mozworth@boz.mozmail.com";
+    const email = "mozworth@mozworth.music";
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
@@ -45,7 +45,7 @@ Also let me know if you're okay with your note being shared on the song page.
 
 Thanks!`);
     
-    window.location.href = `mailto:mozworth@boz.mozmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:mozworth@mozworth.music?subject=${subject}&body=${body}`;
   };
 
   return (
