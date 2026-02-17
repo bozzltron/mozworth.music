@@ -22,7 +22,7 @@ export default function Tour() {
           {/* Main content */}
           <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
-            <p class="text-white/80 mb-6 text-center">Indie rock and alternative rock shows in Austin, Texas and beyond</p>
+            <p class="text-white/80 mb-6 text-center">Indie alternative rock shows in Austin, Texas and beyond</p>
 
             <Callout class="w-full mb-6 flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">2026</div>
