@@ -16,6 +16,7 @@ This is the official website for mozworth, an indie artist from Austin, Texas. T
 
 #### Component Structure
 - **BasePageLayout**: Main layout wrapper for all song/album pages
+- **Callout**: Prominent content box for highlights (tour "up next", "check back") — canonical teal border style
 - **TabbedContent**: Responsive tabbed interface (desktop tabs, mobile scrolling sections)
 - **StreamingIcons**: Consistent streaming platform links with analytics tracking
 - **ReleaseMeta**: Release date display with anniversary confetti effects
@@ -52,6 +53,27 @@ Each song follows a consistent structure:
 - **Headings**: Bold, white text with responsive sizing
 - **Body**: Base to lg text with relaxed leading
 - **Lyrics**: Monospace-like treatment with proper line breaks
+
+#### Callout Component
+Prominent content box for highlights and announcements (e.g. "Up next" on homepage, "Check back" on tour page).
+
+**Canonical style:** `border-2 border-teal-500 bg-teal-500/10 rounded-xl p-6`
+
+**Usage:** Import `Callout` from `../components/Callout`. Use `href` prop when linking (e.g. to tour); omit for static content.
+
+```tsx
+// Link variant (homepage "Up next")
+<Callout href="/tour" class="mb-6 max-w-md mx-auto" onClick={...}>
+  Up next: Shiner's Saloon • Tuesday, March 10 • Austin, TX
+</Callout>
+
+// Static variant (tour page "Check back")
+<Callout class="w-full mb-6 flex flex-col md:flex-row items-start gap-4">
+  ...
+</Callout>
+```
+
+**Do not** create ad-hoc callout-style boxes; use the shared component for consistency.
 
 #### Responsive Behavior
 - **Mobile**: Single column, stacked layout, scrolling sections

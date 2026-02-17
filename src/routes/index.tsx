@@ -1,4 +1,5 @@
 import { createSignal, For } from "solid-js";
+import Callout from "../components/Callout";
 import SmartPromo from "../components/SmartPromo";
 import RotatingBackground from "../components/RotatingBackground";
 import { photographyBackgrounds } from "../data/photography";
@@ -47,7 +48,7 @@ export default function Home() {
         url="https://mozworth.music"
         type="music"
         keywords="indie rock, alternative rock, indie rock bands, alternative rock bands, Austin Texas, indie rock bands Austin, alternative rock bands Austin, Austin indie rock, Austin alternative rock, indie rock Austin TX, mozworth"
-        modifiedDate="2025-01-15"
+        modifiedDate="2026-02-16"
         structuredData={createMusicGroupData()}
       />
       
@@ -70,6 +71,9 @@ export default function Home() {
             <div class="mb-8 w-full flex justify-center">
               <SmartPromo />
             </div>
+            <Callout href="/tour" class="mb-6 w-full max-w-md mx-auto" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>
+              Up next: Shiner's Saloon • Tuesday, March 10 • Austin, TX
+            </Callout>
                       {/* Navigation */}
           <nav aria-label="Main navigation" class="flex flex-col md:flex-row md:flex-wrap justify-center gap-3 mb-6 w-full">
             <a href="/music" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'music_page' }); }}>Music</a>

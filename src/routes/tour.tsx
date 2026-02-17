@@ -1,4 +1,5 @@
 import RotatingBackground from "../components/RotatingBackground";
+import Callout from "../components/Callout";
 import { StandardMetadata } from "../utils/metadata";
 
 export default function Tour() {
@@ -23,15 +24,15 @@ export default function Tour() {
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
             <p class="text-white/80 mb-6 text-center">Indie rock and alternative rock shows in Austin, Texas and beyond</p>
 
-            <div class="tour-date info w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <Callout class="w-full mb-6 flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">2026</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>2026 Tour Dates Coming Soon<br />Check back for updates</p>
               </div>
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end" />
-            </div>
+            </Callout>
 
-            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <div class="tour-date w-full border-2 border-white/80 bg-white/5 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Friday, April 25, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>Hanover<br />w/ Space Cushion & ItBegins<br />Stage Time TBD<br />108 E Main St<br />Pflugerville, TX 78660</p>
@@ -41,18 +42,18 @@ export default function Tour() {
               </div>
             </div>
 
-            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
-              <div class="min-w-[200px] text-left font-bold">Thursday, March 12 - Wednesday, March 18, 2026</div>
+            <div class="tour-date w-full border-2 border-white/80 bg-white/5 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div class="min-w-[200px] text-left font-bold">Friday, March 13, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
-                <p>It's a van festival<br />SXSW<br />Stage Time TBD<br />Austin, TX</p>
+                <p>It's a van fest<br />2:45pm<br />BYOB Austin<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
                 <a href="https://www.bandsintown.com/e/107849645" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1GHRANWTn8/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
+                <a href="https://www.facebook.com/share/1ALJeCufYh/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
 
-            <div class="tour-date w-full border-green-500 bg-green-500/10 border mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            <div class="tour-date w-full border-2 border-white/80 bg-white/5 mb-6 p-6 rounded-xl flex flex-col md:flex-row items-start gap-4 md:gap-6">
               <div class="min-w-[200px] text-left font-bold">Tuesday, March 10, 2026</div>
               <div class="venue-info flex-1 text-left text-base">
                 <p>Shiner's Saloon<br />Stage Time TBD<br />Austin, TX</p>
