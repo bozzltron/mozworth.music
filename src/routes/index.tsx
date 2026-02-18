@@ -1,5 +1,6 @@
 import { createSignal, For } from "solid-js";
 import Callout from "../components/Callout";
+import GlobalFooter from "../components/GlobalFooter";
 import SmartPromo from "../components/SmartPromo";
 import RotatingBackground from "../components/RotatingBackground";
 import { photographyBackgrounds } from "../data/photography";
@@ -79,6 +80,7 @@ export default function Home() {
             <a href="/music" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'music_page' }); }}>Music</a>
             <a href="/support" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'support_page' }); }}>Support</a>
             <a href="/tour" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'tour_page' }); }}>Tour Dates</a>
+            <a href="/backgrounds" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'navigation', { event_label: 'backgrounds_page' }); }}>Backgrounds</a>
             <button type="button" aria-label="Open streaming platforms" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={e => { e.preventDefault(); setShowMusicPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'music' }); }}>Find Streaming</button>
             <button type="button" aria-label="Open social media platforms" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={e => { e.preventDefault(); setShowSocialPanel(true); if (window.gtag) window.gtag('event', 'panel_open', { event_label: 'social' }); }}>Follow On Social</button>
             <a href="https://mozworth.beehiiv.com/subscribe" class="w-full md:w-auto inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" target="_blank" rel="noopener" onClick={() => { if (window.gtag) window.gtag('event', 'outbound_click', { event_category: 'outbound', event_label: 'Newsletter', destination: 'beehiiv' }); }}>Join The Newsletter</a>
@@ -180,9 +182,7 @@ export default function Home() {
             </div>
           )}
         </main>
-        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70">
-          &copy; {new Date().getFullYear()} mozworth. All rights reserved.
-        </footer>
+        <GlobalFooter />
       </div>
     </>
   );

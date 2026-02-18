@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 declare global { interface Window { gtag?: (...args: any[]) => void } }
 
+import GlobalFooter from "../components/GlobalFooter";
 import RotatingBackground from "../components/RotatingBackground";
 import { StandardMetadata, createSocialLinks } from "../utils/metadata";
 
@@ -248,12 +249,7 @@ export default function Support() {
              </div>
           </div>
         </main>
-        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70" role="contentinfo">
-          &copy; {new Date().getFullYear()} mozworth. All rights reserved.
-          <nav aria-label="Footer navigation" class="inline ml-2">
-            <a href="/" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Home</a>
-          </nav>
-        </footer>
+        <GlobalFooter />
       </div>
     </>
   );

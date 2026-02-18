@@ -195,7 +195,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
   const bgBaseClass = "absolute inset-0 bg-center bg-no-repeat bg-fixed";
 
   return (
-    <div class={`absolute inset-0 z-0 ${props.class ?? ""}`} aria-hidden="true">
+    <div class={`fixed inset-0 z-0 ${props.class ?? ""}`} aria-hidden="true">
       {/* Layer A (with blurred fill + focused image) */}
       <div
         class={layerContainerClass}
@@ -210,10 +210,9 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
           style={{
             "background-image": `url('${imageAUrl()}')`,
             "background-size": "cover",
-            filter: "blur(24px)",
+            filter: "blur(16px)", // Reduced from 24px for Safari scroll performance
             transform: "scale(1.08)",
             opacity: imageAOrientation() === "portrait" ? "0.9" : "0.6",
-            "will-change": "transform, filter, opacity",
           }}
         />
         {/* Focused image on top */}
@@ -241,10 +240,9 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
           style={{
             "background-image": `url('${imageBUrl()}')`,
             "background-size": "cover",
-            filter: "blur(24px)",
+            filter: "blur(16px)",
             transform: "scale(1.08)",
             opacity: imageBOrientation() === "portrait" ? "0.9" : "0.6",
-            "will-change": "transform, filter, opacity",
           }}
         />
         {/* Focused image */}

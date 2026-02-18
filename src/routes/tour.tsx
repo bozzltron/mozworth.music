@@ -1,5 +1,6 @@
 import RotatingBackground from "../components/RotatingBackground";
 import Callout from "../components/Callout";
+import GlobalFooter from "../components/GlobalFooter";
 import { StandardMetadata } from "../utils/metadata";
 
 export default function Tour() {
@@ -19,8 +20,8 @@ export default function Tour() {
           {/* Background image */}
           <RotatingBackground />
 
-          {/* Main content */}
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
+          {/* Main content — transform promotes to compositor layer for smoother Safari scroll */}
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70" style="transform: translateZ(0);">
             <h1 class="text-3xl font-bold mb-8 text-center">Tour Dates</h1>
             <p class="text-white/80 mb-6 text-center">Indie alternative rock shows in Austin, Texas and beyond</p>
 
@@ -181,12 +182,7 @@ export default function Tour() {
             </div>
           </div>
         </main>
-        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70" role="contentinfo">
-          &copy; {new Date().getFullYear()} mozworth. All rights reserved.
-          <nav aria-label="Footer navigation" class="inline ml-2">
-            <a href="/" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Home</a>
-          </nav>
-        </footer>
+        <GlobalFooter />
       </div>
     </>
   );

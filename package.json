@@ -2,6 +2,7 @@
   "name": "mozworth.music",
   "type": "module",
   "scripts": {
+    "generate:wallpapers": "node scripts/generate-wallpapers.js",
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
