@@ -39,7 +39,7 @@ export default function Tour() {
                 <p>Hanover<br />w/ Space Cushion & ItBegins<br />Stage Time TBD<br />108 E Main St<br />Pflugerville, TX 78660</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/107888752" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.bandsintown.com/e/107888752" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
               </div>
             </div>
 
@@ -49,8 +49,8 @@ export default function Tour() {
                 <p>It's a van fest<br />2:45pm<br />BYOB Austin<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/107849645" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1ALJeCufYh/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
+                <a href="https://www.bandsintown.com/e/107849645" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1ALJeCufYh/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function Tour() {
                 <p>Shiner's Saloon<br />Stage Time TBD<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/107849633" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.bandsintown.com/e/107849633" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
               </div>
             </div>
 
@@ -70,8 +70,8 @@ export default function Tour() {
                 <p>Stout Haus<br />mozworth solo acoustic<br />7:00pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/107752868?&came_from=210&_ga=2.198202799.1431877457.1767487122-1718009698.1767487122" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1KYdDWVDrw/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
+                <a href="https://www.bandsintown.com/e/107752868?&came_from=210&_ga=2.198202799.1431877457.1767487122-1718009698.1767487122" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1KYdDWVDrw/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
 
@@ -81,8 +81,8 @@ export default function Tour() {
                 <p>South Austin Beer Garden<br />6:00pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://bandsintown.com/e/107422298?came_from=297&utm_medium=web&utm_source=copy_link&utm_campaign=event_social_share" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1A8dT4SnNv/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
+                <a href="https://bandsintown.com/e/107422298?came_from=297&utm_medium=web&utm_source=copy_link&utm_campaign=event_social_share" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1A8dT4SnNv/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
 
@@ -92,8 +92,8 @@ export default function Tour() {
                 <p>The Sky Is Falling Single Release Party<br />South Austin Beer Garden<br />8pm - 10pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/107046899?" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
-                <a href="https://www.facebook.com/share/19L86HVi4U/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
+                <a href="https://www.bandsintown.com/e/107046899?" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Bandsintown (opens in new tab)">Bandsintown</a>
+                <a href="https://www.facebook.com/share/19L86HVi4U/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="View event on Facebook (opens in new tab)">Facebook</a>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export default function Tour() {
                 <p>Good Day Austin (TV Appearance)<br />FOX 7 Austin (KTBC)<br />9:50am Central Time<br />Austin, TX</p>
               </div>
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
-                <a href="https://www.fox7austin.com/video/1683875" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="Watch the FOX 7 Austin segment">Watch</a>
+                <a href="https://www.fox7austin.com/video/1683875" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="Watch the FOX 7 Austin segment">Watch</a>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ export default function Tour() {
                 <p>mozworth Interview Airs<br />KLBJ 93.7 FM<br />7:00pm<br />Austin, TX</p>
               </div>
               <div class="tour-links min-w-[140px] flex flex-wrap gap-2 justify-center md:justify-end">
-                <a href="https://www.klbjfm.com/listen-live" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener" aria-label="Listen to KLBJ live">Listen</a>
+                <a href="https://www.klbjfm.com/listen-live" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer" aria-label="Listen to KLBJ live">Listen</a>
               </div>
             </div>
 
@@ -123,8 +123,8 @@ export default function Tour() {
                 <p>South Austin Beer Garden<br />9pm - 10pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106941100-mozworth-at-south-austin-beer-garden?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1B8AZgXj5f/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.bandsintown.com/e/106941100-mozworth-at-south-austin-beer-garden?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1B8AZgXj5f/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Facebook</a>
               </div>
             </div>
 
@@ -134,8 +134,8 @@ export default function Tour() {
                 <p>Unplugged @ Brentwood Social Club<br />4pm – 6pm<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106761310" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
-                <a href="https://www.facebook.com/share/1AisQjQCHt/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.bandsintown.com/e/106761310" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
+                <a href="https://www.facebook.com/share/1AisQjQCHt/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Facebook</a>
               </div>
             </div>
 
@@ -145,8 +145,8 @@ export default function Tour() {
                 <p>Shiner's Saloon Songwriters Showcase 9pm<br />w/ Fin Fin & Others<br />Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106360770" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
-                <a href="https://www.facebook.com/share/15zTxqmEy4/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.bandsintown.com/e/106360770" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
+                <a href="https://www.facebook.com/share/15zTxqmEy4/" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Facebook</a>
               </div>
             </div>
 
@@ -156,8 +156,8 @@ export default function Tour() {
                 <p>The Meridian <br />w/ The Somebodies <br />Buda, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106153715" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
-                <a href="https://www.facebook.com/events/1367188184260258" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.bandsintown.com/e/106153715" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
+                <a href="https://www.facebook.com/events/1367188184260258" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Facebook</a>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export default function Tour() {
                 <p>mozworth listening party <br /> Virtual</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106122824-mozworth-at-live-stream?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
+                <a href="https://www.bandsintown.com/e/106122824-mozworth-at-live-stream?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
               </div>
             </div>
 
@@ -177,7 +177,7 @@ export default function Tour() {
                 <p>Shiner's Saloon <br /> w/ Horshoes and Handgrinades <br /> Austin, TX</p>
               </div>
               <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
-                <a href="https://www.bandsintown.com/e/106028135-mozworth-at-shiner's-saloon?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener">Bandsintown</a>
+                <a href="https://www.bandsintown.com/e/106028135-mozworth-at-shiner%27s-saloon?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" class="tour-link w-full md:w-auto text-center inline-block border border-white/30 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm transition-all duration-200 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">Bandsintown</a>
               </div>
             </div>
           </div>

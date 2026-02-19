@@ -86,21 +86,21 @@ export default function Support() {
                    
                    <div id="donate-section" style="display: none;" class="px-6 pb-6">
                      <div class="grid grid-cols-4 gap-4 mt-4">
-                       <a href="https://cash.app/$mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Cash App', destination: 'cashapp' }); }} aria-label="Send money via Cash App (opens in new tab)">
+                       <a href="https://cash.app/$mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Cash App', destination: 'cashapp' }); }} aria-label="Send money via Cash App (opens in new tab)">
                          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-2 group-hover:bg-green-500 transition-colors">
                            <img src="/cashapp.svg" alt="" class="w-6 h-6 filter brightness-0 invert" />
                          </div>
                          <span class="text-sm text-center text-white font-semibold">Cash App</span>
                        </a>
                        
-                       <a href="https://mozworth.bandcamp.com/" target="_blank" rel="noopener" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Bandcamp', destination: 'bandcamp' }); }}>
+                       <a href="https://mozworth.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Bandcamp', destination: 'bandcamp' }); }}>
                          <div class="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mb-2 group-hover:bg-cyan-400 transition-colors">
                            <img src="/bandcamp.svg" alt="Bandcamp" class="w-6 h-6 filter brightness-0 invert" />
                          </div>
                          <span class="text-sm text-center text-white font-semibold">Bandcamp</span>
                        </a>
                        
-                       <a href="https://mozworth.printful.me/" target="_blank" rel="noopener" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Merch', destination: 'printful' }); }}>
+                       <a href="https://mozworth.printful.me/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Merch', destination: 'printful' }); }}>
                          <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-2 group-hover:bg-purple-500 transition-colors">
                            <span class="text-lg">👕</span>
                      </div>
@@ -130,43 +130,43 @@ export default function Support() {
                    <div id="stream-section" style="display: none;" class="px-6 pb-6">
                      <p class="text-white/60 text-sm mb-4 mt-4">Higher-paying platforms listed first</p>
                      <div class="grid grid-cols-4 gap-3">
-                       <a href="https://tidal.com/browse/artist/49656537" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Tidal', destination: 'tidal' }); }}>
+                       <a href="https://tidal.com/browse/artist/49656537" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Tidal', destination: 'tidal' }); }}>
                          <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center mb-2 group-hover:bg-gray-800 transition-colors border border-white/20">
                            <img src="/tidal.svg" alt="Tidal" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">Tidal</span>
                        </a>
-                       <a href="https://music.apple.com/us/artist/mozworth/1761894108" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Apple Music', destination: 'apple_music' }); }}>
+                       <a href="https://music.apple.com/us/artist/mozworth/1761894108" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Apple Music', destination: 'apple_music' }); }}>
                          <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-2 group-hover:bg-red-400 transition-colors">
                            <img src="/apple-music.svg" alt="Apple Music" class="w-5 h-5 filter brightness-0 invert" />
                      </div>
                          <span class="text-xs text-center text-white font-semibold">Apple Music</span>
                        </a>
-                       <a href="https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Spotify', destination: 'spotify' }); }}>
+                       <a href="https://open.spotify.com/artist/19yvsMNCISApooxkEt0aMO" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Spotify', destination: 'spotify' }); }}>
                          <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-2 group-hover:bg-green-400 transition-colors">
                            <img src="/spotify.svg" alt="Spotify" class="w-5 h-5 filter brightness-0 invert" />
                      </div>
                          <span class="text-xs text-center text-white font-semibold">Spotify</span>
                        </a>
-                       <a href="https://soundcloud.com/mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'SoundCloud', destination: 'soundcloud' }); }}>
+                       <a href="https://soundcloud.com/mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'SoundCloud', destination: 'soundcloud' }); }}>
                          <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mb-2 group-hover:bg-orange-400 transition-colors">
                            <img src="/soundcloud.svg" alt="SoundCloud" class="w-5 h-5 filter brightness-0 invert" />
                      </div>
                          <span class="text-xs text-center text-white font-semibold">SoundCloud</span>
                        </a>
-                       <a href="https://music.amazon.com/artists/B0DCMD1NQ7/mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Amazon Music', destination: 'amazon_music' }); }}>
+                       <a href="https://music.amazon.com/artists/B0DCMD1NQ7/mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Amazon Music', destination: 'amazon_music' }); }}>
                          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-blue-500 transition-colors">
                            <img src="/amazon-music.svg" alt="Amazon Music" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">Amazon Music</span>
                        </a>
-                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-red-500 transition-colors">
                            <img src="/youtube.svg" alt="YouTube" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">YouTube</span>
                        </a>
-                       <a href="https://www.deezer.com/us/artist/277222071" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Deezer', destination: 'deezer' }); }}>
+                       <a href="https://www.deezer.com/us/artist/277222071" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Deezer', destination: 'deezer' }); }}>
                          <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500 transition-colors">
                            <img src="/deezer.svg" alt="Deezer" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
@@ -174,7 +174,7 @@ export default function Support() {
                        </a>
                      </div>
                      <p class="text-white/50 text-xs mt-4">
-                       <strong>Source:</strong> <a href="https://royaltyexchange.com/blog/how-music-streaming-platforms-calculate-payouts-per-stream-2025?utm_source=chatgpt.com" target="_blank" rel="noopener" class="text-teal-300 hover:underline">Royalty Exchange</a>
+                       <strong>Source:</strong> <a href="https://royaltyexchange.com/blog/how-music-streaming-platforms-calculate-payouts-per-stream-2025?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-teal-300 hover:underline">Royalty Exchange</a>
                      </p>
                    </div>
                </div>
@@ -191,49 +191,49 @@ export default function Support() {
                    
                    <div id="social-section" style="display: none;" class="px-6 pb-6">
                      <div class="grid grid-cols-4 gap-3 mt-4">
-                       <a href="https://bsky.app/profile/mozworth.music" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'social', event_label: 'Bluesky', destination: 'bluesky' }); }}>
+                       <a href="https://bsky.app/profile/mozworth.music" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'social', event_label: 'Bluesky', destination: 'bluesky' }); }}>
                          <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mb-2 group-hover:bg-blue-400 transition-colors">
                            <img src="/bluesky.svg" alt="Bluesky" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">Bluesky</span>
                        </a>
-                       <a href="https://www.reddit.com/user/mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.reddit.com/user/mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-orange-500 transition-colors">
                            <img src="/reddit.svg" alt="Reddit" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">Reddit</span>
                        </a>
-                       <a href="https://www.tiktok.com/@mozworthmusic" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.tiktok.com/@mozworthmusic" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center mb-2 group-hover:bg-gray-800 transition-colors border border-pink-400">
                            <img src="/tiktok.svg" alt="TikTok" class="w-5 h-5 filter brightness-0 invert" />
                          </div>
                          <span class="text-xs text-center text-white font-semibold">TikTok</span>
                        </a>
-                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.youtube.com/@mozworthmusic" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-red-500 transition-colors">
                            <img src="/youtube.svg" alt="YouTube" class="w-5 h-5 filter brightness-0 invert" />
                    </div>
                          <span class="text-xs text-center text-white font-semibold">YouTube</span>
                        </a>
-                       <a href="https://www.instagram.com/mozworthmusic/" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.instagram.com/mozworthmusic/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-2 group-hover:from-purple-400 group-hover:to-pink-400 transition-colors">
                            <img src="/instagram.svg" alt="Instagram" class="w-5 h-5 filter brightness-0 invert" />
                    </div>
                          <span class="text-xs text-center text-white font-semibold">Instagram</span>
                        </a>
-                       <a href="https://www.threads.net/@mozworthmusic" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.threads.net/@mozworthmusic" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center mb-2 group-hover:bg-gray-800 transition-colors border border-white/20">
                            <img src="/threads.svg" alt="Threads" class="w-5 h-5 filter brightness-0 invert" />
                    </div>
                          <span class="text-xs text-center text-white font-semibold">Threads</span>
                        </a>
-                       <a href="https://www.bandsintown.com/a/15561057-mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.bandsintown.com/a/15561057-mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mb-2 group-hover:bg-blue-500 transition-colors">
                            <img src="/bandsintown.svg" alt="Bandsintown" class="w-5 h-5 filter brightness-0 invert" />
                    </div>
                          <span class="text-xs text-center text-white font-semibold">Bandsintown</span>
                        </a>
-                       <a href="https://www.facebook.com/mozworth" target="_blank" rel="noopener" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
+                       <a href="https://www.facebook.com/mozworth" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 transition-colors group">
                          <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center mb-2 group-hover:bg-blue-600 transition-colors">
                            <img src="/facebook.svg" alt="Facebook" class="w-5 h-5 filter brightness-0 invert" />
                    </div>

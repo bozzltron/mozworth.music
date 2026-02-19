@@ -22,7 +22,7 @@ export default function StreamingIcons(props: { links: StreamingLink[]; iconClas
             href={link.href}
             class="player-btn flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black rounded"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label={link.ariaLabel}
             onClick={link.onClick}
           >
@@ -42,7 +42,7 @@ export default function StreamingIcons(props: { links: StreamingLink[]; iconClas
             href={link.href}
             class="player-btn flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black rounded"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label={link.ariaLabel}
             onClick={link.onClick}
           >

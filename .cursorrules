@@ -2,6 +2,10 @@
 
 This is the official website for mozworth, an indie artist from Austin, Texas. The site showcases music, lyrics, song stories, and provides streaming links across all major platforms.
 
+## Project Goals
+
+- **Asset copyright**: All downloadable or distributable assets (wallpapers, images, etc.) must be properly copyrighted to mozworth — embed metadata (EXIF/IPTC) where applicable and include visible or contextual notices (e.g., page disclaimers, "© mozworth") as appropriate.
+
 ## Project Overview
 
 ### Technology Stack
@@ -143,6 +147,12 @@ interface StreamingLink {
 - Modal system for user feedback on songs
 - Purple CTA buttons for engagement
 - Integration with backend comment system
+
+#### Phone Backgrounds
+- Free wallpapers at `/backgrounds` — logo designs and album art
+- **Generation**: `npm run generate:wallpapers` (outputs to `public/wallpapers/`)
+- **Source**: `src/data/wallpapers.ts` defines the catalog
+- **Size**: 1440×3200 (9:20) — universal: QHD Android, scales to 1080p, minimal crop on iPhone
 
 #### PWA Features
 - Offline functionality
