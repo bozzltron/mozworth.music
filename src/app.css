@@ -12,6 +12,23 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+/* Respect user motion preferences — reduce/disable animations for vestibular sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus ring only for keyboard users (focus-visible), not mouse clicks */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 /* Screen reader only — clip-path is modern replacement for deprecated clip */
 .sr-only {
   position: absolute;

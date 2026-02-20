@@ -157,7 +157,7 @@ export default function Press() {
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
           <RotatingBackground />
           {/* Main content */}
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white">
             <h1 class="text-3xl font-bold mb-8 text-center">Press Coverage</h1>
             
             {/* Filter buttons */}
@@ -194,7 +194,7 @@ export default function Press() {
                   href={item.link} 
                   class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" 
                   target="_blank" 
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   {item.linkText}
                 </a>

@@ -68,8 +68,9 @@ export const tourEvents: TourEvent[] = [
     "2026-03-10",
     "Tuesday, March 10, 2026",
     "Shiner's Saloon",
-    "Stage Time TBD\nAustin, TX",
-    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" }]
+    "7:30pm Fin Fin\n8:30pm Shrill Yell\n9:30pm mozworth\nAustin, TX",
+    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
+    "19:30"
   ),
   event(
     "2026-01-04",

@@ -1,5 +1,6 @@
 import { For, createSignal, createEffect, onCleanup } from "solid-js";
 import GlobalFooter from "../components/GlobalFooter";
+import { useFocusTrap } from "../utils/focusTrap";
 import RotatingBackground from "../components/RotatingBackground";
 import ShareButton from "../components/ShareButton";
 import { StandardMetadata } from "../utils/metadata";
@@ -23,23 +24,15 @@ function trackDownload(title: string) {
 
 export default function Backgrounds() {
   const [preview, setPreview] = createSignal<Wallpaper | null>(null);
-  let lastFocusedElement: HTMLElement | null = null;
-  let closeButtonRef: HTMLButtonElement | undefined;
+  let previewModalRef: HTMLDivElement | undefined;
+
+  useFocusTrap(() => previewModalRef, () => !!preview(), () => setPreview(null));
 
   createEffect(() => {
     if (!preview()) return;
-    lastFocusedElement = (document.activeElement as HTMLElement) ?? null;
     document.body.style.overflow = "hidden";
-    requestAnimationFrame(() => closeButtonRef?.focus());
-
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setPreview(null);
-    };
-    window.addEventListener("keydown", handler);
     onCleanup(() => {
-      window.removeEventListener("keydown", handler);
       document.body.style.overflow = "";
-      lastFocusedElement?.focus();
     });
   });
 
@@ -94,7 +87,7 @@ export default function Backgrounds() {
         </a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
           <RotatingBackground />
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white">
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white" style="transform: translateZ(0);">
             <h1 id="wallpapers-heading" class="text-3xl font-bold mb-2 text-center">Phone Backgrounds</h1>
             <p class="text-white/80 mb-4 text-center max-w-lg">
               Free wallpapers for your phone from mozworth, an Austin indie rock band. Logo designs and album art in WebP format (1440×3200). Tap to preview, download to save.
@@ -147,6 +140,7 @@ export default function Backgrounds() {
             {/* Full-res preview modal */}
             {preview() && (
               <div
+                ref={(el) => (previewModalRef = el)}
                 class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
                 role="dialog"
                 aria-modal="true"
@@ -155,7 +149,6 @@ export default function Backgrounds() {
                 onClick={() => setPreview(null)}
               >
                 <button
-                  ref={(el) => (closeButtonRef = el)}
                   type="button"
                   class="absolute top-4 right-4 text-white/80 hover:text-white text-2xl leading-none p-2 focus:outline-none focus:ring-2 focus:ring-teal-400 rounded min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="Close preview"
@@ -171,6 +164,7 @@ export default function Backgrounds() {
                     src={preview()!.source}
                     alt={`${preview()!.title} full resolution wallpaper`}
                     class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
+                    decoding="async"
                   />
                   <p id="preview-title" class="text-white/70 text-sm mt-2 text-center font-medium">{preview()!.title}</p>
                   <p id="preview-desc" class="sr-only">Full resolution wallpaper. Tap outside or press Escape to close.</p>

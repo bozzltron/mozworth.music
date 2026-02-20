@@ -18,7 +18,11 @@ export default function AnniversaryConfetti(props: AnniversaryConfettiProps): JS
   let hideTimeoutId: ReturnType<typeof setTimeout> | undefined;
 
   const check = () => {
-    const shouldShow = !!props.enabled && (props.force === true || isAnniversaryToday(props.releaseDate));
+    const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const shouldShow =
+      !!props.enabled &&
+      !prefersReducedMotion &&
+      (props.force === true || isAnniversaryToday(props.releaseDate));
     setVisible(shouldShow);
     
     // If confetti starts showing, set a graceful stop sequence
