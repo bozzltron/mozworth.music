@@ -1,5 +1,9 @@
 /**
  * Tour dates data — single source of truth for /tour page and /tour.ics
+ *
+ * Time formats:
+ * - details: 12-hour for display (e.g. "7:30pm", "2:45pm") — used on tour page and in iCal DESCRIPTION
+ * - time: 24-hour "HH:MM" for iCal DTSTART/DTEND only (RFC 5545 requires 24h) — never shown to users
  */
 
 export interface TourLink {
@@ -11,16 +15,18 @@ export interface TourLink {
 export interface TourEvent {
   /** ISO date YYYY-MM-DD */
   date: string;
-  /** Optional time "HH:MM" (24h) — default 20:00 when omitted */
+  /** Optional time "HH:MM" (24h) — for iCal only, default 20:00 when omitted. Not displayed to users. */
   time?: string;
   /** Display label e.g. "Friday, April 25, 2026" */
   dateLabel: string;
   /** Venue/short title */
   venue: string;
-  /** Full description (line breaks via \n) */
+  /** Full description (line breaks via \n). Use 12-hour time (e.g. 7:30pm). */
   details: string;
   links: TourLink[];
   isPast: boolean;
+  /** Venue address for iCal LOCATION (optional) */
+  address?: string;
 }
 
 function event(
@@ -29,10 +35,11 @@ function event(
   venue: string,
   details: string,
   links: TourLink[],
-  time?: string
+  time?: string,
+  address?: string
 ): TourEvent {
   const isPast = new Date(date) < new Date();
-  return { date, dateLabel, venue, details, links, isPast, time };
+  return { date, dateLabel, venue, details, links, isPast, time, address };
 }
 
 export const tourEvents: TourEvent[] = [
@@ -51,7 +58,9 @@ export const tourEvents: TourEvent[] = [
     "Friday, April 25, 2026",
     "Hanover",
     "Lineup:\nSpace Cushion\nItBegins\nmozworth\n\nStage Time TBD\n108 E Main St\nPflugerville, TX 78660",
-    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }]
+    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
+    undefined,
+    "108 E Main St, Pflugerville, TX 78660"
   ),
   event(
     "2026-03-13",
@@ -62,7 +71,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/107849645", ariaLabel: "View event on Bandsintown (opens in new tab)" },
       { label: "Facebook", href: "https://www.facebook.com/share/1ALJeCufYh/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
-    "14:45"
+    "14:45",
+    "517 N IH 35, Austin, TX 78702"
   ),
   event(
     "2026-03-10",
@@ -70,7 +80,8 @@ export const tourEvents: TourEvent[] = [
     "Shiner's Saloon",
     "Lineup:\n7:30pm Fin Fin\n8:30pm Shrill Yell\n9:30pm mozworth\n\nAustin, TX",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
-    "19:30"
+    "19:30",
+    "422 Congress Ave, Ste D, Austin, TX 78701"
   ),
   event(
     "2026-01-04",
@@ -81,7 +92,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/107752868?&came_from=210&_ga=2.198202799.1431877457.1767487122-1718009698.1767487122", ariaLabel: "View event on Bandsintown (opens in new tab)" },
       { label: "Facebook", href: "https://www.facebook.com/share/1KYdDWVDrw/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
-    "19:00"
+    "19:00",
+    "4715 South Lamar Blvd, Ste 102, Austin, TX 78745"
   ),
   event(
     "2025-10-11",
@@ -92,7 +104,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://bandsintown.com/e/107422298?came_from=297&utm_medium=web&utm_source=copy_link&utm_campaign=event_social_share", ariaLabel: "View event on Bandsintown (opens in new tab)" },
       { label: "Facebook", href: "https://www.facebook.com/share/1A8dT4SnNv/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
-    "18:00"
+    "18:00",
+    "10700 Menchaca Rd, Austin, TX 78748"
   ),
   event(
     "2025-08-01",
@@ -103,7 +116,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/107046899?", ariaLabel: "View event on Bandsintown (opens in new tab)" },
       { label: "Facebook", href: "https://www.facebook.com/share/19L86HVi4U/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
-    "20:00"
+    "20:00",
+    "10700 Menchaca Rd, Austin, TX 78748"
   ),
   event(
     "2025-07-31",
@@ -111,7 +125,8 @@ export const tourEvents: TourEvent[] = [
     "Good Day Austin (TV Appearance)",
     "FOX 7 Austin (KTBC)\n9:50am Central Time\nAustin, TX",
     [{ label: "Watch", href: "https://www.fox7austin.com/video/1683875", ariaLabel: "Watch the FOX 7 Austin segment" }],
-    "09:50"
+    "09:50",
+    "FOX 7 Austin, Austin, TX"
   ),
   event(
     "2025-07-20",
@@ -119,7 +134,8 @@ export const tourEvents: TourEvent[] = [
     "mozworth Interview Airs",
     "KLBJ 93.7 FM\n7:00pm\nAustin, TX",
     [{ label: "Listen", href: "https://www.klbjfm.com/listen-live", ariaLabel: "Listen to KLBJ live" }],
-    "19:00"
+    "19:00",
+    "KLBJ 93.7 FM, Austin, TX"
   ),
   event(
     "2025-06-06",
@@ -130,7 +146,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/106941100-mozworth-at-south-austin-beer-garden?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event" },
       { label: "Facebook", href: "https://www.facebook.com/share/1B8AZgXj5f/" },
     ],
-    "21:00"
+    "21:00",
+    "10700 Menchaca Rd, Austin, TX 78748"
   ),
   event(
     "2025-05-16",
@@ -141,7 +158,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/106761310" },
       { label: "Facebook", href: "https://www.facebook.com/share/1AisQjQCHt/" },
     ],
-    "16:00"
+    "16:00",
+    "1601 W Koenig Ln, Austin, TX 78756"
   ),
   event(
     "2025-03-09",
@@ -152,7 +170,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/106360770" },
       { label: "Facebook", href: "https://www.facebook.com/share/15zTxqmEy4/" },
     ],
-    "21:00"
+    "21:00",
+    "422 Congress Ave, Ste D, Austin, TX 78701"
   ),
   event(
     "2024-12-20",
@@ -162,7 +181,9 @@ export const tourEvents: TourEvent[] = [
     [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/106153715" },
       { label: "Facebook", href: "https://www.facebook.com/events/1367188184260258" },
-    ]
+    ],
+    undefined,
+    "200 N Main St, Buda, TX 78610"
   ),
   event(
     "2024-11-17",
@@ -176,7 +197,9 @@ export const tourEvents: TourEvent[] = [
     "October 25, 2024",
     "Shiner's Saloon",
     "w/ Horshoes and Handgrinades\nAustin, TX",
-    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/106028135-mozworth-at-shiner%27s-saloon?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" }]
+    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/106028135-mozworth-at-shiner%27s-saloon?came_from=250&utm_medium=web&utm_source=artist_page&utm_campaign=event" }],
+    undefined,
+    "422 Congress Ave, Ste D, Austin, TX 78701"
   ),
 ];
 

@@ -16,11 +16,14 @@ function toIcalDate(date: string): string {
   return date.replace(/-/g, "");
 }
 
+/** Events in the future only (best practice for calendar subscriptions). */
+const futureEvents = icalEvents.filter((e) => !e.isPast);
+
 export async function GET({ request }: { request: Request }) {
   const baseUrl = new URL(request.url).origin;
   const now = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
 
-  const events = icalEvents.map((e) => {
+  const events = futureEvents.map((e) => {
     const uid = `mozworth-${e.date}-${e.venue.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}@mozworth.music`;
     const url = e.links[0]?.href || `${baseUrl}/tour`;
     const hasTime = !!e.time;
@@ -41,9 +44,11 @@ export async function GET({ request }: { request: Request }) {
 
     const desc = escapeIcal(`mozworth at ${e.venue}\n\n${e.details}\n\nTickets: ${url}`);
     const loc =
+      e.address ??
       e.details
         .split("\n")
-        .find((l) => /[A-Z][a-z]+,\s*TX|Austin|Virtual/i.test(l)) || "Austin, TX";
+        .find((l) => /[A-Z][a-z]+,\s*TX|Austin|Virtual/i.test(l)) ??
+      "Austin, TX";
 
     return [
       "BEGIN:VEVENT",
