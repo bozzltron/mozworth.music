@@ -1,5 +1,5 @@
 /**
- * Tour dates data — single source of truth for /tour page and /tour.ics
+ * Tour dates data — single source of truth for /tour page and /tour/ics
  *
  * Time formats:
  * - details: 12-hour for display (e.g. "7:30pm", "2:45pm") — used on tour page and in iCal DESCRIPTION

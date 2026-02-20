@@ -1,4 +1,4 @@
-import { icalEvents } from "../data/tour";
+import { icalEvents } from "../../data/tour";
 
 /** Escape iCal text (commas, semicolons, backslashes) */
 function escapeIcal(s: string): string {

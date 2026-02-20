@@ -59,7 +59,7 @@ export default function Tour() {
             <p class="text-white/80 mb-6 text-center">Indie alternative rock shows in Austin, Texas and beyond</p>
 
             <a
-              href="/tour.ics"
+              href="/tour/ics"
               class="mb-6 inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 text-sm font-medium transition-colors"
               aria-label="Subscribe to mozworth tour calendar (downloads iCal file)"
             >
