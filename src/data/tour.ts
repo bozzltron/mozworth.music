@@ -50,14 +50,14 @@ export const tourEvents: TourEvent[] = [
     "2026-04-25",
     "Friday, April 25, 2026",
     "Hanover",
-    "w/ Space Cushion & ItBegins\nStage Time TBD\n108 E Main St\nPflugerville, TX 78660",
+    "Lineup:\nSpace Cushion\nItBegins\nmozworth\n\nStage Time TBD\n108 E Main St\nPflugerville, TX 78660",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }]
   ),
   event(
     "2026-03-13",
     "Friday, March 13, 2026",
     "It's a van fest",
-    "2:45pm\nBYOB Austin\nAustin, TX",
+    "2:45pm\n\nLineup:\nbug crush\nmozworth\nDiva\nKorda Korder\nThe Red Eye Gamble\nFoliage\nEthan Marc Band\nStacy Antonel\nStephen Babcock\nThe Hedons\nLozenge\nThe Wee-Beasties\n\nBYOB Austin\nAustin, TX",
     [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/107849645", ariaLabel: "View event on Bandsintown (opens in new tab)" },
       { label: "Facebook", href: "https://www.facebook.com/share/1ALJeCufYh/", ariaLabel: "View event on Facebook (opens in new tab)" },
@@ -68,7 +68,7 @@ export const tourEvents: TourEvent[] = [
     "2026-03-10",
     "Tuesday, March 10, 2026",
     "Shiner's Saloon",
-    "7:30pm Fin Fin\n8:30pm Shrill Yell\n9:30pm mozworth\nAustin, TX",
+    "Lineup:\n7:30pm Fin Fin\n8:30pm Shrill Yell\n9:30pm mozworth\n\nAustin, TX",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
     "19:30"
   ),

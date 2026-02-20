@@ -15,7 +15,8 @@ function TourDateBlock({ event }: { event: TourEvent }) {
     >
       <div class="min-w-[200px] text-left font-bold">{event.dateLabel}</div>
       <div class="venue-info flex-1 text-left text-base">
-        <p style="white-space: pre-line">{event.details}</p>
+        <p class="font-semibold text-white mb-1">{event.venue}</p>
+        <p style="white-space: pre-line" class="text-white/90">{event.details}</p>
       </div>
       <div class="tour-links w-full md:w-auto md:min-w-[140px] flex flex-col md:flex-row flex-wrap gap-2 mt-4 md:mt-0 md:justify-end">
         {event.links.map((link) => (
