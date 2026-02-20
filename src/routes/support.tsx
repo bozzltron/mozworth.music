@@ -58,7 +58,7 @@ export default function Support() {
           {/* Background image */}
           <RotatingBackground />
           {/* Main content */}
-          <div class="relative container mx-0 md:mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-4 md:rounded-[10px] bg-black/70">
+          <div class="relative container mx-0 md:mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-4 md:rounded-[10px] bg-black/70 text-white">
             <h1 class="text-3xl font-bold mb-8 text-center">Support mozworth</h1>
             
                         <p class="text-white/90 leading-relaxed text-center mb-8">

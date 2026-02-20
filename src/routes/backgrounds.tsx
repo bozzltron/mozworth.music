@@ -94,7 +94,7 @@ export default function Backgrounds() {
         </a>
         <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
           <RotatingBackground />
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70">
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white">
             <h1 id="wallpapers-heading" class="text-3xl font-bold mb-2 text-center">Phone Backgrounds</h1>
             <p class="text-white/80 mb-4 text-center max-w-lg">
               Free wallpapers for your phone from mozworth, an Austin indie rock band. Logo designs and album art in WebP format (1440×3200). Tap to preview, download to save.
@@ -122,6 +122,8 @@ export default function Backgrounds() {
                           src={wp.source}
                           alt={`${wp.title} wallpaper preview`}
                           class="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     </button>

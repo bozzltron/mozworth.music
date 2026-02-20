@@ -1,8 +1,3 @@
 User-agent: *
-Disallow: /comments
-Disallow: /comments/
-Disallow: /comments/*
-Disallow: /solid/
-Disallow: /solid/*
 Allow: /
 Sitemap: https://mozworth.music/sitemap.xml 

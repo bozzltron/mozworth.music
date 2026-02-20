@@ -5,6 +5,7 @@ This is the official website for mozworth, an indie artist from Austin, Texas. T
 ## Project Goals
 
 - **Asset copyright**: All downloadable or distributable assets (wallpapers, images, etc.) must be properly copyrighted to mozworth — embed metadata (EXIF/IPTC) where applicable and include visible or contextual notices (e.g., page disclaimers, "© mozworth") as appropriate.
+- **Prevent page crash**: Robust error handling, defensive coding, and stable CSS so the site never crashes or renders blank for users. Use ErrorBoundary, avoid uncaught exceptions, and ensure styles work across browsers and color schemes.
 
 ## Project Overview
 
@@ -146,7 +147,6 @@ interface StreamingLink {
 #### Leave Note Feature
 - Modal system for user feedback on songs
 - Purple CTA buttons for engagement
-- Integration with backend comment system
 
 #### Phone Backgrounds
 - Free wallpapers at `/backgrounds` — logo designs and album art
