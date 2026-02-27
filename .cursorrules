@@ -6,7 +6,24 @@ This is the official website for mozworth, an indie artist from Austin, Texas. T
 
 - **Asset copyright**: All downloadable or distributable assets (wallpapers, images, etc.) must be properly copyrighted to mozworth — embed metadata (EXIF/IPTC) where applicable and include visible or contextual notices (e.g., page disclaimers, "© mozworth") as appropriate.
 - **Prevent page crash**: Robust error handling, defensive coding, and stable CSS so the site never crashes or renders blank for users. Use ErrorBoundary, avoid uncaught exceptions, and ensure styles work across browsers and color schemes.
-- **Tour and iCal sync**: Whenever tour dates in `src/data/tour.ts` are updated, `/tour/ics` is automatically correct (single source of truth). The iCal file must remain valid (RFC 5545) so subscribers can add events to their calendars.
+- **Tour and iCal sync**: See "Tour Page & Calendar" below.
+
+## Tour Page & Calendar
+
+**Single source of truth:** `src/data/tour.ts` drives both the `/tour` page and the iCal feed at `/tour/ics`. Update tour dates in one place; both outputs stay in sync.
+
+**mozworth's iCal feed:**
+- **Purpose**: One subscription for all future mozworth events. Subscribers get live updates when new shows are added or changed.
+- **Scope**: Future events only (past events excluded from feed).
+- **URL**: `https://mozworth.music/tour/ics` — Subscribe link uses `webcal://` for iOS/desktop. On Android, webcal often does nothing; users can add the https URL manually in Google Calendar → Settings → From URL. Consider platform detection to offer https download fallback.
+- **Format**: RFC 5545 compliant. Include venue addresses in LOCATION. Use 24-hour time internally; 12-hour in display text.
+
+**Tour page approach:**
+- **Event links**: Each event links to Bandsintown and Facebook. Per-event "Add to calendar" is delegated to those platforms — do not add per-event calendar buttons on mozworth.music.
+- **Subscribe to calendar**: One link at tour level for the full mozworth iCal feed.
+- **Lineup**: Display in consistent "Lineup:" format with one act per line. Venue name shown prominently.
+
+**Data fields:** `TourEvent` includes `date`, `dateLabel`, `venue`, `details` (12h display text), `links`, `time` (24h, iCal only), `address` (for LOCATION), `isPast`.
 
 ## Project Overview
 
