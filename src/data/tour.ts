@@ -79,9 +79,21 @@ export const tourEvents: TourEvent[] = [
     "Tuesday, March 10, 2026",
     "Shiner's Saloon",
     "Lineup:\n7:30pm Fin Fin\n8:30pm Shrill Yell\n9:30pm mozworth\n\nAustin, TX",
-    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/107849633", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+      { label: "Facebook", href: "https://www.facebook.com/share/1DvGZEb6ji/", ariaLabel: "View event on Facebook (opens in new tab)" },
+    ],
     "19:30",
     "422 Congress Ave, Ste D, Austin, TX 78701"
+  ),
+  event(
+    "2026-02-28",
+    "Saturday, February 28, 2026",
+    "Mohawk",
+    "Lineup:\nmozworth\nGirl Dinner\n\nAcoustic — RIP MTV event\nAustin, TX",
+    [],
+    undefined,
+    "912 Red River St, Austin, TX 78701"
   ),
   event(
     "2026-01-04",
