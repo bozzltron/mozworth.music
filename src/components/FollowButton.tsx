@@ -52,7 +52,8 @@ export default function FollowButton(props: FollowButtonProps) {
   const variant = props.variant ?? "dark";
 
   const textAlign = props.compact ? "text-center" : "text-left";
-  const baseLight = `inline-block w-full px-5 py-2 ${textAlign} font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 border-2 border-transparent border-white bg-transparent`;
+  const borderLight = props.compact ? "border-white/30" : "border-white";
+  const baseLight = `inline-block w-full px-5 py-2 ${textAlign} font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black border-2 ${borderLight} bg-transparent`;
   const baseDark = `inline-block w-full px-5 py-2 ${textAlign} font-semibold text-black shadow-sm transition-colors hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 border-2 border-black bg-transparent`;
   const rounded = props.compact ? "rounded-full" : "rounded";
   const margin = props.compact || props.noMargin ? "" : "mt-2 ";
