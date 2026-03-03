@@ -5,6 +5,8 @@ interface ShareButtonProps {
   title: string;
   text?: string;
   buttonClass?: string; // optional custom button class
+  /** Omit top margin (use when parent has flex gap) */
+  noMargin?: boolean;
 }
 
 export default function ShareButton(props: ShareButtonProps) {
@@ -41,7 +43,8 @@ export default function ShareButton(props: ShareButtonProps) {
     }
   };
 
-  const defaultClass = "inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full mt-2 text-left";
+  const baseClass = "inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full text-left";
+  const defaultClass = props.noMargin ? baseClass : `${baseClass} mt-2`;
   const buttonClass = props.buttonClass || defaultClass;
   
   return (

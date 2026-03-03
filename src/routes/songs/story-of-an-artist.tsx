@@ -4,6 +4,7 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import FollowButton from "../../components/FollowButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import { StandardMetadata } from "../../utils/metadata";
@@ -92,7 +93,7 @@ export default function StoryOfAnArtist() {
         mozworth &middot; Story of an Artist
       </div>
       <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={false} textColor="text-black" />
-      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
@@ -100,18 +101,15 @@ export default function StoryOfAnArtist() {
           Leave a Note
         </button>
         <a href="https://mozworth.bandcamp.com/track/story-of-an-artist" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
+          class="inline-block px-5 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Free Download
         </a>
-        <a href="/support" 
-          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-black font-semibold border-2 border-black shadow-sm hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 w-full">
-          Support
-        </a>
-        <ShareButton
+        <FollowButton variant="dark" songTitle="Story of an Artist" noMargin />
+        <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/story-of-an-artist/"}
           title="Story of an Artist by mozworth"
           text="Check out this song by mozworth!"
-          buttonClass="inline-block px-5 py-2 mt-2 rounded bg-transparent text-black font-semibold border-2 border-black shadow-sm hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 w-full text-left"
+          buttonClass="inline-block px-5 py-2 rounded bg-transparent text-black font-semibold border-2 border-black shadow-sm hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 w-full text-left"
         />
       </div>
     </>

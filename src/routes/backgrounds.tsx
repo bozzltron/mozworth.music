@@ -1,6 +1,6 @@
-import { For, createSignal, createEffect, onCleanup } from "solid-js";
+import { For, createSignal, Show } from "solid-js";
 import GlobalFooter from "../components/GlobalFooter";
-import { useFocusTrap } from "../utils/focusTrap";
+import Modal from "../components/Modal";
 import RotatingBackground from "../components/RotatingBackground";
 import ShareButton from "../components/ShareButton";
 import { StandardMetadata } from "../utils/metadata";
@@ -24,17 +24,6 @@ function trackDownload(title: string) {
 
 export default function Backgrounds() {
   const [preview, setPreview] = createSignal<Wallpaper | null>(null);
-  let previewModalRef: HTMLDivElement | undefined;
-
-  useFocusTrap(() => previewModalRef, () => !!preview(), () => setPreview(null));
-
-  createEffect(() => {
-    if (!preview()) return;
-    document.body.style.overflow = "hidden";
-    onCleanup(() => {
-      document.body.style.overflow = "";
-    });
-  });
 
   return (
     <>
@@ -107,7 +96,15 @@ export default function Backgrounds() {
                     <button
                       type="button"
                       class="relative w-full max-w-[160px] mx-auto mb-3 cursor-pointer rounded-[2rem] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black"
-                      onClick={() => setPreview(wp)}
+                      onClick={() => {
+                        setPreview(wp);
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag("event", "wallpaper_preview", {
+                            event_category: "backgrounds",
+                            event_label: wp.title,
+                          });
+                        }
+                      }}
                       aria-label={`Preview ${wp.title} full size`}
                     >
                       <div class="aspect-[9/19.5] rounded-[2rem] overflow-hidden border-4 border-white/20 shadow-xl bg-black">
@@ -138,39 +135,32 @@ export default function Backgrounds() {
             </section>
 
             {/* Full-res preview modal */}
-            {preview() && (
-              <div
-                ref={(el) => (previewModalRef = el)}
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="preview-title"
-                aria-describedby="preview-desc"
-                onClick={() => setPreview(null)}
-              >
-                <button
-                  type="button"
-                  class="absolute top-4 right-4 text-white/80 hover:text-white text-2xl leading-none p-2 focus:outline-none focus:ring-2 focus:ring-teal-400 rounded min-w-[44px] min-h-[44px] flex items-center justify-center"
-                  aria-label="Close preview"
-                  onClick={() => setPreview(null)}
+            <Show when={preview()}>
+              {(wp) => (
+                <Modal
+                  isOpen={true}
+                  onClose={() => setPreview(null)}
+                  titleId="preview-title"
+                  describedby="preview-desc"
+                  variant="media"
                 >
-                  <span aria-hidden="true">×</span>
-                </button>
-                <div
-                  class="relative max-h-[90vh] max-w-full"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <img
-                    src={preview()!.source}
-                    alt={`${preview()!.title} full resolution wallpaper`}
-                    class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
-                    decoding="async"
-                  />
-                  <p id="preview-title" class="text-white/70 text-sm mt-2 text-center font-medium">{preview()!.title}</p>
-                  <p id="preview-desc" class="sr-only">Full resolution wallpaper. Tap outside or press Escape to close.</p>
-                </div>
-              </div>
-            )}
+                  <div class="relative max-h-[90vh] max-w-full">
+                    <img
+                      src={wp.source}
+                      alt={`${wp.title} full resolution wallpaper`}
+                      class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
+                      decoding="async"
+                    />
+                    <p id="preview-title" class="mt-2 text-center text-sm font-medium text-white/90">
+                      {wp.title}
+                    </p>
+                    <p id="preview-desc" class="sr-only">
+                      Full resolution wallpaper. Tap outside or press Escape to close.
+                    </p>
+                  </div>
+                </Modal>
+              )}
+            </Show>
 
             <p class="text-white/60 text-xs mt-8 text-center">
               Optimized for iPhone and Android (1440×3200, 9:20). Tap to preview full size, long-press to save on mobile.

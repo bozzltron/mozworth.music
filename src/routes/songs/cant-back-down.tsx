@@ -4,6 +4,7 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import FollowButton from "../../components/FollowButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import { StandardMetadata } from "../../utils/metadata";
 
@@ -87,7 +88,7 @@ export default function CantBackDown() {
         mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
-      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
@@ -95,14 +96,11 @@ export default function CantBackDown() {
           Leave a Note
         </button>
         <a href="https://mozworth.bandcamp.com/track/cant-back-down" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
+          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
         </a>
-        <a href="/support" 
-          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
-          Support
-        </a>
-        <ShareButton
+        <FollowButton variant="light" songTitle="Can't Back Down" noMargin />
+        <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/cant-back-down/"}
           title="Can't Back Down by mozworth"
           text="Check out this song by mozworth!"

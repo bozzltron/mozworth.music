@@ -60,7 +60,7 @@ src/
 Each song follows a consistent structure:
 - **Cover Art**: Bandcamp embed iframe for playback
 - **Metadata**: Title, artist, album link, release date
-- **Action Buttons**: Leave Note, Purchase, Support, Share
+- **Action Buttons**: Leave Note, Purchase, Follow, Share
 - **Streaming Links**: All major platforms with analytics tracking
 - **Tabbed Content**: Lyrics, Writing, Demo, Credits, Reviews, Performances
 

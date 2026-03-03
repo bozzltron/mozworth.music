@@ -3,6 +3,7 @@ import { useLocation } from "@solidjs/router";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
+import FollowButton from "../../components/FollowButton";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
@@ -40,7 +41,7 @@ export default function Sandpiper() {
         showConfetti={false}
         forceConfetti={isForcedAnniversary()}
       />
-      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4">
+      <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
@@ -51,15 +52,12 @@ export default function Sandpiper() {
           href="https://mozworth.bandcamp.com/track/sandpiper"
           target="_blank"
           rel="noopener"
-          class="inline-block px-5 py-2 mt-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
+          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
           Purchase
         </a>
-        <a href="/support" 
-          class="inline-block px-5 py-2 mt-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
-          Support
-        </a>
-        <ShareButton
+        <FollowButton variant="light" songTitle="Sandpiper" noMargin />
+        <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/sandpiper/"}
           title="Sandpiper by mozworth"
           text="Check out this song by mozworth!"
