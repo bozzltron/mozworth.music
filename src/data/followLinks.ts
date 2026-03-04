@@ -45,10 +45,21 @@ const newsletter: FollowLink[] = [
   },
 ];
 
+/** Direct support / tips */
+const support: FollowLink[] = [
+  {
+    href: "https://cash.app/$mozworth",
+    label: "Cash App",
+    iconSrc: "/cashapp.svg",
+    ariaLabel: "Send a tip via Cash App",
+  },
+];
+
 export const followLinks = {
   streaming,
   social,
   newsletter,
+  support,
 };
 
-export const allFollowLinks = [...streaming, ...social, ...newsletter];
+export const allFollowLinks = [...streaming, ...social, ...newsletter, ...support];

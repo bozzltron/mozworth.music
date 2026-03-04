@@ -144,6 +144,12 @@ interface StreamingLink {
 - Images optimized as WebP with fallbacks
 - All external embeds should be lazy-loaded where possible
 
+#### Promotional Flyers / Posters
+- **Commit WebP only** — do not commit the source JPG for promotional flyers/posters
+- JPG sources are gitignored (`public/Mozworth-Shiners*.jpg`); keep them locally for conversion
+- Generate WebP: `npm run convert:webp` or `node scripts/convert-to-webp.js [path/to/image.jpg]`
+- SmartPromo and other UI should reference the `.webp` file
+
 #### Performance Considerations
 - PWA optimization with aggressive caching
 - Image optimization (WebP format preferred)

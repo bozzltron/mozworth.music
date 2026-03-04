@@ -81,7 +81,7 @@ export default function FollowButton(props: FollowButtonProps) {
           Follow mozworth:
         </p>
         <div class="flex flex-wrap gap-2 text-sm">
-          <For each={[followLinks.streaming[0], followLinks.social[0], followLinks.newsletter[0]]}>
+          <For each={[followLinks.streaming[0], followLinks.social[0], followLinks.newsletter[0], followLinks.support[0]]}>
             {(link) => (
               <a
                 href={link.href}
@@ -153,6 +153,18 @@ export default function FollowButton(props: FollowButtonProps) {
             </h3>
             <div class="grid grid-cols-2 gap-1 sm:grid-cols-4">
               <For each={followLinks.social}>
+                {(link) => (
+                  <FollowLinkItem link={link} songTitle={props.songTitle} />
+                )}
+              </For>
+            </div>
+          </nav>
+          <nav aria-label="Support">
+            <h3 class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+              Support
+            </h3>
+            <div class="grid grid-cols-2 gap-1 sm:grid-cols-4">
+              <For each={followLinks.support}>
                 {(link) => (
                   <FollowLinkItem link={link} songTitle={props.songTitle} />
                 )}

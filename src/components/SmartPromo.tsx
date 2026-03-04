@@ -1,36 +1,37 @@
 import { JSX } from "solid-js";
-import CountdownTimer from "./CountdownTimer";
+
+const RSVP_URL = "https://do512.com/events/2026/3/10/fin-fin-shrill-yell-mozworth-tickets";
 
 export default function SmartPromo(): JSX.Element {
-  // January 22, 2026 at midnight (user's local time)
-  const releaseDate = new Date('2026-01-22T00:00:00');
-
   return (
     <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
-      {/* Story of an Artist Promotion */}
-      <div class="w-full flex justify-center mb-1 md:mb-4">
-        <div class="w-full max-w-[560px] aspect-square">
-          <iframe
-            class="w-full h-full rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
-            src="https://bandcamp.com/EmbeddedPlayer/track=1390313411/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-            seamless
-            title="Story of an Artist by mozworth (Bandcamp embed)"
-          />
-        </div>
+      {/* March 10 show at Shiner's Saloon */}
+      <div class="w-full flex justify-center mb-3">
+        <img
+          src="/Mozworth-Shiners_March10th-2026-V3.webp"
+          alt="Local Indie Alt Rock: mozworth, Shrill Yell, Fin Fin at Shiner's Saloon, March 10th, 2026. Rooftop Patio Gig. Free entry."
+          class="w-full max-w-[560px] rounded-xl shadow-lg object-cover"
+        />
       </div>
-      <div class="text-xl font-bold text-white text-center mb-2">
-        Story of an Artist
+      <div class="text-xl font-bold text-white text-center mb-1">
+        Tuesday, March 10 • Shiner's Saloon
       </div>
-      <div class="text-white/80 text-center mb-3 text-sm max-w-prose">
-        The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day. Released January 22, 2026.
+      <div class="text-white/80 text-center mb-3 text-sm">
+        mozworth + Shrill Yell + Fin Fin • Rooftop Patio Gig • Free Entry
       </div>
-      
-      <div class="flex flex-wrap gap-3 justify-center">
-        <a
-          href="/songs/story-of-an-artist"
-          class="inline-block border border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black"
-        >Listen Now</a>
-      </div>
+      <a
+        href={RSVP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block border-2 border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black"
+        onClick={() => {
+          if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", "rsvp_click", { event_category: "tour", event_label: "March 10 Shiner's Saloon", destination: "do512" });
+          }
+        }}
+      >
+        RSVP
+      </a>
     </div>
   );
 } 

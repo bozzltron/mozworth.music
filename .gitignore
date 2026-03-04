@@ -23,6 +23,9 @@ app.config.timestamp_*.js
 # Temp
 tmp/
 
+# Promotional flyers - commit WebP only, not source JPG (use: npm run convert:webp)
+public/Mozworth-Shiners*.jpg
+
 # System Files
 .DS_Store
 Thumbs.db
