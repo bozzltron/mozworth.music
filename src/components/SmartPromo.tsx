@@ -17,7 +17,7 @@ export default function SmartPromo(): JSX.Element {
         Tuesday, March 10 • Shiner's Saloon
       </div>
       <div class="text-white/80 text-center mb-3 text-sm">
-        mozworth + Shrill Yell + Fin Fin • Rooftop Patio Gig • Free Entry
+        Three local Austin bands combine their powers to create a night of indie rock amazingness. mozworth + Shrill Yell + Fin Fin • Rooftop Patio Gig • Free Entry
       </div>
       <a
         href={RSVP_URL}

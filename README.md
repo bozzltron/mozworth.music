@@ -1,32 +1,85 @@
-# SolidStart
+# mozworth.music
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+Official website for mozworth, an indie artist from Austin, Texas. Music, lyrics, tour dates, and streaming links.
 
-## Creating a project
-
-```bash
-# create a new project in the current directory
-npm init solid@latest
-
-# create a new project in my-app
-npm init solid@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Docs
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+- **[project.md](project.md)** – Project goals, tour/iCal
+- **[architecture.md](architecture.md)** – Tech stack, components, design system
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+## Development Commands
 
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
+```bash
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # ESLint
+npm run lint:fix     # ESLint auto-fix
+```
+
+## Image & Asset Scripts
+
+### WebP Conversion (Promotional Flyers)
+
+**Rule: Commit WebP only, not source JPG.**
+
+Promotional flyers/posters: convert JPG → WebP and commit only the WebP. Source JPGs are gitignored.
+
+```bash
+# Default: converts public/Mozworth-Shiners_March10th-2026-V3.jpg → .webp
+npm run convert:webp
+
+# Custom file:
+node scripts/convert-to-webp.js path/to/image.jpg
+```
+
+- Output: same filename with `.webp` extension
+- Quality: 85
+- UI should reference the `.webp` file
+
+### Wallpapers
+
+```bash
+npm run generate:wallpapers   # Output: public/wallpapers/*.webp (1440×3200)
+```
+
+### PWA Icons
+
+```bash
+node scripts/generate-android-icons.js   # After updating public/logo.jpg
+```
+
+## Guidelines
+
+### New Song Pages
+
+1. Follow the song page pattern (see [architecture.md](architecture.md))
+2. Keep streaming links current; add analytics `onClick` on platform links
+3. Use WebP for images
+4. Include Lyrics, Writing, Demo, Credits
+5. Test responsive + accessibility
+
+### Content
+
+- Song data is component-based (no CMS)
+- Use shared components (Callout, Modal, FollowButton) — no ad-hoc equivalents
+- Lazy-load external embeds where possible
+
+### Code
+
+- SolidJS: createSignal, createMemo, proper TypeScript
+- Accessibility: ARIA labels, semantic HTML
+- Responsive: mobile-first, test on devices
+
+## SEO & Analytics
+
+- Open Graph, Twitter Cards, JSON-LD
+- GA4: streaming clicks, follow modal, RSVP, etc.
+- Canonical URLs, heading hierarchy
