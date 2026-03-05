@@ -75,8 +75,14 @@ node scripts/generate-android-icons.js   # After updating public/logo.jpg
 ### Code
 
 - SolidJS: createSignal, createMemo, proper TypeScript
-- Accessibility: ARIA labels, semantic HTML
+- Accessibility: WCAG 2.1 AA, ARIA labels, semantic HTML
 - Responsive: mobile-first, test on devices
+- Spell "mozworth" lowercase
+- Don't duplicate content across docs
+
+### Page Updates
+
+When updating a page: update `modifiedDate`, JSON-LD, and Open Graph meta.
 
 ## SEO & Analytics
 

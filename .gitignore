@@ -23,6 +23,9 @@ app.config.timestamp_*.js
 # Temp
 tmp/
 
+# Cursor (docs live in README, project.md, architecture.md)
+.cursor/
+
 # Promotional flyers - commit WebP only, not source JPG (use: npm run convert:webp)
 public/Mozworth-Shiners*.jpg
 
