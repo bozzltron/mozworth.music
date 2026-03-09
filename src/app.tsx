@@ -50,6 +50,29 @@ export default function App() {
       }
     });
 
+    // PWA analytics: track installs (Chrome/Edge) and sessions launched from installed app
+    const isPWASession = () =>
+      typeof window !== "undefined" &&
+      (window.matchMedia("(display-mode: standalone)").matches ||
+        window.matchMedia("(display-mode: fullscreen)").matches ||
+        window.matchMedia("(display-mode: minimal-ui)").matches ||
+        (navigator as { standalone?: boolean }).standalone === true);
+
+    if (isPWASession()) {
+      if (!sessionStorage.getItem("pwa_launch_sent")) {
+        sessionStorage.setItem("pwa_launch_sent", "1");
+        if (window.gtag) {
+          window.gtag("event", "pwa_launch", { event_category: "pwa" });
+        }
+      }
+    }
+
+    window.addEventListener("appinstalled", () => {
+      if (window.gtag) {
+        window.gtag("event", "pwa_install", { event_category: "pwa" });
+      }
+    });
+
     // Hide the launch overlay once the page is fully loaded, with a small delay
     const hide = () => setShowLaunchSplash(false);
     if (document.readyState === 'complete') {
@@ -84,7 +107,7 @@ export default function App() {
                   <div class="flex items-center gap-2">
                     <button
                       class="px-3 py-1.5 rounded bg-teal-500 text-white text-sm font-medium hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                      onClick={() => { setUpdateReady(false); doUpdate && doUpdate(true); }}
+                      onClick={() => { setUpdateReady(false); if (doUpdate) doUpdate(true); }}
                     >
                       Reload
                     </button>

@@ -29,7 +29,7 @@ export default function Music() {
                 <img src="/storyofanartist.webp" alt="Story of an Artist cover art" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/50 transition-shadow duration-200" loading="lazy" decoding="async" />
                 <h2 class="text-xl font-bold mb-2 text-teal-300 group-hover:text-teal-200 transition-colors">Story of an Artist</h2>
                 <p class="text-white/90 mb-1 font-semibold">January 22, 2026</p>
-                <p class="text-white/70 text-sm mb-4 italic">The second installment from mozworth celebrating Daniel's birthday and Hi, How Are You Day.</p>
+                <p class="text-white/70 text-sm mb-4 italic">"A heartfelt tribute that feels both tender and alive—Daniel Johnston's spirit resonates through every note." – musikepool</p>
               </a>
               {/* Sandpiper (Upcoming) */}
               <a href="/songs/sandpiper" class="release group bg-black/50 border border-white/10 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 w-full mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'music', event_label: 'Sandpiper', destination: '/songs/sandpiper' }); }} aria-label="Sandpiper - Single releasing September 15, 2025">

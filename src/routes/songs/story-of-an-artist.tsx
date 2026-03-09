@@ -173,6 +173,24 @@ Others just like to watch the world`}</div>
       ),
     },
     {
+      label: "Press",
+      content: (
+        <div class="text-base md:text-lg leading-relaxed text-black">
+          <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">musikepool Review</h3>
+            <p class="text-gray-700 mb-2">January 2026</p>
+            <p class="mb-3">
+              musikepool praises "Story of an Artist" as "a heartfelt tribute that feels both tender and alive—Daniel Johnston's spirit resonates through every note." The review highlights mozworth's ability to honor the emotional core of Johnston's songwriting and describes the cover as "more than a cover—it's a respectful conversation with a musical icon."
+            </p>
+            <a href="https://musikepool.com/story-of-an-artist-mozworth/" target="_blank" rel="noopener" class="inline-block text-teal-600 hover:text-teal-500 underline">
+              Read Full Review →
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
       label: "Press Release",
       content: (
         <>

@@ -8,6 +8,16 @@ export default function Press() {
   // Press items data with categories (sorted chronologically, most recent first)
   const pressItems = [
     {
+      id: 0,
+      category: "REVIEW",
+      title: "mozworth - Story of an Artist",
+      publication: "musikepool",
+      date: "January 2026",
+      description: "musikepool praises \"Story of an Artist\" as \"a heartfelt tribute that feels both tender and alive—Daniel Johnston's spirit resonates through every note.\" The review highlights mozworth's \"ability to honor the emotional core of Johnston's songwriting\" and describes the cover as \"more than a cover—it's a respectful conversation with a musical icon\" that \"channels Daniel's spirit while leaving a distinct imprint.\"",
+      link: "https://musikepool.com/story-of-an-artist-mozworth/",
+      linkText: "Read Full Review"
+    },
+    {
       id: 1,
       category: "REVIEW",
       title: "mozworth - Sandpiper",

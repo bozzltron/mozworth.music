@@ -1,11 +1,13 @@
 # mozworth.music – Architecture
 
+This site is a **Progressive Web App (PWA)** – installable, works offline, and runs in a standalone window when added to the home screen.
+
 ## Technology Stack
 
 - **Framework**: SolidJS with SolidStart (SSR)
 - **Styling**: TailwindCSS 4.x
 - **Build**: Vite with Vinxi
-- **PWA**: Vite PWA plugin
+- **PWA**: Vite PWA plugin (Workbox), `manifest.json`
 - **Node**: >=22
 
 ## File Organization
@@ -48,7 +50,7 @@ src/
 - **Accents**: Purple CTAs, yellow highlights
 - **Mobile**: Single column, stacked
 - **Desktop**: Two-column, fixed sidebar + tabs
-- **PWA**: Offline support, service worker
+- **PWA**: See PWA section below
 
 ## Content Patterns
 
@@ -63,3 +65,25 @@ src/
 - **Leave Note** – Modal feedback on songs
 - **Phone backgrounds** – `npm run generate:wallpapers` → `public/wallpapers/` (1440×3200)
 - **PWA icons** – `node scripts/generate-android-icons.js` after updating `public/logo.jpg`
+
+## PWA
+
+### Current Capabilities
+
+- **Installable** – Add to home screen, runs standalone
+- **Offline** – Service worker caches JS, CSS, HTML, images (glob: `**/*.{js,css,html,svg,png,webp,ico,jpg,jpeg}`)
+- **Web Share API** – ShareButton uses native share on mobile, clipboard fallback on desktop
+- **Manifest** – Icons, shortcuts (Songs, Album), screenshots, theme/background colors
+
+### PWA APIs – Evaluation
+
+| API | Fit | Notes |
+|-----|-----|-------|
+| **Badging API** | Good | Show badge on icon for “new release” or “tour dates added.” Low effort; clear when user visits. |
+| **Web Share Target** | Marginal | Receive shares from other apps. Use case unclear for an artist site (we share out more than in). |
+| **Push Notifications** | Future | New song / tour alerts. Would need a backend for push. |
+| **Media Session API** | Low | Lock-screen/media controls. Requires HTML5 audio; Bandcamp embeds don’t integrate. |
+| **Screen Wake Lock** | Low | Prevent dimming during listening. Bandcamp iframe; limited benefit. |
+| **Background Sync** | Low | Retry failed requests (e.g. Leave Note). Workbox may cover this. |
+
+**Recommendation:** Badging API is the best near-term addition (e.g. badge when new content is available, clear on visit).
