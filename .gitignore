@@ -28,6 +28,7 @@ tmp/
 
 # Promotional flyers - commit WebP only, not source JPG (use: npm run convert:webp)
 public/Mozworth-Shiners*.jpg
+public/itsavan.jpg
 
 # System Files
 .DS_Store
