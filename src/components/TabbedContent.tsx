@@ -99,7 +99,7 @@ export default function TabbedContent(props: TabbedContentProps) {
         newIndex = tabs.length - 1;
         break;
       case 'Enter':
-      case ' ':
+      case ' ': {
         e.preventDefault();
         // Activate tab - click the anchor to trigger hash navigation
         const tab = tabs[currentIndex];
@@ -107,6 +107,7 @@ export default function TabbedContent(props: TabbedContentProps) {
         const tabElement = document.querySelector(`[href="#${slug}"]`) as HTMLAnchorElement;
         tabElement?.click();
         return;
+      }
       default:
         return; // Let other keys work normally
     }

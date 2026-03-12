@@ -244,7 +244,7 @@ export default function SynchronizedLyrics(props: SynchronizedLyricsProps) {
   };
 
   // Glow effect for current line
-  const drawGlowEffect = (context: CanvasRenderingContext2D, text: string, x: number, y: number, t: any) => {
+  const drawGlowEffect = (context: CanvasRenderingContext2D, text: string, x: number, y: number, t: ReturnType<typeof theme>) => {
     const time = Date.now() * 0.005;
     const glowIntensity = (Math.sin(time) + 1) * 0.5; // Pulsing glow
     
@@ -259,13 +259,14 @@ export default function SynchronizedLyrics(props: SynchronizedLyricsProps) {
   // Apply different animation styles
   const applyAnimationStyle = (context: CanvasRenderingContext2D, text: string, style: string) => {
     switch (style) {
-      case 'highlight':
+      case 'highlight': {
         // Add underline or background highlight
         const metrics = context.measureText(text);
         context.fillStyle = theme().highlightColor;
         context.globalAlpha = 0.3;
         context.fillRect(-metrics.width / 2, 10, metrics.width, 4);
         break;
+      }
       
       case 'typewriter':
         // Could implement character-by-character reveal
@@ -294,8 +295,8 @@ export default function SynchronizedLyrics(props: SynchronizedLyricsProps) {
       class={`synchronized-lyrics ${props.className || ''}`}
       style={{
         border: '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: '12px',
-        backgroundColor: theme().backgroundColor,
+        "border-radius": '12px',
+        "background-color": theme().backgroundColor,
         ...props.style
       }}
     />

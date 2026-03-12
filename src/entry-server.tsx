@@ -57,6 +57,7 @@ export default createHandler(() => (
           <link rel="apple-touch-startup-image" href="/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
           <link rel="apple-touch-startup-image" href="/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
           <link rel="apple-touch-startup-image" href="/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
+          {/* eslint-disable-next-line solid/no-innerhtml -- Intentional: gtag analytics script must run in head */}
           <script innerHTML={`
             (function(){
               var allowedHosts = ["mozworth.music"]; // add more production hosts if needed
@@ -70,6 +71,18 @@ export default createHandler(() => (
               window.gtag = gtag;
               gtag('js', new Date());
               gtag('config', 'G-HCSKGBDXDT', { anonymize_ip: true });
+            })();
+          `} />
+          {/* eslint-disable-next-line solid/no-innerhtml -- Intentional: theme init must run before first paint */}
+          <script innerHTML={`
+            (function(){
+              var s=localStorage.getItem('mozworth-theme');
+              var t='dark';
+              if(s==='light'||s==='dark')t=s;
+              else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)t='light';
+              document.documentElement.setAttribute('data-theme',t);
+              var m=document.querySelector('meta[name="theme-color"]');
+              if(m)m.setAttribute('content',t==='light'?'#fafafa':'#000000');
             })();
           `} />
           {assets}

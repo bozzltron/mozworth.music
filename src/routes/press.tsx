@@ -164,10 +164,10 @@ export default function Press() {
       />
       <div class="flex flex-col min-h-screen">
         <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-500 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 z-50">Skip to main content</a>
-        <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
+        <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black light:bg-stone-100">
           <RotatingBackground />
           {/* Main content */}
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white">
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-10 md:rounded-[10px] bg-black/70 light:bg-white/90 text-white light:text-gray-900">
             <h1 class="text-3xl font-bold mb-8 text-center">Press Coverage</h1>
             
             {/* Filter buttons */}
@@ -177,8 +177,8 @@ export default function Press() {
                   onClick={() => setSelectedFilter(category)}
                   class={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                     selectedFilter() === category
-                      ? "bg-white text-black shadow-lg"
-                      : "bg-black/50 text-white border border-white/30 hover:bg-white/10"
+                      ? "bg-white light:bg-gray-900 text-black light:text-white shadow-lg"
+                      : "bg-black/50 light:bg-white/50 text-white light:text-gray-900 border border-white/30 light:border-gray-300 hover:bg-white/10 light:hover:bg-gray-200"
                   }`}
                 >
                   {category}
@@ -188,21 +188,21 @@ export default function Press() {
             
             {/* Dynamic press items */}
             <For each={filteredItems()}>{item => (
-              <div class="press-item mb-10 p-6 bg-black/50 border border-white/30 rounded-lg">
+              <div class="press-item mb-10 p-6 bg-black/50 light:bg-white/70 border border-white/30 light:border-gray-200 rounded-lg">
                 <div class="mb-3">
                   <span class={`inline-block px-3 py-1 text-xs font-semibold text-white rounded-full mr-2 ${getCategoryColor(item.category)}`}>
                     {item.category}
                   </span>
                 </div>
                 <h2 class="text-2xl font-semibold mb-2">{item.title}</h2>
-                <div class="text-lg text-white/70 mb-1">{item.publication}</div>
-                <div class="text-sm text-white/60 mb-3">{item.date}</div>
+                <div class="text-lg text-white/70 light:text-gray-600 mb-1">{item.publication}</div>
+                <div class="text-sm text-white/60 light:text-gray-500 mb-3">{item.date}</div>
                 <div class="mb-4 leading-relaxed">
                   {item.description}
                 </div>
                 <a 
                   href={item.link} 
-                  class="inline-block font-medium text-white text-base rounded-full border-2 border-white/30 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" 
+                  class="inline-block font-medium text-white light:text-gray-900 text-base rounded-full border-2 border-white/30 light:border-gray-300 px-5 py-2 transition-all duration-200 hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -212,7 +212,7 @@ export default function Press() {
             )}</For>
           </div>
         </main>
-        <footer class="w-full text-center text-xs text-gray-400 py-3 border-t border-white/10 bg-black/70" role="contentinfo">
+        <footer class="w-full text-center text-xs text-gray-400 light:text-gray-600 py-3 border-t border-white/10 light:border-gray-200 bg-black/70 light:bg-white/80" role="contentinfo">
           &copy; {new Date().getFullYear()} mozworth. All rights reserved.
           <nav aria-label="Footer navigation" class="inline ml-2">
             <a href="/" class="text-teal-300 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-400 mx-1">Home</a>

@@ -13,7 +13,7 @@ function preloadImage(url: string): void {
     const img = new Image();
     img.src = url;
   } catch {
-    // no-op in non-browser environments
+    void 0; // no-op in non-browser environments
   }
 }
 
@@ -54,7 +54,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
       };
       img.src = url;
     } catch {
-      // ignore
+      void 0; // ignore
     }
   }
 
@@ -115,7 +115,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
         initialIndex = Math.floor(Math.random() * images.length);
       }
     } catch {
-      // ignore and fallback to defaults
+      void 0; // ignore and fallback to defaults
     }
 
     // Seed indices but prefer non-portrait if known
@@ -141,14 +141,14 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
           const saved = JSON.parse(raw) as PersistedState;
           return Math.max(0, now - saved.lastTick);
         }
-      } catch {}
+      } catch { void 0; }
       return 0;
     })();
     const msUntilNext = msSinceLastTick > 0 ? Math.max(0, intervalMs - (msSinceLastTick % intervalMs)) : intervalMs;
 
     const advance = () => {
       currentIndex = nextIndex;
-      let upcoming = findNextNonPortrait(nextIndex + 1);
+      const upcoming = findNextNonPortrait(nextIndex + 1);
 
       if (showA()) {
         setShowA(false);
@@ -169,7 +169,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
       try {
         const toSave: PersistedState = { index: currentIndex, lastTick: Date.now(), showA: showA() };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
-      } catch {}
+      } catch { void 0; }
     };
 
     const timeoutId = window.setTimeout(() => {
@@ -181,7 +181,7 @@ export default function RotatingBackground(props: RotatingBackgroundProps) {
     try {
       const toSave: PersistedState = { index: currentIndex, lastTick: now, showA: showA() };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
-    } catch {}
+    } catch { void 0; }
 
     // Ensure we clear both timer types on cleanup
     onCleanup(() => window.clearTimeout(timeoutId));

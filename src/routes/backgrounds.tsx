@@ -74,18 +74,18 @@ export default function Backgrounds() {
         >
           Skip to main content
         </a>
-        <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black">
+        <main id="main-content" class="flex-1 flex items-center justify-center relative bg-black light:bg-stone-100">
           <RotatingBackground />
-          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70 text-white" style="transform: translateZ(0);">
+          <div class="relative container mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[900px] p-4 md:p-10 md:rounded-[10px] bg-black/70 light:bg-white/90 text-white light:text-gray-900" style={{"transform":"translateZ(0)"}}>
             <h1 id="wallpapers-heading" class="text-3xl font-bold mb-2 text-center">Phone Backgrounds</h1>
-            <p class="text-white/80 mb-4 text-center max-w-lg">
+            <p class="text-white/80 light:text-gray-700 mb-4 text-center max-w-lg">
               Free wallpapers for your phone from mozworth, an Austin indie rock band. Logo designs and album art in WebP format (1440×3200). Tap to preview, download to save.
             </p>
             <ShareButton
               url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/backgrounds/"}
               title="mozworth Phone Backgrounds"
               text="Free phone wallpapers from mozworth — logo and album art. Download at mozworth.music"
-              buttonClass="inline-block border border-white/30 rounded-full px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black mb-8"
+              buttonClass="inline-block border border-white/30 light:border-gray-300 rounded-full px-5 py-2 text-sm font-medium text-white light:text-gray-900 transition-all duration-200 hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 mb-8"
             />
 
             <section aria-labelledby="wallpapers-heading" class="grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
@@ -95,7 +95,7 @@ export default function Backgrounds() {
                     {/* Phone mockup frame — click to preview full-res */}
                     <button
                       type="button"
-                      class="relative w-full max-w-[160px] mx-auto mb-3 cursor-pointer rounded-[2rem] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black"
+                      class="relative w-full max-w-[160px] mx-auto mb-3 cursor-pointer rounded-[2rem] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
                       onClick={() => {
                         setPreview(wp);
                         if (typeof window !== "undefined" && window.gtag) {
@@ -107,7 +107,7 @@ export default function Backgrounds() {
                       }}
                       aria-label={`Preview ${wp.title} full size`}
                     >
-                      <div class="aspect-[9/19.5] rounded-[2rem] overflow-hidden border-4 border-white/20 shadow-xl bg-black">
+                      <div class="aspect-[9/19.5] rounded-[2rem] overflow-hidden border-4 border-white/20 light:border-gray-200 shadow-xl bg-black light:bg-white">
                         <img
                           src={wp.source}
                           alt={`${wp.title} wallpaper preview`}
@@ -117,13 +117,13 @@ export default function Backgrounds() {
                         />
                       </div>
                     </button>
-                    <h2 class="text-sm font-semibold text-white mb-2 text-center line-clamp-2">
+                    <h2 class="text-sm font-semibold text-white light:text-gray-900 mb-2 text-center line-clamp-2">
                       {wp.title}
                     </h2>
                     <a
                       href={wp.source}
                       download={`mozworth-${wp.title.toLowerCase().replace(/\s+/g, "-")}.webp`}
-                      class="inline-block border border-white/30 rounded-full px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black"
+                      class="inline-block border border-white/30 light:border-gray-300 rounded-full px-4 py-2 text-sm font-medium text-white light:text-gray-900 transition-all duration-200 hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
                       onClick={() => trackDownload(wp.title)}
                       aria-label={`Download ${wp.title} wallpaper`}
                     >
@@ -151,7 +151,7 @@ export default function Backgrounds() {
                       class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
                       decoding="async"
                     />
-                    <p id="preview-title" class="mt-2 text-center text-sm font-medium text-white/90">
+                    <p id="preview-title" class="mt-2 text-center text-sm font-medium text-white/90 light:text-gray-800">
                       {wp.title}
                     </p>
                     <p id="preview-desc" class="sr-only">
@@ -162,13 +162,13 @@ export default function Backgrounds() {
               )}
             </Show>
 
-            <p class="text-white/60 text-xs mt-8 text-center">
+            <p class="text-white/60 light:text-gray-600 text-xs mt-8 text-center">
               Optimized for iPhone and Android (1440×3200, 9:20). Tap to preview full size, long-press to save on mobile.
             </p>
-            <p class="text-white/50 text-xs mt-2 text-center">
+            <p class="text-white/50 light:text-gray-500 text-xs mt-2 text-center">
               WebP: Android supports natively. iOS 14+ usually works; if not, use Photos → Share → Convert Image to JPEG.
             </p>
-            <p class="text-white/50 text-xs mt-2 text-center">
+            <p class="text-white/50 light:text-gray-500 text-xs mt-2 text-center">
               © mozworth. For personal use. Do not redistribute or use commercially.
             </p>
           </div>

@@ -4,7 +4,7 @@ const RSVP_URL = "https://www.vancerts.com/rsvp";
 
 export default function SmartPromo(): JSX.Element {
   return (
-    <div class="bg-black/60 border border-white/30 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
+    <div class="bg-black/60 light:bg-white/80 border border-white/30 light:border-gray-200 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
       {/* March 13 - It's A Van Music Festival */}
       <div class="w-full flex justify-center mb-3">
         <img
@@ -13,17 +13,17 @@ export default function SmartPromo(): JSX.Element {
           class="w-full max-w-[560px] rounded-xl shadow-lg object-cover"
         />
       </div>
-      <div class="text-xl font-bold text-white text-center mb-1">
+      <div class="text-xl font-bold text-white light:text-gray-900 text-center mb-1">
         Friday, March 13 • It's A Van Music Festival
       </div>
-      <div class="text-white/80 text-center mb-3 text-sm">
+      <div class="text-white/80 light:text-gray-600 text-center mb-3 text-sm">
         mozworth plays 2:45pm • 80+ confirmed acts • Free • Outside • BYOB • 517 N IH 35, Austin
       </div>
       <a
         href={RSVP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block border-2 border-white/30 text-white font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black"
+        class="inline-block border-2 border-white/30 light:border-gray-300 text-white light:text-gray-900 font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
         onClick={() => {
           if (typeof window !== "undefined" && window.gtag) {
             window.gtag("event", "rsvp_click", { event_category: "tour", event_label: "March 13 It's A Van", destination: "vancerts" });

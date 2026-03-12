@@ -1,4 +1,4 @@
-import { JSX, Show, createEffect, createSignal, onCleanup, onMount } from "solid-js";
+import { For, JSX, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { isAnniversaryToday } from "../utils/date";
 
 interface AnniversaryConfettiProps {
@@ -57,7 +57,7 @@ export default function AnniversaryConfetti(props: AnniversaryConfettiProps): JS
   return (
     <Show when={visible()}>
       <div class={`${variantClass()} z-40 ${stopping() ? 'stopping' : ''}`}>
-        {Array.from({ length: 30 }).map(() => <div class="confetti-piece" />)}
+        <For each={Array.from({ length: 30 }, (_, i) => i)}>{() => <div class="confetti-piece" />}</For>
       </div>
       <style>
         {`

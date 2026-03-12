@@ -1,6 +1,7 @@
 import { createSignal, For } from "solid-js";
 import Modal from "./Modal";
 import { followLinks, type FollowLink } from "../data/followLinks";
+import { useTheme } from "../contexts/ThemeContext";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare global { interface Window { gtag?: (...args: any[]) => void } }
@@ -49,7 +50,11 @@ function FollowLinkItem(props: { link: FollowLink; songTitle?: string }) {
 
 export default function FollowButton(props: FollowButtonProps) {
   const [isOpen, setIsOpen] = createSignal(false);
-  const variant = props.variant ?? "dark";
+  const { theme } = useTheme();
+  const baseVariant = props.variant ?? "dark";
+  // In light mode, "light" variant (white text) needs to become dark text
+  const variant = () =>
+    baseVariant === "light" && theme() === "light" ? "dark" : baseVariant;
 
   const textAlign = props.compact ? "text-center" : "text-left";
   const borderLight = props.compact ? "border-white/30" : "border-white";
@@ -58,7 +63,7 @@ export default function FollowButton(props: FollowButtonProps) {
   const rounded = props.compact ? "rounded-full" : "rounded";
   const margin = props.compact || props.noMargin ? "" : "mt-2 ";
   const buttonClass =
-    variant === "light"
+    variant() === "light"
       ? `${margin}${baseLight} ${rounded}`
       : `${margin}${baseDark} ${rounded}`;
 

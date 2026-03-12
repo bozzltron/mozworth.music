@@ -2,17 +2,18 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount, ErrorBoundary, createSignal } from "solid-js";
 import { registerSW } from 'virtual:pwa-register';
+import { ThemeProvider } from "./contexts/ThemeContext";
 import "./app.css";
 
 function GlobalErrorFallback(err: unknown) {
   console.error("Global error boundary:", err);
   return (
-    <div class="min-h-screen flex flex-col items-center justify-center bg-black">
+    <div class="min-h-screen flex flex-col items-center justify-center bg-black light:bg-stone-100">
       <a href="/" aria-label="Go to home page">
         <img src="/logo.jpg" alt="mozworth logo" class="w-64 h-64 object-contain mb-8 focus:outline-none focus:ring-4 focus:ring-teal-400 rounded transition-shadow" />
       </a>
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">Something went wrong. Stay calm and refresh.</h2>
-      <blockquote class="text-xl md:text-2xl text-white italic text-center max-w-xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-white light:text-gray-900 mb-6 text-center">Something went wrong. Stay calm and refresh.</h2>
+      <blockquote class="text-xl md:text-2xl text-white light:text-gray-700 italic text-center max-w-xl">
         "My worries faiding. Time is slowing."
         <a
           href="/songs/the-observer"
@@ -84,24 +85,25 @@ export default function App() {
     setTimeout(hide, 1800);
   });
   return (
+    <ThemeProvider>
     <ErrorBoundary fallback={GlobalErrorFallback}>
       <Router
         root={props => (
           <>
             {/* In-app launch overlay splash */}
             {showLaunchSplash() && (
-              <div class="fixed inset-0 z-50 bg-black flex items-center justify-center">
+              <div class="fixed inset-0 z-50 bg-black light:bg-stone-100 flex items-center justify-center">
                 <img src="/logo.jpg" alt="mozworth logo" class="w-[52vw] max-w-[300px] h-auto object-contain" />
               </div>
             )}
             <Suspense>{props.children}</Suspense>
             {offlineReady() && (
-              <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 rounded-lg bg-black/80 border border-white/20 px-4 py-2 text-sm text-white shadow-lg">
+              <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 rounded-lg bg-black/80 light:bg-white/95 border border-white/20 light:border-gray-200 px-4 py-2 text-sm text-white light:text-gray-900 shadow-lg">
                 App is ready to work offline
               </div>
             )}
             {updateReady() && (
-              <div class="fixed bottom-0 left-0 right-0 z-40 bg-black/90 border-t border-white/20 text-white">
+              <div class="fixed bottom-0 left-0 right-0 z-40 bg-black/90 light:bg-stone-100 border-t border-white/20 light:border-gray-200 text-white light:text-gray-900">
                 <div class="mx-auto max-w-3xl px-4 py-3 flex items-center justify-between gap-3">
                   <span class="text-sm">A new version is available.</span>
                   <div class="flex items-center gap-2">
@@ -112,7 +114,7 @@ export default function App() {
                       Reload
                     </button>
                     <button
-                      class="px-3 py-1.5 rounded border border-white/30 text-white/90 text-sm hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+                      class="px-3 py-1.5 rounded border border-white/30 light:border-gray-300 text-white/90 light:text-gray-700 text-sm hover:bg-white/10 light:hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white/30 light:focus:ring-gray-400"
                       onClick={() => setUpdateReady(false)}
                     >
                       Dismiss
@@ -127,5 +129,6 @@ export default function App() {
         <FileRoutes />
       </Router>
     </ErrorBoundary>
+    </ThemeProvider>
   );
 }
