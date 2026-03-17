@@ -8,6 +8,16 @@ export default function Press() {
   // Press items data with categories (sorted chronologically, most recent first)
   const pressItems = [
     {
+      id: 12,
+      category: "INTERVIEW",
+      title: "Talking Daniel Johnston, The Austin Underground, And \"The Mountain And The Wolf\" With mozworth",
+      publication: "Wax Zine",
+      date: "February 2026",
+      description: "Wax Zine sits down with mozworth for an in-depth conversation about Daniel Johnston's influence on Austin, the local live music scene (SABG, Sam's Town Point, Far Out Lounge), and the band's upcoming concept album \"The Mountain & The Wolf.\" Michael shares how the album—built around dual energies of stability (mountain) and risk (wolf)—features lyrics sourced from conversations with his wife, and how both title tracks are written in the same tempo and key so fans can play them together. Covers collaboration, trust in the band, and influences from The Pixies to Braiding Sweetgrass.",
+      link: "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth",
+      linkText: "Read Full Interview"
+    },
+    {
       id: 0,
       category: "REVIEW",
       title: "mozworth - Story of an Artist",

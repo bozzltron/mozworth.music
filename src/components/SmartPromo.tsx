@@ -1,36 +1,30 @@
 import { JSX } from "solid-js";
 
-const RSVP_URL = "https://www.vancerts.com/rsvp";
+const EVENT_URL = "https://www.bandsintown.com/e/107888752";
 
 export default function SmartPromo(): JSX.Element {
   return (
     <div class="bg-black/60 light:bg-white/80 border border-white/30 light:border-gray-200 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
-      {/* March 13 - It's A Van Music Festival */}
-      <div class="w-full flex justify-center mb-3">
-        <img
-          src="/itsavan.webp"
-          alt="It's A Van Music Festival Austin - March 13, 2026. 80+ acts, mozworth at 2:45pm. Free, outside, BYOB."
-          class="w-full max-w-[560px] rounded-xl shadow-lg object-cover"
-        />
-      </div>
+      {/* April 25 - Hanover, Pflugerville */}
+      <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-teal-600 rounded-full mb-3">Upcoming</span>
       <div class="text-xl font-bold text-white light:text-gray-900 text-center mb-1">
-        Friday, March 13 • It's A Van Music Festival
+        Friday, April 25 • Hanovers Draught Haus
       </div>
       <div class="text-white/80 light:text-gray-600 text-center mb-3 text-sm">
-        mozworth plays 2:45pm • 80+ confirmed acts • Free • Outside • BYOB • 517 N IH 35, Austin
+        Space Cushion, ItBegins, mozworth • Stage time TBD • 108 E Main St, Pflugerville
       </div>
       <a
-        href={RSVP_URL}
+        href={EVENT_URL}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block border-2 border-white/30 light:border-gray-300 text-white light:text-gray-900 font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
         onClick={() => {
           if (typeof window !== "undefined" && window.gtag) {
-            window.gtag("event", "rsvp_click", { event_category: "tour", event_label: "March 13 It's A Van", destination: "vancerts" });
+            window.gtag("event", "rsvp_click", { event_category: "tour", event_label: "April 25 Hanovers Draught Haus", destination: "bandsintown" });
           }
         }}
       >
-        RSVP
+        View Event
       </a>
     </div>
   );

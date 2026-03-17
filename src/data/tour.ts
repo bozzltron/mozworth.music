@@ -56,7 +56,7 @@ export const tourEvents: TourEvent[] = [
   event(
     "2026-04-25",
     "Friday, April 25, 2026",
-    "Hanover",
+    "Hanovers Draught Haus",
     "Lineup:\nSpace Cushion\nItBegins\nmozworth\n\nStage Time TBD\n108 E Main St\nPflugerville, TX 78660",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
     undefined,
