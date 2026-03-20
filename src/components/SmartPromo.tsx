@@ -1,6 +1,7 @@
 import { JSX } from "solid-js";
 
 const EVENT_URL = "https://www.bandsintown.com/e/107888752";
+const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
 
 export default function SmartPromo(): JSX.Element {
   return (
@@ -26,6 +27,9 @@ export default function SmartPromo(): JSX.Element {
       >
         View Event
       </a>
+      <p class="mt-4 pt-4 border-t border-white/20 light:border-gray-200 text-sm text-white/70 light:text-gray-600 text-center">
+        Latest: <a href={WAXZINE_INTERVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">Wax Zine interview</a> — Daniel Johnston, Austin underground & The Mountain & The Wolf
+      </p>
     </div>
   );
-} 
+}
