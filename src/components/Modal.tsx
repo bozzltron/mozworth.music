@@ -1,6 +1,13 @@
 import { Show, createEffect, onCleanup } from "solid-js";
 import { useFocusTrap } from "../utils/focusTrap";
 
+/**
+ * Full-viewport overlay (`fixed inset-0`). Do not render inside an ancestor with
+ * `transform`, `filter`, or `perspective` (e.g. glass panels using `translateZ(0)`)
+ * or the backdrop will clip to that box — mount as a sibling outside those wrappers
+ * or use a portal. See architecture.md § SolidJS & Modal pitfalls.
+ */
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;

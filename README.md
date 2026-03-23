@@ -75,6 +75,7 @@ node scripts/generate-android-icons.js   # After updating public/logo.jpg
 ### Code
 
 - SolidJS: createSignal, createMemo, proper TypeScript
+- **Show + objects / modals:** use `<Show when={x()} keyed>` when passing a record, and keep `Modal` outside `transform`/`translateZ` ancestors — see [architecture.md — SolidJS & Modal pitfalls](architecture.md#solidjs--modal-pitfalls-regression-prevention)
 - Accessibility: WCAG 2.1 AA, ARIA labels, semantic HTML, light/dark mode (respects system preference)
 - Responsive: mobile-first, test on devices
 - Spell "mozworth" lowercase

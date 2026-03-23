@@ -30,7 +30,7 @@ src/
 - **StreamingIcons** – Platform links with analytics
 - **ReleaseMeta** – Release date + anniversary confetti
 - **Callout** – Prominent box for highlights; canonical style: `border-2 border-teal-500 bg-teal-500/10 rounded-xl p-6`
-- **Modal** – Shared modal with focus trap, ESC, ARIA
+- **Modal** – Shared modal with focus trap, ESC, ARIA (see **SolidJS & Modal pitfalls** below)
 - **FollowButton** – Opens modal with newsletter, streaming, social, support links
 - **SmartPromo** – Homepage event/promo (e.g. show poster + RSVP)
 
@@ -87,3 +87,21 @@ src/
 | **Background Sync** | Low | Retry failed requests (e.g. Leave Note). Workbox may cover this. |
 
 **Recommendation:** Badging API is the best near-term addition (e.g. badge when new content is available, clear on visit).
+
+## SolidJS & Modal pitfalls (regression prevention)
+
+### `<Show>` with object values
+
+When `when` is a non-boolean (e.g. a selected item), the **child callback receives an accessor**, not the raw object — unless you pass **`keyed`**.
+
+- **Wrong:** `<Show when={preview()}>{(wp) => <img src={wp.source} />}</Show>` → `wp.source` is `undefined` (`wp` is a function).
+- **Right:** `<Show when={preview()} keyed>{(wp) => <img src={wp.source} />}</Show>` **or** use `wp().source` without `keyed`.
+
+Reference: [Solid `Show`](https://docs.solidjs.com/reference/components/show).
+
+### `position: fixed` overlays (Modal) vs. transformed ancestors
+
+CSS: any ancestor with **`transform`**, **`filter`**, or **`perspective`** (non-`none`) creates a **containing block** for `position: fixed`. The modal root uses `fixed inset-0`; if it is rendered **inside** a glass panel that uses e.g. **`translateZ(0)`** for compositing, the backdrop only covers that panel — not the viewport.
+
+- **Right:** Render `<Modal>` **outside** transformed wrappers (e.g. sibling under `<main>`, after the glass `div`), or use a **portal** to `document.body`.
+- **Backgrounds page:** preview modal lives **after** the `translateZ(0)` content panel, not inside it.

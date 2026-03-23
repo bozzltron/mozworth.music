@@ -134,34 +134,6 @@ export default function Backgrounds() {
               </For>
             </section>
 
-            {/* Full-res preview modal */}
-            <Show when={preview()}>
-              {(wp) => (
-                <Modal
-                  isOpen={true}
-                  onClose={() => setPreview(null)}
-                  titleId="preview-title"
-                  describedby="preview-desc"
-                  variant="media"
-                >
-                  <div class="relative max-h-[90vh] max-w-full">
-                    <img
-                      src={wp.source}
-                      alt={`${wp.title} full resolution wallpaper`}
-                      class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
-                      decoding="async"
-                    />
-                    <p id="preview-title" class="mt-2 text-center text-sm font-medium text-white/90 light:text-gray-800">
-                      {wp.title}
-                    </p>
-                    <p id="preview-desc" class="sr-only">
-                      Full resolution wallpaper. Tap outside or press Escape to close.
-                    </p>
-                  </div>
-                </Modal>
-              )}
-            </Show>
-
             <p class="text-white/60 light:text-gray-600 text-xs mt-8 text-center">
               Optimized for iPhone and Android (1440×3200, 9:20). Tap to preview full size, long-press to save on mobile.
             </p>
@@ -172,6 +144,34 @@ export default function Backgrounds() {
               © mozworth. For personal use. Do not redistribute or use commercially.
             </p>
           </div>
+
+          {/* Modal outside transformed panel — fixed inset-0 must not sit under translateZ(0) or overlay is clipped to the card */}
+          <Show when={preview()} keyed>
+            {(wp) => (
+              <Modal
+                isOpen={true}
+                onClose={() => setPreview(null)}
+                titleId="preview-title"
+                describedby="preview-desc"
+                variant="media"
+              >
+                <div class="relative max-h-[90vh] max-w-full">
+                  <img
+                    src={wp.source}
+                    alt={`${wp.title} full resolution wallpaper`}
+                    class="max-h-[90vh] w-auto object-contain rounded-lg shadow-2xl"
+                    decoding="async"
+                  />
+                  <p id="preview-title" class="mt-2 text-center text-sm font-medium text-white/90 light:text-gray-800">
+                    {wp.title}
+                  </p>
+                  <p id="preview-desc" class="sr-only">
+                    Full resolution wallpaper. Tap outside or press Escape to close.
+                  </p>
+                </div>
+              </Modal>
+            )}
+          </Show>
         </main>
         <GlobalFooter />
       </div>
