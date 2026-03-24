@@ -27,6 +27,11 @@ export interface TourEvent {
   isPast: boolean;
   /** Venue address for iCal LOCATION (optional) */
   address?: string;
+  /**
+   * Tour poster image (WebP) under /tour-posters/{ISO-date}.webp when available.
+   * Add via `npm run tour-poster:import` or sync script; see README.
+   */
+  posterWebp?: string;
 }
 
 function event(
@@ -36,10 +41,31 @@ function event(
   details: string,
   links: TourLink[],
   time?: string,
-  address?: string
+  address?: string,
+  posterWebp?: string
 ): TourEvent {
   const isPast = new Date(date) < new Date();
-  return { date, dateLabel, venue, details, links, isPast, time, address };
+  return { date, dateLabel, venue, details, links, isPast, time, address, posterWebp };
+}
+
+/** Sort by ISO date, then 24h time; same-day events without `time` sort after timed ones. */
+export function compareTourEventChronological(a: TourEvent, b: TourEvent): number {
+  const d = a.date.localeCompare(b.date);
+  if (d !== 0) return d;
+  const ta = a.time ?? "99:99";
+  const tb = b.time ?? "99:99";
+  return ta.localeCompare(tb);
+}
+
+/**
+ * /tour page order: upcoming soonest first, then past most recent first.
+ * Omits the "Coming Soon" placeholder (rendered separately).
+ */
+export function sortedTourEventsForPage(events: readonly TourEvent[] = tourEvents): TourEvent[] {
+  const list = events.filter((e) => e.venue !== "2026 Tour Dates Coming Soon");
+  const upcoming = list.filter((e) => !e.isPast).sort(compareTourEventChronological);
+  const past = list.filter((e) => e.isPast).sort((a, b) => compareTourEventChronological(b, a));
+  return [...upcoming, ...past];
 }
 
 export const tourEvents: TourEvent[] = [
@@ -72,7 +98,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/1ALJeCufYh/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     "14:45",
-    "517 N IH 35, Austin, TX 78702"
+    "517 N IH 35, Austin, TX 78702",
+    "/tour-posters/2026-03-13.webp"
   ),
   event(
     "2026-03-10",
@@ -84,7 +111,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/1DvGZEb6ji/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     "19:30",
-    "422 Congress Ave, Ste D, Austin, TX 78701"
+    "422 Congress Ave, Ste D, Austin, TX 78701",
+    "/tour-posters/2026-03-10.webp"
   ),
   event(
     "2026-02-28",
@@ -93,7 +121,8 @@ export const tourEvents: TourEvent[] = [
     "Lineup:\nmozworth\nGirl Dinner\n\nAcoustic — RIP MTV event\nAustin, TX",
     [],
     undefined,
-    "912 Red River St, Austin, TX 78701"
+    "912 Red River St, Austin, TX 78701",
+    "/tour-posters/2026-02-28.webp"
   ),
   event(
     "2026-01-04",
@@ -117,7 +146,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/1A8dT4SnNv/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     "18:00",
-    "10700 Menchaca Rd, Austin, TX 78748"
+    "10700 Menchaca Rd, Austin, TX 78748",
+    "/tour-posters/2025-10-11.webp"
   ),
   event(
     "2025-08-01",
@@ -138,7 +168,8 @@ export const tourEvents: TourEvent[] = [
     "FOX 7 Austin (KTBC)\n9:50am Central Time\nAustin, TX",
     [{ label: "Watch", href: "https://www.fox7austin.com/video/1683875", ariaLabel: "Watch the FOX 7 Austin segment" }],
     "09:50",
-    "FOX 7 Austin, Austin, TX"
+    "FOX 7 Austin, Austin, TX",
+    "/tour-posters/2025-07-31.webp"
   ),
   event(
     "2025-07-20",
@@ -171,7 +202,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/1AisQjQCHt/" },
     ],
     "16:00",
-    "1601 W Koenig Ln, Austin, TX 78756"
+    "1601 W Koenig Ln, Austin, TX 78756",
+    "/tour-posters/2025-05-16.webp"
   ),
   event(
     "2025-03-09",
@@ -183,7 +215,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/15zTxqmEy4/" },
     ],
     "21:00",
-    "422 Congress Ave, Ste D, Austin, TX 78701"
+    "422 Congress Ave, Ste D, Austin, TX 78701",
+    "/tour-posters/2025-03-09.webp"
   ),
   event(
     "2024-12-20",

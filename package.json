@@ -12,7 +12,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "preview": "vite preview",
-    "update-sw-cache": "node scripts/update-sw-cache.js"
+    "update-sw-cache": "node scripts/update-sw-cache.js",
+    "tour-posters:sync": "node scripts/sync-tour-poster-assets.mjs",
+    "tour-poster:import": "node scripts/import-tour-poster.mjs"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.3",

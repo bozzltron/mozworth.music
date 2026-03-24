@@ -50,6 +50,24 @@ node scripts/convert-to-webp.js path/to/image.jpg
 npm run generate:wallpapers   # Output: public/wallpapers/*.webp (1440×3200)
 ```
 
+### Tour posters (/tour page)
+
+Posters live in **`public/tour-posters/{YYYY-MM-DD}.webp`** and are wired per show via **`posterWebp`** on `TourEvent` in `src/data/tour.ts`.
+
+Bandsintown/Facebook often block automated downloads (Cloudflare). **Recommended:** save the flyer from the event page manually, then:
+
+```bash
+npm run tour-poster:import -- 2026-04-25 ./path/to/flyer.jpg
+```
+
+Then add `posterWebp: "/tour-posters/2026-04-25.webp"` to that event (last argument to `event()` in `tour.ts`).
+
+Re-sync known promo files from `public/` into `tour-posters/` (see `scripts/sync-tour-poster-assets.mjs`):
+
+```bash
+npm run tour-posters:sync
+```
+
 ### PWA Icons
 
 ```bash

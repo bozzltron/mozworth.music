@@ -1,4 +1,4 @@
-import { icalEvents } from "../../data/tour";
+import { compareTourEventChronological, icalEvents } from "../../data/tour";
 
 /** Escape iCal text (commas, semicolons, backslashes) */
 function escapeIcal(s: string): string {
@@ -16,12 +16,13 @@ function toIcalDate(date: string): string {
   return date.replace(/-/g, "");
 }
 
-/** Events in the future only (best practice for calendar subscriptions). */
-const futureEvents = icalEvents.filter((e) => !e.isPast);
-
 export async function GET({ request }: { request: Request }) {
   const baseUrl = new URL(request.url).origin;
   const now = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+
+  const futureEvents = [...icalEvents]
+    .filter((e) => !e.isPast)
+    .sort(compareTourEventChronological);
 
   const events = futureEvents.map((e) => {
     const uid = `mozworth-${e.date}-${e.venue.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}@mozworth.music`;

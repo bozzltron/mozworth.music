@@ -64,6 +64,7 @@ src/
 - **Anniversary confetti** – `?anniversary=true` to force
 - **Leave Note** – Modal feedback on songs
 - **Phone backgrounds** – `npm run generate:wallpapers` → `public/wallpapers/` (1440×3200)
+- **Tour posters** – optional `posterWebp` on `TourEvent`; assets in `public/tour-posters/{date}.webp`; masonry on `/tour`. Import: `npm run tour-poster:import -- YYYY-MM-DD ./flyer.jpg` (Bandsintown blocks headless scraping — manual flyer is reliable)
 - **PWA icons** – `node scripts/generate-android-icons.js` after updating `public/logo.jpg`
 
 ## PWA
