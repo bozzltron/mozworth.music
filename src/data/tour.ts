@@ -159,7 +159,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/share/19L86HVi4U/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     "20:00",
-    "10700 Menchaca Rd, Austin, TX 78748"
+    "10700 Menchaca Rd, Austin, TX 78748",
+    "/tour-posters/2025-08-01.webp"
   ),
   event(
     "2025-07-31",
@@ -228,7 +229,8 @@ export const tourEvents: TourEvent[] = [
       { label: "Facebook", href: "https://www.facebook.com/events/1367188184260258" },
     ],
     undefined,
-    "200 N Main St, Buda, TX 78610"
+    "200 N Main St, Buda, TX 78610",
+    "/tour-posters/2024-12-20.webp"
   ),
   event(
     "2024-11-17",
