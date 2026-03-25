@@ -12,7 +12,7 @@ export default function SmartPromo(): JSX.Element {
         Friday, April 25 • Hanovers Draught Haus
       </div>
       <div class="text-white/80 light:text-gray-600 text-center mb-3 text-sm">
-        Space Cushion, ItBegins, mozworth • Stage time TBD • 108 E Main St, Pflugerville
+        9pm Mega Negative • 10pm Space Cushion • 11pm mozworth • 108 E Main St, Pflugerville, TX 78660
       </div>
       <a
         href={EVENT_URL}
