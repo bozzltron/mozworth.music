@@ -66,3 +66,22 @@ body {
   clip-path: none;
   white-space: normal;
 }
+
+/* Tour dates masonry — explicit column-count so multi-column always applies (matches sm/xl breakpoints). */
+.tour-masonry {
+  width: 100%;
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .tour-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tour-masonry {
+    column-count: 3;
+  }
+}

@@ -106,8 +106,9 @@ export default function Tour() {
           <div class="relative container mx-auto md:mt-10 md:mb-10 w-full max-w-6xl px-4 md:px-6 py-6 md:py-10 md:rounded-[10px] bg-black/70 light:bg-white/90 text-white light:text-gray-900">
             <h1 class="text-3xl font-bold mb-4 text-center">Tour Dates</h1>
             <p class="text-white/80 light:text-gray-600 mb-6 text-center max-w-xl mx-auto">
-              Indie alternative rock shows in Austin, Texas and beyond. Posters appear when we have art. Upcoming shows
-              are listed soonest first; past shows are most recent first.
+              Indie alternative rock shows in Austin, Texas and beyond. Posters appear when we have art. Dates run
+              newest first (reverse chronological). On narrow screens everything stacks in one column; wider layouts use
+              masonry columns (read top to bottom in each column, then the next).
             </p>
 
             <a
@@ -129,8 +130,8 @@ export default function Tour() {
               </Callout>
             )}
 
-            {/* Masonry: match press page — CSS columns + break-inside-avoid */}
-            <div class="columns-1 sm:columns-2 xl:columns-3 gap-6">
+            {/* Masonry: .tour-masonry in app.css sets column-count + gap (explicit CSS; reliable with multicol). */}
+            <div class="tour-masonry">
               <For each={events}>{(event) => <TourDateCard event={event} />}</For>
             </div>
           </div>

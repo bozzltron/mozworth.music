@@ -58,14 +58,12 @@ export function compareTourEventChronological(a: TourEvent, b: TourEvent): numbe
 }
 
 /**
- * /tour page order: upcoming soonest first, then past most recent first.
+ * /tour page order: reverse chronological (latest date first, then earlier).
  * Omits the "Coming Soon" placeholder (rendered separately).
  */
 export function sortedTourEventsForPage(events: readonly TourEvent[] = tourEvents): TourEvent[] {
   const list = events.filter((e) => e.venue !== "2026 Tour Dates Coming Soon");
-  const upcoming = list.filter((e) => !e.isPast).sort(compareTourEventChronological);
-  const past = list.filter((e) => e.isPast).sort((a, b) => compareTourEventChronological(b, a));
-  return [...upcoming, ...past];
+  return [...list].sort((a, b) => compareTourEventChronological(b, a));
 }
 
 export const tourEvents: TourEvent[] = [
