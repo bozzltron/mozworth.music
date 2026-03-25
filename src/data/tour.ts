@@ -3,6 +3,7 @@
  *
  * Time formats:
  * - details: 12-hour for display (e.g. "7:30pm", "2:45pm") — used on tour page and in iCal DESCRIPTION
+ * - Lineup rows: time left of act — e.g. "7:30pm Fin Fin", not "Fin Fin 7:30pm"
  * - time: 24-hour "HH:MM" for iCal DTSTART/DTEND only (RFC 5545 requires 24h) — never shown to users
  */
 
@@ -81,7 +82,7 @@ export const tourEvents: TourEvent[] = [
     "2026-04-25",
     "Friday, April 25, 2026",
     "Hanovers Draught Haus",
-    "Lineup:\nSpace Cushion\nItBegins\nmozworth\n\nStage Time TBD\n108 E Main St\nPflugerville, TX 78660",
+    "Lineup:\n9pm Mega Negative\n10pm Space Cushion\n11pm mozworth\n\n108 E Main St\nPflugerville, TX 78660",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
     undefined,
     "108 E Main St, Pflugerville, TX 78660"
