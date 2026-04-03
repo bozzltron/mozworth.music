@@ -20,49 +20,57 @@ export default function WalkingTheCow() {
       href: "https://open.spotify.com/track/29Y414L9PJrHtVWc5kpqJB?si=ff3f6296bf184ebb",
       alt: "Spotify",
       iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify"
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Walking The Cow' }); }
     },
     {
       href: "https://mozworth.bandcamp.com/track/walking-the-cow",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp"
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Walking The Cow' }); }
     },
     {
       href: "https://soundcloud.com/mozworth/walking-the-cow",
       alt: "SoundCloud",
       iconSrc: "/soundcloud.svg",
-      ariaLabel: "Listen on SoundCloud"
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Walking The Cow' }); }
     },
     {
       href: "https://tidal.com/browse/track/413771222",
       alt: "Tidal",
       iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal"
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Walking The Cow' }); }
     },
     {
       href: "https://music.apple.com/us/song/walking-the-cow/1792739172",
       alt: "Apple Music",
       iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music"
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Walking The Cow' }); }
     },
     {
       href: "https://www.amazon.com/music/player/albums/B0DV3F48DQ",
       alt: "Amazon Music",
       iconSrc: "/amazon-music.svg",
-      ariaLabel: "Listen on Amazon Music"
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Walking The Cow' }); }
     },
     {
       href: "https://www.deezer.com/us/album/703000271",
       alt: "Deezer",
       iconSrc: "/deezer.svg",
-      ariaLabel: "Listen on Deezer"
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Walking The Cow' }); }
     },
     {
       href: "https://youtu.be/sOMIUcZ0Sgw",
       alt: "YouTube",
       iconSrc: "/youtube.svg",
-      ariaLabel: "Watch on YouTube"
+      ariaLabel: "Watch on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Walking The Cow' }); }
     }
   ];
 

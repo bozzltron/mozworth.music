@@ -3,7 +3,7 @@
 /* eslint-env node */
 
 /**
- * Import a flyer image → public/tour-posters/{YYYY-MM-DD}.webp
+ * Import a flyer image → public/tour-posters/{YYYY-MM-DD}.webp (EXIF © mozworth).
  * Then add posterWebp: "/tour-posters/YYYY-MM-DD.webp" to the matching event in src/data/tour.ts
  *
  * Run: node scripts/import-tour-poster.mjs 2026-04-25 ./path/to/flyer.jpg
@@ -17,6 +17,7 @@ import sharp from "sharp";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const QUALITY = 88;
+const COPYRIGHT = "© mozworth. All rights reserved.";
 
 async function main() {
   const date = process.argv[2];
@@ -32,7 +33,10 @@ async function main() {
   const outDir = path.join(ROOT, "public", "tour-posters");
   fs.mkdirSync(outDir, { recursive: true });
   const out = path.join(outDir, `${date}.webp`);
-  await sharp(input).webp({ quality: QUALITY }).toFile(out);
+  await sharp(input)
+    .withMetadata({ exif: { IFD0: { Copyright: COPYRIGHT } } })
+    .webp({ quality: QUALITY })
+    .toFile(out);
   console.log(`Wrote ${path.relative(ROOT, out)}`);
   console.log(`Add to src/data/tour.ts for that event: posterWebp: "/tour-posters/${date}.webp"`);
 }

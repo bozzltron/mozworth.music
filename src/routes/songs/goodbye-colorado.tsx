@@ -20,49 +20,57 @@ export default function GoodbyeColorado() {
       href: "https://open.spotify.com/track/5EHFPfXAA7ezlrL5GzPw4k?si=22079d9af9ee4d6f", // Replace with actual Spotify link if available
       alt: "Spotify",
       iconSrc: "/spotify.svg",
-      ariaLabel: "Listen on Spotify"
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://music.apple.com/us/song/goodbye-colorado/1768959065", // Replace with actual Apple Music link if available
       alt: "Apple Music",
       iconSrc: "/apple-music.svg",
-      ariaLabel: "Listen on Apple Music"
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://mozworth.bandcamp.com/track/goodbye-colorado",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp"
+      ariaLabel: "Buy on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://soundcloud.com/mozworth/goodbye-colorado",
       alt: "SoundCloud",
       iconSrc: "/soundcloud.svg",
-      ariaLabel: "Listen on SoundCloud"
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://www.youtube.com/watch?v=Vv9xnKNOcEM", // Replace with actual Apple Music link if available
       alt: "YouTube",
       iconSrc: "/youtube.svg",
-      ariaLabel: "Listen on YouTube"
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://listen.tidal.com/album/387655037/track/387655038", // Replace with actual Tidal link if available
       alt: "Tidal",
       iconSrc: "/tidal.svg",
-      ariaLabel: "Listen on Tidal"
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://amazon.com/music/player/albums/B0DH5BMGX7", // Replace with actual Amazon Music link if available
       alt: "Amazon Music",
       iconSrc: "/amazon-music.svg",
-      ariaLabel: "Listen on Amazon Music"
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Goodbye Colorado' }); }
     },
     {
       href: "https://dzr.page.link/5CBRZeEfV7NVGM4C8", // Replace with actual Deezer link if available
       alt: "Deezer",
       iconSrc: "/deezer.svg",
-      ariaLabel: "Listen on Deezer"
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Goodbye Colorado' }); }
     }
   ];
 

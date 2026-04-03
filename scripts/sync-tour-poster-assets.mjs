@@ -3,7 +3,7 @@
 /* eslint-env node */
 
 /**
- * Re-encode known promo WebPs into public/tour-posters/{ISO-date}.webp
+ * Re-encode known promo WebPs into public/tour-posters/{ISO-date}.webp (EXIF © mozworth).
  * Update TOUR_POSTER_SOURCES when you add a new on-disk flyer that maps to a tour date.
  *
  * Run: node scripts/sync-tour-poster-assets.mjs
@@ -18,6 +18,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "public", "tour-posters");
 const QUALITY = 88;
+const COPYRIGHT = "© mozworth. All rights reserved.";
 
 /** [source under public/, output filename ISO date + .webp] */
 const TOUR_POSTER_SOURCES = [
@@ -35,7 +36,10 @@ async function main() {
       continue;
     }
     const dest = path.join(OUT, outName);
-    await sharp(src).webp({ quality: QUALITY }).toFile(dest);
+    await sharp(src)
+      .withMetadata({ exif: { IFD0: { Copyright: COPYRIGHT } } })
+      .webp({ quality: QUALITY })
+      .toFile(dest);
     console.log(`✓ ${outName} ← ${srcName}`);
   }
   console.log(`Done. ${OUT}`);

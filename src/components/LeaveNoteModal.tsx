@@ -74,15 +74,9 @@ Thanks!`);
     >
       <div id="leave-note-desc" class="space-y-4">
         <p class="text-gray-700">
-          I love the idea that the meaning of art isn't fixed by the artist, but
-          it emerges from the audience's collective response. I'm curious to know
-          your response to "{props.songTitle}".
-        </p>
-
-        <p class="text-gray-700">
-          Share your thoughts, feelings, what this song means to you, or just say
-          hi. Your note could be featured on this page (with your permission, of
-          course).
+          Maybe the idea of art isn't fixed by the artist, but it emerges from the
+          audience's collective response. Share your response to "{props.songTitle}".
+          Your note could be featured on this page (with your permission, of course).
         </p>
 
         <div class="rounded-xl border border-teal-200 bg-teal-50/50 p-4">

@@ -5,6 +5,7 @@
  * Convert an image to WebP format using sharp.
  * Default: converts Mozworth-Shiners_March10th-2026-V3.jpg to WebP.
  * Or pass a path: node scripts/convert-to-webp.js path/to/image.jpg
+ * Embeds EXIF Copyright (matches generate-wallpapers.js / project.md).
  *
  * Run: node scripts/convert-to-webp.js
  *      node scripts/convert-to-webp.js public/your-image.jpg
@@ -20,6 +21,7 @@ const __dirname = path.dirname(__filename);
 
 const DEFAULT_INPUT = "Mozworth-Shiners_March10th-2026-V3.jpg";
 const WEBP_QUALITY = 85;
+const COPYRIGHT = "© mozworth. All rights reserved.";
 
 async function convertToWebp(inputPath) {
   const absolutePath = path.isAbsolute(inputPath)
@@ -34,6 +36,7 @@ async function convertToWebp(inputPath) {
   const outputPath = path.join(parsed.dir, `${parsed.name}.webp`);
 
   const info = await sharp(absolutePath)
+    .withMetadata({ exif: { IFD0: { Copyright: COPYRIGHT } } })
     .webp({ quality: WEBP_QUALITY })
     .toFile(outputPath);
 
