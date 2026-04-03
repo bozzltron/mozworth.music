@@ -55,7 +55,7 @@ export default function TheSkyIsFalling() {
           rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
         >
-          Purchase
+          Buy Digital
         </a>
         <BuyVinylLink analyticsLabel="The Sky Is Falling" />
         <FollowButton variant="light" songTitle="The Sky Is Falling" noMargin />

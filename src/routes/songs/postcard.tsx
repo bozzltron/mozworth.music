@@ -105,7 +105,7 @@ export default function Postcard() {
         </button>
         <a href="https://mozworth.bandcamp.com/track/postcard" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Purchase
+          Buy Digital
         </a>
         <BuyVinylLink analyticsLabel="Postcard" />
         <FollowButton variant="light" songTitle="Postcard" noMargin />

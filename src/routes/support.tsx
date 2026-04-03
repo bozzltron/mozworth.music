@@ -73,7 +73,7 @@ export default function Support() {
             <div class="space-y-6 w-full mt-6">
                {/* Top 3 Actions */}
                <div class="space-y-4 mb-8">
-                 {/* Action 1: Donate/Purchase */}
+                 {/* Action 1: Donate / buy */}
                  <div class="bg-black/40 light:bg-white/60 border border-white/20 light:border-gray-200 rounded-lg">
                    <button 
                      class="w-full px-6 py-4 text-left rounded-lg hover:bg-black/60 light:hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" 
@@ -83,9 +83,9 @@ export default function Support() {
                      }}
                      aria-expanded="false"
                      aria-controls="donate-section"
-                     aria-label="Toggle donate or purchase options"
+                     aria-label="Toggle donate or buy options"
                    >
-                     <h2 class="text-xl font-bold text-teal-300">Donate or Purchase</h2>
+                     <h2 class="text-xl font-bold text-teal-300">Donate or Buy</h2>
                      <p class="text-white/70 light:text-gray-600 text-sm mt-1">Direct financial support - the most impactful way to help</p>
                    </button>
                    

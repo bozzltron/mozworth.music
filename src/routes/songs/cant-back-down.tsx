@@ -98,7 +98,7 @@ export default function CantBackDown() {
         </button>
         <a href="https://mozworth.bandcamp.com/track/cant-back-down" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Purchase
+          Buy Digital
         </a>
         <BuyVinylLink analyticsLabel="Can't Back Down" />
         <FollowButton variant="light" songTitle="Can't Back Down" noMargin />

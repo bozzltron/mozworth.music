@@ -102,7 +102,7 @@ export default function StoryOfAnArtist() {
         </button>
         <a href="https://mozworth.bandcamp.com/track/story-of-an-artist" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Free Download
+          Buy Digital
         </a>
         <FollowButton variant="dark" songTitle="Story of an Artist" noMargin />
         <ShareButton noMargin

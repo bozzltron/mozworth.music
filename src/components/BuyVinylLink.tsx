@@ -31,7 +31,7 @@ export default function BuyVinylLink(props: BuyVinylLinkProps): JSX.Element {
       }}
       aria-label="Buy self-titled debut album on vinyl at elasticStage (opens in new tab)"
     >
-      Buy on Vinyl
+      Buy Vinyl
     </a>
   );
 }

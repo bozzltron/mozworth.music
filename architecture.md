@@ -38,7 +38,7 @@ src/
 
 - Cover art (Bandcamp embed)
 - Metadata: title, artist, album link, release date
-- Action buttons: Leave Note, Purchase, Follow, Share
+- Action buttons: Leave Note, Buy Digital, Buy Vinyl (debut LP), Follow, Share
 - Streaming icons
 - Tabbed content: Lyrics, Writing, Demo, Credits, Reviews, Performances
 
