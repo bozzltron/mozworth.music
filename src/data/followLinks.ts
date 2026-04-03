@@ -61,6 +61,12 @@ const support: FollowLink[] = [
     iconSrc: "/record.svg",
     ariaLabel: "Buy debut album on vinyl at elasticStage (opens in new tab)",
   },
+  {
+    href: "https://mozworth.printful.me/",
+    label: "Merch",
+    iconSrc: "/shirt.svg",
+    ariaLabel: "Shop mozworth merch at Printful (opens in new tab)",
+  },
 ];
 
 export const followLinks = {
