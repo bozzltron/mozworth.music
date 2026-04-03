@@ -134,7 +134,17 @@ export default function Support() {
                    </button>
                    
                    <div id="stream-section" style={{"display":"none"}} class="px-6 pb-6">
-                     <p class="text-white/60 light:text-gray-500 text-sm mb-4 mt-4">Higher-paying platforms listed first</p>
+                     <a
+                       href={MOZWORTH_DEBUT_VINYL_URL}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-4 mb-4 flex w-full items-center justify-center font-semibold text-white light:text-gray-900 py-3 px-4 rounded-xl border-2 border-white/30 light:border-gray-300 hover:bg-white/10 light:hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 text-sm sm:text-base"
+                       onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Follow Stream: Buy Vinyl', destination: 'elasticstage' }); }}
+                       aria-label="Buy debut album on vinyl at elasticStage (opens in new tab)"
+                     >
+                       Buy Vinyl
+                     </a>
+                     <p class="text-white/60 light:text-gray-500 text-sm mb-4">Higher-paying platforms listed first</p>
                      <div class="grid grid-cols-4 gap-3">
                        <a href="https://tidal.com/browse/artist/49656537" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-3 rounded-xl hover:bg-white/5 light:hover:bg-gray-200/50 transition-colors group" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'streaming', event_label: 'Tidal', destination: 'tidal' }); }}>
                          <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center mb-2 group-hover:bg-gray-800 transition-colors border border-white/20 light:border-gray-300">
