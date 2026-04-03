@@ -4,6 +4,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
+import BuyVinylLink from "../../components/BuyVinylLink";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
@@ -56,6 +57,7 @@ export default function TheSkyIsFalling() {
         >
           Purchase
         </a>
+        <BuyVinylLink analyticsLabel="The Sky Is Falling" />
         <FollowButton variant="light" songTitle="The Sky Is Falling" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/the-sky-is-falling/"}

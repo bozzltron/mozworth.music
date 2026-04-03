@@ -4,6 +4,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
+import BuyVinylLink from "../../components/BuyVinylLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import { StandardMetadata } from "../../utils/metadata";
@@ -94,6 +95,7 @@ export default function WalkingTheCow() {
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Free Download
         </a>
+        <BuyVinylLink analyticsLabel="Walking The Cow" />
         <FollowButton variant="light" songTitle="Walking The Cow" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/walking-the-cow/"}
