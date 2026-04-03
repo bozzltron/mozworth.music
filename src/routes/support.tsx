@@ -4,6 +4,7 @@ declare global { interface Window { gtag?: (...args: any[]) => void } }
 import GlobalFooter from "../components/GlobalFooter";
 import RotatingBackground from "../components/RotatingBackground";
 import { StandardMetadata, createSocialLinks } from "../utils/metadata";
+import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
 export default function Support() {
   return (
@@ -46,6 +47,11 @@ export default function Support() {
               "@type": "BuyAction", 
               "target": "https://mozworth.bandcamp.com/",
               "description": "Buy music on Bandcamp"
+            },
+            {
+              "@type": "BuyAction",
+              "target": MOZWORTH_DEBUT_VINYL_URL,
+              "description": "Buy debut album on vinyl"
             }
           ]
         }}
@@ -106,12 +112,13 @@ export default function Support() {
                          <span class="text-sm text-center text-white light:text-gray-900 font-semibold">Merch</span>
                        </a>
                        
-                       <div class="flex flex-col items-center p-4 rounded-xl">
-                         <div class="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mb-2">
-                           <span class="text-lg">💿</span>
+                       <a href={MOZWORTH_DEBUT_VINYL_URL} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 rounded-xl hover:bg-white/5 light:hover:bg-gray-200/50 transition-colors group focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black" onClick={() => { if (window.gtag) window.gtag('event', 'support_click', { event_category: 'support', event_label: 'Vinyl', destination: 'elasticstage' }); }} aria-label="Buy debut album on vinyl at elasticStage (opens in new tab)">
+                         <div class="w-12 h-12 bg-amber-800 rounded-xl flex items-center justify-center mb-2 group-hover:bg-amber-700 transition-colors">
+                           <span class="text-lg" aria-hidden="true">💿</span>
                          </div>
-                         <span class="text-sm text-center text-white/70 light:text-gray-600 font-semibold">Physical (Soon)</span>
-                       </div>
+                         <span class="text-sm text-center text-white light:text-gray-900 font-semibold">Vinyl</span>
+                         <span class="text-xs text-center text-white/70 light:text-gray-600 mt-1 max-w-[100px] leading-tight">mozworth LP</span>
+                       </a>
                      </div>
                      </div>
                  </div>

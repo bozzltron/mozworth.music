@@ -1,5 +1,6 @@
 import GlobalFooter from "../components/GlobalFooter";
 import RotatingBackground from "../components/RotatingBackground";
+import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
 export default function Discography() {
   return (
@@ -31,12 +32,15 @@ export default function Discography() {
                 <p class="text-white/60 light:text-gray-500 text-sm mb-4">A cover of Daniel Johnston's 'Walking The Cow' released on Daniel's birthday, which is also celebrated in Austin and elsewhere as 'Hi, How Are You Day'!</p>
               </a>
               {/* Self-titled Album */}
-              <a href="/albums/mozworth" class="release group bg-black/50 light:bg-white/80 border border-white/10 light:border-gray-200 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 light:hover:shadow-teal-500/20 w-full  mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'discography', event_label: 'mozworth', destination: '/albums/mozworth' }); }} aria-label="mozworth - Debut album released November 15, 2024">
-                <img src="/mozworth-debut.webp" alt="mozworth debut album cover featuring artist's portrait in moody lighting" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
-                <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 light:group-hover:text-teal-600 transition-colors">mozworth</h2>
-                <p class="text-white/70 light:text-gray-600 mb-1">November 15, 2024</p>
-                <p class="text-white/60 light:text-gray-500 text-sm mb-4">Six songs that form the debut of mozworth.</p>
-              </a>
+              <div class="release group bg-black/50 light:bg-white/80 border border-white/10 light:border-gray-200 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 light:hover:shadow-teal-500/20 w-full mx-auto">
+                <a href="/albums/mozworth" class="flex flex-col items-center text-center w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'discography', event_label: 'mozworth', destination: '/albums/mozworth' }); }} aria-label="mozworth - Debut album released November 15, 2024">
+                  <img src="/mozworth-debut.webp" alt="mozworth debut album cover featuring artist's portrait in moody lighting" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />
+                  <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 light:group-hover:text-teal-600 transition-colors">mozworth</h2>
+                  <p class="text-white/70 light:text-gray-600 mb-1">November 15, 2024</p>
+                  <p class="text-white/60 light:text-gray-500 text-sm mb-1">Six songs that form the debut of mozworth.</p>
+                </a>
+                <a href={MOZWORTH_DEBUT_VINYL_URL} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-teal-300 light:text-teal-600 hover:underline mb-1 focus:outline-none focus:ring-2 focus:ring-teal-400 rounded" onClick={() => { if (window.gtag) window.gtag('event', 'commerce_click', { event_category: 'vinyl', event_label: 'discography_debut_card', destination: 'elasticstage' }); }} aria-label="Buy debut album on vinyl at elasticStage (opens in new tab)">Buy vinyl</a>
+              </div>
               {/* Goodbye Colorado */}
               <a href="/songs/goodbye-colorado" class="release group bg-black/50 light:bg-white/80 border border-white/10 light:border-gray-200 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 light:hover:shadow-teal-500/20 w-full  mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'discography', event_label: 'Goodbye Colorado', destination: '/songs/goodbye-colorado' }); }} aria-label="Goodbye Colorado - Single released October 9, 2024">
                 <img src="/goodbye_colorado_cover.webp" alt="Goodbye Colorado single cover showing Colorado mountain landscape at sunset" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" />

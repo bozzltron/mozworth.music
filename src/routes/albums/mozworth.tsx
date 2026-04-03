@@ -5,6 +5,7 @@ import BasePageLayout from "../../components/BasePageLayout";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
+import BuyVinylLink from "../../components/BuyVinylLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
 
@@ -193,6 +194,7 @@ export default function mozworthAlbum() {
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
         </a>
+        <BuyVinylLink analyticsLabel="Album: mozworth" />
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch

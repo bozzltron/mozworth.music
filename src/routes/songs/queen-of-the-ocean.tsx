@@ -6,6 +6,7 @@ import TabbedContent from "../../components/TabbedContent";
 import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
+import BuyVinylLink from "../../components/BuyVinylLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
@@ -103,6 +104,7 @@ export default function QueenOfTheOcean() {
           class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
           Purchase
         </a>
+        <BuyVinylLink analyticsLabel="Queen of the Ocean" />
         <FollowButton variant="light" songTitle="Queen of the Ocean" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/queen-of-the-ocean/"}
