@@ -1,3 +1,5 @@
+import { MOZWORTH_DEBUT_VINYL_URL } from "./commerce";
+
 /**
  * Artist profile / follow links for mozworth.
  * All links go to the artist profile page on each service (not song-specific).
@@ -52,6 +54,12 @@ const support: FollowLink[] = [
     label: "Cash App",
     iconSrc: "/cashapp.svg",
     ariaLabel: "Send a tip via Cash App",
+  },
+  {
+    href: MOZWORTH_DEBUT_VINYL_URL,
+    label: "Buy Vinyl",
+    iconSrc: "/record.svg",
+    ariaLabel: "Buy debut album on vinyl at elasticStage (opens in new tab)",
   },
 ];
 

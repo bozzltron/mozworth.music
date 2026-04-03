@@ -86,7 +86,7 @@ export default function FollowButton(props: FollowButtonProps) {
           Follow mozworth:
         </p>
         <div class="flex flex-wrap gap-2 text-sm">
-          <For each={[followLinks.streaming[0], followLinks.social[0], followLinks.newsletter[0], followLinks.support[0]]}>
+          <For each={[followLinks.streaming[0], followLinks.social[0], followLinks.newsletter[0], ...followLinks.support]}>
             {(link) => (
               <a
                 href={link.href}
