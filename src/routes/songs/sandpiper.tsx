@@ -5,6 +5,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
@@ -43,21 +44,18 @@ export default function Sandpiper() {
         forceConfetti={isForcedAnniversary()}
       />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
+        <BuyVinylLink analyticsLabel="Sandpiper" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/sandpiper"
+          analyticsLabel="Sandpiper"
+          pricing="paid"
+        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
-        <a
-          href="https://mozworth.bandcamp.com/track/sandpiper"
-          target="_blank"
-          rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors w-full"
-        >
-          Buy Digital
-        </a>
-        <BuyVinylLink analyticsLabel="Sandpiper" />
         <FollowButton variant="light" songTitle="Sandpiper" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/sandpiper/"}

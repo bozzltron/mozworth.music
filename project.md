@@ -13,6 +13,12 @@ mozworth is an indie artist from Austin, Texas. This site showcases music, lyric
 3. **Tour and iCal sync**  
    `src/data/tour.ts` is the single source of truth for both `/tour` and `/tour/ics`. Update tour dates in one place; both stay in sync.
 
+4. **Physical first**  
+   Prioritize vinyl and other physical sales over digital: song and album pages surface **Buy Vinyl** as the primary (filled) CTA above Bandcamp digital.
+
+5. **Daniel Johnston covers — free digital**  
+   Tracks that cover Daniel Johnston must stay **free download** digitally (Bandcamp name-your-price at $0). Site copy uses **Free Download** (not “Buy Digital”) for those releases. Slugs live in `src/data/johnstonCovers.ts`.
+
 ### Tour Page & Calendar
 
 - **iCal feed**: `https://mozworth.music/tour/ics` — webcal:// for iOS/desktop; Android users can add the https URL in Google Calendar → Settings → From URL.

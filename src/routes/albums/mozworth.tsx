@@ -6,6 +6,7 @@ import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
 
@@ -190,11 +191,12 @@ export default function mozworthAlbum() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">mozworth</div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
-        <a href="https://mozworth.bandcamp.com/album/mozworth" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Buy Digital
-        </a>
         <BuyVinylLink analyticsLabel="Album: mozworth" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/album/mozworth"
+          analyticsLabel="Album: mozworth"
+          pricing="paid"
+        />
         <a href="https://mozworth.printful.me/" target="_blank" rel="noopener"
           class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full">
           Merch

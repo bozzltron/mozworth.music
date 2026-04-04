@@ -5,10 +5,13 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import { StandardMetadata } from "../../utils/metadata";
+import { isJohnstonCoverSlug } from "../../data/johnstonCovers";
 
+const WALKING_THE_COW_SLUG = "walking-the-cow";
 
 export default function WalkingTheCow() {
   const [tab, setTab] = createSignal("Lyrics");
@@ -27,7 +30,7 @@ export default function WalkingTheCow() {
       href: "https://mozworth.bandcamp.com/track/walking-the-cow",
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
-      ariaLabel: "Buy on Bandcamp",
+      ariaLabel: "Free download on Bandcamp",
       onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Walking The Cow' }); }
     },
     {
@@ -93,17 +96,18 @@ export default function WalkingTheCow() {
       </div>
       <ReleaseMeta releaseDate="2025-01-22" prefix="Released" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
+        <BuyVinylLink analyticsLabel="Walking The Cow" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/walking-the-cow"
+          analyticsLabel="Walking The Cow"
+          pricing={isJohnstonCoverSlug(WALKING_THE_COW_SLUG) ? "free" : "paid"}
+        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
-        <a href="https://mozworth.bandcamp.com/track/walking-the-cow" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Buy Digital
-        </a>
-        <BuyVinylLink analyticsLabel="Walking The Cow" />
         <FollowButton variant="light" songTitle="Walking The Cow" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/walking-the-cow/"}

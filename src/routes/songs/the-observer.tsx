@@ -7,6 +7,7 @@ import { useLocation } from "@solidjs/router";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 
@@ -93,17 +94,18 @@ export default function TheObserver() {
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
+        <BuyVinylLink analyticsLabel="The Observer" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/the-observer"
+          analyticsLabel="The Observer"
+          pricing="paid"
+        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
-        <a href="https://mozworth.bandcamp.com/track/the-observer" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Buy Digital
-        </a>
-        <BuyVinylLink analyticsLabel="The Observer" />
         <FollowButton variant="light" songTitle="The Observer" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/the-observer/"}

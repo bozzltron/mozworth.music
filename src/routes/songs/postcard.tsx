@@ -7,6 +7,7 @@ import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import AnniversaryMessage from "../../components/AnniversaryMessage";
 
@@ -97,17 +98,18 @@ export default function Postcard() {
       <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={false} />
       <AnniversaryMessage releaseDate={new Date(2024, 8, 12)} enabled={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
+        <BuyVinylLink analyticsLabel="Postcard" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/postcard"
+          analyticsLabel="Postcard"
+          pricing="paid"
+        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
-        <a href="https://mozworth.bandcamp.com/track/postcard" target="_blank" rel="noopener"
-          class="inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 w-full">
-          Buy Digital
-        </a>
-        <BuyVinylLink analyticsLabel="Postcard" />
         <FollowButton variant="light" songTitle="Postcard" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/postcard/"}

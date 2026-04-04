@@ -7,19 +7,30 @@ declare global {
   }
 }
 
+export type BuyVinylSurface = "onDark" | "onLight";
+
 export interface BuyVinylLinkProps {
   /** For analytics (song title, `Album: mozworth`, etc.) */
   analyticsLabel: string;
+  /** Light info panels need darker teal + dark text on hover ring offset */
+  surface?: BuyVinylSurface;
 }
 
-/** Outbound link to order the self-titled debut on vinyl (elasticStage). */
+const primaryOnDark =
+  "inline-block px-5 py-2 rounded bg-teal-500 text-white font-semibold shadow hover:bg-teal-400 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black/50 w-full text-left";
+
+const primaryOnLight =
+  "inline-block px-5 py-2 rounded bg-teal-600 text-white font-semibold shadow hover:bg-teal-500 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-stone-100 w-full text-left";
+
+/** Primary CTA: self-titled debut vinyl (elasticStage). */
 export default function BuyVinylLink(props: BuyVinylLinkProps): JSX.Element {
+  const surface = props.surface ?? "onDark";
   return (
     <a
       href={MOZWORTH_DEBUT_VINYL_URL}
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-block px-5 py-2 rounded bg-transparent text-white font-semibold border border-white shadow-sm hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 w-full text-left"
+      class={surface === "onLight" ? primaryOnLight : primaryOnDark}
       onClick={() => {
         if (window.gtag) {
           window.gtag("event", "commerce_click", {
