@@ -111,10 +111,9 @@ export default function Tour() {
 
             <a
               href="webcal://mozworth.music/tour/ics"
-              class="mb-8 inline-flex items-center gap-2 text-teal-400 light:text-teal-600 hover:text-teal-300 light:hover:text-teal-700 text-sm font-medium transition-colors justify-center w-full"
+              class="mb-8 inline-flex items-center justify-center text-teal-400 light:text-teal-600 hover:text-teal-300 light:hover:text-teal-700 text-sm font-medium transition-colors w-full"
               aria-label="Subscribe to mozworth tour calendar"
             >
-              <span aria-hidden="true">📅</span>
               Subscribe to calendar
             </a>
 

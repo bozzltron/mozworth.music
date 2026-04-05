@@ -23,14 +23,14 @@ export default function SmartPromo(): JSX.Element {
         href={EVENT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="block w-full max-w-sm mb-3 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
+        class="block w-full mb-3 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
         aria-label="View Hanovers Draught Haus show on Bandsintown — poster opens event page"
         onClick={() => trackRsvp("poster")}
       >
         <img
           src={POSTER_SRC}
           alt="Hanovers Draught Haus live show flyer: mozworth, Space Cushion, Mega Negative. Saturday April 25, 2026. $10. 8pm doors, 9pm live. 108 E Main St, Pflugerville."
-          class="w-full h-auto object-cover max-h-[min(52vh,360px)] object-top"
+          class="w-full h-auto"
           loading="lazy"
           decoding="async"
         />
