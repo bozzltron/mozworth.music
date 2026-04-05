@@ -80,12 +80,13 @@ export const tourEvents: TourEvent[] = [
   ),
   event(
     "2026-04-25",
-    "Friday, April 25, 2026",
+    "Saturday, April 25, 2026",
     "Hanovers Draught Haus",
-    "Lineup:\n9pm Mega Negative\n10pm Space Cushion\n11pm mozworth\n\n108 E Main St\nPflugerville, TX 78660",
+    "$10 · 8pm doors · 9pm show\n\nLineup:\n9pm Mega Negative\n10pm Space Cushion\n11pm mozworth\n\n108 E Main St\nPflugerville, TX 78660",
     [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
-    undefined,
-    "108 E Main St, Pflugerville, TX 78660"
+    "21:00",
+    "108 E Main St, Pflugerville, TX 78660",
+    "/tour-posters/2026-04-25.webp"
   ),
   event(
     "2026-03-13",
