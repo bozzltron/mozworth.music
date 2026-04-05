@@ -83,7 +83,10 @@ export const tourEvents: TourEvent[] = [
     "Saturday, April 25, 2026",
     "Hanovers Draught Haus",
     "$10 · 8pm doors · 9pm show\n\nLineup:\n9pm Mega Negative\n10pm Space Cushion\n11pm mozworth\n\n108 E Main St\nPflugerville, TX 78660",
-    [{ label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" }],
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/107888752", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+      { label: "Facebook", href: "https://www.facebook.com/share/15h8p8LbY7h/", ariaLabel: "View event on Facebook (opens in new tab)" },
+    ],
     "21:00",
     "108 E Main St, Pflugerville, TX 78660",
     "/tour-posters/2026-04-25.webp"
