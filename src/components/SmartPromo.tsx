@@ -29,7 +29,7 @@ export default function SmartPromo(): JSX.Element {
       >
         <img
           src={POSTER_SRC}
-          alt="Show flyer: Hanovers Draught Haus live music—mozworth, Space Cushion, Mega Negative. Saturday April 25, 2026. $10."
+          alt="Hanovers Draught Haus live show flyer: mozworth, Space Cushion, Mega Negative. Saturday April 25, 2026. $10. 8pm doors, 9pm live. 108 E Main St, Pflugerville."
           class="w-full h-auto object-cover max-h-[min(52vh,360px)] object-top"
           loading="lazy"
           decoding="async"
