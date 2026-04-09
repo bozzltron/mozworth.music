@@ -92,6 +92,17 @@ export const tourEvents: TourEvent[] = [
     "/tour-posters/2026-04-25.webp"
   ),
   event(
+    "2026-06-08",
+    "Monday, June 8, 2026",
+    "Sahara Lounge",
+    "Free admission · 8pm\n\nIndie alt rock\n\n1413 Webberville Rd\nAustin, TX",
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/108215329", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+    ],
+    "20:00",
+    "1413 Webberville Rd, Austin, TX 78721"
+  ),
+  event(
     "2026-03-13",
     "Friday, March 13, 2026",
     "It's a van fest",

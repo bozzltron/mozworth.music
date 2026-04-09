@@ -46,7 +46,7 @@ export default function Home() {
         url="https://mozworth.music"
         type="music"
         keywords="indie rock, alternative rock, indie rock bands, alternative rock bands, Austin Texas, indie rock bands Austin, alternative rock bands Austin, Austin indie rock, Austin alternative rock, indie rock Austin TX, mozworth"
-        modifiedDate="2026-02-16"
+        modifiedDate="2026-04-09"
         structuredData={createMusicGroupData()}
       />
       

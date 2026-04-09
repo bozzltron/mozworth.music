@@ -91,7 +91,7 @@ export default function Tour() {
         url="https://mozworth.music/tour/"
         type="website"
         keywords="indie rock shows Austin, alternative rock concerts Austin, Austin indie rock bands, mozworth tour dates, Austin live music, indie rock Austin Texas"
-        modifiedDate="2026-02-01"
+        modifiedDate="2026-04-09"
       />
       <div class="flex flex-col min-h-screen">
         <a
