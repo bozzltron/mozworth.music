@@ -98,6 +98,12 @@ export default function StoryOfAnArtist() {
       </div>
       <ReleaseMeta releaseDate="2026-01-22" prefix="Released" showConfetti={false} textColor="text-black" />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
+        >
+          Leave a Note
+        </button>
         <BuyVinylLink analyticsLabel="Story of an Artist" surface="onLight" />
         <BandcampDigitalLink
           href="https://mozworth.bandcamp.com/track/story-of-an-artist"
@@ -105,12 +111,6 @@ export default function StoryOfAnArtist() {
           pricing={isJohnstonCoverSlug(STORY_OF_AN_ARTIST_SLUG) ? "free" : "paid"}
           surface="onLight"
         />
-        <button
-          onClick={() => setShowLeaveNoteModal(true)}
-          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
-        >
-          Leave a Note
-        </button>
         <FollowButton variant="dark" songTitle="Story of an Artist" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/story-of-an-artist/"}
@@ -299,13 +299,13 @@ Others just like to watch the world`}</div>
           defaultTab="Lyrics"
           inactiveTabColor="text-gray-900"
           activeTabColor="text-black"
-        />      <LeaveNoteModal
+        />
+      </BasePageLayout>
+      <LeaveNoteModal
         isOpen={showLeaveNoteModal()}
         onClose={() => setShowLeaveNoteModal(false)}
         songTitle="Story of an Artist"
       />
-
-      </BasePageLayout>
     </>
   );
 }

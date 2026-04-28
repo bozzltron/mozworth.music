@@ -2,8 +2,12 @@ import { JSX } from "solid-js";
 import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
 const ALBUM_ART_SRC = "/mozworth-debut.webp";
-const EVENT_URL = "https://www.bandsintown.com/e/107888752";
+/** June 8, 2026 — Sahara Lounge (sync with src/data/tour.ts) */
+const NEXT_SHOW_BANDSINTOWN_URL = "https://www.bandsintown.com/e/108215329";
 const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
+
+const promoCtaButtonClass =
+  "block w-full text-center border-2 border-white/30 light:border-gray-300 text-white light:text-gray-900 font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100";
 
 function trackVinyl(source: "art" | "button") {
   if (typeof window !== "undefined" && window.gtag) {
@@ -11,6 +15,16 @@ function trackVinyl(source: "art" | "button") {
       event_category: "vinyl",
       event_label: `smart_promo_debut_vinyl (${source})`,
       destination: "elasticstage",
+    });
+  }
+}
+
+function trackBandsintownClick() {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", "rsvp_click", {
+      event_category: "tour",
+      event_label: "June 8 2026 Sahara SmartPromo (bandsintown)",
+      destination: "bandsintown",
     });
   }
 }
@@ -39,31 +53,44 @@ export default function SmartPromo(): JSX.Element {
       <div class="text-white/80 light:text-gray-600 text-center mb-3 text-sm">
         The self-titled release is available to order on vinyl at elasticStage.
       </div>
-      <a
-        href={MOZWORTH_DEBUT_VINYL_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block border-2 border-white/30 light:border-gray-300 text-white light:text-gray-900 font-semibold px-6 py-2 rounded-full shadow transition-colors hover:bg-white hover:text-black light:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100"
-        onClick={() => trackVinyl("button")}
-        aria-label="Buy debut album on vinyl at elasticStage (opens in new tab)"
-      >
-        Shop vinyl
-      </a>
-      <div class="mt-4 pt-4 border-t border-white/20 light:border-gray-200 text-sm text-white/70 light:text-gray-600 text-center flex flex-col gap-2">
-        <p>
-          Next show:{" "}
-          <a href={EVENT_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
-            April 25 — Hanovers Draught Haus
-          </a>
-        </p>
-        <p>
-          Latest interview:{" "}
-          <a href={WAXZINE_INTERVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
-            Wax Zine
-          </a>
-          {" — Daniel Johnston, Austin underground & The Mountain & The Wolf"}
-        </p>
+      <div class="w-max max-w-full mx-auto min-w-0">
+        <a
+          href={MOZWORTH_DEBUT_VINYL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={promoCtaButtonClass}
+          onClick={() => trackVinyl("button")}
+          aria-label="Buy debut album on vinyl at elasticStage (opens in new tab)"
+        >
+          Shop vinyl
+        </a>
       </div>
+      <div class="w-full self-stretch mt-4 pt-4 border-t border-white/20 light:border-gray-200 text-sm text-white/70 light:text-gray-600 text-center flex flex-col gap-2">
+        <p>
+          <span class="font-medium text-white light:text-gray-800">Next show</span>
+          <br />
+          June 8 — Sahara Lounge, Austin
+        </p>
+        <div class="w-max max-w-full mx-auto">
+          <a
+            href={NEXT_SHOW_BANDSINTOWN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={promoCtaButtonClass}
+            aria-label="View June 8 show on Bandsintown (opens in new tab)"
+            onClick={() => trackBandsintownClick()}
+          >
+            Bandsintown
+          </a>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-white/70 light:text-gray-600 text-center">
+        Latest interview:{" "}
+        <a href={WAXZINE_INTERVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
+          Wax Zine
+        </a>
+        {" — Daniel Johnston, Austin underground & The Mountain & The Wolf"}
+      </p>
     </div>
   );
 }

@@ -94,18 +94,18 @@ export default function TheObserver() {
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
-        <BuyVinylLink analyticsLabel="The Observer" />
-        <BandcampDigitalLink
-          href="https://mozworth.bandcamp.com/track/the-observer"
-          analyticsLabel="The Observer"
-          pricing="paid"
-        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
+        <BuyVinylLink analyticsLabel="The Observer" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/the-observer"
+          analyticsLabel="The Observer"
+          pricing="paid"
+        />
         <FollowButton variant="light" songTitle="The Observer" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/the-observer/"}
@@ -253,13 +253,13 @@ I'm just listening</p>
           key={location.pathname}
           tabs={tabs}
           defaultTab="Lyrics"
-        />      <LeaveNoteModal
+        />
+      </BasePageLayout>
+      <LeaveNoteModal
         isOpen={showLeaveNoteModal()}
         onClose={() => setShowLeaveNoteModal(false)}
         songTitle="The Observer"
       />
-
-      </BasePageLayout>
     </>
   );
 } 

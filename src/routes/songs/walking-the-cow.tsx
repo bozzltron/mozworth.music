@@ -96,18 +96,18 @@ export default function WalkingTheCow() {
       </div>
       <ReleaseMeta releaseDate="2025-01-22" prefix="Released" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
-        <BuyVinylLink analyticsLabel="Walking The Cow" />
-        <BandcampDigitalLink
-          href="https://mozworth.bandcamp.com/track/walking-the-cow"
-          analyticsLabel="Walking The Cow"
-          pricing={isJohnstonCoverSlug(WALKING_THE_COW_SLUG) ? "free" : "paid"}
-        />
         <button
           onClick={() => setShowLeaveNoteModal(true)}
           class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
           Leave a Note
         </button>
+        <BuyVinylLink analyticsLabel="Walking The Cow" />
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/walking-the-cow"
+          analyticsLabel="Walking The Cow"
+          pricing={isJohnstonCoverSlug(WALKING_THE_COW_SLUG) ? "free" : "paid"}
+        />
         <FollowButton variant="light" songTitle="Walking The Cow" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/walking-the-cow/"}
@@ -260,13 +260,13 @@ I am walking the cow`}</div>
           key={location.pathname}
           tabs={tabs()}
           defaultTab="Lyrics"
-        />      <LeaveNoteModal
+        />
+      </BasePageLayout>
+      <LeaveNoteModal
         isOpen={showLeaveNoteModal()}
         onClose={() => setShowLeaveNoteModal(false)}
         songTitle="Walking the Cow"
       />
-
-      </BasePageLayout>
     </>
   );
 } 

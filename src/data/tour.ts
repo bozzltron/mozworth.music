@@ -25,6 +25,7 @@ export interface TourEvent {
   /** Full description (line breaks via \n). Use 12-hour time (e.g. 7:30pm). */
   details: string;
   links: TourLink[];
+  /** Mirrors {@link isTourDatePast} at data build time — prefer that function for request-time accuracy. */
   isPast: boolean;
   /** Venue address for iCal LOCATION (optional) */
   address?: string;
@@ -33,6 +34,19 @@ export interface TourEvent {
    * Add via `npm run tour-poster:import` or sync script; see README.
    */
   posterWebp?: string;
+}
+
+/** Calendar day comparison in local time — use for UI and subscribed ICS feeds. */
+export function isTourDatePast(isoDate: string): boolean {
+  const parts = isoDate.split("-").map(Number);
+  const y = parts[0];
+  const m = parts[1];
+  const d = parts[2];
+  if (y === undefined || m === undefined || d === undefined) return false;
+  const day = new Date(y, m - 1, d);
+  const today = new Date();
+  const startToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  return day < startToday;
 }
 
 function event(
@@ -45,7 +59,7 @@ function event(
   address?: string,
   posterWebp?: string
 ): TourEvent {
-  const isPast = new Date(date) < new Date();
+  const isPast = isTourDatePast(date);
   return { date, dateLabel, venue, details, links, isPast, time, address, posterWebp };
 }
 
@@ -95,7 +109,7 @@ export const tourEvents: TourEvent[] = [
     "2026-06-08",
     "Monday, June 8, 2026",
     "Sahara Lounge",
-    "Free admission · 8pm\n\nIndie alt rock\n\n1413 Webberville Rd\nAustin, TX",
+    "Free admission · 8pm\n\nLineup:\nDream Eater\nmozworth\n\nIndie alt rock\n\n1413 Webberville Rd\nAustin, TX",
     [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/108215329", ariaLabel: "View event on Bandsintown (opens in new tab)" },
     ],

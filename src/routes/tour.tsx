@@ -3,7 +3,8 @@ import RotatingBackground from "../components/RotatingBackground";
 import Callout from "../components/Callout";
 import GlobalFooter from "../components/GlobalFooter";
 import { StandardMetadata } from "../utils/metadata";
-import { sortedTourEventsForPage, tourEvents, type TourEvent } from "../data/tour";
+import AddToCalendar from "../components/AddToCalendar";
+import { isTourDatePast, sortedTourEventsForPage, tourEvents, type TourEvent } from "../data/tour";
 
 const linkClass =
   "tour-link w-full md:w-auto text-center inline-block border border-white/30 light:border-gray-300 rounded-full px-6 py-3 md:px-4 md:py-2 text-base md:text-sm text-white light:text-gray-900 transition-all duration-200 hover:bg-white hover:text-black light:hover:bg-gray-100";
@@ -18,14 +19,14 @@ function TourDateCard(props: { event: TourEvent }) {
   const posterAlt = `Show poster — ${props.event.venue}, ${props.event.dateLabel}`;
   const imgClass =
     "w-full h-auto object-cover max-h-[min(70vh,520px)] object-top rounded-lg";
-
-  const pastMetaClass = props.event.isPast ? "opacity-70" : "";
+  const isPastEvent = isTourDatePast(props.event.date);
+  const pastMetaClass = isPastEvent ? "opacity-70" : "";
 
   return (
     <article class="break-inside-avoid mb-6">
       <div
         class={`tour-date w-full p-6 rounded-xl flex flex-col gap-4 ${
-          props.event.isPast
+          isPastEvent
             ? "border border-white/30 light:border-gray-200"
             : "border-2 border-white/80 light:border-gray-300 bg-white/5 light:bg-gray-100/80"
         }`}
@@ -51,14 +52,21 @@ function TourDateCard(props: { event: TourEvent }) {
         </Show>
 
         <div class={`flex flex-col gap-4 ${pastMetaClass}`}>
-          <div class="font-bold text-left text-lg text-white light:text-gray-900">{props.event.dateLabel}</div>
+          <div class="flex flex-wrap items-center gap-2 text-left">
+            <div class="font-bold text-lg text-white light:text-gray-900">{props.event.dateLabel}</div>
+            <Show when={isPastEvent}>
+              <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-white/15 light:bg-gray-200 text-white/75 light:text-gray-600">
+                Past
+              </span>
+            </Show>
+          </div>
           <div class="venue-info flex-1 text-left text-base">
             <p class="font-semibold text-white light:text-gray-900 mb-1">{props.event.venue}</p>
             <p style={{ "white-space": "pre-line" }} class="text-white/90 light:text-gray-700">
               {props.event.details}
             </p>
           </div>
-          <div class="tour-links w-full flex flex-col sm:flex-row flex-wrap gap-2">
+          <div class="tour-links w-full flex flex-col sm:flex-row flex-wrap gap-2 items-stretch sm:items-center">
             <For each={props.event.links}>
               {(link) => (
                 <a
@@ -72,6 +80,7 @@ function TourDateCard(props: { event: TourEvent }) {
                 </a>
               )}
             </For>
+            <AddToCalendar event={props.event} />
           </div>
         </div>
       </div>
@@ -91,7 +100,7 @@ export default function Tour() {
         url="https://mozworth.music/tour/"
         type="website"
         keywords="indie rock shows Austin, alternative rock concerts Austin, Austin indie rock bands, mozworth tour dates, Austin live music, indie rock Austin Texas"
-        modifiedDate="2026-04-09"
+        modifiedDate="2026-04-28"
       />
       <div class="flex flex-col min-h-screen">
         <a
