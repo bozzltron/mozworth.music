@@ -2,7 +2,7 @@ import { JSX } from "solid-js";
 import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
 const ALBUM_ART_SRC = "/mozworth-debut.webp";
-/** August 1, 2026 — The Austin Beer Garden (sync with src/data/tour.ts) */
+/** August 8, 2026 — The Austin Beer Garden (sync with src/data/tour.ts) */
 const NEXT_SHOW_URL = "/tour";
 const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
 
@@ -23,7 +23,7 @@ function trackNextShowClick() {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "rsvp_click", {
       event_category: "tour",
-      event_label: "August 1 2026 AGBG SmartPromo (tour page)",
+      event_label: "August 8 2026 AGBG SmartPromo (tour page)",
       destination: "tour",
     });
   }
@@ -69,13 +69,13 @@ export default function SmartPromo(): JSX.Element {
         <p>
           <span class="font-medium text-white light:text-gray-800">Next show</span>
           <br />
-          August 1 — The Austin Beer Garden w/ The Somebodies
+          August 8 — The Austin Beer Garden w/ The Somebodies
         </p>
         <div class="w-max max-w-full mx-auto">
           <a
             href={NEXT_SHOW_URL}
             class={promoCtaButtonClass}
-            aria-label="View August 1 show on tour dates page"
+            aria-label="View August 8 show on tour dates page"
             onClick={() => trackNextShowClick()}
           >
             Tour dates

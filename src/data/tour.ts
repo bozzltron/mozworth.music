@@ -106,8 +106,8 @@ export const tourEvents: TourEvent[] = [
     "/tour-posters/2026-04-25.webp"
   ),
   event(
-    "2026-08-01",
-    "Saturday, August 1, 2026",
+    "2026-08-08",
+    "Saturday, August 8, 2026",
     "The Austin Beer Garden",
     "w/ The Somebodies\n\n1305 W Oltorf St\nAustin, TX 78704",
     [],
