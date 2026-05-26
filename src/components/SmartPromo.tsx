@@ -2,8 +2,8 @@ import { JSX } from "solid-js";
 import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
 const ALBUM_ART_SRC = "/mozworth-debut.webp";
-/** June 8, 2026 — Sahara Lounge (sync with src/data/tour.ts) */
-const NEXT_SHOW_BANDSINTOWN_URL = "https://www.bandsintown.com/e/108215329";
+/** August 1, 2026 — The Austin Beer Garden (sync with src/data/tour.ts) */
+const NEXT_SHOW_URL = "/tour";
 const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
 
 const promoCtaButtonClass =
@@ -19,12 +19,12 @@ function trackVinyl(source: "art" | "button") {
   }
 }
 
-function trackBandsintownClick() {
+function trackNextShowClick() {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "rsvp_click", {
       event_category: "tour",
-      event_label: "June 8 2026 Sahara SmartPromo (bandsintown)",
-      destination: "bandsintown",
+      event_label: "August 1 2026 AGBG SmartPromo (tour page)",
+      destination: "tour",
     });
   }
 }
@@ -69,18 +69,16 @@ export default function SmartPromo(): JSX.Element {
         <p>
           <span class="font-medium text-white light:text-gray-800">Next show</span>
           <br />
-          June 8 — Sahara Lounge, Austin
+          August 1 — The Austin Beer Garden w/ The Somebodies
         </p>
         <div class="w-max max-w-full mx-auto">
           <a
-            href={NEXT_SHOW_BANDSINTOWN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={NEXT_SHOW_URL}
             class={promoCtaButtonClass}
-            aria-label="View June 8 show on Bandsintown (opens in new tab)"
-            onClick={() => trackBandsintownClick()}
+            aria-label="View August 1 show on tour dates page"
+            onClick={() => trackNextShowClick()}
           >
-            Bandsintown
+            Tour dates
           </a>
         </div>
       </div>
