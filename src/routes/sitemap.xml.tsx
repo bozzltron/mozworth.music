@@ -12,17 +12,10 @@ async function getSlugs(dir: string) {
 
 export async function GET({ request }: { request: Request }) {
   const baseUrl = new URL(request.url).origin;
+  const today = new Date().toISOString().slice(0, 10);
 
-  // Static pages
-  const staticPages = [
-    "",
-    "about",
-    "albums",
-    "songs",
-    "tour",
-    "music",
-    "press"
-  ];
+  // Static content pages (no index/404/feed routes)
+  const staticPages = ["music", "discography", "tour", "press", "support", "backgrounds"];
 
   // Dynamic song and album slugs
   const songsDir = path.join(process.cwd(), "src/routes/songs");
@@ -33,9 +26,9 @@ export async function GET({ request }: { request: Request }) {
   // Build URLs with SEO sparkle
   const urls = [
     // Home page: weekly, highest priority
-    `<url><loc>${baseUrl}/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2025-05-01</lastmod></url>`,
+    `<url><loc>${baseUrl}/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>${today}</lastmod></url>`,
     // All others: monthly, slightly lower priority
-    ...staticPages.filter((p) => p !== "").map(
+    ...staticPages.map(
       (p) => `<url><loc>${baseUrl}/${p}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2025-05-01</lastmod></url>`
     ),
     ...songSlugs.map(
@@ -51,6 +44,7 @@ export async function GET({ request }: { request: Request }) {
   return new Response(xml, {
     headers: {
       "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=3600",
     },
   });
 } 
