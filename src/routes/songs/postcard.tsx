@@ -1,4 +1,6 @@
 import { createSignal, createEffect, createMemo } from "solid-js";
+import { A } from "@solidjs/router";
+
 import { StreamingLink } from "../../components/StreamingIcons";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import BasePageLayout from "../../components/BasePageLayout";
@@ -10,6 +12,7 @@ import BuyVinylLink from "../../components/BuyVinylLink";
 import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
 import AnniversaryMessage from "../../components/AnniversaryMessage";
+import { StandardMetadata } from "../../utils/metadata";
 
 //
 
@@ -93,7 +96,7 @@ export default function Postcard() {
     <>
       <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">Postcard</h1>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
-        mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
+        mozworth &middot; <A href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</A>
       </div>
       <ReleaseMeta releaseDate="2024-09-12" prefix="Released as a single on" showConfetti={false} />
       <AnniversaryMessage releaseDate={new Date(2024, 8, 12)} enabled={true} />
@@ -271,37 +274,29 @@ Wishing you were here with me</p>
 
   return (
     <>
-      <title>Postcard | mozworth</title>
-      <meta name="description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/songs/postcard/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="Postcard | mozworth" />
-      <meta property="og:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/postcard_cover.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/postcard/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Postcard | mozworth" />
-      <meta name="twitter:description" content="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/postcard_cover.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "Postcard",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/postcard_cover.webp",
-        "datePublished": "2024-11-15",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/songs/postcard/"
-      })} />
+      <StandardMetadata
+        title="Postcard | mozworth"
+        description="Listen to 'Postcard' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'Postcard' from the self-titled debut album (2024)."
+        url="https://mozworth.music/songs/postcard/"
+        type="music.song"
+        image="https://mozworth.music/postcard_cover.webp"
+        imageAlt="Postcard by mozworth - single cover art"
+        keywords="mozworth, Postcard, indie rock, Austin, KUTX, debut album"
+        author="mozworth"
+        modifiedDate="2025-05-01"
+        publishDate="2024-09-12"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "Postcard",
+          "byArtist": { "@type": "MusicGroup", "name": "mozworth" },
+          "inAlbum": { "@type": "MusicAlbum", "name": "mozworth" },
+          "image": "https://mozworth.music/postcard_cover.webp",
+          "datePublished": "2024-09-12",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/songs/postcard/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}

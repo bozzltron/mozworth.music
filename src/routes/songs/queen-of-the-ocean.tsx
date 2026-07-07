@@ -3,7 +3,8 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 //
-import { useLocation } from "@solidjs/router";
+import { A, useLocation } from "@solidjs/router";
+
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
@@ -91,7 +92,7 @@ export default function QueenOfTheOcean() {
     <>
       <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">Queen of the Ocean</h1>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
-        mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
+        mozworth &middot; <A href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</A>
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
@@ -208,6 +209,7 @@ Her spirit is finally free</p></div>,
         image="https://mozworth.music/mozworth-debut.webp"
         imageAlt="Queen of the Ocean by mozworth - album artwork"
         publishDate="2024-11-15"
+        modifiedDate="2025-05-01"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -222,6 +224,7 @@ Her spirit is finally free</p></div>,
           },
           "image": "https://mozworth.music/mozworth-debut.webp",
           "datePublished": "2024-11-15",
+          "dateModified": "2025-05-01",
           "url": "https://mozworth.music/songs/queen-of-the-ocean/"
         }}
       />

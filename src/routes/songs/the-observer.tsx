@@ -3,13 +3,15 @@ import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 //
-import { useLocation } from "@solidjs/router";
+import { A, useLocation } from "@solidjs/router";
+
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import BuyVinylLink from "../../components/BuyVinylLink";
 import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import { StandardMetadata } from "../../utils/metadata";
 
 //
 
@@ -90,7 +92,7 @@ export default function TheObserver() {
     <>
       <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">The Observer</h1>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
-        mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
+        mozworth &middot; <A href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</A>
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
@@ -212,37 +214,29 @@ I'm just listening</p>
 
   return (
     <>
-      <title>The Observer | mozworth</title>
-      <meta name="description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
-      <meta name="last-modified" content="2025-05-01" />
-      <link rel="canonical" href="https://mozworth.music/songs/the-observer/" />
-      <meta property="og:type" content="music.song" />
-      <meta property="og:title" content="The Observer | mozworth" />
-      <meta property="og:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
-      <meta property="og:image" content="https://mozworth.music/mozworth-debut.webp" />
-      <meta property="og:url" content="https://mozworth.music/songs/the-observer/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="The Observer | mozworth" />
-      <meta name="twitter:description" content="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)." />
-      <meta name="twitter:image" content="https://mozworth.music/mozworth-debut.webp" />
-      {/* Structured Data for AI and Search Engines */}
-      <script type="application/ld+json" textContent={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MusicRecording",
-        "name": "The Observer",
-        "byArtist": {
-          "@type": "MusicGroup",
-          "name": "mozworth"
-        },
-        "inAlbum": {
-          "@type": "MusicAlbum",
-          "name": "mozworth"
-        },
-        "image": "https://mozworth.music/mozworth-debut.webp",
-        "datePublished": "2024-11-15",
-        "dateModified": "2025-05-01",
-        "url": "https://mozworth.music/songs/the-observer/"
-      })} />
+      <StandardMetadata
+        title="The Observer | mozworth"
+        description="Listen to 'The Observer' by mozworth. Read the lyrics, learn about the song, and experience the official album art. This is the definitive online destination for the song 'The Observer' from the self-titled debut album (2024)."
+        url="https://mozworth.music/songs/the-observer/"
+        type="music.song"
+        image="https://mozworth.music/mozworth-debut.webp"
+        imageAlt="The Observer by mozworth - single cover art"
+        keywords="mozworth, The Observer, indie rock, Austin, debut album"
+        author="mozworth"
+        modifiedDate="2025-05-01"
+        publishDate="2024-11-15"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "MusicRecording",
+          "name": "The Observer",
+          "byArtist": { "@type": "MusicGroup", "name": "mozworth" },
+          "inAlbum": { "@type": "MusicAlbum", "name": "mozworth" },
+          "image": "https://mozworth.music/mozworth-debut.webp",
+          "datePublished": "2024-11-15",
+          "dateModified": "2025-05-01",
+          "url": "https://mozworth.music/songs/the-observer/"
+        }}
+      />
       <BasePageLayout
         cover={cover}
         info={info}
