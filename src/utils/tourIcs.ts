@@ -10,6 +10,45 @@ export function escapeIcal(s: string): string {
   return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
 }
 
+/**
+ * RFC 5545 §3.1 line folding: any content line longer than 75 octets must be
+ * folded by inserting CRLF followed by a single white-space character.
+ */
+export function foldIcalLine(line: string): string {
+  const MAX_OCTETS = 75;
+  const encoder = new TextEncoder();
+
+  if (encoder.encode(line).length <= MAX_OCTETS) {
+    return line;
+  }
+
+  // Continuation lines may be 75 octets including the leading space (1 octet).
+  const CONTINUATION_MAX = MAX_OCTETS - 1;
+  const result: string[] = [];
+  let current = '';
+  let currentOctets = 0;
+
+  for (const ch of line) {
+    const charOctets = encoder.encode(ch).length;
+    const limit = current === '' ? MAX_OCTETS : CONTINUATION_MAX;
+
+    if (currentOctets + charOctets > limit) {
+      result.push(current);
+      current = ch;
+      currentOctets = charOctets;
+    } else {
+      current += ch;
+      currentOctets += charOctets;
+    }
+  }
+
+  if (current) {
+    result.push(current);
+  }
+
+  return result.join('\r\n ');
+}
+
 /** yyyymmddTHHmmss for DTSTART/DTEND with TZID */
 export function toIcalDateTimeCompact(date: string, time?: string): string {
   const hour = time ? time.slice(0, 2) : "20";
@@ -92,7 +131,7 @@ export function buildTourEventVEvent(event: TourEvent, baseUrl: string, dtStamp:
     `LOCATION:${loc}`,
     `URL:${url}`,
     "END:VEVENT",
-  ].join("\r\n");
+  ].map(foldIcalLine).join("\r\n");
 }
 
 export function wrapVCalendar(veventBlocks: readonly string[], calName: string): string {
@@ -105,7 +144,7 @@ export function wrapVCalendar(veventBlocks: readonly string[], calName: string):
     "X-WR-TIMEZONE:America/Chicago",
     ...veventBlocks,
     "END:VCALENDAR",
-  ].join("\r\n");
+  ].map(foldIcalLine).join("\r\n");
 }
 
 export function buildTourFeedCalendar(events: readonly TourEvent[], baseUrl: string, dtStamp: string): string {
