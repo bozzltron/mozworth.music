@@ -2,6 +2,11 @@ import { defineConfig } from "@solidjs/start/config";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+// Bumped by scripts/update-sw-cache.js — do not edit by hand.
+// Referenced in the VitePWA workbox cacheNames below so any bump
+// invalidates the precache and runtime caches on the next build.
+const SW_REVISION = 'initial';
+
 export default defineConfig({
   vite: {
     plugins: [
@@ -18,6 +23,8 @@ export default defineConfig({
         workbox: {
           globPatterns: ['**/*.{js,css,html,svg,png,webp,ico,jpg,jpeg}'],
           navigateFallback: '/',
+          cleanupOutdatedCaches: true,
+          cacheId: `mozworth-${SW_REVISION}`,
         },
         devOptions: {
           enabled: false,
