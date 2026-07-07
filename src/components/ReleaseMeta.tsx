@@ -18,7 +18,11 @@ export default function ReleaseMeta(props: ReleaseMetaProps): JSX.Element {
     const [year, month, day] = props.releaseDate.split('-').map(Number);
     return new Date(year, month - 1, day); // month is 0-based
   });
-  const userLocale = createMemo(() => (typeof navigator !== 'undefined' && navigator.language) ? navigator.language : undefined);
+  const userLocale = createMemo(() =>
+    typeof navigator !== 'undefined' && navigator.language
+      ? navigator.language
+      : 'en-US'
+  );
   const formatted = createMemo(() => date().toLocaleDateString(userLocale(), { year: 'numeric', month: 'long', day: 'numeric' }));
   const timeAgo = createMemo(() => formatTimeAgo(date(), new Date(), userLocale()));
   const todayIsAnniversary = createMemo(() => isAnniversaryToday(date()));
@@ -32,9 +36,9 @@ export default function ReleaseMeta(props: ReleaseMetaProps): JSX.Element {
       <Show when={isClient()}>
         <span class={`ml-2 ${timeAgoColorClass}`}>({timeAgo()})</span>
       </Show>
-      {props.showConfetti && (todayIsAnniversary() || props.forceConfetti) && (
-        <AnniversaryConfetti releaseDate={date()} enabled={true} force={props.forceConfetti} />
-      )}
+  {props.showConfetti && isClient() && (todayIsAnniversary() || props.forceConfetti) && (
+    <AnniversaryConfetti releaseDate={date()} enabled={true} force={props.forceConfetti} />
+  )}
     </div>
   );
 }

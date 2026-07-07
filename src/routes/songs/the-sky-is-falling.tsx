@@ -13,8 +13,7 @@ import { StandardMetadata } from "../../utils/metadata";
 export default function TheSkyIsFalling() {
   const location = useLocation();
   const isForcedAnniversary = createMemo(() => {
-    const search = typeof window !== 'undefined' ? window.location.search : '';
-    const sp = new URLSearchParams(search);
+    const sp = new URLSearchParams(location.search);
     return sp.has('anniversary') && sp.get('anniversary') !== '0' && sp.get('anniversary') !== 'false';
   });
   const [tab, setTab] = createSignal("Lyrics");

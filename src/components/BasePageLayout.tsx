@@ -1,4 +1,5 @@
-import { JSX } from "solid-js";
+import { JSX, createMemo } from "solid-js";
+import { useLocation } from "@solidjs/router";
 import AnniversaryConfetti from "./AnniversaryConfetti";
 import GlobalFooter from "./GlobalFooter";
 import StreamingIcons, { StreamingLink } from "./StreamingIcons";
@@ -21,16 +22,11 @@ interface BasePageLayoutProps {
 }
 
 export default function BasePageLayout(props: BasePageLayoutProps) {
-  const forceConfetti = ((): boolean => {
-    try {
-      const search = typeof window !== 'undefined' ? window.location.search : '';
-      const sp = new URLSearchParams(search);
-      const v = sp.get('anniversary');
-      return sp.has('anniversary') && v !== '0' && v !== 'false';
-    } catch {
-      return false;
-    }
-  })();
+  const location = useLocation();
+  const forceConfetti = createMemo(() => {
+    const sp = new URLSearchParams(location.search);
+    return sp.has('anniversary') && sp.get('anniversary') !== '0' && sp.get('anniversary') !== 'false';
+  });
   return (
     <>
       {props.isrc && <meta property="music:isrc" content={props.isrc} />}
@@ -55,7 +51,7 @@ export default function BasePageLayout(props: BasePageLayoutProps) {
         <AnniversaryConfetti
           releaseDate={props.confetti.releaseDate}
           enabled={true}
-          force={props.confetti.force ?? forceConfetti}
+          force={props.confetti.force ?? forceConfetti()}
           variant="fullscreen"
           imageUrl={props.confetti.imageUrl}
         />

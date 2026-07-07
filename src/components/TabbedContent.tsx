@@ -1,4 +1,4 @@
-import { createSignal, For, JSX, onMount, onCleanup } from "solid-js";
+import { createSignal, For, JSX, onMount, onCleanup, createEffect } from "solid-js";
 
 interface Tab {
   label: string;
@@ -35,6 +35,19 @@ export default function TabbedContent(props: TabbedContentProps) {
   };
 
   const [activeTab, setActiveTab] = createSignal(getDefaultTab());
+  const [isDesktop, setIsDesktop] = createSignal(false);
+
+  onMount(() => {
+    if (typeof window === 'undefined') return;
+    setIsDesktop(window.innerWidth >= 640);
+  });
+
+  createEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handler = () => setIsDesktop(window.innerWidth >= 640);
+    window.addEventListener('resize', handler);
+    onCleanup(() => window.removeEventListener('resize', handler));
+  });
 
   // Sync activeTab with hash - let browser handle hash navigation naturally
   const syncTabFromHash = () => {
@@ -197,9 +210,7 @@ export default function TabbedContent(props: TabbedContentProps) {
         const isActive = () => activeTab() === t.label;
         const slug = slugify(t.label);
         const panelId = `panel-${slug}`;
-        const tabId = typeof window !== 'undefined' && window.innerWidth >= 640 
-          ? `tab-${slug}` 
-          : `tab-mobile-${slug}`;
+        const tabId = isDesktop() ? `tab-${slug}` : `tab-mobile-${slug}`;
         
         return (
           <div

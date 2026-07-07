@@ -1,4 +1,4 @@
-import { JSX, Show, createMemo } from "solid-js";
+import { JSX, Show, createMemo, createSignal, onMount } from "solid-js";
 import { isAnniversaryToday } from "../utils/date";
 
 interface AnniversaryMessageProps {
@@ -8,8 +8,11 @@ interface AnniversaryMessageProps {
 }
 
 export default function AnniversaryMessage(props: AnniversaryMessageProps): JSX.Element {
+  const [isClient, setIsClient] = createSignal(false);
+  onMount(() => setIsClient(true));
+
   const shouldShow = createMemo(() => {
-    return props.enabled && (props.force === true || isAnniversaryToday(props.releaseDate));
+    return props.enabled && isClient() && (props.force === true || isAnniversaryToday(props.releaseDate));
   });
 
   const yearsAgo = createMemo(() => {
