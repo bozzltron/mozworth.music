@@ -96,29 +96,40 @@ async function main() {
     console.log(`Recapture mode: ids ${[...onlyIds].join(", ")}`);
   }
 
-  const browser = await puppeteer.default.launch({ headless: "new" });
+  const browser = await puppeteer.default.launch({ headless: true });
 
-  for (const entry of toCapture) {
-    const { id, link } = entry;
-    const settleMs = entry.settleAfterLoadMs ?? DEFAULT_SETTLE_MS;
-    const outPath = path.join(OUTPUT_DIR, `${id}.webp`);
-    try {
-      const page = await browser.newPage();
-      await page.setViewport(VIEWPORT);
-      await page.goto(link, {
-        waitUntil: "load",
-        timeout: NAV_TIMEOUT_MS
-      });
-      await sleep(settleMs);
-      await page.screenshot({ path: outPath, type: "webp", quality: 85 });
-      await page.close();
-      console.log(`✓ ${id}.webp (settle ${settleMs}ms)`);
-    } catch (err) {
-      console.error(`✗ ${id} ${link}: ${err.message}`);
+  try {
+    for (const entry of toCapture) {
+      const { id, link } = entry;
+      const settleMs = entry.settleAfterLoadMs ?? DEFAULT_SETTLE_MS;
+      const outPath = path.join(OUTPUT_DIR, `${id}.webp`);
+      let page;
+      try {
+        page = await browser.newPage();
+        await page.setViewport(VIEWPORT);
+        await page.goto(link, {
+          waitUntil: "load",
+          timeout: NAV_TIMEOUT_MS
+        });
+        await sleep(settleMs);
+        await page.screenshot({ path: outPath, type: "webp", quality: 85 });
+        console.log(`✓ ${id}.webp (settle ${settleMs}ms)`);
+      } catch (err) {
+        console.error(`✗ ${id} ${link}: ${err.message}`);
+      } finally {
+        if (page) {
+          try {
+            await page.close();
+          } catch {
+            // deliberate: ignore close errors on a page that may have crashed
+          }
+        }
+      }
     }
+  } finally {
+    await browser.close();
   }
 
-  await browser.close();
   console.log(`Done. Screenshots in ${OUTPUT_DIR}`);
 }
 
