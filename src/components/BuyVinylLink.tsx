@@ -1,12 +1,6 @@
 import type { JSX } from "solid-js";
 import { MOZWORTH_DEBUT_VINYL_URL } from "../data/commerce";
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 export type BuyVinylSurface = "onDark" | "onLight";
 
 export interface BuyVinylLinkProps {

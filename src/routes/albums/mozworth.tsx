@@ -11,8 +11,6 @@ import LeaveNoteModal from "../../components/LeaveNoteModal";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
 
-declare global { interface Window { gtag?: (...args: unknown[]) => void } }
-
 export default function mozworthAlbum() {
   const [tab, setTab] = createSignal("Tracklist");
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
@@ -39,7 +37,7 @@ export default function mozworthAlbum() {
       alt: "Bandcamp",
       iconSrc: "/bandcamp.svg",
       ariaLabel: "Buy on Bandcamp",
-      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Merch', song: 'Album: mozworth' }); }
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Album: mozworth' }); }
     },
     {
       href: "https://www.youtube.com/watch?v=4Avq0ZtLtRc&list=OLAK5uy_kDXxBe_o2gnmaYQnzlPe1BY13IU2mkc8A",

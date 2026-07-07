@@ -1,4 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
+import { A } from "@solidjs/router";
+
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
@@ -87,7 +89,7 @@ export default function CantBackDown() {
     <>
       <h1 class="song-title text-2xl sm:text-3xl font-bold mb-1 text-left w-full">Can't Back Down</h1>
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
-        mozworth &middot; <a href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</a>
+        mozworth &middot; <A href={albumLink} class="underline hover:text-teal-300 transition-colors">mozworth</A>
       </div>
       <ReleaseMeta releaseDate="2024-11-15" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">

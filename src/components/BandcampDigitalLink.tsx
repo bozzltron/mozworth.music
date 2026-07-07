@@ -1,11 +1,5 @@
 import type { JSX } from "solid-js";
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 export type BandcampDigitalSurface = "onDark" | "onLight";
 
 export interface BandcampDigitalLinkProps {

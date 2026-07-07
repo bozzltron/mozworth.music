@@ -1,9 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
 import Modal from "./Modal";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare global { interface Window { gtag?: (...args: any[]) => void } }
-
 interface LeaveNoteModalProps {
   isOpen: boolean;
   onClose: () => void;

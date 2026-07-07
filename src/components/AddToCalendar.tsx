@@ -6,12 +6,6 @@ import {
   icsFilenameForEvent,
 } from "../utils/tourIcs";
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 /** Fallback when `window` is unavailable (SSR) or missing. */
 const CANONICAL_ORIGIN = "https://mozworth.music";
 

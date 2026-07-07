@@ -1,10 +1,9 @@
 import { createSignal, For } from "solid-js";
+import { A } from "@solidjs/router";
+
 import Modal from "./Modal";
 import { followLinks, type FollowLink } from "../data/followLinks";
 import { useTheme } from "../contexts/ThemeContext";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare global { interface Window { gtag?: (...args: any[]) => void } }
 
 interface FollowButtonProps {
   /** Button styling - light text for dark backgrounds, dark for light */
@@ -98,9 +97,9 @@ export default function FollowButton(props: FollowButtonProps) {
               </a>
             )}
           </For>
-          <a href="/support" class="text-teal-600 underline hover:text-teal-700">
+          <A href="/support" class="text-teal-600 underline hover:text-teal-700">
             All platforms
-          </a>
+          </A>
         </div>
       </noscript>
       <button

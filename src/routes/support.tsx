@@ -1,6 +1,3 @@
-// eslint-disable-next-line
-declare global { interface Window { gtag?: (...args: any[]) => void } }
-
 import GlobalFooter from "../components/GlobalFooter";
 import RotatingBackground from "../components/RotatingBackground";
 import { StandardMetadata, createSocialLinks } from "../utils/metadata";

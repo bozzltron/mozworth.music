@@ -7,12 +7,6 @@ import { StandardMetadata } from "../utils/metadata";
 import { wallpapers } from "../data/wallpapers";
 import type { Wallpaper } from "../data/wallpapers";
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 function trackDownload(title: string) {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "wallpaper_download", {
