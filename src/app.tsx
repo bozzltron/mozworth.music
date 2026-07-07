@@ -1,9 +1,25 @@
-import { Router } from "@solidjs/router";
+import { Router, useLocation } from "@solidjs/router";
+
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense, onMount, ErrorBoundary, createSignal } from "solid-js";
+import { Suspense, onMount, ErrorBoundary, createSignal, createEffect } from "solid-js";
 import { registerSW } from 'virtual:pwa-register';
 import { ThemeProvider } from "./contexts/ThemeContext";
 import "./app.css";
+
+function RoutePageViewTracker() {
+  const location = useLocation();
+  createEffect(() => {
+    const path = location.pathname;
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "page_view", {
+        page_path: path,
+        page_location: typeof window !== "undefined" ? window.location.href : undefined,
+        page_title: typeof document !== "undefined" ? document.title : undefined,
+      });
+    }
+  });
+  return null;
+}
 
 function GlobalErrorFallback(err: unknown) {
   console.error("Global error boundary:", err);
@@ -84,12 +100,14 @@ export default function App() {
     // Fallback in case load event is delayed
     setTimeout(hide, 1800);
   });
+
   return (
     <ThemeProvider>
     <ErrorBoundary fallback={GlobalErrorFallback}>
       <Router
         root={props => (
           <>
+            <RoutePageViewTracker />
             {/* In-app launch overlay splash */}
             {showLaunchSplash() && (
               <div class="fixed inset-0 z-50 bg-black light:bg-stone-100 flex items-center justify-center">

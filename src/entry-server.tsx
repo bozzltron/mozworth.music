@@ -70,7 +70,12 @@ export default createHandler(() => (
               function gtag(){dataLayer.push(arguments);} 
               window.gtag = gtag;
               gtag('js', new Date());
-              gtag('config', 'G-HCSKGBDXDT', { anonymize_ip: true });
+              gtag('config', 'G-HCSKGBDXDT', {
+                anonymize_ip: true,
+                send_page_view: false,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false,
+              });
             })();
           `} />
           {/* eslint-disable-next-line solid/no-innerhtml -- Intentional: theme init must run before first paint */}

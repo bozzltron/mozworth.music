@@ -18,7 +18,7 @@ export default function ShareButton(props: ShareButtonProps) {
       window.gtag('event', 'share', {
         event_category: 'engagement',
         event_label: props.title,
-        value: props.url,
+        url: props.url,
         method,
       });
     }
