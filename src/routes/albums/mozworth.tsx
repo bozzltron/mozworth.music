@@ -153,7 +153,7 @@ export default function mozworthAlbum() {
       content: (
         <section class="tab-content mb-8">
           <p>Songwriting by Michael Bosworth</p>
-          <p>Composition by Michael Bosworth, Jeff Shinrock, Ken Mockler, and Mark Heaps</p>
+          <p>Composition by Michael Bosworth, Jeff Shinrock, and Ken Mockler</p>
           <p>Lyrics by Michael Bosworth</p>
           <p>Vocals, Electric Guitars, Bass, Tambourine, and Han Pan by Michael Bosworth</p>
           <p>Drums, Auxiliary Percussion, and Synth by Ken Mockler</p>

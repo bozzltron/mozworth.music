@@ -26,23 +26,17 @@ npm run lint:fix     # ESLint auto-fix
 
 ## Image & Asset Scripts
 
-### WebP Conversion (Promotional Flyers)
+### WebP Conversion
 
-**Rule: Commit WebP only, not source JPG.**
-
-Promotional flyers/posters: convert JPG → WebP and commit only the WebP. Source JPGs are gitignored.
+Converts a single image to WebP at quality 85 with embedded EXIF copyright.
 
 ```bash
-# Default: converts public/Mozworth-Shiners_March10th-2026-V3.jpg → .webp
-npm run convert:webp
-
-# Custom file:
-node scripts/convert-to-webp.js path/to/image.jpg
+# Convert by passing the path from project root:
+npm run convert:webp -- public/tour-posters/abgb-poster.png
 ```
 
-- Output: same filename with `.webp` extension
-- Quality: 85
-- UI should reference the `.webp` file
+- Output: same directory, `.webp` extension
+- Commit only the `.webp`; source files are gitignored
 
 ### Wallpapers
 

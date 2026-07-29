@@ -24,6 +24,7 @@ const streaming: FollowLink[] = [
   { href: "https://www.deezer.com/us/artist/277222071", label: "Deezer", iconSrc: "/deezer.svg", ariaLabel: "Follow mozworth on Deezer" },
   { href: "https://www.pandora.com/artist/mozworth/AR5hqjlxV7wvwdg", label: "Pandora", iconSrc: "/pandora.svg", ariaLabel: "Follow mozworth on Pandora" },
   { href: "https://www.youtube.com/@mozworthmusic", label: "YouTube", iconSrc: "/youtube.svg", ariaLabel: "Subscribe to mozworth on YouTube" },
+  { href: "https://www.subvert.fm/mozworth", label: "Subvert FM", iconSrc: "/subvert.svg", ariaLabel: "Follow mozworth on Subvert FM" },
 ];
 
 /** Social platforms - artist profile pages */

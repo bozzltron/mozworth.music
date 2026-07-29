@@ -24,9 +24,16 @@ const WEBP_QUALITY = 85;
 const COPYRIGHT = "© mozworth. All rights reserved.";
 
 async function convertToWebp(inputPath) {
-  const absolutePath = path.isAbsolute(inputPath)
-    ? inputPath
-    : path.join(path.dirname(__dirname), "public", path.basename(inputPath));
+  let absolutePath;
+  if (path.isAbsolute(inputPath)) {
+    absolutePath = inputPath;
+  } else if (inputPath.includes("/")) {
+    // Relative path with directory — resolve from project root
+    absolutePath = path.join(path.dirname(__dirname), inputPath);
+  } else {
+    // Bare filename — resolve in public/
+    absolutePath = path.join(path.dirname(__dirname), "public", inputPath);
+  }
 
   if (!fs.existsSync(absolutePath)) {
     throw new Error(`File not found: ${absolutePath}`);
