@@ -110,7 +110,10 @@ export const tourEvents: TourEvent[] = [
     "Saturday, August 8, 2026",
     "The Austin Beer Garden",
     "Lineup:\n 6pm The Somebodies\n7pm mozworth\n\n1305 W Oltorf St\nAustin, TX 78704",
-    [],
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/108215329?came_from=210", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+      { label: "Facebook", href: "https://www.facebook.com/share/191C7pgbFW/", ariaLabel: "View event on Facebook (opens in new tab)" },
+    ],
     undefined,
     "1305 W Oltorf St, Austin, TX 78704",
     "/tour-posters/abgb-poster.webp"
