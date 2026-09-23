@@ -93,6 +93,17 @@ export const tourEvents: TourEvent[] = [
     undefined
   ),
   event(
+    "2027-02-05",
+    "Friday, February 5, 2027",
+    "HOPE Outdoor Gallery",
+    "First Friday Art Trail\n6pm – 10pm\nAustin, TX",
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/108932750?&came_from=210&_ga=2.66458667.48348914.1790005389-1718009698.1767487122", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+    ],
+    "18:00",
+    "1100 Baylor St, Austin, TX 78703"
+  ),
+  event(
     "2026-04-25",
     "Saturday, April 25, 2026",
     "Hanovers Draught Haus",
