@@ -16,7 +16,7 @@ export default function WhyNot() {
 
   const cover = (
     <img
-      src="/why-not.webp"
+      src="/Why-Not.webp"
       alt="Why Not by mozworth - single artwork"
       class="cover-art w-full max-w-[380px] mx-auto rounded-xl shadow-xl bg-[#222] object-contain mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04]"
       loading="lazy"
@@ -128,7 +128,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
         description="mozworth releases Why Not — an indie rock awakening about taking chances and embracing the unknown. Out October 22, 2026."
         url="https://mozworth.music/songs/why-not/"
         type="music.song"
-        image="https://mozworth.music/why-not.webp"
+        image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
         modifiedDate="2026-10-01"
@@ -144,7 +144,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
             "@type": "MusicAlbum",
             "name": "The Mountain & The Wolf"
           },
-          "image": "https://mozworth.music/why-not.webp",
+          "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
           "dateModified": "2026-10-01",
           "url": "https://mozworth.music/songs/why-not/"
@@ -154,7 +154,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
         cover={cover}
         info={info}
         streamingLinks={streamingLinks}
-        confetti={{ enabled: true, releaseDate: new Date('2026-10-22'), imageUrl: '/why-not.webp' }}
+        confetti={{ enabled: true, releaseDate: new Date('2026-10-22'), imageUrl: '/Why-Not.webp' }}
       >
         <TabbedContent
           key={location.pathname}

@@ -1,7 +1,7 @@
 import { JSX } from "solid-js";
 import Countdown from "./Countdown";
 
-const ALBUM_ART_SRC = "/why-not.webp";
+const ALBUM_ART_SRC = "/Why-Not.webp";
 /** Latest interview link */
 const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
 /** Why Not release date - midnight UTC */
