@@ -18,11 +18,15 @@ const main = async () => {
   const original = await readFile(configPath, "utf8");
   const stamp = new Date().toISOString();
 
-  const swRevisionRegex = /(const SW_REVISION\s*=\s*['"])([^'"]+)(['"]);?/;
+  const swRevisionRegex = /(const SW_REVISION\s*=\s*['"])([^'"]+)(['"]);?;/;
+  const swRevisionRegexNoSemi = /(const SW_REVISION\s*=\s*['"])([^'"]+)(['"])\s*$/;
 
   let updated;
   if (swRevisionRegex.test(original)) {
-    updated = original.replace(swRevisionRegex, `$1${stamp}$3`);
+    updated = original.replace(swRevisionRegex, `$1${stamp}$3;`);
+    console.log(`Bumped service-worker cache revision to: ${stamp}`);
+  } else if (swRevisionRegexNoSemi.test(original)) {
+    updated = original.replace(swRevisionRegexNoSemi, `$1${stamp}$3;`);
     console.log(`Bumped service-worker cache revision to: ${stamp}`);
   } else {
     const importEndRegex = /((?:^|\n)import[^;]+;\s*\n)(?!import)/m;
