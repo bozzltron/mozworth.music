@@ -6,6 +6,8 @@ const ALBUM_ART_SRC = "/why-not.webp";
 const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
 /** Why Not release date - midnight UTC */
 const WHY_NOT_RELEASE_DATE = "2026-10-22T00:00:00Z";
+/** Pre-save link */
+const PRE_SAVE_URL = "https://distrokid.com/hyperfollow/mozworth/why-not";
 
 export default function SmartPromo(): JSX.Element {
   return (
@@ -32,6 +34,17 @@ export default function SmartPromo(): JSX.Element {
       </div>
       <div class="w-full flex justify-center mb-4">
         <Countdown targetDate={WHY_NOT_RELEASE_DATE} />
+      </div>
+      <div class="w-full flex justify-center mb-4">
+        <a
+          href={PRE_SAVE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => { if (window.gtag) window.gtag('event', 'pre_save_click', { song: 'Why Not', source: 'home_promo' }); }}
+          class="inline-block px-5 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 text-center"
+        >
+          Pre-save
+        </a>
       </div>
       <p class="mt-4 text-sm text-white/70 light:text-gray-600 text-center">
         Latest interview:{" "}
