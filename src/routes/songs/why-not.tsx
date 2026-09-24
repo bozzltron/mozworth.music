@@ -110,8 +110,27 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
     </div>
   );
 
+  const performances = (
+    <div class="flex flex-col items-start gap-6">
+      <p class="mb-4">Watch live performances of "Why Not":</p>
+      <div class="w-full aspect-video max-w-2xl">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/bsGnlAxp2fk"
+          title="Why Not - Live Performance"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          class="rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  );
+
   const tabs = createMemo(() => [
     { label: "Lyrics", content: lyrics },
+    { label: "Performances", content: performances },
     { label: "Credits", content: credits }
   ]);
 
