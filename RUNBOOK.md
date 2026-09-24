@@ -131,6 +131,8 @@ Before writing code, confirm:
 | Capture press screenshots | `npm run screenshot:press` |
 | Update PWA service worker cache | `npm run update-sw-cache` |
 
+> **PWA Cache Key:** The service worker uses a cache key based on the Vite build output hash. Run `npm run update-sw-cache` **after any change to cached assets** (JS, CSS, HTML, images, manifest) to regenerate the cache manifest and bump the cache key. This ensures users get the new version on next load (via `registerType: 'autoUpdate'`).
+
 ---
 
 ## 9. Run Dev Server & Test in Real Time
@@ -279,7 +281,7 @@ npm run convert:webp -- <file> # Image → WebP + EXIF
 npm run tour-poster:import -- YYYY-MM-DD ./flyer.jpg
 npm run generate:wallpapers
 npm run screenshot:press
-npm run update-sw-cache
+npm run update-sw-cache        # Update PWA cache manifest + bump cache key
 ```
 
 ### Gotchas to Avoid
@@ -291,3 +293,4 @@ npm run update-sw-cache
 - ❌ Don't make digital CTA primary over vinyl
 - ❌ Don't skip `modifiedDate` / JSON-LD / OG updates on page changes
 - ❌ Don't write "Mozworth" or "MOZWORTH" — always `mozworth`
+- ❌ Don't forget `npm run update-sw-cache` after asset changes — users won't see updates until the cache key bumps
