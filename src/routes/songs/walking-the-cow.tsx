@@ -178,6 +178,7 @@ I am walking the cow`}</div>
           <p>Recorded by Michael Bosworth and Ken Mockler</p>
           <p>Mixed and Mastered by Steve Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
           <p>Cover art by Michael Bosworth</p>
+          <p>No AI was used to create this music.</p>
         </>
       ),
     },

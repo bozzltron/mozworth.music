@@ -107,6 +107,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
       <p>Mixed by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
       <p>Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
       <p>Cover art by Mark Heaps</p>
+      <p>No AI was used to create this music.</p>
     </div>
   );
 

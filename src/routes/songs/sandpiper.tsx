@@ -189,6 +189,7 @@ Sandpiper show me the way!`}
           <p>Cover art watercolor by Jessica Bosworth</p>
           <p>Cover art composition and design by Mark Heaps</p>
           <p>ISRC: QZZ782549784</p>
+          <p>No AI was used to create this music.</p>
         </>
       ),
     }

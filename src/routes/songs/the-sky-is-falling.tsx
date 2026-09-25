@@ -243,6 +243,7 @@ Falling!`}
           <p>Recorded at mozworth and Mockler home studio's</p>
           <p>Released July 15, 2025 by Balanced Scale Media</p>
           <p>Cover art by Mark Heaps</p>
+          <p>No AI was used to create this music.</p>
         </>
       ),
     }

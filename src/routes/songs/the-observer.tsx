@@ -168,6 +168,7 @@ I'm just listening</p>
         <p>Mastered by Steve Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-300">Tone Freq Studios</a></p>
         <p>Cover art by <a href="https://www.instagram.com/joshrowdesign/?hl=en" target="_blank" rel="noopener" class="underline hover:text-teal-300">Josh Row</a></p>
         <p>Cover art photography by Kelly Treybig</p>
+        <p>No AI was used to create this music.</p>
       </>
     },
     {

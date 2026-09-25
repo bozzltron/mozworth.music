@@ -240,6 +240,7 @@ Others just like to watch the world`}</div>
           <p class="text-black">Recording by Mark Heaps, Michael Bosworth, and Mike Hall</p>
           <p class="text-black">Mixed and Mastered by Steven Glaze at <a href="https://stevenglaze.com/" target="_blank" rel="noopener" class="underline hover:text-teal-600 text-black">Tone Freq Studios</a></p>
           <p class="text-black">Cover art by Michael Bosworth</p>
+          <p class="text-black">No AI was used to create this music.</p>
         </>
       ),
     },
