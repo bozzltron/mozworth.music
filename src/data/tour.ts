@@ -93,6 +93,15 @@ export const tourEvents: TourEvent[] = [
     undefined
   ),
   event(
+    "2026-10-30",
+    "Friday, October 30, 2026",
+    "The Austin Beer Garden",
+    "Lineup:\nJaded Ravins\nmozworth\n\n1305 W Oltorf St\nAustin, TX 78704",
+    [],
+    undefined,
+    "1305 W Oltorf St, Austin, TX 78704"
+  ),
+  event(
     "2027-02-05",
     "Friday, February 5, 2027",
     "HOPE Outdoor Gallery",
