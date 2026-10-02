@@ -27,7 +27,7 @@ export default function Backgrounds() {
         url="https://mozworth.music/backgrounds/"
         type="website"
         keywords="mozworth wallpapers, phone backgrounds, indie rock wallpapers, Austin music backgrounds, free phone wallpapers"
-        modifiedDate="2026-02-16"
+        modifiedDate="2026-10-02"
         author="mozworth"
         image="https://mozworth.music/wallpapers/logo-black.webp"
         imageAlt="mozworth logo on black — free phone wallpaper"

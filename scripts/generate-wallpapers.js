@@ -140,6 +140,7 @@ async function main() {
     { src: "mozworth-debut.webp", base: "mozworth-debut" },
     { src: "goodbye_colorado_cover.webp", base: "goodbye-colorado" },
     { src: "postcard_cover.webp", base: "postcard" },
+    { src: "Why-Not.webp", base: "why-not", closeupOffsetX: -0.215 },
   ];
 
   for (const { src, base, closeupPosition, closeupOffsetX } of albums) {

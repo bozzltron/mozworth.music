@@ -22,4 +22,5 @@ export const wallpapers: Wallpaper[] = [
   { id: "mozworth-debut-closeup", title: "mozworth debut (close-up)", source: "/wallpapers/mozworth-debut-closeup.webp", category: "album" },
   { id: "goodbye-colorado-closeup", title: "Goodbye Colorado (close-up)", source: "/wallpapers/goodbye-colorado-closeup.webp", category: "album" },
   { id: "postcard-closeup", title: "Postcard (close-up)", source: "/wallpapers/postcard-closeup.webp", category: "album" },
+  { id: "why-not-closeup", title: "Why Not (close-up)", source: "/wallpapers/why-not-closeup.webp", category: "album" },
 ];
