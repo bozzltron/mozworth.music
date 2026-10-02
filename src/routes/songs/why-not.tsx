@@ -35,7 +35,7 @@ export default function WhyNot() {
       <ReleaseMeta releaseDate="2026-10-22" prefix="Released on" showConfetti={true} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
         <a
-          href="https://distrokid.com/hyperfollow/mozworth/why-not"
+          href="https://li.sten.to/why-not"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => { if (window.gtag) window.gtag('event', 'pre_save_click', { song: 'Why Not' }); }}
@@ -151,7 +151,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
         image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
-        modifiedDate="2026-10-01"
+        modifiedDate="2026-10-02"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -166,7 +166,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
           },
           "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
-          "dateModified": "2026-10-01",
+          "dateModified": "2026-10-02",
           "url": "https://mozworth.music/songs/why-not/"
         }}
       />

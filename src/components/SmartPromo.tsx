@@ -7,7 +7,7 @@ const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johns
 /** Why Not release date - midnight UTC */
 const WHY_NOT_RELEASE_DATE = "2026-10-22T00:00:00Z";
 /** Pre-save link */
-const PRE_SAVE_URL = "https://distrokid.com/hyperfollow/mozworth/why-not";
+const PRE_SAVE_URL = "https://li.sten.to/why-not";
 
 export default function SmartPromo(): JSX.Element {
   return (
