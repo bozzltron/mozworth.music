@@ -8,23 +8,88 @@ import FollowButton from "../../components/FollowButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
 import LeaveNoteModal from "../../components/LeaveNoteModal";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 
 export default function WhyNot() {
   const [tab, setTab] = createSignal("Lyrics");
   const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
   const location = useLocation();
 
+  // Bandcamp embedded player
   const cover = (
-    <img
-      src="/Why-Not.webp"
-      alt="Why Not by mozworth - single artwork"
-      class="cover-art w-full max-w-[380px] mx-auto rounded-xl shadow-xl bg-[#222] object-contain mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04]"
-      loading="lazy"
-      decoding="async"
+    <iframe
+      src="https://bandcamp.com/EmbeddedPlayer/track=2084037407/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
+      seamless
+      class="cover-art w-full aspect-square rounded-xl shadow-xl bg-[#222] mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      title="Why Not by mozworth"
     />
   );
 
-  const streamingLinks: StreamingLink[] = [];
+  const streamingLinks: StreamingLink[] = [
+    {
+      href: "https://open.spotify.com/track/3ekUvQlwMnQmVyJIV7zGcW?si=06894b4089704e42",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Why Not' }); }
+    },
+    {
+      href: "https://music.apple.com/us/song/why-not/6815667974",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Why Not' }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/why-not",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Why Not' }); }
+    },
+    {
+      href: "https://music.amazon.com/tracks/B0HKTRN5J7?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_BQ1en18I5Cde2gKzn7YR4Q0Ai",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Why Not' }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=P4z-AF61SHQ&list=OLAK5uy_lt-c3fL2FT4dDbJBiHGC3NWTa68Akul6I",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Why Not' }); }
+    },
+    {
+      href: "https://tidal.com/track/563856535/u",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Why Not' }); }
+    },
+    {
+      href: "https://www.deezer.com/us/album/1105902212",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Why Not' }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/why-not",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Listen on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Why Not' }); }
+    },
+    {
+      href: "https://www.subvert.fm/mozworth/tracks/why-not",
+      alt: "Subvert FM",
+      iconSrc: "/subvert.svg",
+      ariaLabel: "Listen on Subvert FM",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Subvert FM', song: 'Why Not' }); }
+    },
+  ];
 
   const info = (
     <>
@@ -32,17 +97,19 @@ export default function WhyNot() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Why Not
       </div>
-      <ReleaseMeta releaseDate="2026-10-22" prefix="Released on" showConfetti={true} />
+      <ReleaseMeta releaseDate="2026-10-22" prefix="Released on" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
-        <a
-          href="https://ffm.to/mozworth-why-not"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => { if (window.gtag) window.gtag('event', 'pre_save_click', { song: 'Why Not' }); }}
-          class="inline-block px-5 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 w-full text-left text-center"
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
-          Pre-save
-        </a>
+          Leave a Note
+        </button>
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/why-not"
+          analyticsLabel="Why Not"
+          pricing="paid"
+        />
         <FollowButton variant="light" songTitle="Why Not" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/why-not/"}
@@ -145,13 +212,13 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
     <>
       <StandardMetadata
         title="Why Not | mozworth"
-        description="mozworth releases Why Not — an indie rock awakening about taking chances and embracing the unknown. Out October 22, 2026."
+        description="mozworth releases Why Not — an indie rock awakening about taking chances and embracing the unknown. Released October 22, 2026."
         url="https://mozworth.music/songs/why-not/"
         type="music.song"
         image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
-        modifiedDate="2026-10-07"
+        modifiedDate="2026-10-22"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -166,7 +233,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
           },
           "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
-          "dateModified": "2026-10-07",
+          "dateModified": "2026-10-22",
           "url": "https://mozworth.music/songs/why-not/"
         }}
       />
