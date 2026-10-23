@@ -1,8 +1,8 @@
 import { JSX } from "solid-js";
 import Countdown from "./Countdown";
 
-/** Latest interview link */
-const WAXZINE_INTERVIEW_URL = "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth";
+/** Latest music review link */
+const NO_TRANSMISSION_REVIEW_URL = "https://notransmission.com/mozworth-sound-ready-to-break-something-open-on-why-not/";
 /** Why Not release date - midnight UTC */
 const WHY_NOT_RELEASE_DATE = "2026-10-22T00:00:00Z";
 
@@ -25,11 +25,11 @@ export default function SmartPromo(): JSX.Element {
         <Countdown targetDate={WHY_NOT_RELEASE_DATE} />
       </div>
       <p class="mt-4 text-sm text-white/70 light:text-gray-600 text-center">
-        Latest interview:{" "}
-        <a href={WAXZINE_INTERVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
-          Wax Zine
+        Latest review:{" "}
+        <a href={NO_TRANSMISSION_REVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
+          No Transmission
         </a>
-        {" — Daniel Johnston, Austin underground & The Mountain & The Wolf"}
+        {" — “Why Not”"}
       </p>
     </div>
   );

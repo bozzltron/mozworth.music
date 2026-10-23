@@ -31,8 +31,14 @@ const NAV_TIMEOUT_MS = 120_000;
  */
 const DEFAULT_SETTLE_MS = 5_000;
 
-// Mirror of press items — optional `settleAfterLoadMs` for slow SPAs / heavy pages
+// Mirror of press items — optional `settleAfterLoadMs` for slow SPAs / heavy pages,
+// optional `fullPage: true` to capture the whole scrollable page instead of the viewport
 const PRESS_LINKS = [
+  {
+    id: 13,
+    link: "https://notransmission.com/mozworth-sound-ready-to-break-something-open-on-why-not/",
+    fullPage: true
+  },
   { id: 12, link: "https://www.waxzine.com/post/talking-daniel-johnston-the-austin-underground-and-the-mountain-and-the-wolf-with-mozworth" },
   { id: 0, link: "https://musikepool.com/story-of-an-artist-mozworth/" },
   { id: 1, link: "https://plasticmag.co.uk/2025/09/mozworth-drops-new-single-sandpiper/" },
@@ -65,7 +71,7 @@ function sleep(ms) {
 }
 
 function parseOnlyArg() {
-  const arg = process.argv.find((a) => a.startsWith("--only="));
+  const arg = process.argv.filter((a) => a.startsWith("--only=")).at(-1);
   if (!arg) return null;
   const ids = arg
     .slice("--only=".length)
@@ -112,7 +118,7 @@ async function main() {
           timeout: NAV_TIMEOUT_MS
         });
         await sleep(settleMs);
-        await page.screenshot({ path: outPath, type: "webp", quality: 85 });
+        await page.screenshot({ path: outPath, type: "webp", quality: 85, fullPage: entry.fullPage === true });
         console.log(`✓ ${id}.webp (settle ${settleMs}ms)`);
       } catch (err) {
         console.error(`✗ ${id} ${link}: ${err.message}`);

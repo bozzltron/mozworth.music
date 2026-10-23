@@ -196,9 +196,26 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
     </div>
   );
 
+  const press = (
+    <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
+      <h2 class="text-xl font-bold mb-4">Press Coverage</h2>
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">No Transmission Review</h3>
+        <p class="text-white/70 mb-2">October 22, 2026</p>
+        <p class="mb-3">
+          No Transmission calls "Why Not" a single that’s "heavier, more forceful and more outward-looking than much of their earlier work," setting the tone for The Mountain & The Wolf.
+        </p>
+        <a href="https://notransmission.com/mozworth-sound-ready-to-break-something-open-on-why-not/" target="_blank" rel="noopener noreferrer" class="inline-block text-teal-300 hover:text-teal-200 underline">
+          Read Full Review →
+        </a>
+      </div>
+    </div>
+  );
+
   const tabs = createMemo(() => [
     { label: "Lyrics", content: lyrics },
     { label: "Performances", content: performances },
+    { label: "Press", content: press },
     { label: "Credits", content: credits }
   ]);
 
@@ -218,7 +235,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
         image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
-        modifiedDate="2026-10-22"
+        modifiedDate="2026-10-23"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -233,7 +250,7 @@ If you wanted to live a quiet peaceful life, you picked the wrong time to be ali
           },
           "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
-          "dateModified": "2026-10-22",
+          "dateModified": "2026-10-23",
           "url": "https://mozworth.music/songs/why-not/"
         }}
       />

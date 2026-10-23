@@ -16,6 +16,16 @@ export interface PressItem {
 
 export const pressItems: PressItem[] = [
   {
+    id: 13,
+    category: "REVIEW",
+    title: "mozworth sound ready to break something open on \u2018Why Not\u2019",
+    publication: "No Transmission",
+    date: "October 22, 2026",
+    description: "No Transmission calls \"Why Not\" a single that's \"heavier, more forceful and more outward-looking than much of their earlier work,\" setting the tone for The Mountain & The Wolf.",
+    link: "https://notransmission.com/mozworth-sound-ready-to-break-something-open-on-why-not/",
+    linkText: "Read Full Review"
+  },
+  {
     id: 12,
     category: "INTERVIEW",
     title: "Talking Daniel Johnston, The Austin Underground, And \"The Mountain And The Wolf\" With mozworth",
