@@ -124,38 +124,53 @@ export default function WhyNot() {
     <div class="text-base md:text-lg leading-relaxed text-white opacity-90">
       <pre class="whitespace-pre-line font-sans">
 {`In a building with real windows
-I don't think I should be alone 
-Outside the earth's atmosphere I feel more at home
+I don't think I should be alone
+Outside the earth's atmosphere
+I feel more at home
 
-The time was never right
-The time is always wrong
-Arms and legs blown 
+And the time was never right
+The time was always wrong
+Arms and legs gettin' blown off
 God save these bones
 
-If you wanted to live a quiet peaceful life, you picked the wrong time to be alive  
+If you wanted to live a quiet peaceful life
+You picked the wrong time to be alive
 
-I can't even see myself anymore but here I am 
-The sad thing is I'm actually a comedian 
+I can't even see myself anymore but here I am
+And the sad thing is I'm actually a comedian
 
-If you wanted a breath of fresh air, you won't find one 
-It's a fact She's not coming back but we're not alone
+If you wanted a breath of fresh air you won't find one
+It's a fact she's not coming back and we are not alone
 
-If you wanted to live a quiet peaceful life, you picked the wrong time to be alive 
+If you wanted to live a quiet peaceful life
+You picked the wrong time to be alive
 
 You can't wake up if you don't fall asleep
-I meant to say yes my mouth didn't speak 
+I meant to say yes but my mouth didn't speak
 You can't wake up if you don't fall asleep
 Just keep telling the story
 
-What's the cause? What's the meaning? Why
-do you always have to dare?
-we watch, transfixed, as you enter
-into uncharted terr
+What's the cause?
+What's the meaning?
+Why do you always have to dare?
+We watch transfixed as you enter into uncharted terr
 
-Are you planning to abandon us? We're in grief
-Eyeballs gouged literal and figuratively 
+Are you going to abandon us?
+We're in our grief
+Eyeballs gouged literal and figuratively
 
-If you wanted to live a quiet peaceful life, you picked the wrong time to be alive`}
+If you wanted to live a quiet peaceful life
+You picked the wrong time to be alive
+
+You can't wake up if you don't fall asleep
+I meant to say yes but my mouth didn't speak
+You can't wake up if you don't fall asleep
+Just keep telling the story
+
+You can't wake up if you don't fall asleep
+I meant to say yes but my mouth didn't speak
+You can't wake up if you don't fall asleep
+Just keep telling the story`}
       </pre>
     </div>
   );
