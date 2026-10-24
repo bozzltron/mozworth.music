@@ -35,6 +35,11 @@ const DEFAULT_SETTLE_MS = 5_000;
 // optional `fullPage: true` to capture the whole scrollable page instead of the viewport
 const PRESS_LINKS = [
   {
+    id: 14,
+    link: "https://www.cougarmicrobes.com/2026/10/cougar-microbes-selects-indie-october-2026-4/",
+    fullPage: true
+  },
+  {
     id: 13,
     link: "https://notransmission.com/mozworth-sound-ready-to-break-something-open-on-why-not/",
     fullPage: true

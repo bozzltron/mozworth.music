@@ -224,6 +224,16 @@ Just keep telling the story`}
           Read Full Review →
         </a>
       </div>
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Cougar Microbes Selects</h3>
+        <p class="text-white/70 mb-2">October 23, 2026</p>
+        <p class="mb-3">
+          Cougar Microbes includes "Why Not" in its indie selects, calling it "a more confident step forward" for mozworth.
+        </p>
+        <a href="https://www.cougarmicrobes.com/2026/10/cougar-microbes-selects-indie-october-2026-4/" target="_blank" rel="noopener noreferrer" class="inline-block text-teal-300 hover:text-teal-200 underline">
+          Read Full Review →
+        </a>
+      </div>
     </div>
   );
 
@@ -250,7 +260,7 @@ Just keep telling the story`}
         image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
-        modifiedDate="2026-10-23"
+        modifiedDate="2026-10-24"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -265,7 +275,7 @@ Just keep telling the story`}
           },
           "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
-          "dateModified": "2026-10-23",
+          "dateModified": "2026-10-24",
           "url": "https://mozworth.music/songs/why-not/"
         }}
       />

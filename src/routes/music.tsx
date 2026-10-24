@@ -14,7 +14,7 @@ export default function Music() {
         url="https://mozworth.music/music/"
         type="music.albums"
         keywords="indie rock music, alternative rock music, indie rock albums, alternative rock singles, Austin indie rock, Austin alternative rock, mozworth music"
-        modifiedDate="2025-10-28"
+        modifiedDate="2026-10-24"
       />
       
       <div class="flex flex-col min-h-screen">
@@ -32,7 +32,7 @@ export default function Music() {
                 <img src="/Why-Not.webp" alt="Why Not single cover artwork" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" loading="lazy" decoding="async" />
                 <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 light:group-hover:text-teal-600 transition-colors">Why Not</h2>
                 <p class="text-white/70 light:text-gray-600 mb-1">October 22, 2026</p>
-                <p class="text-white/60 light:text-gray-500 text-sm mb-4">New indie rock single from mozworth.</p>
+                <p class="text-white/60 light:text-gray-500 text-sm mb-4">“The band sounds ready to push beyond its familiar comfort zone and explore what happens when all that pent-up emotion comes pouring out through the amps.” – Cougar Microbes</p>
               </A>
               {/* Story of an Artist */}
               {/* Sandpiper (Upcoming) */}

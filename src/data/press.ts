@@ -16,6 +16,16 @@ export interface PressItem {
 
 export const pressItems: PressItem[] = [
   {
+    id: 14,
+    category: "REVIEW",
+    title: "Cougar Microbes Selects: Indie October 2026 #4",
+    publication: "Cougar Microbes",
+    date: "October 23, 2026",
+    description: "Cougar Microbes includes \"Why Not\" in its indie selects, calling it \"a more confident step forward\" for mozworth.",
+    link: "https://www.cougarmicrobes.com/2026/10/cougar-microbes-selects-indie-october-2026-4/",
+    linkText: "Read Full Review"
+  },
+  {
     id: 13,
     category: "REVIEW",
     title: "mozworth sound ready to break something open on \u2018Why Not\u2019",
