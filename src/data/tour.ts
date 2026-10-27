@@ -99,6 +99,7 @@ export const tourEvents: TourEvent[] = [
     "Lineup:\nJaded Ravins\nmozworth\n\n1305 W Oltorf St\nAustin, TX 78704",
     [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/108973520?&came_from=210&_ga=2.37181609.803213143.1790722511-1718009698.1767487122", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+      { label: "Facebook", href: "https://www.facebook.com/share/1EBF3oemJN/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     undefined,
     "1305 W Oltorf St, Austin, TX 78704"
