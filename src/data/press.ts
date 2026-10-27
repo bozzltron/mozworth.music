@@ -16,6 +16,16 @@ export interface PressItem {
 
 export const pressItems: PressItem[] = [
   {
+    id: 15,
+    category: "REVIEW",
+    title: "mozworth's \"Why Not\" Makes the Case That The Mountain & The Wolf Will Have Something to Say",
+    publication: "The Cage Magazine",
+    date: "October 26, 2026",
+    description: "The Cage Magazine says mozworth's \"Why Not\" makes a strong case that The Mountain & The Wolf will have something real to say.",
+    link: "https://thecagemagazine.com/article/mozworth-s-why-not-makes-the-case-that-the-mountain-the-wolf-will-have-something-to-say",
+    linkText: "Read Full Review"
+  },
+  {
     id: 14,
     category: "REVIEW",
     title: "Cougar Microbes Selects: Indie October 2026 #4",

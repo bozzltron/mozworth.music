@@ -234,6 +234,16 @@ Just keep telling the story`}
           Read Full Review →
         </a>
       </div>
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">The Cage Magazine Review</h3>
+        <p class="text-white/70 mb-2">October 26, 2026</p>
+        <p class="mb-3">
+          The Cage Magazine says "That message is the song's thesis, and the music earns it."
+        </p>
+        <a href="https://thecagemagazine.com/article/mozworth-s-why-not-makes-the-case-that-the-mountain-the-wolf-will-have-something-to-say" target="_blank" rel="noopener noreferrer" class="inline-block text-teal-300 hover:text-teal-200 underline">
+          Read Full Review →
+        </a>
+      </div>
     </div>
   );
 
@@ -260,7 +270,7 @@ Just keep telling the story`}
         image="https://mozworth.music/Why-Not.webp"
         imageAlt="Why Not by mozworth - single artwork"
         publishDate="2026-10-22"
-        modifiedDate="2026-10-24"
+        modifiedDate="2026-10-27"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -275,7 +285,7 @@ Just keep telling the story`}
           },
           "image": "https://mozworth.music/Why-Not.webp",
           "datePublished": "2026-10-22",
-          "dateModified": "2026-10-24",
+          "dateModified": "2026-10-27",
           "url": "https://mozworth.music/songs/why-not/"
         }}
       />

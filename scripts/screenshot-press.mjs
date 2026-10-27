@@ -35,6 +35,11 @@ const DEFAULT_SETTLE_MS = 5_000;
 // optional `fullPage: true` to capture the whole scrollable page instead of the viewport
 const PRESS_LINKS = [
   {
+    id: 15,
+    link: "https://thecagemagazine.com/article/mozworth-s-why-not-makes-the-case-that-the-mountain-the-wolf-will-have-something-to-say",
+    fullPage: true
+  },
+  {
     id: 14,
     link: "https://www.cougarmicrobes.com/2026/10/cougar-microbes-selects-indie-october-2026-4/",
     fullPage: true

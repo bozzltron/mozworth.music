@@ -2,7 +2,7 @@ import { JSX } from "solid-js";
 import Countdown from "./Countdown";
 
 /** Latest music review link */
-const LATEST_REVIEW_URL = "https://www.cougarmicrobes.com/2026/10/cougar-microbes-selects-indie-october-2026-4/";
+const LATEST_REVIEW_URL = "https://thecagemagazine.com/article/mozworth-s-why-not-makes-the-case-that-the-mountain-the-wolf-will-have-something-to-say";
 /** Why Not release date - midnight UTC */
 const WHY_NOT_RELEASE_DATE = "2026-10-22T00:00:00Z";
 
@@ -27,7 +27,7 @@ export default function SmartPromo(): JSX.Element {
       <p class="mt-4 text-sm text-white/70 light:text-gray-600 text-center">
         Latest review:{" "}
         <a href={LATEST_REVIEW_URL} target="_blank" rel="noopener noreferrer" class="text-teal-300 light:text-teal-600 hover:underline">
-          Cougar Microbes
+          The Cage Magazine
         </a>
         {" — “Why Not”"}
       </p>
