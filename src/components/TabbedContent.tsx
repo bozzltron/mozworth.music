@@ -217,7 +217,7 @@ export default function TabbedContent(props: TabbedContentProps) {
             id={panelId}
             role="tabpanel"
             aria-labelledby={tabId}
-            aria-hidden={!isActive()}
+            aria-hidden={!isActive() && isDesktop()}
             class={`tab-panel mb-8 ${isActive() ? 'sm:block' : 'sm:hidden'} block`}
             style={{ order: i() }}
             data-tab={slug}

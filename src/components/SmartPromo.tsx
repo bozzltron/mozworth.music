@@ -9,7 +9,7 @@ const WHY_NOT_RELEASE_DATE = "2026-10-22T00:00:00Z";
 export default function SmartPromo(): JSX.Element {
   return (
     <div class="bg-black/60 light:bg-white/80 border border-white/30 light:border-gray-200 rounded-xl p-4 w-full max-w-xl flex flex-col items-center mb-8">
-      <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-teal-600 rounded-full mb-3">New single</span>
+      <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-teal-700 rounded-full mb-3">New single</span>
       <iframe
         src="https://bandcamp.com/EmbeddedPlayer/track=2084037407/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
         seamless

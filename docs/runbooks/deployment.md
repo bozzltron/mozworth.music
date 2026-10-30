@@ -17,6 +17,18 @@ There is no automated accessibility test. Check these by hand on every page you 
 
 Details: `RUNBOOK.md` §7 (accessibility row) and §9 (smoke test checklist).
 
+### Lighthouse (run against production after deploy)
+
+Run the audits on the live site for the home page, `/tour`, and a song page. Save the JSON reports outside the repo:
+
+```bash
+npx --yes lighthouse https://mozworth.music/ --only-categories=performance,accessibility,best-practices,seo --chrome-flags="--headless=new --no-sandbox" --quiet --output=json --output-path=<report-dir>/home.json
+```
+
+Lighthouse 12 removed the PWA category. Check installability by hand in Chrome DevTools (Application tab: manifest, service worker, icons, offline).
+
+Known open items (as of 2026-10-30): the head meta tags render in `<body>` (needs `@solidjs/meta`), the home-page background photo is 1.8 MB and is the largest paint, and two Google tags (`GTM-TKFS52TF`, `GT-WV86TPST`) load from outside this repo.
+
 ## 2. Check metadata
 
 For every page you changed:
