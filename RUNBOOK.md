@@ -132,6 +132,8 @@ Before writing code, confirm:
 | Update PWA service worker cache | `npm run update-sw-cache` |
 
 > **New press coverage:** follow `docs/runbooks/new-press.md` (screenshot, `/press` entry, song page press section).
+>
+> **Deploying to production:** follow `docs/runbooks/deployment.md` before pushing to `main`.
 
 > **PWA Cache Key:** The service worker uses a cache key based on the Vite build output hash. Run `npm run update-sw-cache` **after any change to cached assets** (JS, CSS, HTML, images, manifest) to regenerate the cache manifest and bump the cache key. This ensures users get the new version on next load (via `registerType: 'autoUpdate'`).
 
