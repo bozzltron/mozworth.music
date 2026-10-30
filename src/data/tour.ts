@@ -105,6 +105,15 @@ export const tourEvents: TourEvent[] = [
     "1305 W Oltorf St, Austin, TX 78704"
   ),
   event(
+    "2026-12-05",
+    "Saturday, December 5, 2026",
+    "Hanovers Draught Haus",
+    "Times TBD\n\nLineup:\nSpace Cushion\nFreebleeder\nMismones\nmozworth\n\n108 E Main St\nPflugerville, TX 78660",
+    [],
+    undefined,
+    "108 E Main St, Pflugerville, TX 78660"
+  ),
+  event(
     "2027-02-05",
     "Friday, February 5, 2027",
     "HOPE Outdoor Gallery",
