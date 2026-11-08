@@ -14,7 +14,7 @@ export default function Music() {
         url="https://mozworth.music/music/"
         type="music.albums"
         keywords="indie rock music, alternative rock music, indie rock albums, alternative rock singles, Austin indie rock, Austin alternative rock, mozworth music"
-        modifiedDate="2026-10-24"
+        modifiedDate="2026-11-08"
       />
       
       <div class="flex flex-col min-h-screen">
@@ -27,6 +27,13 @@ export default function Music() {
           <div class="relative container mx-0 md:mx-auto md:mt-10 md:mb-10 text-center flex flex-col items-center max-w-[800px] p-4 md:p-4 md:rounded-[10px] bg-black/70 light:bg-white/90 text-white light:text-gray-900">
             <h1 class="text-3xl font-bold mb-8 text-center">Music</h1>
             <section aria-label="Music releases" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
+              {/* Push */}
+              <A href="/songs/push" class="release group bg-black/50 light:bg-white/80 border border-white/10 light:border-gray-200 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 light:hover:shadow-teal-500/20 w-full mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'music', event_label: 'Push', destination: '/songs/push' }); }} aria-label="Push - Single releasing November 24, 2026">
+                <img src="/mozworth-push.webp" alt="Push single cover artwork" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" loading="lazy" decoding="async" />
+                <h2 class="text-xl font-bold mb-2 group-hover:text-teal-300 light:group-hover:text-teal-600 transition-colors">Push</h2>
+                <p class="text-white/70 light:text-gray-600 mb-1">November 24, 2026</p>
+                <p class="text-white/60 light:text-gray-500 text-sm mb-4">Texas-meets-surf rock, recorded live at 5th Street Studios.</p>
+              </A>
               {/* Why Not */}
               <A href="/songs/why-not" class="release group bg-black/50 light:bg-white/80 border border-white/10 light:border-gray-200 rounded-lg md:rounded-xl p-4 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-teal-400/30 light:hover:shadow-teal-500/20 w-full mx-auto focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100" onClick={() => { if (window.gtag) window.gtag('event', 'release_click', { event_category: 'music', event_label: 'Why Not', destination: '/songs/why-not' }); }} aria-label="Why Not - Single released October 22, 2026">
                 <img src="/Why-Not.webp" alt="Why Not single cover artwork" class="w-full aspect-square object-cover mb-4 rounded shadow-lg group-hover:shadow-teal-400/40 transition-shadow duration-200" loading="lazy" decoding="async" />

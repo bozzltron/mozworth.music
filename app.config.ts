@@ -5,7 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 // Bumped by scripts/update-sw-cache.js — do not edit by hand.
 // Referenced in the VitePWA workbox cacheNames below so any bump
 // invalidates the precache and runtime caches on the next build.
-const SW_REVISION = '2026-10-30T15:54:42.694Z';
+const SW_REVISION = '2026-11-08T19:36:48.991Z';
 
 export default defineConfig({
   vite: {

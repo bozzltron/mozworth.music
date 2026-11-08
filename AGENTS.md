@@ -115,3 +115,4 @@ There is no PR template, no `.github/` directory, and no branching convention �
 - `README.md` — quick start, full command list, new-song-page guidelines.
 - `architecture.md` — component inventory, design system, SolidJS/modal pitfalls, PWA capability evaluation.
 - `project.md` — product goals: asset copyright, prevent page crashes, tour/iCal sync, physical-first sales, Daniel Johnston covers free.
+- `docs/runbooks/new-single.md` — announce a new single: cover art, pre-release song page, home countdown, `/music` card, release-day follow-up.
