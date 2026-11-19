@@ -108,9 +108,11 @@ export const tourEvents: TourEvent[] = [
     "2026-12-05",
     "Saturday, December 5, 2026",
     "Hanovers Draught Haus",
-    "Times TBD\n\nLineup:\nSpace Cushion\nFreebleeder\nMismones\nmozworth\n\n108 E Main St\nPflugerville, TX 78660",
-    [],
-    undefined,
+    "Lineup:\n7:30pm mozworth\n8:15pm Foo Shot\n9pm Freebleeder\n9:45pm Space Cushion\n10:30pm Mismones\n11:15pm Diamondback Cad\n\n108 E Main St\nPflugerville, TX 78660",
+    [
+      { label: "Bandsintown", href: "https://www.bandsintown.com/e/109100466?&came_from=210&_ga=2.255088524.527380568.1795054852-1718009698.1767487122", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+    ],
+    "19:30",
     "108 E Main St, Pflugerville, TX 78660"
   ),
   event(
