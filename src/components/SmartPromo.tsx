@@ -23,8 +23,10 @@ export default function SmartPromo(): JSX.Element {
         <img
           src={COVER_ART_SRC}
           alt={`${SONG_TITLE} single artwork`}
+          width="1400"
+          height="1400"
           class="w-full h-auto"
-          loading="lazy"
+          fetchpriority="high"
           decoding="async"
         />
       </a>
@@ -40,7 +42,7 @@ export default function SmartPromo(): JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => { if (window.gtag) window.gtag('event', 'listen_now_click', { song: SONG_TITLE }); }}
-        class="inline-block px-5 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 w-full text-center mb-3"
+        class="inline-block px-5 py-2 rounded bg-green-700 text-white font-semibold shadow hover:bg-green-800 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 w-full text-center mb-3"
       >
         Listen Now
       </a>
