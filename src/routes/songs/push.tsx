@@ -1,23 +1,94 @@
+import { createSignal } from "solid-js";
+import { StreamingLink } from "../../components/StreamingIcons";
 import BasePageLayout from "../../components/BasePageLayout";
 import TabbedContent from "../../components/TabbedContent";
 import ShareButton from "../../components/ShareButton";
 import FollowButton from "../../components/FollowButton";
 import ReleaseMeta from "../../components/ReleaseMeta";
 import { StandardMetadata } from "../../utils/metadata";
+import LeaveNoteModal from "../../components/LeaveNoteModal";
+import BandcampDigitalLink from "../../components/BandcampDigitalLink";
 
-const PRE_SAVE_URL = "https://ffm.to/mozworth-push";
 const RELEASE_DATE = "2026-11-24";
 
 export default function Push() {
+  const [showLeaveNoteModal, setShowLeaveNoteModal] = createSignal(false);
+
+  // Bandcamp embedded player
   const cover = (
-    <img
-      src="/mozworth-push.webp"
-      alt="Push by mozworth - single artwork"
-      class="cover-art w-full max-w-[380px] mx-auto rounded-xl shadow-xl bg-[#0b1d33] object-contain mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04]"
-      loading="lazy"
-      decoding="async"
+    <iframe
+      src="https://bandcamp.com/EmbeddedPlayer/track=1205551012/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      seamless
+      class="cover-art w-full max-w-[380px] min-h-[430px] md:min-h-[470px] h-[56vw] max-h-[380px] rounded-xl shadow-xl bg-[#0b1d33] object-cover mb-6 md:mb-8 transition-transform duration-300 hover:scale-[1.04] hover:-rotate-2 hover:shadow-teal-400/60"
+      title="Push by mozworth (Bandcamp embed)"
     />
   );
+
+  const streamingLinks: StreamingLink[] = [
+    {
+      href: "https://open.spotify.com/album/4DX7ksdewwG9R6Prp6ohi6",
+      alt: "Spotify",
+      iconSrc: "/spotify.svg",
+      ariaLabel: "Listen on Spotify",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Spotify', song: 'Push' }); }
+    },
+    {
+      href: "https://music.apple.com/us/album/push/6831842567?i=6831842568",
+      alt: "Apple Music",
+      iconSrc: "/apple-music.svg",
+      ariaLabel: "Listen on Apple Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Apple Music', song: 'Push' }); }
+    },
+    {
+      href: "https://soundcloud.com/mozworth/push",
+      alt: "SoundCloud",
+      iconSrc: "/soundcloud.svg",
+      ariaLabel: "Listen on SoundCloud",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'SoundCloud', song: 'Push' }); }
+    },
+    {
+      href: "https://music.amazon.com/albums/B0HQR547BR",
+      alt: "Amazon Music",
+      iconSrc: "/amazon-music.svg",
+      ariaLabel: "Listen on Amazon Music",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Amazon Music', song: 'Push' }); }
+    },
+    {
+      href: "https://www.youtube.com/watch?v=L8l9F6vHcwI&list=OLAK5uy_lZX5yxGqbiUK43O5rHPJkLujOSbhPijLI",
+      alt: "YouTube",
+      iconSrc: "/youtube.svg",
+      ariaLabel: "Listen on YouTube",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'YouTube', song: 'Push' }); }
+    },
+    {
+      href: "https://tidal.com/track/576798229/u",
+      alt: "Tidal",
+      iconSrc: "/tidal.svg",
+      ariaLabel: "Listen on Tidal",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Tidal', song: 'Push' }); }
+    },
+    {
+      href: "https://link.deezer.com/s/3538TJSmT923LwYash6YF",
+      alt: "Deezer",
+      iconSrc: "/deezer.svg",
+      ariaLabel: "Listen on Deezer",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Deezer', song: 'Push' }); }
+    },
+    {
+      href: "https://mozworth.bandcamp.com/track/push",
+      alt: "Bandcamp",
+      iconSrc: "/bandcamp.svg",
+      ariaLabel: "Listen on Bandcamp",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Bandcamp', song: 'Push' }); }
+    },
+    {
+      href: "https://www.subvert.fm/mozworth/tracks/push",
+      alt: "Subvert FM",
+      iconSrc: "/subvert.svg",
+      ariaLabel: "Listen on Subvert FM",
+      onClick: () => { if (window.gtag) window.gtag('event', 'streaming_click', { event_category: 'streaming', event_label: 'Subvert FM', song: 'Push' }); }
+    },
+  ];
 
   const info = (
     <>
@@ -25,22 +96,24 @@ export default function Push() {
       <div class="song-info text-gray-400 text-base mb-1 w-full text-left">
         mozworth &middot; Push
       </div>
-      <ReleaseMeta releaseDate={RELEASE_DATE} prefix="Out" showConfetti={true} />
+      <ReleaseMeta releaseDate={RELEASE_DATE} prefix="Released" showConfetti={false} />
       <div class="song-info text-gray-400 text-base mb-6 w-full text-left mt-4 flex flex-col gap-2">
-        <a
-          href={PRE_SAVE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => { if (window.gtag) window.gtag('event', 'pre_save_click', { song: 'Push' }); }}
-          class="inline-block px-5 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 w-full text-left text-center"
+        <button
+          onClick={() => setShowLeaveNoteModal(true)}
+          class="inline-block px-5 py-2 rounded bg-purple-600 text-white font-semibold shadow hover:bg-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 w-full text-left"
         >
-          Pre-save
-        </a>
+          Leave a Note
+        </button>
+        <BandcampDigitalLink
+          href="https://mozworth.bandcamp.com/track/push"
+          analyticsLabel="Push"
+          pricing="paid"
+        />
         <FollowButton variant="light" songTitle="Push" noMargin />
         <ShareButton noMargin
           url={typeof window !== "undefined" ? window.location.href : "https://mozworth.music/songs/push/"}
           title="Push by mozworth"
-          text="Pre-save Push by mozworth!"
+          text="Listen to Push by mozworth!"
         />
       </div>
     </>
@@ -180,7 +253,7 @@ Wow`}
         image="https://mozworth.music/mozworth-push.webp"
         imageAlt="Push by mozworth - single artwork"
         publishDate={RELEASE_DATE}
-        modifiedDate="2026-11-08"
+        modifiedDate="2026-11-24"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -195,14 +268,14 @@ Wow`}
           },
           "image": "https://mozworth.music/mozworth-push.webp",
           "datePublished": RELEASE_DATE,
-          "dateModified": "2026-11-08",
+          "dateModified": "2026-11-24",
           "url": "https://mozworth.music/songs/push/"
         }}
       />
       <BasePageLayout
         cover={cover}
         info={info}
-        streamingLinks={[]}
+        streamingLinks={streamingLinks}
         backgroundClass="min-h-screen min-w-full w-full flex items-center justify-center bg-gradient-to-br from-[#081b2e] via-[#1c4a68] to-[#8fc1d4]"
         confetti={{ enabled: true, releaseDate: new Date(RELEASE_DATE), imageUrl: '/mozworth-push.webp' }}
       >
@@ -211,6 +284,11 @@ Wow`}
           defaultTab="Lyrics"
         />
       </BasePageLayout>
+      <LeaveNoteModal
+        isOpen={showLeaveNoteModal()}
+        onClose={() => setShowLeaveNoteModal(false)}
+        songTitle="Push"
+      />
     </>
   );
 }

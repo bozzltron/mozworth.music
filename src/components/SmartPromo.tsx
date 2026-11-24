@@ -9,7 +9,7 @@ const TAGLINE = "Texas-meets-surf rock, recorded live at 5th Street Studios.";
 /** Release day - midnight UTC */
 const RELEASE_DATE = "2026-11-24T00:00:00Z";
 const RELEASE_DATE_LABEL = "November 24, 2026";
-const PRE_SAVE_URL = "https://ffm.to/mozworth-push";
+const LISTEN_URL = "https://ffm.to/mozworth-push";
 
 export default function SmartPromo(): JSX.Element {
   return (
@@ -36,13 +36,13 @@ export default function SmartPromo(): JSX.Element {
         <Countdown targetDate={RELEASE_DATE} />
       </div>
       <a
-        href={PRE_SAVE_URL}
+        href={LISTEN_URL}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => { if (window.gtag) window.gtag('event', 'pre_save_click', { song: SONG_TITLE }); }}
+        onClick={() => { if (window.gtag) window.gtag('event', 'listen_now_click', { song: SONG_TITLE }); }}
         class="inline-block px-5 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black light:focus:ring-offset-stone-100 w-full text-center mb-3"
       >
-        Pre-save
+        Listen Now
       </a>
       <a href={SONG_SLUG} class="text-teal-300 light:text-teal-600 hover:underline text-sm font-semibold">
         Learn more about {SONG_TITLE} →
