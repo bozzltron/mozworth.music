@@ -111,6 +111,7 @@ export const tourEvents: TourEvent[] = [
     "Lineup:\n7:30pm mozworth\n8:15pm Foo Shot\n9pm Freebleeder\n9:45pm Space Cushion\n10:30pm Mismones\n11:15pm Diamondback Cad\n\n108 E Main St\nPflugerville, TX 78660",
     [
       { label: "Bandsintown", href: "https://www.bandsintown.com/e/109100466?&came_from=210&_ga=2.255088524.527380568.1795054852-1718009698.1767487122", ariaLabel: "View event on Bandsintown (opens in new tab)" },
+      { label: "Facebook", href: "https://www.facebook.com/share/1EGdfFMhEQ/", ariaLabel: "View event on Facebook (opens in new tab)" },
     ],
     "19:30",
     "108 E Main St, Pflugerville, TX 78660"
