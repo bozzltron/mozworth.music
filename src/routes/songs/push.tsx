@@ -136,39 +136,41 @@ All in harmony
 
 Push to stand
 Glide towards the sand
-A Holy message from the deep
+On a holy message from the deep
 
 What could be more profound than this wave?
-swelling up under me
+Oh this wave
+It's swelling up under me
 What could be more profound than this wave?
-breakin' up over me
+On this wave
+It's breaking up over me
 
 Wow
 
 The push of the sun
-pull of the moon
+Pull of the moon
 On the surface of the earth
 
-Feel your space
+Find your space
 Among the waves
 Among all things
 Feel the swell and take your place
 
 What could be more profound than this wave?
-swelling up under me
+Oh this wave
+It's swelling up under me
 What could be more profound than this wave?
-breakin' up over me
+On this wave
+It's breaking up over me
 
 Wow
 
 What could be more profound than this wave?
-swelling up under me
+Oh this wave
+It's swelling up under me
 What could be more profound than this wave?
-breakin' up over me
-The salt the sweat the sun the proving ground
-Swimming in infinity
-What could be more profound than this wave?
-breakin' up over me
+On this wave
+It's breaking up over me
 
 Wow`}
       </pre>
@@ -253,7 +255,7 @@ Wow`}
         image="https://mozworth.music/mozworth-push.webp"
         imageAlt="Push by mozworth - single artwork"
         publishDate={RELEASE_DATE}
-        modifiedDate="2026-11-24"
+        modifiedDate="2026-11-25"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "MusicRecording",
@@ -268,7 +270,7 @@ Wow`}
           },
           "image": "https://mozworth.music/mozworth-push.webp",
           "datePublished": RELEASE_DATE,
-          "dateModified": "2026-11-24",
+          "dateModified": "2026-11-25",
           "url": "https://mozworth.music/songs/push/"
         }}
       />
